@@ -758,10 +758,44 @@ img {
    7. A JORNADA DAS FAIXAS (SONGAHM) - TIMELINE INTERATIVA COM SCROLL
    ========================================================================== */
 .journey-section {
-    padding: 110px 0;
-    background: radial-gradient(circle at 50% 30%, #151a28 0%, var(--bg-black) 75%);
+    padding: 120px 0;
     position: relative;
     overflow: hidden;
+    background-color: var(--bg-black);
+}
+
+/* Background com Foto em Blur & Profundidade Cinematográfica */
+.journey-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.journey-bg-image {
+    position: absolute;
+    inset: -40px;
+    background-image: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    filter: blur(14px) brightness(0.25) saturate(1.3) contrast(1.15);
+    transform: scale(1.08);
+    will-change: transform;
+}
+
+.journey-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(180deg, var(--bg-black) 0%, rgba(8, 9, 13, 0.45) 15%, rgba(8, 9, 13, 0.65) 85%, var(--bg-black) 100%),
+        radial-gradient(circle at 50% 35%, rgba(21, 26, 40, 0.35) 0%, rgba(8, 9, 13, 0.94) 85%);
+}
+
+.journey-container {
+    position: relative;
+    z-index: 2;
 }
 
 .journey-timeline-wrapper {
@@ -848,15 +882,18 @@ img {
 .marker-dot.belt-red   { background: #e03131; box-shadow: 0 0 10px rgba(224, 49, 49, 0.8); }
 .marker-dot.belt-black { background: #08090d; border: 2px solid #ffffff; box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
 
-/* Card da Etapa */
+/* Card da Etapa com Frosted Glass sobre o fundo desfocado */
 .timeline-card {
     flex: 1;
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
+    background: rgba(14, 17, 24, 0.84);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-md);
     padding: 26px 28px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
 }
 
 .timeline-card::before {
@@ -866,9 +903,11 @@ img {
     left: -8px;
     width: 14px;
     height: 14px;
-    background: var(--bg-card);
-    border-left: 1px solid var(--border-card);
-    border-bottom: 1px solid var(--border-card);
+    background: rgba(14, 17, 24, 0.84);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transform: rotate(45deg);
     transition: all 0.4s ease;
 }

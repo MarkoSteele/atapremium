@@ -452,7 +452,13 @@ get_header(); ?>
 
 <!-- 7. A JORNADA DAS FAIXAS (SONGAHM) - TIMELINE INTERATIVA COM SCROLL -->
 <section id="jornada" class="journey-section">
-    <div class="container">
+    <!-- Foto de Fundo com Blur & Gradiente de Profundidade -->
+    <div class="journey-bg-wrapper" aria-hidden="true">
+        <div class="journey-bg-image"></div>
+        <div class="journey-bg-overlay"></div>
+    </div>
+
+    <div class="container journey-container">
         <div class="section-title text-center reveal-on-scroll">
             <span class="badge-gold" data-i18n="journey_badge">TRADIÇÃO & METÁFORA</span>
             <h2 data-i18n="journey_title">A Jornada Songahm: Do Templo ao Pinheiro</h2>

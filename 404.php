@@ -7,6 +7,12 @@
 get_header(); ?>
 
 <main id="primary" class="site-main error-404-main">
+    <!-- Imagem de fundo com foto da equipe/mestres e overlay de alto padrão -->
+    <div class="error-404-bg-media">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/404-bg.jpg' ); ?>" alt="Equipe ATA Martial Arts Florianópolis" class="error-404-bg-img" loading="eager">
+        <div class="error-404-overlay"></div>
+    </div>
+
     <!-- Efeitos de iluminação de fundo -->
     <div class="error-404-glow-bg"></div>
 

@@ -226,4 +226,76 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initVideoAutoplay();
+
+    // 6. Animação Global de Scroll Reveal (Aparecimento suave do conteúdo ao rolar a página)
+    const initScrollReveal = () => {
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        if (!revealElements.length) return;
+
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        } else {
+            // Fallback imediato caso o navegador não suporte IntersectionObserver
+            revealElements.forEach(el => el.classList.add('is-visible'));
+        }
+    };
+
+    initScrollReveal();
+
+    // 7. Timeline Interativa Dinâmica ao Scroll (#jornada)
+    const initTimelineProgress = () => {
+        const journeySection = document.querySelector('#jornada');
+        const progressBar = document.querySelector('.timeline-progress-bar');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        if (!journeySection || !progressBar || !timelineItems.length) return;
+
+        const updateTimeline = () => {
+            const rect = journeySection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Inicia quando o topo da seção entra em 70% da viewport e finaliza ao percorrer a seção
+            const startThreshold = windowHeight * 0.70;
+            const totalTravelDistance = rect.height;
+            const currentTravel = startThreshold - rect.top;
+            const progress = currentTravel / totalTravelDistance;
+            const clampedProgress = Math.max(0, Math.min(1, progress));
+
+            progressBar.style.height = `${clampedProgress * 100}%`;
+
+            // Ativa individualmente cada marco da timeline conforme o scroll alcança sua posição
+            timelineItems.forEach(item => {
+                const itemRect = item.getBoundingClientRect();
+                if (itemRect.top < windowHeight * 0.72) {
+                    item.classList.add('is-active');
+                } else {
+                    item.classList.remove('is-active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', updateTimeline, { passive: true });
+        window.addEventListener('resize', updateTimeline, { passive: true });
+        updateTimeline();
+
+        // Clique em um card para destaque suave
+        timelineItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.add('is-active');
+            });
+        });
+    };
+
+    initTimelineProgress();
 });

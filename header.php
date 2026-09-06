@@ -32,9 +32,9 @@
             <ul class="nav-list">
                 <li><a href="#hero">Início</a></li>
                 <li><a href="#programas">Programas</a></li>
-                <li><a href="#jornada">Método Songahm</a></li>
-                <li><a href="#unidades">Unidades</a></li>
                 <li><a href="#instagram">Instagram</a></li>
+                <li><a href="#unidades">Unidades</a></li>
+                <li><a href="#jornada">Método Songahm</a></li>
                 <li><a href="#faq">Dúvidas</a></li>
             </ul>
         </nav>
@@ -80,9 +80,9 @@
         <ul class="mobile-nav-list">
             <li><a href="#hero">Início</a></li>
             <li><a href="#programas">Programas</a></li>
-            <li><a href="#jornada">Método Songahm</a></li>
-            <li><a href="#unidades">Unidades</a></li>
             <li><a href="#instagram">Instagram (@ata.premium)</a></li>
+            <li><a href="#unidades">Unidades</a></li>
+            <li><a href="#jornada">Método Songahm</a></li>
             <li><a href="#faq">Dúvidas</a></li>
             <li class="mobile-cta-item">
                 <a href="#contato" class="btn btn-gold btn-block">Agendar Aula Experimental</a>

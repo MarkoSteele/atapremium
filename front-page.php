@@ -16,7 +16,7 @@ get_header(); ?>
     </div>
 
     <div class="container hero-container">
-        <div class="hero-content">
+        <div class="hero-content reveal-on-scroll">
             <span class="badge-gold">★ ATA MARTIAL ARTS • MÉTODO SONGAHM | FLORIANÓPOLIS ★</span>
             <h1 class="hero-title">
                 Mais disciplina, foco e segurança para seus filhos — <span class="gold-gradient">dentro e fora do tatame.</span>
@@ -56,22 +56,22 @@ get_header(); ?>
 <section id="autoridade" class="metrics-section">
     <div class="container">
         <div class="metrics-grid">
-            <div class="metric-card">
+            <div class="metric-card reveal-on-scroll delay-1">
                 <div class="metric-number gold-gradient">+1.5 Milhão</div>
                 <div class="metric-label">Praticantes no Mundo</div>
                 <p class="metric-desc">Taekwondo Songahm presente em dezenas de países (ATA / WTTU / STF)</p>
             </div>
-            <div class="metric-card">
+            <div class="metric-card reveal-on-scroll delay-2">
                 <div class="metric-number gold-gradient">3 Unidades</div>
                 <div class="metric-label">Em Florianópolis</div>
                 <p class="metric-desc">Estruturas completas no Centro e Córrego Grande (Spotmarkt)</p>
             </div>
-            <div class="metric-card">
+            <div class="metric-card reveal-on-scroll delay-3">
                 <div class="metric-number gold-gradient">30+ Anos</div>
                 <div class="metric-label">De Tradição Marcial</div>
                 <p class="metric-desc">Metodologia e refinamento pedagógico do Grão-Mestre H.U. Lee</p>
             </div>
-            <div class="metric-card">
+            <div class="metric-card reveal-on-scroll delay-4">
                 <div class="metric-number gold-gradient">100%</div>
                 <div class="metric-label">Instrutores Certificados</div>
                 <p class="metric-desc">Formação internacional contínua e foco no desenvolvimento humano</p>
@@ -83,7 +83,7 @@ get_header(); ?>
 <!-- 3. FILOSOFIA & MANIFESTO ATA -->
 <section id="filosofia" class="philosophy-section">
     <div class="container">
-        <div class="philosophy-box">
+        <div class="philosophy-box reveal-on-scroll">
             <span class="badge-gold">NOSSO COMPROMISSO</span>
             <h2 class="philosophy-quote">
                 "Aqui, o objetivo não é formar lutadores. <span class="gold-gradient">É formar atitudes!</span>"
@@ -106,7 +106,7 @@ get_header(); ?>
 <!-- 4. PROGRAMAS POR FAIXA ETÁRIA -->
 <section id="programas" class="programs-section">
     <div class="container">
-        <div class="section-title text-center">
+        <div class="section-title text-center reveal-on-scroll">
             <span class="badge-gold">DIDÁTICA E METODOLOGIA</span>
             <h2>Programas Estruturados por Idade</h2>
             <p>Cada estágio do desenvolvimento exige estímulos, didática e linguagem adequados.</p>
@@ -114,7 +114,7 @@ get_header(); ?>
 
         <div class="programs-grid-4">
             <!-- Tigers -->
-            <div class="program-card">
+            <div class="program-card reveal-on-scroll delay-1">
                 <div class="program-card-header">
                     <span class="program-tag">3 a 6 anos</span>
                     <h3>Tigers</h3>
@@ -135,7 +135,7 @@ get_header(); ?>
             </div>
 
             <!-- Kids -->
-            <div class="program-card">
+            <div class="program-card reveal-on-scroll delay-2">
                 <div class="program-card-header">
                     <span class="program-tag">7 a 13 anos</span>
                     <h3>Kids</h3>
@@ -156,7 +156,7 @@ get_header(); ?>
             </div>
 
             <!-- Teens -->
-            <div class="program-card">
+            <div class="program-card reveal-on-scroll delay-3">
                 <div class="program-card-header">
                     <span class="program-tag">11 a 15 anos</span>
                     <h3>Adolescentes</h3>
@@ -177,7 +177,7 @@ get_header(); ?>
             </div>
 
             <!-- Adultos & Família -->
-            <div class="program-card">
+            <div class="program-card reveal-on-scroll delay-4">
                 <div class="program-card-header">
                     <span class="program-tag">Adultos & Família</span>
                     <h3>Adultos e Masters</h3>
@@ -200,71 +200,10 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 5. A JORNADA DAS FAIXAS (SONGAHM) -->
-<section id="jornada" class="journey-section">
-    <div class="container">
-        <div class="section-title text-center">
-            <span class="badge-gold">TRADIÇÃO & METÁFORA</span>
-            <h2>A Jornada Songahm: Do Templo ao Pinheiro</h2>
-            <p>O crescimento só é sólido quando as raízes são tão fortes quanto a copa da árvore.</p>
-        </div>
-
-        <div class="journey-timeline">
-            <!-- Passo 1: Branca -->
-            <div class="timeline-item">
-                <div class="timeline-marker">
-                    <span class="marker-dot belt-white"></span>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-badge">1ª ETAPA • A SEMENTE</div>
-                    <h3>Faixa Branca: O Início da Jornada</h3>
-                    <p>O aluno inicia sem conhecimento prévio — a terra pura pronta para ser cultivada. Aprende a etiqueta do tatame, a ouvir com atenção e os fundamentos do respeito e da postura marcial.</p>
-                </div>
-            </div>
-
-            <!-- Passo 2: Coloridas -->
-            <div class="timeline-item">
-                <div class="timeline-marker">
-                    <span class="marker-dot belt-gold"></span>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-badge">2ª ETAPA • AS RAÍZES</div>
-                    <h3>Faixas Coloridas: A Criação das Raízes</h3>
-                    <p>Fase de desenvolvimento e superação de barreiras. O praticante desenvolve tônus muscular, agilidade, perseverança e aprende a transformar erros em aprendizado constante.</p>
-                </div>
-            </div>
-
-            <!-- Passo 3: Vermelha -->
-            <div class="timeline-item">
-                <div class="timeline-marker">
-                    <span class="marker-dot belt-red"></span>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-badge">3ª ETAPA • O SOL POENTE</div>
-                    <h3>Faixa Vermelha: A Maturidade Técnica</h3>
-                    <p>Fase de nobreza e consolidação técnica. A disciplina física atinge excelência e o aluno passa a focar no refinamento mental, autocontrole e liderança.</p>
-                </div>
-            </div>
-
-            <!-- Passo 4: Preta -->
-            <div class="timeline-item">
-                <div class="timeline-marker">
-                    <span class="marker-dot belt-black"></span>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-badge">4ª ETAPA • O PINHEIRO ETERNO</div>
-                    <h3>Faixa Preta: A Formação de Atitudes</h3>
-                    <p>A vitória sobre a dúvida e a escuridão da ignorância. Não é a linha de chegada, mas o verdadeiro recomeço onde o praticante lidera pelo exemplo e planta sementes para toda a comunidade.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 6. SEÇÃO DE VÍDEOS VERTICAIS DO INSTAGRAM (@ATA.PREMIUM) -->
+<!-- 5. SEÇÃO DE VÍDEOS VERTICAIS DO INSTAGRAM (@ATA.PREMIUM) -->
 <section id="instagram" class="instagram-section">
     <div class="container">
-        <div class="insta-section-header">
+        <div class="insta-section-header reveal-on-scroll">
             <div class="insta-header-left">
                 <span class="badge-gold">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -284,7 +223,7 @@ get_header(); ?>
         <!-- Grid de 4 Vídeos Verticais (Aspect Ratio 9:16) com Autoplay Contínuo -->
         <div class="reels-grid">
             <!-- Reel 1: Unidade Alves de Brito -->
-            <div class="reel-card is-playing" data-video="alves-de-brito">
+            <div class="reel-card is-playing reveal-on-scroll delay-1" data-video="alves-de-brito">
                 <div class="reel-media-wrapper">
                     <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/alves-de-brito.mp4' ); ?>" type="video/mp4">
@@ -303,7 +242,7 @@ get_header(); ?>
             </div>
 
             <!-- Reel 2: Unidade Colégio Catarinense -->
-            <div class="reel-card is-playing" data-video="catarinense">
+            <div class="reel-card is-playing reveal-on-scroll delay-2" data-video="catarinense">
                 <div class="reel-media-wrapper">
                     <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/catarinense.mp4' ); ?>" type="video/mp4">
@@ -322,7 +261,7 @@ get_header(); ?>
             </div>
 
             <!-- Reel 3: Unidade Spotmarkt -->
-            <div class="reel-card is-playing" data-video="spotmarkt">
+            <div class="reel-card is-playing reveal-on-scroll delay-3" data-video="spotmarkt">
                 <div class="reel-media-wrapper">
                     <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/spotmarket.mp4' ); ?>" type="video/mp4">
@@ -341,7 +280,7 @@ get_header(); ?>
             </div>
 
             <!-- Reel 4: Evento & Espetáculo -->
-            <div class="reel-card is-playing" data-video="espetaculo">
+            <div class="reel-card is-playing reveal-on-scroll delay-4" data-video="espetaculo">
                 <div class="reel-media-wrapper">
                     <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?q=80&w=800&auto=format&fit=crop">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/' . rawurlencode('ESPETÁCULO 1.mp4') ); ?>" type="video/mp4">
@@ -360,7 +299,7 @@ get_header(); ?>
             </div>
         </div>
 
-        <div class="insta-bottom-cta text-center">
+        <div class="insta-bottom-cta text-center reveal-on-scroll">
             <p>Junte-se à nossa comunidade de mais de <strong>10 mil seguidores</strong> no Instagram!</p>
             <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener noreferrer" class="insta-follow-btn">
                 <span class="insta-icon-circle">
@@ -372,10 +311,10 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 7. NOSSAS UNIDADES EM FLORIANÓPOLIS (Cards com Imagem que levam à Página da Unidade) -->
+<!-- 6. NOSSAS UNIDADES EM FLORIANÓPOLIS (Cards com Imagem que levam à Página da Unidade) -->
 <section id="unidades" class="units-section">
     <div class="container">
-        <div class="section-title text-center">
+        <div class="section-title text-center reveal-on-scroll">
             <span class="badge-gold">LOCALIZAÇÃO & CONVENIÊNCIA</span>
             <h2>Nossas 3 Unidades em Florianópolis</h2>
             <p>Clique na unidade para ver fotos, infraestrutura e horários exclusivos de cada dojo.</p>
@@ -383,7 +322,7 @@ get_header(); ?>
 
         <div class="units-grid">
             <!-- Unidade 1: Centro - Alves de Brito -->
-            <div class="unit-card-interactive">
+            <div class="unit-card-interactive reveal-on-scroll delay-1">
                 <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Alves de Brito">
                     <div class="unit-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" alt="Unidade Alves de Brito Centro" class="unit-img" loading="lazy">
@@ -425,7 +364,7 @@ get_header(); ?>
             </div>
 
             <!-- Unidade 2: Centro - Colégio Catarinense -->
-            <div class="unit-card-interactive">
+            <div class="unit-card-interactive reveal-on-scroll delay-2">
                 <a href="<?php echo esc_url( home_url( '/unidade-colegio-catarinense/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Colégio Catarinense">
                     <div class="unit-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Unidade Colégio Catarinense" class="unit-img" loading="lazy">
@@ -467,7 +406,7 @@ get_header(); ?>
             </div>
 
             <!-- Unidade 3: Córrego Grande - Spotmarkt -->
-            <div class="unit-card-interactive">
+            <div class="unit-card-interactive reveal-on-scroll delay-3">
                 <a href="<?php echo esc_url( home_url( '/unidade-spotmarkt/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Spotmarkt">
                     <div class="unit-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" alt="Unidade Spotmarkt Córrego Grande" class="unit-img" loading="lazy">
@@ -511,6 +450,90 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- 7. A JORNADA DAS FAIXAS (SONGAHM) - TIMELINE INTERATIVA COM SCROLL -->
+<section id="jornada" class="journey-section">
+    <div class="container">
+        <div class="section-title text-center reveal-on-scroll">
+            <span class="badge-gold">TRADIÇÃO & METÁFORA</span>
+            <h2>A Jornada Songahm: Do Templo ao Pinheiro</h2>
+            <p>O crescimento só é sólido quando as raízes são tão fortes quanto a copa da árvore.</p>
+        </div>
+
+        <div class="journey-timeline-wrapper">
+            <!-- Trilho Vertical & Barra de Progresso Dourada Preenchida ao Rolar -->
+            <div class="timeline-vertical-track" aria-hidden="true">
+                <div class="timeline-progress-bar"></div>
+            </div>
+
+            <div class="journey-timeline">
+                <!-- Passo 1: Branca -->
+                <div class="timeline-item reveal-on-scroll delay-1" data-step="1">
+                    <div class="timeline-marker">
+                        <span class="marker-glow"></span>
+                        <span class="marker-dot belt-white"></span>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <span class="timeline-step-pill">1ª ETAPA • A SEMENTE</span>
+                            <span class="belt-label-tag belt-tag-white">Faixa Branca</span>
+                        </div>
+                        <h3>O Início da Jornada</h3>
+                        <p>O aluno inicia sem conhecimento prévio — a terra pura pronta para ser cultivada. Aprende a etiqueta do tatame, a ouvir com atenção e os fundamentos do respeito e da postura marcial.</p>
+                    </div>
+                </div>
+
+                <!-- Passo 2: Coloridas -->
+                <div class="timeline-item reveal-on-scroll delay-2" data-step="2">
+                    <div class="timeline-marker">
+                        <span class="marker-glow"></span>
+                        <span class="marker-dot belt-gold"></span>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <span class="timeline-step-pill">2ª ETAPA • AS RAÍZES</span>
+                            <span class="belt-label-tag belt-tag-gold">Faixas Coloridas</span>
+                        </div>
+                        <h3>A Criação das Raízes</h3>
+                        <p>Fase de desenvolvimento e superação de barreiras. O praticante desenvolve tônus muscular, agilidade, perseverança e aprende a transformar erros em aprendizado constante.</p>
+                    </div>
+                </div>
+
+                <!-- Passo 3: Vermelha -->
+                <div class="timeline-item reveal-on-scroll delay-3" data-step="3">
+                    <div class="timeline-marker">
+                        <span class="marker-glow"></span>
+                        <span class="marker-dot belt-red"></span>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <span class="timeline-step-pill">3ª ETAPA • O SOL POENTE</span>
+                            <span class="belt-label-tag belt-tag-red">Faixa Vermelha</span>
+                        </div>
+                        <h3>A Maturidade Técnica</h3>
+                        <p>Fase de nobreza e consolidação técnica. A disciplina física atinge excelência e o aluno passa a focar no refinamento mental, autocontrole e liderança.</p>
+                    </div>
+                </div>
+
+                <!-- Passo 4: Preta -->
+                <div class="timeline-item reveal-on-scroll delay-4" data-step="4">
+                    <div class="timeline-marker">
+                        <span class="marker-glow"></span>
+                        <span class="marker-dot belt-black"></span>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <span class="timeline-step-pill">4ª ETAPA • O PINHEIRO ETERNO</span>
+                            <span class="belt-label-tag belt-tag-black">Faixa Preta</span>
+                        </div>
+                        <h3>A Formação de Atitudes</h3>
+                        <p>A vitória sobre a dúvida e a escuridão da ignorância. Não é a linha de chegada, mas o verdadeiro recomeço onde o praticante lidera pelo exemplo e planta sementes para toda a comunidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- 8. QUEBRA DE OBJEÇÕES (FAQ ACORDEON) -->
 <section id="faq" class="faq-section">
     <!-- Efeito Parallax da Logo no Background do FAQ -->
@@ -519,14 +542,14 @@ get_header(); ?>
     </div>
 
     <div class="container">
-        <div class="section-title text-center">
+        <div class="section-title text-center reveal-on-scroll">
             <span class="badge-gold">DÚVIDAS FREQUENTES</span>
             <h2>Perguntas Frequentes dos Pais</h2>
             <p>Respostas diretas e transparentes para você se sentir 100% seguro.</p>
         </div>
 
         <div class="faq-container">
-            <div class="faq-item">
+            <div class="faq-item reveal-on-scroll delay-1">
                 <button class="faq-question" type="button">
                     <span>Meu filho já é muito agitado/hiperativo. Ele vai ficar mais agressivo fazendo Taekwondo?</span>
                 </button>
@@ -535,7 +558,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item reveal-on-scroll delay-2">
                 <button class="faq-question" type="button">
                     <span>Existe contato físico violento nas aulas? Meu filho corre risco de se machucar?</span>
                 </button>
@@ -544,7 +567,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item reveal-on-scroll delay-3">
                 <button class="faq-question" type="button">
                     <span>Meu filho é tímido e tem dificuldade de fazer amigos. Ele vai conseguir se adaptar?</span>
                 </button>
@@ -553,7 +576,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item reveal-on-scroll delay-4">
                 <button class="faq-question" type="button">
                     <span>Meninas e mulheres podem treinar na ATA?</span>
                 </button>
@@ -562,7 +585,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item reveal-on-scroll delay-5">
                 <button class="faq-question" type="button">
                     <span>Adultos sem nenhum preparo físico ou flexibilidade podem começar a treinar?</span>
                 </button>
@@ -577,7 +600,7 @@ get_header(); ?>
 <!-- 9. FORMULÁRIO FINAL DE CAPTURA & CONVERSÃO -->
 <section id="contato" class="contact-section">
     <div class="container">
-        <div class="contact-card-wrapper">
+        <div class="contact-card-wrapper reveal-on-scroll">
             <div class="contact-card-header text-center">
                 <span class="badge-gold">VAGAS LIMITADAS POR TURMA</span>
                 <h2>Dê o Primeiro Passo: Agende Sua Aula Gratuita</h2>

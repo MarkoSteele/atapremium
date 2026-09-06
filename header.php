@@ -42,7 +42,40 @@
         <!-- Redes Sociais, Idiomas & CTA à Direita -->
         <div class="header-actions">
             <!-- Seletor Moderno de Idioma (PT / EN / ES) -->
-            <div class="header-lang-mount"></div>
+            <div class="header-lang-mount">
+                <div class="lang-switcher-dropdown" id="langSwitcherDropdown">
+                    <button type="button" class="lang-btn-current" aria-haspopup="true" aria-expanded="false" aria-label="Alterar Idioma">
+                        <span class="lang-flag-wrap">
+                            <svg class="lang-flag-svg" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><clipPath id="circle-br-hdr"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#circle-br-hdr)"><rect width="32" height="32" fill="#009b3a"/><polygon points="16,4 30,16 16,28 2,16" fill="#fedf00"/><circle cx="16" cy="16" r="7" fill="#002776"/><path d="M9.5,17.5 A7,7 0 0,0 22.5,14" stroke="#ffffff" stroke-width="1.3" fill="none"/></g></svg>
+                        </span>
+                        <span class="lang-code-current">PT</span>
+                        <svg class="lang-chevron" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="lang-dropdown-menu" role="menu">
+                        <button type="button" class="lang-option is-active" data-lang="pt" role="menuitem">
+                            <span class="lang-flag-wrap">
+                                <svg class="lang-flag-svg" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><clipPath id="circle-br-opt"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#circle-br-opt)"><rect width="32" height="32" fill="#009b3a"/><polygon points="16,4 30,16 16,28 2,16" fill="#fedf00"/><circle cx="16" cy="16" r="7" fill="#002776"/><path d="M9.5,17.5 A7,7 0 0,0 22.5,14" stroke="#ffffff" stroke-width="1.3" fill="none"/></g></svg>
+                            </span>
+                            <span class="lang-name">Português</span>
+                            <span class="lang-check">✓</span>
+                        </button>
+                        <button type="button" class="lang-option" data-lang="en" role="menuitem">
+                            <span class="lang-flag-wrap">
+                                <svg class="lang-flag-svg" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><clipPath id="circle-en-opt"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#circle-en-opt)"><rect width="32" height="32" fill="#bf0a30"/><rect y="4.5" width="32" height="4.5" fill="#ffffff"/><rect y="13.5" width="32" height="4.5" fill="#ffffff"/><rect y="22.5" width="32" height="4.5" fill="#ffffff"/><rect width="15" height="16" fill="#002868"/><circle cx="4" cy="4" r="1.2" fill="#fff"/><circle cx="11" cy="4" r="1.2" fill="#fff"/><circle cx="7.5" cy="8" r="1.2" fill="#fff"/><circle cx="4" cy="12" r="1.2" fill="#fff"/><circle cx="11" cy="12" r="1.2" fill="#fff"/></g></svg>
+                            </span>
+                            <span class="lang-name">English</span>
+                            <span class="lang-check">✓</span>
+                        </button>
+                        <button type="button" class="lang-option" data-lang="es" role="menuitem">
+                            <span class="lang-flag-wrap">
+                                <svg class="lang-flag-svg" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><clipPath id="circle-es-opt"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#circle-es-opt)"><rect width="32" height="32" fill="#aa151b"/><rect y="7" width="32" height="18" fill="#f1bf00"/><rect x="7" y="11" width="5" height="9" rx="2" fill="#aa151b"/></g></svg>
+                            </span>
+                            <span class="lang-name">Español</span>
+                            <span class="lang-check">✓</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <div class="header-socials">
                 <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram @ata.premium" title="Siga no Instagram @ata.premium">
@@ -81,7 +114,28 @@
     <!-- Drawer Menu Mobile -->
     <div class="mobile-nav-drawer">
         <!-- Idiomas no Menu Mobile -->
-        <div class="mobile-lang-mount"></div>
+        <div class="mobile-lang-mount">
+            <div class="mobile-lang-segmented" role="radiogroup" aria-label="Seleção de Idioma">
+                <button type="button" class="mobile-lang-tab is-active" data-lang="pt">
+                    <span class="lang-flag-wrap">
+                        <svg class="lang-flag-svg" viewBox="0 0 32 32" width="18" height="18" aria-hidden="true"><clipPath id="circle-br-mob"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#circle-br-mob)"><rect width="32" height="32" fill="#009b3a"/><polygon points="16,4 30,16 16,28 2,16" fill="#fedf00"/><circle cx="16" cy="16" r="7" fill="#002776"/><path d="M9.5,17.5 A7,7 0 0,0 22.5,14" stroke="#ffffff" stroke-width="1.3" fill="none"/></g></svg>
+                    </span>
+                    <span>PT</span>
+                </button>
+                <button type="button" class="mobile-lang-tab" data-lang="en">
+                    <span class="lang-flag-wrap">
+                        <svg class="lang-flag-svg" viewBox="0 0 32 32" width="18" height="18" aria-hidden="true"><clipPath id="circle-en-mob"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#circle-en-mob)"><rect width="32" height="32" fill="#bf0a30"/><rect y="4.5" width="32" height="4.5" fill="#ffffff"/><rect y="13.5" width="32" height="4.5" fill="#ffffff"/><rect y="22.5" width="32" height="4.5" fill="#ffffff"/><rect width="15" height="16" fill="#002868"/><circle cx="4" cy="4" r="1.2" fill="#fff"/><circle cx="11" cy="4" r="1.2" fill="#fff"/><circle cx="7.5" cy="8" r="1.2" fill="#fff"/><circle cx="4" cy="12" r="1.2" fill="#fff"/><circle cx="11" cy="12" r="1.2" fill="#fff"/></g></svg>
+                    </span>
+                    <span>EN</span>
+                </button>
+                <button type="button" class="mobile-lang-tab" data-lang="es">
+                    <span class="lang-flag-wrap">
+                        <svg class="lang-flag-svg" viewBox="0 0 32 32" width="18" height="18" aria-hidden="true"><clipPath id="circle-es-mob"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#circle-es-mob)"><rect width="32" height="32" fill="#aa151b"/><rect y="7" width="32" height="18" fill="#f1bf00"/><rect x="7" y="11" width="5" height="9" rx="2" fill="#aa151b"/></g></svg>
+                    </span>
+                    <span>ES</span>
+                </button>
+            </div>
+        </div>
 
         <ul class="mobile-nav-list">
             <li><a href="#hero" data-i18n="nav_home">Início</a></li>

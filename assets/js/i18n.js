@@ -599,13 +599,19 @@ class AtaI18n {
     }
 
     init() {
-        document.addEventListener('DOMContentLoaded', () => {
+        const bootstrap = () => {
             this.renderLanguageSwitchers();
             this.bindEvents();
             if (this.currentLang !== 'pt') {
                 this.setLanguage(this.currentLang, false);
             }
-        });
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', bootstrap);
+        } else {
+            bootstrap();
+        }
     }
 
     renderLanguageSwitchers() {
@@ -663,21 +669,27 @@ class AtaI18n {
     }
 
     bindEvents() {
-        // Toggle Desktop Dropdown
+        // Toggle Desktop Dropdown & Troca de Idioma com deleção global robusta
         document.addEventListener('click', (e) => {
-            const dropdown = document.querySelector('#langSwitcherDropdown');
             const btn = e.target.closest('.lang-btn-current');
             const option = e.target.closest('.lang-option, .mobile-lang-tab');
+            const dropdown = document.querySelector('#langSwitcherDropdown');
 
-            if (btn && dropdown) {
+            if (btn) {
+                e.preventDefault();
                 e.stopPropagation();
-                const isOpen = dropdown.classList.contains('is-open');
-                dropdown.classList.toggle('is-open', !isOpen);
-                btn.setAttribute('aria-expanded', String(!isOpen));
+                const parentDropdown = btn.closest('.lang-switcher-dropdown') || dropdown;
+                if (parentDropdown) {
+                    const isOpen = parentDropdown.classList.contains('is-open');
+                    parentDropdown.classList.toggle('is-open', !isOpen);
+                    btn.setAttribute('aria-expanded', String(!isOpen));
+                }
                 return;
             }
 
             if (option) {
+                e.preventDefault();
+                e.stopPropagation();
                 const targetLang = option.getAttribute('data-lang');
                 if (targetLang && this.supportedLangs.includes(targetLang)) {
                     this.setLanguage(targetLang, true);
@@ -705,15 +717,19 @@ class AtaI18n {
         // Atualiza textos marcados com data-i18n
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            if (translations[key]) {
-                el.innerHTML = translations[key];
+            if (translations[key] !== undefined) {
+                if (el.tagName === 'OPTION') {
+                    el.textContent = translations[key];
+                } else {
+                    el.innerHTML = translations[key];
+                }
             }
         });
 
         // Atualiza placeholders
         document.querySelectorAll('[data-i18n-ph]').forEach(el => {
             const key = el.getAttribute('data-i18n-ph');
-            if (translations[key]) {
+            if (translations[key] !== undefined) {
                 el.setAttribute('placeholder', translations[key]);
             }
         });

@@ -188,6 +188,19 @@ const ATA_TRANSLATIONS = {
         form_btn_submit: "Confirmar Agendamento Gratuito",
         form_security_note: "🔒 Seus dados estão 100% seguros. Não enviamos spam. Contato exclusivo para confirmação da aula experimental.",
 
+        // Página 404
+        p404_badge: "★ ERRO 404 • PÁGINA NÃO ENCONTRADA ★",
+        p404_title: "Golpe fora do tatame? <span class=\"gold-gradient\">Esta página não foi encontrada.</span>",
+        p404_desc: "Assim como no método Songahm, quando erramos um movimento, respiramos fundo e retornamos à postura de prontidão. Escolha um dos caminhos abaixo para continuar sua jornada:",
+        p404_btn_home: "Voltar para o Início",
+        p404_btn_wpp: "Falar no WhatsApp",
+        p404_card1_title: "🥋 Programas por Idade",
+        p404_card1_desc: "Tigers (3-6), Kids (7-13), Teens e Adultos.",
+        p404_card2_title: "📍 Nossas 3 Unidades",
+        p404_card2_desc: "Alves de Brito, Col. Catarinense e Spotmarkt.",
+        p404_card3_title: "⚡ Aula Grátis",
+        p404_card3_desc: "Agende sua aula experimental sem compromisso.",
+
         // Rodapé
         footer_slogan: "Formando atitudes, caráter e liderança para toda a vida através do Taekwondo Songahm em Florianópolis.",
         footer_links_title: "Navegação Rápida",
@@ -380,6 +393,19 @@ const ATA_TRANSLATIONS = {
         form_btn_submit: "Confirm Free Trial Booking",
         form_security_note: "🔒 Your information is 100% secure. Zero spam. Contact is exclusively used to schedule your trial class.",
 
+        // 404 Page
+        p404_badge: "★ ERROR 404 • PAGE NOT FOUND ★",
+        p404_title: "A step outside the mat? <span class=\"gold-gradient\">This page doesn't exist.</span>",
+        p404_desc: "Just like in Songahm Martial Arts, when we miss a step, we reset to our ready stance. Choose one of the paths below to continue your journey:",
+        p404_btn_home: "Back to Home",
+        p404_btn_wpp: "Chat on WhatsApp",
+        p404_card1_title: "🥋 Age-Based Programs",
+        p404_card1_desc: "Tigers (3-6), Kids (7-13), Teens & Adults.",
+        p404_card2_title: "📍 Our 3 Locations",
+        p404_card2_desc: "Downtown & Spotmarkt Mall in Florianópolis.",
+        p404_card3_title: "⚡ Free Trial Class",
+        p404_card3_desc: "Book your introductory class with no commitment.",
+
         // Footer
         footer_slogan: "Building character, leadership, and lifelong attitude through Songahm Taekwondo in Florianópolis.",
         footer_links_title: "Quick Navigation",
@@ -571,6 +597,19 @@ const ATA_TRANSLATIONS = {
         form_ph_email: "tu@correo.com",
         form_btn_submit: "Confirmar Reserva Gratuita",
         form_security_note: "🔒 Tus datos están 100% seguros. Cero spam. Contacto exclusivo para confirmar tu clase de prueba.",
+
+        // 10. Página 404
+        p404_badge: "★ ERROR 404 • PÁGINA NO ENCONTRADA ★",
+        p404_title: "¿Un golpe fuera del tatami? <span class=\"gold-gradient\">Esta página no existe.</span>",
+        p404_desc: "Al igual que en el método Songahm, cuando fallamos un movimiento, respiramos profundo y volvemos a la postura de inicio. Elige uno de los caminos a continuación:",
+        p404_btn_home: "Volver al Inicio",
+        p404_btn_wpp: "Hablar por WhatsApp",
+        p404_card1_title: "🥋 Programas por Edad",
+        p404_card1_desc: "Tigers (3-6), Kids (7-13), Teens y Adultos.",
+        p404_card2_title: "📍 Nuestras 3 Sedes",
+        p404_card2_desc: "Alves de Brito, Col. Catarinense y Spotmarkt.",
+        p404_card3_title: "⚡ Clase Gratis",
+        p404_card3_desc: "Reserva tu clase de prueba sin compromiso.",
 
         // Pie de Página
         footer_slogan: "Formando carácter, liderazgo y actitudes para toda la vida a través del Taekwondo Songahm en Florianópolis.",

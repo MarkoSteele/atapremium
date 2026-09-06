@@ -135,8 +135,7 @@ get_header(); ?>
             </div>
 
             <!-- Kids -->
-            <div class="program-card featured-card">
-                <div class="featured-badge">MAIS PROCURADO</div>
+            <div class="program-card">
                 <div class="program-card-header">
                     <span class="program-tag">7 a 13 anos</span>
                     <h3>Kids</h3>

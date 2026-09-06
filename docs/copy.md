@@ -126,7 +126,7 @@ Acompanhe os bastidores da nossa formação de líderes: @ata.premium no Instagr
 
 ---
 
-### Card 2: Kids (7 a 13 anos) — [MAIS PROCURADO]
+### Card 2: Kids (7 a 13 anos)
 * **Badge:** `7 a 13 anos` &bull; **Título:** `Kids`
 * **Conceito:** *Foco escolar, autoconfiança e proteção contra o bullying.*
 * **Descrição:** Fase decisiva para a construção de hábitos duradouros, fortalecimento da autoestima e desenvolvimento da disciplina que reflete nas notas.

@@ -721,6 +721,11 @@ class AtaI18n {
         // Atualiza botões e UI do seletor
         this.renderLanguageSwitchers();
 
+        // Reexecuta animação de contagem dos Big Numbers no novo idioma
+        if (window.triggerMetricsAnimation) {
+            window.triggerMetricsAnimation();
+        }
+
         // Disparo para GTM / DataLayer
         if (triggerTracking && window.dataLayer) {
             window.dataLayer.push({

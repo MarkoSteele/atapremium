@@ -271,7 +271,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initScrollReveal();
 
-    // 7. Timeline Interativa Dinâmica ao Scroll (#jornada)
+    // 7. Animação de Contagem Progressiva dos Big Numbers (#autoridade)
+    const initBigNumbersCounter = () => {
+        const metricsSection = document.querySelector('#autoridade');
+        if (!metricsSection) return;
+
+        const metricNumbers = metricsSection.querySelectorAll('.metric-number');
+        let hasAnimated = false;
+
+        const animateSingleNumber = (element, duration = 1800) => {
+            const rawText = element.textContent.trim();
+            // Regex para capturar prefixo (ex: "+"), valor numérico (ex: "1.5", "30", "100"), e sufixo (ex: " Milhão", "+ Anos", "%", " Unidades")
+            const match = rawText.match(/^([^\d]*)([\d]+(?:[.,]\d+)?)(.*)$/);
+            if (!match) return;
+
+            const prefix = match[1] || '';
+            const numStr = match[2].replace(',', '.');
+            const targetValue = parseFloat(numStr);
+            const isDecimal = match[2].includes('.') || match[2].includes(',');
+            const decimals = isDecimal ? (match[2].split(/[.,]/)[1]?.length || 1) : 0;
+            const suffix = match[3] || '';
+
+            let startTimestamp = null;
+            element.classList.add('is-counting');
+            element.classList.remove('is-counted');
+
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                
+                // Curva de desaceleração suave: easeOutExpo
+                const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                const currentVal = targetValue * ease;
+                
+                const formattedVal = decimals > 0 ? currentVal.toFixed(decimals) : Math.floor(currentVal);
+                element.textContent = `${prefix}${formattedVal}${suffix}`;
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    element.textContent = rawText; // Restaura a string exata original
+                    element.classList.remove('is-counting');
+                    element.classList.add('is-counted');
+                }
+            };
+
+            window.requestAnimationFrame(step);
+        };
+
+        const startCounting = () => {
+            metricNumbers.forEach((el, index) => {
+                setTimeout(() => {
+                    animateSingleNumber(el, 1800);
+                }, index * 120); // Delays escalonados entre os 4 cards
+            });
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        startCounting();
+                    }
+                });
+            }, { threshold: 0.25 });
+
+            observer.observe(metricsSection);
+        } else {
+            startCounting();
+        }
+
+        // Exporta globalmente para acionar ao trocar de idioma
+        window.triggerMetricsAnimation = () => {
+            startCounting();
+        };
+    };
+
+    initBigNumbersCounter();
+
+    // 8. Timeline Interativa Dinâmica ao Scroll (#jornada)
     const initTimelineProgress = () => {
         const journeySection = document.querySelector('#jornada');
         const progressBar = document.querySelector('.timeline-progress-bar');

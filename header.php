@@ -33,9 +33,8 @@
                 <li><a href="<?php echo esc_url( home_url( '/#hero' ) ); ?>" data-i18n="nav_home">Início</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/sobre-a-ata/' ) ); ?>" data-i18n="nav_about">Sobre a ATA</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/#instagram' ) ); ?>" data-i18n="nav_instagram">Instagram</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/#jornada' ) ); ?>" data-i18n="nav_method">Método Songahm</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/#jornada' ) ); ?>" data-i18n="nav_method">Metodologia</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             </ul>
         </nav>
@@ -142,9 +141,8 @@
             <li><a href="<?php echo esc_url( home_url( '/#hero' ) ); ?>" data-i18n="nav_home">Início</a></li>
             <li><a href="<?php echo esc_url( home_url( '/sobre-a-ata/' ) ); ?>" data-i18n="nav_about">Sobre a ATA</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/#instagram' ) ); ?>" data-i18n="nav_instagram">Instagram (@ata.premium)</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/#jornada' ) ); ?>" data-i18n="nav_method">Método Songahm</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/#jornada' ) ); ?>" data-i18n="nav_method">Metodologia</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             <li class="mobile-cta-item">
                 <a href="<?php echo esc_url( home_url( '/#contato' ) ); ?>" class="btn btn-gold btn-block" data-i18n="nav_mobile_cta">Agendar Aula Experimental</a>

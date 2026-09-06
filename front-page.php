@@ -9,8 +9,8 @@ get_header(); ?>
 <!-- 1. HERO SECTION -->
 <section id="hero" class="hero-section">
     <div class="hero-bg-media">
-        <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video-bg" poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1920&auto=format&fit=crop">
-            <source src="<?php echo esc_url( get_template_directory_uri() . '/' . rawurlencode('ESPETÁCULO 1.mp4') ); ?>" type="video/mp4">
+        <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video-bg" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-poster.jpg' ); ?>">
+            <source src="<?php echo esc_url( get_template_directory_uri() . '/hero-ata.mp4' ); ?>" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
     </div>

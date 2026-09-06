@@ -20,8 +20,8 @@ $unidades_data = [
         'telefone'    => '(48) 3039-0446',
         'whatsapp'    => '5548999313558',
         'horario'     => 'Segunda a Sexta: 09h às 12h | 15h às 21h',
-        'video'       => get_template_directory_uri() . '/alves-de-brito.mp4',
-        'imagem_hero' => 'https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1600&auto=format&fit=crop',
+        'video'       => null, // Usando a foto real da fachada oficial
+        'imagem_hero' => get_template_directory_uri() . '/assets/images/unidade-alves-de-brito-fachada.jpg',
         'destaques'   => ['Tatame Oficial de Alto Impacto', 'Vestiários Completos & Climatizados', 'Localização Central Privilegiada', 'Estacionamento Próximo Convencionado'],
         'maps_query'  => 'Rua+Alves+de+Brito+33+Centro+Florianopolis'
     ],
@@ -63,12 +63,16 @@ foreach ($unidades_data as $key => $data) {
 }
 ?>
 
-<!-- Hero da Unidade com Vídeo de Fundo -->
+<!-- Hero da Unidade com Foto ou Vídeo de Fundo -->
 <section class="unit-hero-section">
     <div class="hero-bg-media">
-        <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video-bg" poster="<?php echo esc_url($unidade_atual['imagem_hero']); ?>">
-            <source src="<?php echo esc_url($unidade_atual['video']); ?>" type="video/mp4">
-        </video>
+        <?php if ( ! empty( $unidade_atual['video'] ) ) : ?>
+            <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video-bg" poster="<?php echo esc_url( $unidade_atual['imagem_hero'] ); ?>">
+                <source src="<?php echo esc_url( $unidade_atual['video'] ); ?>" type="video/mp4">
+            </video>
+        <?php else : ?>
+            <img src="<?php echo esc_url( $unidade_atual['imagem_hero'] ); ?>" alt="<?php echo esc_attr( $unidade_atual['titulo'] ); ?>" class="hero-img-bg">
+        <?php endif; ?>
         <div class="hero-overlay"></div>
     </div>
     <div class="container unit-hero-container">

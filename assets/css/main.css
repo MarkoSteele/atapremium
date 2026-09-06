@@ -459,11 +459,13 @@ img {
     z-index: 1;
 }
 
-.hero-video-bg {
+.hero-video-bg,
+.hero-img-bg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7);
+    object-position: center center;
+    filter: brightness(0.65);
 }
 
 .hero-overlay {

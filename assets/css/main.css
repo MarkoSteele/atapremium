@@ -2805,7 +2805,9 @@ select.form-control {
 }
 
 .error-404-card {
-    background: rgba(12, 15, 22, 0.8);
+    background: rgba(12, 15, 22, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--gold-border);
     border-radius: var(--radius-lg);
     padding: 50px 40px;

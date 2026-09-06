@@ -17,35 +17,35 @@ get_header(); ?>
 
     <div class="container hero-container">
         <div class="hero-content reveal-on-scroll">
-            <span class="badge-gold">★ ATA MARTIAL ARTS • MÉTODO SONGAHM | FLORIANÓPOLIS ★</span>
-            <h1 class="hero-title">
+            <span class="badge-gold" data-i18n="hero_badge">★ ATA MARTIAL ARTS • MÉTODO SONGAHM | FLORIANÓPOLIS ★</span>
+            <h1 class="hero-title" data-i18n="hero_title">
                 Mais disciplina, foco e segurança para seus filhos — <span class="gold-gradient">dentro e fora do tatame.</span>
             </h1>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" data-i18n="hero_subtitle">
                 Na ATA Premium em Florianópolis, cada treino é estruturado para desenvolver caráter, autocontrole e respeito por meio de uma metodologia internacional com mais de 1,5 milhão de praticantes.
             </p>
 
             <div class="hero-ctas">
-                <a href="#contato" class="btn btn-gold btn-lg" data-track="cta_hero_agendar">
+                <a href="#contato" class="btn btn-gold btn-lg" data-track="cta_hero_agendar" data-i18n="hero_cta_agendar">
                     Agendar Aula Experimental Grátis
                 </a>
                 <a href="https://wa.me/5548999313558?text=Olá!%20Gostaria%20de%20informações%20sobre%20a%20aula%20experimental%20na%20ATA%20Premium." target="_blank" rel="noopener" class="btn btn-outline-gold btn-lg" data-track="cta_hero_wpp">
-                    <span class="wpp-icon">💬</span> Falar com Central WhatsApp
+                    <span class="wpp-icon">💬</span> <span data-i18n="hero_cta_wpp">Falar com Central WhatsApp</span>
                 </a>
             </div>
 
             <div class="hero-perks">
                 <div class="perk-item">
                     <span class="perk-check">✓</span>
-                    <span>Turmas 100% divididas por idade</span>
+                    <span data-i18n="hero_perk_1">Turmas 100% divididas por idade</span>
                 </div>
                 <div class="perk-item">
                     <span class="perk-check">✓</span>
-                    <span>Ambiente seguro, acolhedor e supervisionado</span>
+                    <span data-i18n="hero_perk_2">Ambiente seguro, acolhedor e supervisionado</span>
                 </div>
                 <div class="perk-item">
                     <span class="perk-check">✓</span>
-                    <span>3 unidades completas em Florianópolis</span>
+                    <span data-i18n="hero_perk_3">3 unidades completas em Florianópolis</span>
                 </div>
             </div>
         </div>
@@ -57,24 +57,24 @@ get_header(); ?>
     <div class="container">
         <div class="metrics-grid">
             <div class="metric-card reveal-on-scroll delay-1">
-                <div class="metric-number gold-gradient">+1.5 Milhão</div>
-                <div class="metric-label">Praticantes no Mundo</div>
-                <p class="metric-desc">Taekwondo Songahm presente em dezenas de países (ATA / WTTU / STF)</p>
+                <div class="metric-number gold-gradient" data-i18n="metric_num_1">+1.5 Milhão</div>
+                <div class="metric-label" data-i18n="metric_lbl_1">Praticantes no Mundo</div>
+                <p class="metric-desc" data-i18n="metric_desc_1">Taekwondo Songahm presente em dezenas de países (ATA / WTTU / STF)</p>
             </div>
             <div class="metric-card reveal-on-scroll delay-2">
-                <div class="metric-number gold-gradient">3 Unidades</div>
-                <div class="metric-label">Em Florianópolis</div>
-                <p class="metric-desc">Estruturas completas no Centro e Córrego Grande (Spotmarkt)</p>
+                <div class="metric-number gold-gradient" data-i18n="metric_num_2">3 Unidades</div>
+                <div class="metric-label" data-i18n="metric_lbl_2">Em Florianópolis</div>
+                <p class="metric-desc" data-i18n="metric_desc_2">Estruturas completas no Centro e Córrego Grande (Spotmarkt)</p>
             </div>
             <div class="metric-card reveal-on-scroll delay-3">
-                <div class="metric-number gold-gradient">30+ Anos</div>
-                <div class="metric-label">De Tradição Marcial</div>
-                <p class="metric-desc">Metodologia e refinamento pedagógico do Grão-Mestre H.U. Lee</p>
+                <div class="metric-number gold-gradient" data-i18n="metric_num_3">30+ Anos</div>
+                <div class="metric-label" data-i18n="metric_lbl_3">De Tradição Marcial</div>
+                <p class="metric-desc" data-i18n="metric_desc_3">Metodologia e refinamento pedagógico do Grão-Mestre H.U. Lee</p>
             </div>
             <div class="metric-card reveal-on-scroll delay-4">
-                <div class="metric-number gold-gradient">100%</div>
-                <div class="metric-label">Instrutores Certificados</div>
-                <p class="metric-desc">Formação internacional contínua e foco no desenvolvimento humano</p>
+                <div class="metric-number gold-gradient" data-i18n="metric_num_4">100%</div>
+                <div class="metric-label" data-i18n="metric_lbl_4">Instrutores Certificados</div>
+                <p class="metric-desc" data-i18n="metric_desc_4">Formação internacional contínua e foco no desenvolvimento humano</p>
             </div>
         </div>
     </div>
@@ -84,19 +84,19 @@ get_header(); ?>
 <section id="filosofia" class="philosophy-section">
     <div class="container">
         <div class="philosophy-box reveal-on-scroll">
-            <span class="badge-gold">NOSSO COMPROMISSO</span>
-            <h2 class="philosophy-quote">
+            <span class="badge-gold" data-i18n="philosophy_badge">NOSSO COMPROMISSO</span>
+            <h2 class="philosophy-quote" data-i18n="philosophy_quote">
                 "Aqui, o objetivo não é formar lutadores. <span class="gold-gradient">É formar atitudes!</span>"
             </h2>
             <div class="gold-divider"></div>
-            <p class="philosophy-text">
+            <p class="philosophy-text" data-i18n="philosophy_text">
                 Escolher onde seu filho vai treinar é escolher com quem ele vai conviver. Na <strong>ATA Premium</strong>, criamos um ambiente de influência positiva estruturado para transformar limites em conquistas, canalizar energias e desenvolver competências socioemocionais indispensáveis para a vida toda: <strong>obediência por respeito, autocontrole emocional e persistência diante de desafios.</strong>
             </p>
             <div class="philosophy-instagram-callout">
-                <span>Acompanhe os bastidores da nossa formação de líderes:</span>
+                <span data-i18n="philosophy_insta_callout">Acompanhe os bastidores da nossa formação de líderes:</span>
                 <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener" class="insta-link-badge">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    @ata.premium no Instagram
+                    <span data-i18n="philosophy_insta_btn">@ata.premium no Instagram</span>
                 </a>
             </div>
         </div>
@@ -107,93 +107,93 @@ get_header(); ?>
 <section id="programas" class="programs-section">
     <div class="container">
         <div class="section-title text-center reveal-on-scroll">
-            <span class="badge-gold">DIDÁTICA E METODOLOGIA</span>
-            <h2>Programas Estruturados por Idade</h2>
-            <p>Cada estágio do desenvolvimento exige estímulos, didática e linguagem adequados.</p>
+            <span class="badge-gold" data-i18n="programs_badge">DIDÁTICA E METODOLOGIA</span>
+            <h2 data-i18n="programs_title">Programas Estruturados por Idade</h2>
+            <p data-i18n="programs_subtitle">Cada estágio do desenvolvimento exige estímulos, didática e linguagem adequados.</p>
         </div>
 
         <div class="programs-grid-4">
             <!-- Tigers -->
             <div class="program-card reveal-on-scroll delay-1">
                 <div class="program-card-header">
-                    <span class="program-tag">3 a 6 anos</span>
-                    <h3>Tigers</h3>
-                    <p class="program-tagline">Primeiros limites, primeiras conquistas.</p>
+                    <span class="program-tag" data-i18n="program_tigers_tag">3 a 6 anos</span>
+                    <h3 data-i18n="program_tigers_title">Tigers</h3>
+                    <p class="program-tagline" data-i18n="program_tigers_tagline">Primeiros limites, primeiras conquistas.</p>
                 </div>
                 <div class="program-card-body">
-                    <p class="program-desc">Aulas lúdicas e altamente dinâmicas que ensinam respeito às regras, canalização de energia e desenvolvimento motor.</p>
+                    <p class="program-desc" data-i18n="program_tigers_desc">Aulas lúdicas e altamente dinâmicas que ensinam respeito às regras, canalização de energia e desenvolvimento motor.</p>
                     <ul class="program-benefits">
-                        <li>Coordenação motora ampla e equilíbrio</li>
-                        <li>Capacidade de escuta ativa e atenção</li>
-                        <li>Socialização e primeiros limites</li>
-                        <li>Noções fundamentais de autoproteção</li>
+                        <li data-i18n="program_tigers_b1">Coordenação motora ampla e equilíbrio</li>
+                        <li data-i18n="program_tigers_b2">Capacidade de escuta ativa e atenção</li>
+                        <li data-i18n="program_tigers_b3">Socialização e primeiros limites</li>
+                        <li data-i18n="program_tigers_b4">Noções fundamentais de autoproteção</li>
                     </ul>
                 </div>
                 <div class="program-card-footer">
-                    <a href="#contato" class="btn btn-gold btn-block" data-track="program_tigers">Agendar Tigers</a>
+                    <a href="#contato" class="btn btn-gold btn-block" data-track="program_tigers" data-i18n="program_tigers_btn">Agendar Tigers</a>
                 </div>
             </div>
 
             <!-- Kids -->
             <div class="program-card reveal-on-scroll delay-2">
                 <div class="program-card-header">
-                    <span class="program-tag">7 a 13 anos</span>
-                    <h3>Kids</h3>
-                    <p class="program-tagline">Foco escolar, autoconfiança e anti-bullying.</p>
+                    <span class="program-tag" data-i18n="program_kids_tag">7 a 13 anos</span>
+                    <h3 data-i18n="program_kids_title">Kids</h3>
+                    <p class="program-tagline" data-i18n="program_kids_tagline">Foco escolar, autoconfiança e anti-bullying.</p>
                 </div>
                 <div class="program-card-body">
-                    <p class="program-desc">Fase decisiva para a construção de hábitos duradouros, fortalecimento da autoestima e disciplina que reflete nas notas.</p>
+                    <p class="program-desc" data-i18n="program_kids_desc">Fase decisiva para a construção de hábitos duradouros, fortalecimento da autoestima e disciplina que reflete nas notas.</p>
                     <ul class="program-benefits">
-                        <li>Disciplina voluntária e foco nos estudos</li>
-                        <li>Postura corporal firme contra o bullying</li>
-                        <li>Resiliência para lidar com frustrações</li>
-                        <li>Respeito aos pais e espírito de liderança</li>
+                        <li data-i18n="program_kids_b1">Disciplina voluntária e foco nos estudos</li>
+                        <li data-i18n="program_kids_b2">Postura corporal firme contra o bullying</li>
+                        <li data-i18n="program_kids_b3">Resiliência para lidar com frustrações</li>
+                        <li data-i18n="program_kids_b4">Respeito aos pais e espírito de liderança</li>
                     </ul>
                 </div>
                 <div class="program-card-footer">
-                    <a href="#contato" class="btn btn-gold btn-block" data-track="program_kids">Agendar Kids</a>
+                    <a href="#contato" class="btn btn-gold btn-block" data-track="program_kids" data-i18n="program_kids_btn">Agendar Kids</a>
                 </div>
             </div>
 
             <!-- Teens -->
             <div class="program-card reveal-on-scroll delay-3">
                 <div class="program-card-header">
-                    <span class="program-tag">11 a 15 anos</span>
-                    <h3>Adolescentes</h3>
-                    <p class="program-tagline">Estrutura, pertencimento e inteligência emocional.</p>
+                    <span class="program-tag" data-i18n="program_teens_tag">11 a 15 anos</span>
+                    <h3 data-i18n="program_teens_title">Adolescentes</h3>
+                    <p class="program-tagline" data-i18n="program_teens_tagline">Estrutura, pertencimento e inteligência emocional.</p>
                 </div>
                 <div class="program-card-body">
-                    <p class="program-desc">Um refúgio de convivência saudável para canalizar ansiedades, desintoxicar das telas e blindar a identidade.</p>
+                    <p class="program-desc" data-i18n="program_teens_desc">Um refúgio de convivência saudável para canalizar ansiedades, desintoxicar das telas e blindar a identidade.</p>
                     <ul class="program-benefits">
-                        <li>Condicionamento físico e flexibilidade</li>
-                        <li>Controle emocional e tomada de decisão</li>
-                        <li>Postura firme e descompressão digital</li>
-                        <li>Ambiente positivo de amizades sólidas</li>
+                        <li data-i18n="program_teens_b1">Condicionamento físico e flexibilidade</li>
+                        <li data-i18n="program_teens_b2">Controle emocional e tomada de decisão</li>
+                        <li data-i18n="program_teens_b3">Postura firme e descompressão digital</li>
+                        <li data-i18n="program_teens_b4">Ambiente positivo de amizades sólidas</li>
                     </ul>
                 </div>
                 <div class="program-card-footer">
-                    <a href="#contato" class="btn btn-gold btn-block" data-track="program_teens">Agendar Teens</a>
+                    <a href="#contato" class="btn btn-gold btn-block" data-track="program_teens" data-i18n="program_teens_btn">Agendar Teens</a>
                 </div>
             </div>
 
             <!-- Adultos & Família -->
             <div class="program-card reveal-on-scroll delay-4">
                 <div class="program-card-header">
-                    <span class="program-tag">Adultos & Família</span>
-                    <h3>Adultos e Masters</h3>
-                    <p class="program-tagline">Saúde, alívio do estresse e tempo de qualidade.</p>
+                    <span class="program-tag" data-i18n="program_adults_tag">Adultos & Família</span>
+                    <h3 data-i18n="program_adults_title">Adultos e Masters</h3>
+                    <p class="program-tagline" data-i18n="program_adults_tagline">Saúde, alívio do estresse e tempo de qualidade.</p>
                 </div>
                 <div class="program-card-body">
-                    <p class="program-desc">Treinamento completo para queima calórica, defesa pessoal funcional e a oportunidade única de pais e filhos treinarem juntos.</p>
+                    <p class="program-desc" data-i18n="program_adults_desc">Treinamento completo para queima calórica, defesa pessoal funcional e a oportunidade única de pais e filhos treinarem juntos.</p>
                     <ul class="program-benefits">
-                        <li>Perda de peso e tonificação muscular</li>
-                        <li>Defesa pessoal prática e inteligente</li>
-                        <li>Treino conjunto com a família</li>
-                        <li>Alívio do estresse e ganho de mobilidade</li>
+                        <li data-i18n="program_adults_b1">Perda de peso e tonificação muscular</li>
+                        <li data-i18n="program_adults_b2">Defesa pessoal prática e inteligente</li>
+                        <li data-i18n="program_adults_b3">Treino conjunto com a família</li>
+                        <li data-i18n="program_adults_b4">Alívio do estresse e ganho de mobilidade</li>
                     </ul>
                 </div>
                 <div class="program-card-footer">
-                    <a href="#contato" class="btn btn-gold btn-block" data-track="program_adultos">Agendar Adultos</a>
+                    <a href="#contato" class="btn btn-gold btn-block" data-track="program_adultos" data-i18n="program_adults_btn">Agendar Adultos</a>
                 </div>
             </div>
         </div>
@@ -207,15 +207,15 @@ get_header(); ?>
             <div class="insta-header-left">
                 <span class="badge-gold">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    @ATA.PREMIUM NO INSTAGRAM
+                    <span data-i18n="insta_badge">@ATA.PREMIUM NO INSTAGRAM</span>
                 </span>
-                <h2>Treinos e Bastidores em Vídeo</h2>
-                <p>Veja a energia, a disciplina e a evolução dos nossos alunos direto do tatame de Florianópolis.</p>
+                <h2 data-i18n="insta_title">Treinos e Bastidores em Vídeo</h2>
+                <p data-i18n="insta_subtitle">Veja a energia, a disciplina e a evolução dos nossos alunos direto do tatame de Florianópolis.</p>
             </div>
             <div class="insta-header-right">
                 <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    Seguir @ata.premium
+                    <span data-i18n="insta_btn_follow">Seguir @ata.premium</span>
                 </a>
             </div>
         </div>
@@ -229,13 +229,13 @@ get_header(); ?>
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/alves-de-brito.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
-                        <span class="reel-tag-badge">Unidade Alves de Brito</span>
+                        <span class="reel-tag-badge" data-i18n="reel_tag_1">Unidade Alves de Brito</span>
                         <button class="reel-play-btn" type="button" aria-label="Pausar ou reproduzir vídeo da Unidade Alves de Brito">
                             <svg class="icon-play" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                         </button>
                         <div class="reel-meta">
-                            <p class="reel-title">Treinos, energia e foco na Unidade Centro - Alves de Brito 🥋⚡</p>
-                            <span class="reel-views">▶ Ver Unidade no Instagram</span>
+                            <p class="reel-title" data-i18n="reel_title_1">Treinos, energia e foco na Unidade Centro - Alves de Brito 🥋⚡</p>
+                            <span class="reel-views" data-i18n="reel_view_insta">▶ Ver no Instagram</span>
                         </div>
                     </div>
                 </div>
@@ -248,13 +248,13 @@ get_header(); ?>
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/catarinense.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
-                        <span class="reel-tag-badge">Unidade Col. Catarinense</span>
+                        <span class="reel-tag-badge" data-i18n="reel_tag_2">Unidade Col. Catarinense</span>
                         <button class="reel-play-btn" type="button" aria-label="Pausar ou reproduzir vídeo da Unidade Colégio Catarinense">
                             <svg class="icon-play" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                         </button>
                         <div class="reel-meta">
-                            <p class="reel-title">Estrutura completa e disciplina na Unidade Colégio Catarinense 🛡️</p>
-                            <span class="reel-views">▶ Ver Unidade no Instagram</span>
+                            <p class="reel-title" data-i18n="reel_title_2">Estrutura completa e disciplina na Unidade Colégio Catarinense 🛡️</p>
+                            <span class="reel-views" data-i18n="reel_view_insta">▶ Ver no Instagram</span>
                         </div>
                     </div>
                 </div>
@@ -267,13 +267,13 @@ get_header(); ?>
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/spotmarket.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
-                        <span class="reel-tag-badge">Unidade Spotmarkt</span>
+                        <span class="reel-tag-badge" data-i18n="reel_tag_3">Unidade Spotmarkt</span>
                         <button class="reel-play-btn" type="button" aria-label="Pausar ou reproduzir vídeo da Unidade Spotmarkt">
                             <svg class="icon-play" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                         </button>
                         <div class="reel-meta">
-                            <p class="reel-title">Treinamento e conveniência no Mall Spotmarkt - Córrego Grande 🔥</p>
-                            <span class="reel-views">▶ Ver Unidade no Instagram</span>
+                            <p class="reel-title" data-i18n="reel_title_3">Treinamento e conveniência no Mall Spotmarkt - Córrego Grande 🔥</p>
+                            <span class="reel-views" data-i18n="reel_view_insta">▶ Ver no Instagram</span>
                         </div>
                     </div>
                 </div>
@@ -286,13 +286,13 @@ get_header(); ?>
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/' . rawurlencode('ESPETÁCULO 1.mp4') ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
-                        <span class="reel-tag-badge">Evento Oficial ATA</span>
+                        <span class="reel-tag-badge" data-i18n="reel_tag_4">Evento Oficial ATA</span>
                         <button class="reel-play-btn" type="button" aria-label="Pausar ou reproduzir vídeo do Espetáculo e Graduação">
                             <svg class="icon-play" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                         </button>
                         <div class="reel-meta">
-                            <p class="reel-title">O grande espetáculo e cerimônia de graduação das faixas 🥇✨</p>
-                            <span class="reel-views">▶ Ver Evento no Instagram</span>
+                            <p class="reel-title" data-i18n="reel_title_4">O grande espetáculo e cerimônia de graduação das faixas 🥇✨</p>
+                            <span class="reel-views" data-i18n="reel_view_insta">▶ Ver no Instagram</span>
                         </div>
                     </div>
                 </div>
@@ -300,12 +300,12 @@ get_header(); ?>
         </div>
 
         <div class="insta-bottom-cta text-center reveal-on-scroll">
-            <p>Junte-se à nossa comunidade de mais de <strong>10 mil seguidores</strong> no Instagram!</p>
+            <p data-i18n="insta_community_text">Junte-se à nossa comunidade de mais de <strong>10 mil seguidores</strong> no Instagram!</p>
             <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener noreferrer" class="insta-follow-btn">
                 <span class="insta-icon-circle">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </span>
-                <span>@ata.premium &bull; Acompanhar no Instagram</span>
+                <span data-i18n="insta_community_btn">@ata.premium • Acompanhar no Instagram</span>
             </a>
         </div>
     </div>
@@ -315,9 +315,9 @@ get_header(); ?>
 <section id="unidades" class="units-section">
     <div class="container">
         <div class="section-title text-center reveal-on-scroll">
-            <span class="badge-gold">LOCALIZAÇÃO & CONVENIÊNCIA</span>
-            <h2>Nossas 3 Unidades em Florianópolis</h2>
-            <p>Clique na unidade para ver fotos, infraestrutura e horários exclusivos de cada dojo.</p>
+            <span class="badge-gold" data-i18n="units_badge">LOCALIZAÇÃO & CONVENIÊNCIA</span>
+            <h2 data-i18n="units_title">Nossas 3 Unidades em Florianópolis</h2>
+            <p data-i18n="units_subtitle">Clique na unidade para ver fotos, infraestrutura e horários exclusivos de cada dojo.</p>
         </div>
 
         <div class="units-grid">
@@ -326,21 +326,21 @@ get_header(); ?>
                 <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Alves de Brito">
                     <div class="unit-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" alt="Unidade Alves de Brito Centro" class="unit-img" loading="lazy">
-                        <div class="unit-badge-pill">Unidade 1 • Centro</div>
+                        <div class="unit-badge-pill" data-i18n="unit_pill_1">Unidade 1 • Centro</div>
                         <div class="unit-image-overlay">
-                            <span class="view-unit-badge">Ver Página da Unidade &rarr;</span>
+                            <span class="view-unit-badge" data-i18n="unit_hover_label">Ver Página da Unidade &rarr;</span>
                         </div>
                     </div>
                 </a>
                 
                 <div class="unit-card-info">
                     <h3>
-                        <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>">Unidade Alves de Brito</a>
+                        <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>" data-i18n="unit_name_1">Unidade Alves de Brito</a>
                     </h3>
                     <div class="unit-details-list">
                         <p class="unit-detail-item">
                             <span class="icon">📍</span>
-                            <span>Rua Alves de Brito, nº 33 – Centro</span>
+                            <span data-i18n="unit_addr_1">Rua Alves de Brito, nº 33 – Centro</span>
                         </p>
                         <p class="unit-detail-item">
                             <span class="icon">📞</span>
@@ -348,15 +348,15 @@ get_header(); ?>
                         </p>
                         <p class="unit-detail-item">
                             <span class="icon">🕒</span>
-                            <span>Seg a Sex: 09h às 12h | 15h às 21h</span>
+                            <span data-i18n="unit_hours_1">Seg a Sex: 09h às 12h | 15h às 21h</span>
                         </p>
                     </div>
 
                     <div class="unit-card-actions">
-                        <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>" class="btn btn-gold btn-sm">
+                        <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>" class="btn btn-gold btn-sm" data-i18n="unit_btn_explore">
                             Conhecer Unidade
                         </a>
-                        <a href="https://wa.me/5548999313558?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20na%20Unidade%20Alves%20de%20Brito" target="_blank" rel="noopener" class="btn btn-outline-gold btn-sm" data-unidade="Alves de Brito" data-track="whatsapp_unidade">
+                        <a href="https://wa.me/5548999313558?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20na%20Unidade%20Alves%20de%20Brito" target="_blank" rel="noopener" class="btn btn-outline-gold btn-sm" data-unidade="Alves de Brito" data-track="whatsapp_unidade" data-i18n="unit_btn_wpp">
                             WhatsApp
                         </a>
                     </div>
@@ -368,21 +368,21 @@ get_header(); ?>
                 <a href="<?php echo esc_url( home_url( '/unidade-colegio-catarinense/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Colégio Catarinense">
                     <div class="unit-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Unidade Colégio Catarinense" class="unit-img" loading="lazy">
-                        <div class="unit-badge-pill">Unidade 2 • Centro</div>
+                        <div class="unit-badge-pill" data-i18n="unit_pill_2">Unidade 2 • Centro</div>
                         <div class="unit-image-overlay">
-                            <span class="view-unit-badge">Ver Página da Unidade &rarr;</span>
+                            <span class="view-unit-badge" data-i18n="unit_hover_label">Ver Página da Unidade &rarr;</span>
                         </div>
                     </div>
                 </a>
 
                 <div class="unit-card-info">
                     <h3>
-                        <a href="<?php echo esc_url( home_url( '/unidade-colegio-catarinense/' ) ); ?>">Unidade Colégio Catarinense</a>
+                        <a href="<?php echo esc_url( home_url( '/unidade-colegio-catarinense/' ) ); ?>" data-i18n="unit_name_2">Unidade Colégio Catarinense</a>
                     </h3>
                     <div class="unit-details-list">
                         <p class="unit-detail-item">
                             <span class="icon">📍</span>
-                            <span>Ao lado do Colégio Catarinense – Centro</span>
+                            <span data-i18n="unit_addr_2">Ao lado do Colégio Catarinense – Centro</span>
                         </p>
                         <p class="unit-detail-item">
                             <span class="icon">📞</span>
@@ -390,15 +390,15 @@ get_header(); ?>
                         </p>
                         <p class="unit-detail-item">
                             <span class="icon">🕒</span>
-                            <span>Seg a Sex: 09h às 12h | 15h às 21h</span>
+                            <span data-i18n="unit_hours_2">Seg a Sex: 09h às 12h | 15h às 21h</span>
                         </p>
                     </div>
 
                     <div class="unit-card-actions">
-                        <a href="<?php echo esc_url( home_url( '/unidade-colegio-catarinense/' ) ); ?>" class="btn btn-gold btn-sm">
+                        <a href="<?php echo esc_url( home_url( '/unidade-colegio-catarinense/' ) ); ?>" class="btn btn-gold btn-sm" data-i18n="unit_btn_explore">
                             Conhecer Unidade
                         </a>
-                        <a href="https://wa.me/5548999313558?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20na%20Unidade%20Colégio%20Catarinense" target="_blank" rel="noopener" class="btn btn-outline-gold btn-sm" data-unidade="Colegio Catarinense" data-track="whatsapp_unidade">
+                        <a href="https://wa.me/5548999313558?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20na%20Unidade%20Colégio%20Catarinense" target="_blank" rel="noopener" class="btn btn-outline-gold btn-sm" data-unidade="Colegio Catarinense" data-track="whatsapp_unidade" data-i18n="unit_btn_wpp">
                             WhatsApp
                         </a>
                     </div>
@@ -410,21 +410,21 @@ get_header(); ?>
                 <a href="<?php echo esc_url( home_url( '/unidade-spotmarkt/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Spotmarkt">
                     <div class="unit-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" alt="Unidade Spotmarkt Córrego Grande" class="unit-img" loading="lazy">
-                        <div class="unit-badge-pill">Unidade 3 • Córrego Grande</div>
+                        <div class="unit-badge-pill" data-i18n="unit_pill_3">Unidade 3 • Córrego Grande</div>
                         <div class="unit-image-overlay">
-                            <span class="view-unit-badge">Ver Página da Unidade &rarr;</span>
+                            <span class="view-unit-badge" data-i18n="unit_hover_label">Ver Página da Unidade &rarr;</span>
                         </div>
                     </div>
                 </a>
 
                 <div class="unit-card-info">
                     <h3>
-                        <a href="<?php echo esc_url( home_url( '/unidade-spotmarkt/' ) ); ?>">Unidade Spotmarkt</a>
+                        <a href="<?php echo esc_url( home_url( '/unidade-spotmarkt/' ) ); ?>" data-i18n="unit_name_3">Unidade Spotmarkt</a>
                     </h3>
                     <div class="unit-details-list">
                         <p class="unit-detail-item">
                             <span class="icon">📍</span>
-                            <span>Mall Spotmarkt – Córrego Grande</span>
+                            <span data-i18n="unit_addr_3">Mall Spotmarkt – Córrego Grande</span>
                         </p>
                         <p class="unit-detail-item">
                             <span class="icon">📞</span>
@@ -432,15 +432,15 @@ get_header(); ?>
                         </p>
                         <p class="unit-detail-item">
                             <span class="icon">🕒</span>
-                            <span>Seg a Sex: 09h às 12h | 15h às 21h</span>
+                            <span data-i18n="unit_hours_3">Seg a Sex: 09h às 12h | 15h às 21h</span>
                         </p>
                     </div>
 
                     <div class="unit-card-actions">
-                        <a href="<?php echo esc_url( home_url( '/unidade-spotmarkt/' ) ); ?>" class="btn btn-gold btn-sm">
+                        <a href="<?php echo esc_url( home_url( '/unidade-spotmarkt/' ) ); ?>" class="btn btn-gold btn-sm" data-i18n="unit_btn_explore">
                             Conhecer Unidade
                         </a>
-                        <a href="https://wa.me/5548999313558?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20na%20Unidade%20Spotmarkt" target="_blank" rel="noopener" class="btn btn-outline-gold btn-sm" data-unidade="Spotmarkt" data-track="whatsapp_unidade">
+                        <a href="https://wa.me/5548999313558?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20na%20Unidade%20Spotmarkt" target="_blank" rel="noopener" class="btn btn-outline-gold btn-sm" data-unidade="Spotmarkt" data-track="whatsapp_unidade" data-i18n="unit_btn_wpp">
                             WhatsApp
                         </a>
                     </div>
@@ -454,9 +454,9 @@ get_header(); ?>
 <section id="jornada" class="journey-section">
     <div class="container">
         <div class="section-title text-center reveal-on-scroll">
-            <span class="badge-gold">TRADIÇÃO & METÁFORA</span>
-            <h2>A Jornada Songahm: Do Templo ao Pinheiro</h2>
-            <p>O crescimento só é sólido quando as raízes são tão fortes quanto a copa da árvore.</p>
+            <span class="badge-gold" data-i18n="journey_badge">TRADIÇÃO & METÁFORA</span>
+            <h2 data-i18n="journey_title">A Jornada Songahm: Do Templo ao Pinheiro</h2>
+            <p data-i18n="journey_subtitle">O crescimento só é sólido quando as raízes são tão fortes quanto a copa da árvore.</p>
         </div>
 
         <div class="journey-timeline-wrapper">
@@ -474,11 +474,11 @@ get_header(); ?>
                     </div>
                     <div class="timeline-card">
                         <div class="timeline-card-header">
-                            <span class="timeline-step-pill">1ª ETAPA • A SEMENTE</span>
-                            <span class="belt-label-tag belt-tag-white">Faixa Branca</span>
+                            <span class="timeline-step-pill" data-i18n="timeline_step_1">1ª ETAPA • A SEMENTE</span>
+                            <span class="belt-label-tag belt-tag-white" data-i18n="belt_tag_1">Faixa Branca</span>
                         </div>
-                        <h3>O Início da Jornada</h3>
-                        <p>O aluno inicia sem conhecimento prévio — a terra pura pronta para ser cultivada. Aprende a etiqueta do tatame, a ouvir com atenção e os fundamentos do respeito e da postura marcial.</p>
+                        <h3 data-i18n="timeline_title_1">O Início da Jornada</h3>
+                        <p data-i18n="timeline_desc_1">O aluno inicia sem conhecimento prévio — a terra pura pronta para ser cultivada. Aprende a etiqueta do tatame, a ouvir com atenção e os fundamentos do respeito e da postura marcial.</p>
                     </div>
                 </div>
 
@@ -490,11 +490,11 @@ get_header(); ?>
                     </div>
                     <div class="timeline-card">
                         <div class="timeline-card-header">
-                            <span class="timeline-step-pill">2ª ETAPA • AS RAÍZES</span>
-                            <span class="belt-label-tag belt-tag-gold">Faixas Coloridas</span>
+                            <span class="timeline-step-pill" data-i18n="timeline_step_2">2ª ETAPA • AS RAÍZES</span>
+                            <span class="belt-label-tag belt-tag-gold" data-i18n="belt_tag_2">Faixas Coloridas</span>
                         </div>
-                        <h3>A Criação das Raízes</h3>
-                        <p>Fase de desenvolvimento e superação de barreiras. O praticante desenvolve tônus muscular, agilidade, perseverança e aprende a transformar erros em aprendizado constante.</p>
+                        <h3 data-i18n="timeline_title_2">A Criação das Raízes</h3>
+                        <p data-i18n="timeline_desc_2">Fase de desenvolvimento e superação de barreiras. O praticante desenvolve tônus muscular, agilidade, perseverança e aprende a transformar erros em aprendizado constante.</p>
                     </div>
                 </div>
 
@@ -506,11 +506,11 @@ get_header(); ?>
                     </div>
                     <div class="timeline-card">
                         <div class="timeline-card-header">
-                            <span class="timeline-step-pill">3ª ETAPA • O SOL POENTE</span>
-                            <span class="belt-label-tag belt-tag-red">Faixa Vermelha</span>
+                            <span class="timeline-step-pill" data-i18n="timeline_step_3">3ª ETAPA • O SOL POENTE</span>
+                            <span class="belt-label-tag belt-tag-red" data-i18n="belt_tag_3">Faixa Vermelha</span>
                         </div>
-                        <h3>A Maturidade Técnica</h3>
-                        <p>Fase de nobreza e consolidação técnica. A disciplina física atinge excelência e o aluno passa a focar no refinamento mental, autocontrole e liderança.</p>
+                        <h3 data-i18n="timeline_title_3">A Maturidade Técnica</h3>
+                        <p data-i18n="timeline_desc_3">Fase de nobreza e consolidação técnica. A disciplina física atinge excelência e o aluno passa a focar no refinamento mental, autocontrole e liderança.</p>
                     </div>
                 </div>
 
@@ -522,11 +522,11 @@ get_header(); ?>
                     </div>
                     <div class="timeline-card">
                         <div class="timeline-card-header">
-                            <span class="timeline-step-pill">4ª ETAPA • O PINHEIRO ETERNO</span>
-                            <span class="belt-label-tag belt-tag-black">Faixa Preta</span>
+                            <span class="timeline-step-pill" data-i18n="timeline_step_4">4ª ETAPA • O PINHEIRO ETERNO</span>
+                            <span class="belt-label-tag belt-tag-black" data-i18n="belt_tag_4">Faixa Preta</span>
                         </div>
-                        <h3>A Formação de Atitudes</h3>
-                        <p>A vitória sobre a dúvida e a escuridão da ignorância. Não é a linha de chegada, mas o verdadeiro recomeço onde o praticante lidera pelo exemplo e planta sementes para toda a comunidade.</p>
+                        <h3 data-i18n="timeline_title_4">A Formação de Atitudes</h3>
+                        <p data-i18n="timeline_desc_4">A vitória sobre a dúvida e a escuridão da ignorância. Não é a linha de chegada, mas o verdadeiro recomeço onde o praticante lidera pelo exemplo e planta sementes para toda a comunidade.</p>
                     </div>
                 </div>
             </div>
@@ -543,54 +543,54 @@ get_header(); ?>
 
     <div class="container">
         <div class="section-title text-center reveal-on-scroll">
-            <span class="badge-gold">DÚVIDAS FREQUENTES</span>
-            <h2>Perguntas Frequentes dos Pais</h2>
-            <p>Respostas diretas e transparentes para você se sentir 100% seguro.</p>
+            <span class="badge-gold" data-i18n="faq_badge">DÚVIDAS FREQUENTES</span>
+            <h2 data-i18n="faq_title">Perguntas Frequentes dos Pais</h2>
+            <p data-i18n="faq_subtitle">Respostas diretas e transparentes para você se sentir 100% seguro.</p>
         </div>
 
         <div class="faq-container">
             <div class="faq-item reveal-on-scroll delay-1">
                 <button class="faq-question" type="button">
-                    <span>Meu filho já é muito agitado/hiperativo. Ele vai ficar mais agressivo fazendo Taekwondo?</span>
+                    <span data-i18n="faq_q1">Meu filho já é muito agitado/hiperativo. Ele vai ficar mais agressivo fazendo Taekwondo?</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Não, muito pelo contrário. No método Songahm da ATA, a energia excedente da criança é canalizada de forma positiva e produtiva. O treino desenvolve autocontrole, concentração, respiração e respeito rigoroso aos limites. Nossos alunos aprendem desde o primeiro dia que as técnicas marciais existem exclusivamente para autoproteção em situações extremas, e nunca para iniciar conflitos ou intimidar colegas.</p>
+                    <p data-i18n="faq_a1">Não, muito pelo contrário. No método Songahm da ATA, a energia excedente da criança é canalizada de forma positiva e produtiva. O treino desenvolve autocontrole, concentração, respiração e respeito rigoroso aos limites. Nossos alunos aprendem desde o primeiro dia que as técnicas marciais existem exclusivamente para autoproteção em situações extremas, e nunca para iniciar conflitos ou intimidar colegas.</p>
                 </div>
             </div>
 
             <div class="faq-item reveal-on-scroll delay-2">
                 <button class="faq-question" type="button">
-                    <span>Existe contato físico violento nas aulas? Meu filho corre risco de se machucar?</span>
+                    <span data-i18n="faq_q2">Existe contato físico violento nas aulas? Meu filho corre risco de se machucar?</span>
                 </button>
                 <div class="faq-answer">
-                    <p>A integridade e segurança dos alunos são prioridades absolutas. O treino com contato é gradual, estritamente controlado e supervisionado por professores com certificação internacional. Todas as atividades contam com equipamentos de proteção homologados (capacetes, protetores torácicos, luvas e caneleiras), respeitando o ritmo e a anatomia de cada faixa etária.</p>
+                    <p data-i18n="faq_a2">A integridade e segurança dos alunos são prioridades absolutas. O treino com contato é gradual, estritamente controlado e supervisionado por professores com certificação internacional. Todas as atividades contam com equipamentos de proteção homologados (capacetes, protetores torácicos, luvas e caneleiras), respeitando o ritmo e a anatomia de cada faixa etária.</p>
                 </div>
             </div>
 
             <div class="faq-item reveal-on-scroll delay-3">
                 <button class="faq-question" type="button">
-                    <span>Meu filho é tímido e tem dificuldade de fazer amigos. Ele vai conseguir se adaptar?</span>
+                    <span data-i18n="faq_q3">Meu filho é tímido e tem dificuldade de fazer amigos. Ele vai conseguir se adaptar?</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Com certeza. O ambiente da ATA é acolhedor, inclusivo e totalmente livre de comparações depreciativas. No tatame, a criança tímida é encorajada a se expressar, adquire postura corporal firme, passa a olhar nos olhos com segurança e desenvolve autoconfiança convivendo com colegas que celebram cada conquista em grupo.</p>
+                    <p data-i18n="faq_a3">Com certeza. O ambiente da ATA é acolhedor, inclusivo e totalmente livre de comparações depreciativas. No tatame, a criança tímida é encorajada a se expressar, adquire postura corporal firme, passa a olhar nos olhos com segurança e desenvolve autoconfiança convivendo com colegas que celebram cada conquista em grupo.</p>
                 </div>
             </div>
 
             <div class="faq-item reveal-on-scroll delay-4">
                 <button class="faq-question" type="button">
-                    <span>Meninas e mulheres podem treinar na ATA?</span>
+                    <span data-i18n="faq_q4">Meninas e mulheres podem treinar na ATA?</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Com certeza! O Taekwondo Songahm baseia-se em biomecânica, alavancagem, velocidade e técnica — e não em força bruta. É uma das artes marciais mais recomendadas do mundo para desenvolver autoconfiança, condicionamento físico e habilidades práticas de defesa pessoal feminina.</p>
+                    <p data-i18n="faq_a4">Com certeza! O Taekwondo Songahm baseia-se em biomecânica, alavancagem, velocidade e técnica — e não em force bruta. É uma das artes marciais mais recomendadas do mundo para desenvolver autoconfiança, condicionamento físico e habilidades práticas de defesa pessoal feminina.</p>
                 </div>
             </div>
 
             <div class="faq-item reveal-on-scroll delay-5">
                 <button class="faq-question" type="button">
-                    <span>Adultos sem nenhum preparo físico ou flexibilidade podem começar a treinar?</span>
+                    <span data-i18n="faq_q5">Adultos sem nenhum preparo físico ou flexibilidade podem começar a treinar?</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Sim, você pode começar exatamente como está! Mais de 80% dos nossos alunos adultos nunca haviam praticado arte marcial antes. Nossas aulas são planejadas para que você evolua no seu próprio ritmo, ganhando mobilidade, queima calórica e condicionamento gradualmente, sem risco de sobrecarga.</p>
+                    <p data-i18n="faq_a5">Sim, você pode começar exatamente como está! Mais de 80% dos nossos alunos adultos nunca haviam praticado arte marcial antes. Nossas aulas são planejadas para que você evolua no seu próprio ritmo, ganhando mobilidade, queima calórica e condicionamento gradualmente, sem risco de sobrecarga.</p>
                 </div>
             </div>
         </div>
@@ -602,56 +602,56 @@ get_header(); ?>
     <div class="container">
         <div class="contact-card-wrapper reveal-on-scroll">
             <div class="contact-card-header text-center">
-                <span class="badge-gold">VAGAS LIMITADAS POR TURMA</span>
-                <h2>Dê o Primeiro Passo: Agende Sua Aula Gratuita</h2>
-                <p>Preencha os dados abaixo e nossa equipe entrará em contato via WhatsApp para confirmar o melhor horário na unidade de sua preferência.</p>
+                <span class="badge-gold" data-i18n="contact_badge">VAGAS LIMITADAS POR TURMA</span>
+                <h2 data-i18n="contact_title">Dê o Primeiro Passo: Agende Sua Aula Gratuita</h2>
+                <p data-i18n="contact_subtitle">Preencha os dados abaixo e nossa equipe entrará em contato via WhatsApp para confirmar o melhor horário na unidade de sua preferência.</p>
             </div>
 
             <div class="form-container-box">
                 <form id="form-lead-home" class="lead-capture-form">
                     <div class="form-grid-2">
                         <div class="form-group">
-                            <label for="nome">Nome Completo (do aluno ou responsável) *</label>
-                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome completo" required>
+                            <label for="nome" data-i18n="form_lbl_name">Nome Completo (do aluno ou responsável) *</label>
+                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome completo" data-i18n-ph="form_ph_name" required>
                         </div>
                         <div class="form-group">
-                            <label for="telefone">WhatsApp (com DDD) *</label>
-                            <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(48) 99999-9999" required>
+                            <label for="telefone" data-i18n="form_lbl_phone">WhatsApp (com DDD) *</label>
+                            <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(48) 99999-9999" data-i18n-ph="form_ph_phone" required>
                         </div>
                     </div>
 
                     <div class="form-grid-2">
                         <div class="form-group">
-                            <label for="unidade">Unidade de Preferência em Floripa *</label>
+                            <label for="unidade" data-i18n="form_lbl_unit">Unidade de Preferência em Floripa *</label>
                             <select id="unidade" name="unidade" class="form-control" required>
-                                <option value="" disabled selected>Selecione a unidade mais próxima...</option>
-                                <option value="Unidade 1 - Alves de Brito (Centro)">Unidade 1 - Rua Alves de Brito, nº 33 (Centro)</option>
-                                <option value="Unidade 2 - Colégio Catarinense (Centro)">Unidade 2 - Ao lado do Col. Catarinense (Centro)</option>
-                                <option value="Unidade 3 - Spotmarkt (Córrego Grande)">Unidade 3 - Spotmarkt (Córrego Grande)</option>
+                                <option value="" disabled selected data-i18n="form_opt_unit_placeholder">Selecione a unidade mais próxima...</option>
+                                <option value="Unidade 1 - Alves de Brito (Centro)" data-i18n="form_opt_u1">Unidade 1 - Rua Alves de Brito, nº 33 (Centro)</option>
+                                <option value="Unidade 2 - Colégio Catarinense (Centro)" data-i18n="form_opt_u2">Unidade 2 - Ao lado do Col. Catarinense (Centro)</option>
+                                <option value="Unidade 3 - Spotmarkt (Córrego Grande)" data-i18n="form_opt_u3">Unidade 3 - Spotmarkt (Córrego Grande)</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="faixa_etaria">Faixa Etária / Programa de Interesse *</label>
+                            <label for="faixa_etaria" data-i18n="form_lbl_program">Faixa Etária / Programa de Interesse *</label>
                             <select id="faixa_etaria" name="faixa_etaria" class="form-control" required>
-                                <option value="" disabled selected>Selecione o programa...</option>
-                                <option value="Tigers (3 a 6 anos)">Tigers (3 a 6 anos)</option>
-                                <option value="Kids (7 a 13 anos)">Kids (7 a 13 anos)</option>
-                                <option value="Teens (11 a 15 anos)">Adolescentes / Teens (11 a 15 anos)</option>
-                                <option value="Adultos e Família">Adultos e Família (Masters)</option>
+                                <option value="" disabled selected data-i18n="form_opt_prog_placeholder">Selecione o programa...</option>
+                                <option value="Tigers (3 a 6 anos)" data-i18n="form_opt_p1">Tigers (3 a 6 anos)</option>
+                                <option value="Kids (7 a 13 anos)" data-i18n="form_opt_p2">Kids (7 a 13 anos)</option>
+                                <option value="Teens (11 a 15 anos)" data-i18n="form_opt_p3">Adolescentes / Teens (11 a 15 anos)</option>
+                                <option value="Adultos e Família" data-i18n="form_opt_p4">Adultos e Família (Masters)</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">E-mail (opcional)</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com">
+                        <label for="email" data-i18n="form_lbl_email">E-mail (opcional)</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com" data-i18n-ph="form_ph_email">
                     </div>
 
-                    <button type="submit" class="btn btn-gold btn-block btn-lg" data-track="cta_form_final">
+                    <button type="submit" class="btn btn-gold btn-block btn-lg" data-track="cta_form_final" data-i18n="form_btn_submit">
                         Confirmar Agendamento Gratuito
                     </button>
                     
-                    <p class="form-security-note">
+                    <p class="form-security-note" data-i18n="form_security_note">
                         🔒 Seus dados estão 100% seguros. Não enviamos spam. Contato exclusivo para confirmação da aula experimental.
                     </p>
                 </form>

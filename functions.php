@@ -38,11 +38,20 @@ function atapremium_enqueue_assets() {
         '1.0.0'
     );
 
-    // JS para envio assíncrono do formulário
+    // JS de Internacionalização (i18n - Português, Inglês e Espanhol)
+    wp_enqueue_script(
+        'atapremium-i18n',
+        get_template_directory_uri() . '/assets/js/i18n.js',
+        array(),
+        '1.0.0',
+        true
+    );
+
+    // JS para envio assíncrono do formulário e interações
     wp_enqueue_script(
         'atapremium-form-lead',
         get_template_directory_uri() . '/assets/js/form-lead.js',
-        array(),
+        array('atapremium-i18n'),
         '1.0.0',
         true // Carrega no rodapé
     );

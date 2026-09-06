@@ -30,17 +30,20 @@
         <!-- Menu Principal Central -->
         <nav class="header-nav" aria-label="Navegação Principal">
             <ul class="nav-list">
-                <li><a href="#hero">Início</a></li>
-                <li><a href="#programas">Programas</a></li>
-                <li><a href="#instagram">Instagram</a></li>
-                <li><a href="#unidades">Unidades</a></li>
-                <li><a href="#jornada">Método Songahm</a></li>
-                <li><a href="#faq">Dúvidas</a></li>
+                <li><a href="#hero" data-i18n="nav_home">Início</a></li>
+                <li><a href="#programas" data-i18n="nav_programs">Programas</a></li>
+                <li><a href="#instagram" data-i18n="nav_instagram">Instagram</a></li>
+                <li><a href="#unidades" data-i18n="nav_units">Unidades</a></li>
+                <li><a href="#jornada" data-i18n="nav_method">Método Songahm</a></li>
+                <li><a href="#faq" data-i18n="nav_faq">Dúvidas</a></li>
             </ul>
         </nav>
 
-        <!-- Redes Sociais & CTA à Direita -->
+        <!-- Redes Sociais, Idiomas & CTA à Direita -->
         <div class="header-actions">
+            <!-- Seletor Moderno de Idioma (PT / EN / ES) -->
+            <div class="header-lang-mount"></div>
+
             <div class="header-socials">
                 <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram @ata.premium" title="Siga no Instagram @ata.premium">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -63,7 +66,7 @@
 
             <!-- Botão CTA Aula Experimental -->
             <a href="#contato" class="btn-header-cta" data-track="cta_header_agendar">
-                <span>Aula Grátis</span>
+                <span data-i18n="nav_cta">Aula Grátis</span>
             </a>
 
             <!-- Botão Menu Mobile -->
@@ -77,15 +80,18 @@
 
     <!-- Drawer Menu Mobile -->
     <div class="mobile-nav-drawer">
+        <!-- Idiomas no Menu Mobile -->
+        <div class="mobile-lang-mount"></div>
+
         <ul class="mobile-nav-list">
-            <li><a href="#hero">Início</a></li>
-            <li><a href="#programas">Programas</a></li>
-            <li><a href="#instagram">Instagram (@ata.premium)</a></li>
-            <li><a href="#unidades">Unidades</a></li>
-            <li><a href="#jornada">Método Songahm</a></li>
-            <li><a href="#faq">Dúvidas</a></li>
+            <li><a href="#hero" data-i18n="nav_home">Início</a></li>
+            <li><a href="#programas" data-i18n="nav_programs">Programas</a></li>
+            <li><a href="#instagram" data-i18n="nav_instagram">Instagram (@ata.premium)</a></li>
+            <li><a href="#unidades" data-i18n="nav_units">Unidades</a></li>
+            <li><a href="#jornada" data-i18n="nav_method">Método Songahm</a></li>
+            <li><a href="#faq" data-i18n="nav_faq">Dúvidas</a></li>
             <li class="mobile-cta-item">
-                <a href="#contato" class="btn btn-gold btn-block">Agendar Aula Experimental</a>
+                <a href="#contato" class="btn btn-gold btn-block" data-i18n="nav_mobile_cta">Agendar Aula Experimental</a>
             </li>
             <li class="mobile-socials-item">
                 <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener">Instagram</a>

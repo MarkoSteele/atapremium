@@ -7,14 +7,14 @@
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/logo.png' ); ?>" alt="ATA Premium Martial Arts" class="footer-logo-img">
                 </a>
             </div>
-            <p class="footer-mission">
+            <p class="footer-mission" data-i18n="footer_slogan">
                 Formando líderes e faixas pretas para a vida em Florianópolis. Metodologia internacional Songahm focada em disciplina voluntária, respeito mútuo e excelência humana.
             </p>
             
             <!-- Caixa de Destaque Instagram -->
             <div class="footer-insta-box">
                 <div class="footer-insta-text">
-                    <strong>Siga no Instagram:</strong>
+                    <strong data-i18n="footer_insta_title">Siga no Instagram:</strong>
                     <span>@ata.premium</span>
                 </div>
                 <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener noreferrer" class="btn-insta-follow" title="Acessar Instagram @ata.premium">
@@ -26,7 +26,7 @@
 
         <!-- Coluna 2: Nossas Unidades -->
         <div class="footer-col">
-            <h4 class="footer-title">Nossas Unidades</h4>
+            <h4 class="footer-title" data-i18n="footer_units_title">Nossas Unidades</h4>
             <ul class="footer-nav-list">
                 <li>
                     <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>">
@@ -51,7 +51,7 @@
 
         <!-- Coluna 3: Atendimento e Redes -->
         <div class="footer-col">
-            <h4 class="footer-title">Atendimento & Redes</h4>
+            <h4 class="footer-title" data-i18n="footer_links_title">Atendimento & Redes</h4>
             <ul class="footer-contact-list">
                 <li>
                     <span class="icon">📞</span>
@@ -82,7 +82,7 @@
     <!-- Barra de Direitos e Legais -->
     <div class="footer-bottom">
         <div class="container footer-bottom-container">
-            <p>© <?php echo date( 'Y' ); ?> ATA Premium Martial Arts Florianópolis. Todos os direitos reservados.</p>
+            <p data-i18n="footer_copyright">© <?php echo date( 'Y' ); ?> ATA Premium Martial Arts Florianópolis. Todos os direitos reservados.</p>
             <p class="footer-affiliation">Filiada à American Taekwondo Association (ATA / WTTU / STF) • Método Songahm</p>
         </div>
     </div>

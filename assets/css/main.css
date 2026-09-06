@@ -2783,26 +2783,17 @@ select.form-control {
     height: 100%;
     object-fit: cover;
     object-position: center 25%;
-    filter: brightness(0.32) saturate(1.1);
+    filter: brightness(0.48) saturate(1.05);
 }
 
 .error-404-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 40%, rgba(8, 9, 13, 0.6) 0%, rgba(8, 9, 13, 0.88) 75%, var(--bg-black) 100%);
+    background: radial-gradient(circle at 50% 40%, rgba(8, 9, 13, 0.45) 0%, rgba(8, 9, 13, 0.82) 80%, var(--bg-black) 100%);
 }
 
 .error-404-glow-bg {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0) 70%);
-    filter: blur(60px);
-    pointer-events: none;
-    z-index: 1;
+    display: none;
 }
 
 .error-404-container {
@@ -2814,9 +2805,7 @@ select.form-control {
 }
 
 .error-404-card {
-    background: rgba(14, 17, 24, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(12, 15, 22, 0.8);
     border: 1px solid var(--gold-border);
     border-radius: var(--radius-lg);
     padding: 50px 40px;

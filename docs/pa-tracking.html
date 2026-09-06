@@ -1,0 +1,315 @@
+---
+
+### Versão HTML (`plano-de-acao-gtm.html`)
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Ação: Matriz de Tags GTM</title>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --surface: #111827;
+            --surface-card: #1f2937;
+            --border: #374151;
+            --primary: #d4a627;
+            --text: #f9fafb;
+            --text-muted: #9ca3af;
+            --accent: #38bdf8;
+            --success: #10b981;
+            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
+            line-height: 1.5;
+            padding: 32px 20px;
+        }
+
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin: 28px 0 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th,
+        td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+        }
+
+        .tag-title {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background-color: rgba(56, 189, 248, 0.12);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .badge-ads {
+            background-color: rgba(16, 185, 129, 0.12);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .badge-clarity {
+            background-color: rgba(212, 166, 39, 0.12);
+            color: var(--primary);
+            border: 1px solid rgba(212, 166, 39, 0.2);
+        }
+
+        code {
+            background: #030712;
+            color: var(--accent);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-family: Consolas, Monaco, "Courier New", monospace;
+        }
+
+        pre code {
+            display: block;
+            padding: 14px;
+            overflow-x: auto;
+            margin: 10px 0;
+            border: 1px solid var(--border);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.92rem;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Plano de Ação: Matriz de Tags e Disparos no GTM</h1>
+            <p class="subtitle">Implementação técnica: Google Analytics 4, Google Ads e Microsoft Clarity</p>
+        </header>
+
+        <h2>1. Matriz Operacional do Container</h2>
+        <div class="card" style="padding: 0; overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag GTM</th>
+                        <th>Tipo</th>
+                        <th>Acionador / Regra</th>
+                        <th>Parâmetros Enviados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tag-title">GA4 - Configuração</td>
+                        <td><span class="badge">GA4 Configuration</span></td>
+                        <td><code>All Pages</code> (Initialization)</td>
+                        <td><code>page_location</code>, <code>page_title</code></td>
+                    </tr>
+                    <tr>
+                        <td class="tag-title">GA4 - WhatsApp Click</td>
+                        <td><span class="badge">GA4 Event (click_whatsapp)</span></td>
+                        <td>Clique em links com <code>wa.me</code> ou <code>api.whatsapp</code></td>
+                        <td><code>unidade_clicada</code>, <code>posicao_elemento</code>, <code>link_url</code></td>
+                    </tr>
+                    <tr>
+                        <td class="tag-title">GA4 - Generate Lead</td>
+                        <td><span class="badge">GA4 Event (generate_lead)</span></td>
+                        <td>Evento Customizado <code>form_lead_sucesso</code></td>
+                        <td><code>unidade</code>, <code>faixa_etaria</code>, <code>form_id</code></td>
+                    </tr>
+                    <tr>
+                        <td class="tag-title">Google Ads - Conversão Lead</td>
+                        <td><span class="badge badge-ads">Google Ads Conversion</span></td>
+                        <td>Evento Customizado <code>form_lead_sucesso</code></td>
+                        <td><code>Conversion ID</code>, <code>Conversion Label</code></td>
+                    </tr>
+                    <tr>
+                        <td class="tag-title">Google Ads - Conversão Wpp</td>
+                        <td><span class="badge badge-ads">Google Ads Conversion</span></td>
+                        <td>Clique nos botões de WhatsApp</td>
+                        <td><code>Conversion ID</code>, <code>Conversion Label</code></td>
+                    </tr>
+                    <tr>
+                        <td class="tag-title">Microsoft Clarity</td>
+                        <td><span class="badge badge-clarity">Custom HTML</span></td>
+                        <td><code>All Pages</code></td>
+                        <td>Captura de calor, gravações e cliques com raiva</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>2. Configurações Técnicas no GTM</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="color: var(--primary); margin-bottom: 10px;">Variáveis Personalizadas (DLV)</h3>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="margin-bottom: 8px;">&bull; <code>leadData.unidade</code> &rarr; Variável Camada de Dados
+                    </li>
+                    <li style="margin-bottom: 8px;">&bull; <code>leadData.faixa_etaria</code> &rarr; Variável Camada de
+                        Dados</li>
+                    <li style="margin-bottom: 8px;">&bull; <code>leadData.form_id</code> &rarr; Variável Camada de Dados
+                    </li>
+                    <li>&bull; Habilitar variáveis nativas: <code>Click URL</code> e <code>Click Text</code></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 style="color: var(--primary); margin-bottom: 10px;">Regras dos Acionadores (Triggers)</h3>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="margin-bottom: 8px;">
+                        <strong>Trig - Clique WhatsApp:</strong><br>
+                        Tipo: <em>Apenas Links</em> &bull; Dispara se: <code>Click URL</code> contém <code>wa.me</code>
+                    </li>
+                    <li>
+                        <strong>Trig - Sucesso Form Lead:</strong><br>
+                        Tipo: <em>Evento Personalizado</em> &bull; Nome do evento: <code>form_lead_sucesso</code>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>3. Código do Formulário (Data Layer)</h2>
+        <div class="card">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Inserir no retorno positivo do envio do formulário
+                no código do site:</p>
+            <pre><code>window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'form_lead_sucesso',
+  leadData: {
+    form_id: 'form_aula_experimental',
+    unidade: 'Spotmarkt', // Dinâmico conforme preenchimento
+    faixa_etaria: 'Kids (7 a 13 anos)' // Dinâmico conforme preenchimento
+  }
+});</code></pre>
+        </div>
+
+        <h2>4. Checklist de Execução & Testes</h2>
+        <div class="card">
+            <ul class="task-list">
+                <li class="task-item"><input type="checkbox"> Instalar container do GTM no cabeçalho e corpo da página.
+                </li>
+                <li class="task-item"><input type="checkbox"> Criar a tag do Vinculador de Conversões (Conversion
+                    Linker) no GTM.</li>
+                <li class="task-item"><input type="checkbox"> Configurar a tag de Configuração do GA4 e a tag HTML do
+                    Microsoft Clarity.</li>
+                <li class="task-item"><input type="checkbox"> Configurar os acionadores de clique de WhatsApp e evento
+                    de formulário.</li>
+                <li class="task-item"><input type="checkbox"> Criar as tags de eventos do GA4 e as tags de conversão do
+                    Google Ads.</li>
+                <li class="task-item"><input type="checkbox"> Homologar via Tag Assistant (Preview Mode) testando
+                    cliques e envios.</li>
+                <li class="task-item"><input type="checkbox"> Confirmar recebimento de parâmetros no GA4 DebugView.</li>
+                <li class="task-item"><input type="checkbox"> Validar gravação da sessão e heatmap no dashboard do
+                    Clarity.</li>
+                <li class="task-item"><input type="checkbox"> Publicar versão final do container no GTM.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

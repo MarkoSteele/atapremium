@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Tecnológica e Integrações - Projeto Artes Marciais</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1a1d24;
+            --text-main: #f0f0f0;
+            --text-muted: #a0aab5;
+            --gold: #d4af37;
+            --gold-light: #f3d568;
+            --gold-dark: #b8962e;
+            --border-color: #2a2d35;
+            --highlight-bg: rgba(212, 175, 55, 0.08);
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--gold-dark);
+            padding-bottom: 25px;
+        }
+        h1 {
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 2.4em;
+            letter-spacing: 0.5px;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1em;
+        }
+        h2 {
+            color: var(--gold-light);
+            border-left: 4px solid var(--gold);
+            padding-left: 15px;
+            margin-top: 45px;
+            font-size: 1.5em;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold-dark);
+        }
+        .card-highlight {
+            background-color: var(--highlight-bg);
+            border: 1px solid var(--gold-dark);
+        }
+        .stack-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        p {
+            color: #c4cdd5;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        li::before {
+            content: '♦';
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+            top: -2px;
+        }
+        .tag {
+            background-color: rgba(212, 175, 55, 0.12);
+            color: var(--gold-light);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 10px;
+            display: inline-block;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .highlight-text {
+            color: var(--gold-light);
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+        /* Novas Estruturas */
+        .code-block {
+            background-color: #12141a;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.88em;
+            color: #e2e8f0;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .phase-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .phase-badge {
+            font-size: 0.8em;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .phase-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 12px;
+        }
+        .sla-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        .sla-table th {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--gold-light);
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 2px solid var(--gold-dark);
+            font-weight: 600;
+        }
+        .sla-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            color: #c4cdd5;
+        }
+        .badge-sla {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .sla-high {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+        }
+        .sla-medium {
+            background-color: rgba(245, 158, 11, 0.2);
+            color: #fcd34d;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+        .sla-low {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #6ee7b7;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+        /* Estilos do Mapa de Florianópolis */
+        .map-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+            align-items: flex-start;
+        }
+        @media (max-width: 800px) {
+            .map-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+        .map-container {
+            position: relative;
+            background: linear-gradient(145deg, #10131a 0%, #171b26 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.6);
+        }
+        .floripa-svg {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            filter: drop-shadow(0 6px 16px rgba(0,0,0,0.7));
+        }
+        .unit-pin {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .unit-pin:hover {
+            transform: scale(1.25);
+        }
+        .unit-pin circle.pulse {
+            animation: pinPulse 2s infinite ease-out;
+            transform-origin: center;
+        }
+        @keyframes pinPulse {
+            0% {
+                r: 6px;
+                opacity: 0.9;
+                stroke-width: 2px;
+            }
+            100% {
+                r: 20px;
+                opacity: 0;
+                stroke-width: 0.5px;
+            }
+        }
+        .unit-card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .unit-item-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 18px;
+            transition: all 0.3s ease;
+        }
+        .unit-item-card:hover {
+            border-color: var(--gold);
+            background-color: rgba(212, 175, 55, 0.08);
+            transform: translateX(4px);
+        }
+        .unit-name {
+            font-weight: 700;
+            color: var(--gold-light);
+            font-size: 1.05em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .unit-address {
+            font-size: 0.88em;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .unit-badge-crm {
+            background-color: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            font-size: 0.75em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Proposta de Arquitetura Tecnológica</h1>
+            <div class="subtitle">DEVEN - Mapeamento de Stack e Fluxos de Integração</div>
+        </header>
+
+        <section>
+            <h2>0. Diagnóstico Técnico da Landing Page Atual (Análise de Recursos & Stack Wix)</h2>
+            <div class="card">
+                <div class="stack-title">Mapeamento da Infraestrutura Atual (Plataforma Wix • <code>www.premiumma.com</code>)</div>
+                <p>Análise técnica aprofundada baseada no código-fonte original do site do cliente (Wix Revision 208 • Engine <code>thunderbolt-renderer v1.17741.0</code>):</p>
+                <ul>
+                    <li><span class="tag">Motor de Renderização (Thunderbolt + React)</span>Site desenvolvido no Wix usando a engine <strong>Thunderbolt Framework</strong> baseada em React (<code>componentsReact</code>, <code>editor-elements v1.15414.0</code>), que exige a execução de scripts pesados como <code>handleAccessTokens.bundle.js</code> e <code>overrideGlobals.bundle.js</code> para interceptar e sanitizar chamadas DOM/Fetch.</li>
+                    <li><span class="tag">Formulários & Captcha</span>Presença do módulo nativo <code>captcha</code> (Google reCAPTCHA v2/v3) e <code>clickHandlerRegistrar</code> para segurança em envio de formulários e agendamento de aulas.</li>
+                    <li><span class="tag">Privacidade & Cookies (LGPD)</span>Módulo nativo <code>consentPolicy</code> para gerenciamento de preferências e bloqueio preventivo de cookies de marketing.</li>
+                    <li><span class="tag">Gestão de Alunos & Catálogo</span>Recursos de <code>siteMembers</code> (Área de Alunos) e <code>stores</code> (Catálogo de produtos/planos) habilitados no ambiente Wix.</li>
+                    <li><span class="tag">Mídias Modernas & CDN</span>Servidor de mídias <code>static.wixstatic.com</code> com suporte a transformações automáticas em tempo real para <strong>WebP e AVIF</strong> (<code>allowWebpAvifTransforms</code>).</li>
+                    <li><span class="tag">Telemetria & Monitoring</span>Monitoramento contínuo de erros e métricas via <code>appMonitoring</code>, <code>businessLogger</code>, <code>panorama</code> e <code>reporter</code>.</li>
+                    <li><span class="tag">Gargalo de Performance (Core Web Vitals)</span>Fracionamento em dezenas de bundles inline e arquivos `.chunk.min.js`, resultando em <strong>mais de 180 requisições HTTP simultâneas</strong> que atrasam a renderização inicial no celular (LCP e INP).</li>
+                </ul>
+                
+                <div style="margin-top: 20px; padding: 15px; background-color: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px;">
+                    <div style="color: #fca5a5; font-weight: 600; margin-bottom: 6px;">⚠️ Por que migrar do Wix (premiumma.com) para a Arquitetura WordPress (DEVEN)?</div>
+                    <p style="margin-bottom: 0; font-size: 0.93em; color: #e2e8f0;">
+                        O Wix exige a execução de múltiplos scripts de runtime (como <code>overrideGlobals</code> e <code>handleAccessTokens</code>) antes de renderizar o conteúdo, aumentando a latência do primeiro clique do usuário. Na nova arquitetura WordPress, simplificamos a entrega do HTML estático, reduzimos o número de requisições em 90% e conectamos diretamente os Webhooks do <strong>Cloud Gym</strong> e <strong>UnderChat</strong> sem intermediários SaaS.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>1. Core Development e SEO Técnico</h2>
+            <div class="card">
+                <div class="stack-title">WordPress + Estrutura de Indexação</div>
+                <p>Desenvolvimento focado em performance absoluta e adequação às diretrizes de rastreamento do Google.</p>
+                <ul>
+                    <li><span class="tag">Arquitetura Leve</span>Uso de hierarquia nativa (<code>front-page.php</code>, <code>single.php</code>) para garantir aprovação no Core Web Vitals.</li>
+                    <li><span class="tag">SEO Técnico</span>Configuração rigorosa do <code>robots.txt</code> para guiar os crawlers do Google e geração de <code>sitemap.xml</code> dinâmico para garantir indexação imediata de novas turmas ou modalidades.</li>
+                    <li><span class="tag">Search Console</span>Integração nativa para monitoramento de palavras-chave, impressões de busca e saúde do domínio orgânico.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Rastreamento e Conversão de Leads Pagos</h2>
+            <div class="card card-highlight">
+                <div class="stack-title">Data, Tracking & Otimização de ROI</div>
+                <p>O coração do tráfego pago. Uma estrutura centralizada para garantir que o custo de cada lead seja mapeado sem perdas.</p>
+                <ul>
+                    <li><span class="tag">Google Tag Manager (GTM)</span>O grande maestro da operação. Centralizamos o disparo de pixels de Ads, Tags do GA4 e scripts do Search Console em um único container, sem poluir o código do site.</li>
+                    <li><span class="tag">Rastreamento de Leads Pagos</span>Eventos personalizados para medir exatamente quando um lead de tráfego pago (Google Ads/Meta Ads) clica no WhatsApp ou agenda uma aula, reduzindo o Custo por Aquisição (CPA).</li>
+                    <li><span class="tag">Google Analytics 4 (GA4)</span>Mensuração do ciclo de vida do visitante, identificando quais campanhas trazem os alunos mais qualificados.</li>
+                    <li><span class="tag">Microsoft Clarity</span>Gravação de sessões e heatmaps para entender o comportamento do lead na página de vendas e otimizar as taxas de conversão.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Sistemas Base (CRM e Atendimento)</h2>
+            <div class="card">
+                <div class="stack-title">Cloud Gym e UnderChat (Operação Independente)</div>
+                <p>As duas principais plataformas operacionais da academia antes da integração.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3.1. Cobertura Geográfica das Unidades (Florianópolis - SC)</h2>
+            <div class="card card-highlight">
+                <div class="stack-title">Mapeamento de Unidades ATA Premium na Ilha e Continente</div>
+                <p>Estrutura visual interativa para direcionamento automático de leads no formulário conforme a unidade de preferência do cliente em Florianópolis:</p>
+                
+                <div class="map-wrapper">
+                    <!-- Mapa SVG Vetorial de Florianópolis -->
+                    <div class="map-container">
+                        <svg class="floripa-svg" viewBox="0 0 500 620" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="islandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2a303c" />
+                                    <stop offset="50%" stop-color="#1e232e" />
+                                    <stop offset="100%" stop-color="#151922" />
+                                </linearGradient>
+                                <linearGradient id="mainlandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#222733" />
+                                    <stop offset="100%" stop-color="#181c26" />
+                                </linearGradient>
+                                <filter id="glowGold" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+
+                            <!-- Fundo / Oceano -->
+                            <rect width="500" height="620" rx="10" fill="#0b0e14" />
+
+                            <!-- Linhas sutis de coordenadas náuticas -->
+                            <line x1="50" y1="120" x2="450" y2="120" stroke="#1c2230" stroke-dasharray="3 6" stroke-width="1"/>
+                            <line x1="50" y1="310" x2="450" y2="310" stroke="#1c2230" stroke-dasharray="3 6" stroke-width="1"/>
+                            <line x1="50" y1="500" x2="450" y2="500" stroke="#1c2230" stroke-dasharray="3 6" stroke-width="1"/>
+                            <line x1="160" y1="50" x2="160" y2="570" stroke="#1c2230" stroke-dasharray="3 6" stroke-width="1"/>
+                            <line x1="320" y1="50" x2="320" y2="570" stroke="#1c2230" stroke-dasharray="3 6" stroke-width="1"/>
+
+                            <!-- Continente (Estreito / Coqueiros) -->
+                            <path d="M 10 180 
+                                     C 40 180, 80 200, 100 240 
+                                     C 120 280, 125 320, 110 360 
+                                     C 95 400, 70 440, 40 470 
+                                     C 20 490, 10 520, 10 600
+                                     L 0 600 L 0 180 Z" 
+                                  fill="url(#mainlandGrad)" stroke="#3a4254" stroke-width="1.5" />
+                            <text x="25" y="270" fill="#64748b" font-size="10" font-weight="700" letter-spacing="1">CONTINENTE</text>
+
+                            <!-- Pontes de Acesso (Hercílio Luz / Pedro Ivo) -->
+                            <line x1="110" y1="320" x2="175" y2="315" stroke="var(--gold)" stroke-width="2.5" stroke-dasharray="3 2"/>
+                            <text x="115" y="306" fill="var(--gold-light)" font-size="8" font-weight="700">PONTES</text>
+
+                            <!-- Ilha de Santa Catarina (Florianópolis) -->
+                            <path d="M 310 35 
+                                     C 330 35, 360 45, 380 65 
+                                     C 400 85, 395 115, 375 145 
+                                     C 365 160, 360 185, 370 210 
+                                     C 385 240, 395 285, 375 325 
+                                     C 360 355, 370 405, 360 445 
+                                     C 350 485, 335 525, 305 565 
+                                     C 285 590, 265 605, 245 595 
+                                     C 230 585, 235 555, 245 525 
+                                     C 255 495, 245 465, 235 435 
+                                     C 225 405, 195 375, 175 345 
+                                     C 165 330, 165 315, 175 300 
+                                     C 195 270, 225 240, 245 200 
+                                     C 260 170, 265 125, 275 85 
+                                     C 285 55, 295 35, 310 35 Z" 
+                                  fill="url(#islandGrad)" stroke="var(--gold-dark)" stroke-width="2" />
+
+                            <!-- Lagoa da Conceição -->
+                            <path d="M 325 235 C 345 230, 360 255, 345 285 C 330 310, 315 280, 325 235 Z" 
+                                  fill="#0b0e14" stroke="#252d3d" stroke-width="1.5" />
+                            <text x="328" y="260" fill="#475569" font-size="8" font-style="italic">Lagoa da Conceição</text>
+
+                            <!-- Lagoa do Peri -->
+                            <ellipse cx="295" cy="485" rx="14" ry="10" fill="#0b0e14" stroke="#252d3d" stroke-width="1"/>
+
+                            <!-- Rotulagem Geográfica -->
+                            <text x="315" y="55" fill="#94a3b8" font-size="9" font-weight="700">NORTE DA ILHA</text>
+                            <text x="195" y="340" fill="#94a3b8" font-size="9" font-weight="700">CENTRO</text>
+                            <text x="260" y="540" fill="#94a3b8" font-size="9" font-weight="700">SUL DA ILHA</text>
+
+                            <!-- PINS INTERATIVOS DAS UNIDADES REAIS (3 UNIDADES) -->
+
+                            <!-- Pin 1: Unidade Centro I (Matriz) -->
+                            <g class="unit-pin" transform="translate(195, 310)">
+                                <circle class="pulse" cx="0" cy="0" r="10" fill="none" stroke="var(--gold-light)" />
+                                <circle cx="0" cy="0" r="7" fill="var(--gold)" filter="url(#glowGold)" />
+                                <circle cx="0" cy="0" r="3" fill="#0f1115" />
+                                <rect x="-125" y="-12" width="120" height="22" rx="4" fill="rgba(15,17,21,0.92)" stroke="var(--gold)" stroke-width="1"/>
+                                <text x="-118" y="3" fill="var(--gold-light)" font-size="9" font-weight="700">1. Unid. Centro I</text>
+                            </g>
+
+                            <!-- Pin 2: Unidade Centro II -->
+                            <g class="unit-pin" transform="translate(210, 335)">
+                                <circle class="pulse" cx="0" cy="0" r="10" fill="none" stroke="var(--gold-light)" />
+                                <circle cx="0" cy="0" r="7" fill="var(--gold)" filter="url(#glowGold)" />
+                                <circle cx="0" cy="0" r="3" fill="#0f1115" />
+                                <rect x="12" y="-12" width="120" height="22" rx="4" fill="rgba(15,17,21,0.92)" stroke="var(--gold)" stroke-width="1"/>
+                                <text x="18" y="3" fill="var(--gold-light)" font-size="9" font-weight="700">2. Unid. Centro II</text>
+                            </g>
+
+                            <!-- Pin 3: Unidade Córrego Grande -->
+                            <g class="unit-pin" transform="translate(265, 280)">
+                                <circle class="pulse" cx="0" cy="0" r="10" fill="none" stroke="var(--gold-light)" />
+                                <circle cx="0" cy="0" r="7" fill="var(--gold)" filter="url(#glowGold)" />
+                                <circle cx="0" cy="0" r="3" fill="#0f1115" />
+                                <rect x="12" y="-12" width="145" height="22" rx="4" fill="rgba(15,17,21,0.92)" stroke="var(--gold)" stroke-width="1"/>
+                                <text x="18" y="3" fill="var(--gold-light)" font-size="9" font-weight="700">3. Unid. Córrego Grande</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Lista das 3 Unidades Reais com Mapeamento no Cloud Gym -->
+                    <div class="unit-card-list">
+                        <div class="unit-item-card">
+                            <div class="unit-name">
+                                <span>1. Unidade Centro I (Matriz)</span>
+                                <span class="unit-badge-crm">Cloud Gym ID: #101</span>
+                            </div>
+                            <div class="unit-address">Centro, Florianópolis - SC (Área Central)</div>
+                            <div style="font-size: 0.8em; color: #94a3b8; margin-top: 6px;">Modalidades: ATA Taekwondo, Krav Maga, Little Tigers</div>
+                        </div>
+
+                        <div class="unit-item-card">
+                            <div class="unit-name">
+                                <span>2. Unidade Centro II</span>
+                                <span class="unit-badge-crm">Cloud Gym ID: #102</span>
+                            </div>
+                            <div class="unit-address">Centro, Florianópolis - SC (Área Comercial/Executiva)</div>
+                            <div style="font-size: 0.8em; color: #94a3b8; margin-top: 6px;">Modalidades: ATA Taekwondo, Defesa Pessoal, Karate Fitness</div>
+                        </div>
+
+                        <div class="unit-item-card">
+                            <div class="unit-name">
+                                <span>3. Unidade Córrego Grande</span>
+                                <span class="unit-badge-crm">Cloud Gym ID: #103</span>
+                            </div>
+                            <div class="unit-address">Córrego Grande, Florianópolis - SC (Bairro Universitário / Itacorubi)</div>
+                            <div style="font-size: 0.8em; color: #94a3b8; margin-top: 6px;">Modalidades: ATA Taekwondo, Little Tigers, Karate Kids, Kickboxing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. O Poder da Integração: Cloud Gym + UnderChat</h2>
+            <div class="card card-highlight">
+                <div class="stack-title">Sinergia e Automação do Fluxo de Vendas</div>
+                <p>A verdadeira vantagem competitiva desta arquitetura não está apenas no uso das ferramentas, mas em como elas conversam entre si, eliminando gargalos manuais e aumentando a taxa de fechamento.</p>
+                <ul>
+                    <li><span class="tag">Velocidade de Contato (Lead Quente)</span>Quando o visitante se cadastra no site, o lead cai no pipeline do <strong>Cloud Gym</strong>. Instantaneamente, um webhook aciona o <strong>UnderChat</strong>, que dispara uma saudação no WhatsApp do cliente ("Olá! Vimos seu interesse na aula experimental...").</li>
+                    <li><span class="tag">Contexto Comercial Unificado</span>Ao responder o WhatsApp, o lead é direcionado para um consultor no UnderChat. O consultor já tem em mãos o histórico enviado pelo GTM/Site (qual modalidade ele buscou, se veio de tráfego pago ou orgânico), tornando a abordagem comercial super personalizada.</li>
+                    <li><span class="tag">Redução de Evasão</span>Ao confirmar um agendamento no Cloud Gym, automações no UnderChat podem enviar lembretes automáticos 2h antes da aula experimental, diminuindo drasticamente a taxa de não-comparecimento (no-show).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Arquitetura de APIs, Webhooks & Contratos de Dados</h2>
+            <div class="card card-highlight">
+                <div class="stack-title">Fluxo de Dados e Integração em Tempo Real</div>
+                <p>Comunicação assíncrona orientada a eventos para garantir zero perda de conversões e atualização em milissegundos.</p>
+                <ul>
+                    <li><span class="tag">WordPress &rarr; Cloud Gym</span>Formulários de captura enviam dados cadastrais e parâmetros UTM via API REST/HTTP POST no momento do envio.</li>
+                    <li><span class="tag">Cloud Gym &rarr; UnderChat</span>Gatilho (Webhook) disparado na criação do Lead no CRM com autorização Bearer Token.</li>
+                </ul>
+
+                <div style="margin-top: 20px;">
+                    <div style="font-weight: 600; color: var(--gold-light); margin-bottom: 8px;">Exemplo de Payload Webhook (Lead Quente):</div>
+                    <pre class="code-block"><code>{
+  "event": "lead.created",
+  "timestamp": "2026-08-11T10:30:00Z",
+  "lead": {
+    "name": "Carlos Silva",
+    "phone": "5511999998888",
+    "email": "carlos.silva@email.com",
+    "unit": "Unidade Moema",
+    "interest_modality": "Krav Maga / Jiu-Jitsu",
+    "utm_source": "google_ads",
+    "utm_campaign": "search_aulas_experimentais"
+  }
+}</code></pre>
+                </div>
+                <ul style="margin-top: 15px;">
+                    <li><span class="tag">Resiliência e Retentativas</span>Mecanismo de retry automático com <i>Exponential Backoff</i> em caso de instabilidade pontual na API do WhatsApp.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Cronograma de Implementação (Roadmap)</h2>
+            <div class="card">
+                <div class="stack-title">Planejamento de Execução em 4 Fases</div>
+                <p>Estrutura ágil para entrega contínua com validação em ambiente de staging antes do lançamento oficial.</p>
+                <div class="roadmap-grid">
+                    <div class="phase-card">
+                        <div class="phase-badge">Fase 1 • Semana 1</div>
+                        <div class="phase-title">Foundation & SEO Técnico</div>
+                        <ul>
+                            <li>Setup do WordPress Core & Hierarquia de templates.</li>
+                            <li>Configuração de SEO Técnico, <code>robots.txt</code> e <code>sitemap.xml</code>.</li>
+                            <li>Instalação do GTM, GA4, Meta Pixel e Microsoft Clarity.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-badge">Fase 2 • Semana 2</div>
+                        <div class="phase-title">Integração CRM & WhatsApp</div>
+                        <ul>
+                            <li>Configuração dos Webhooks no Cloud Gym.</li>
+                            <li>Mapeamento de rotas e campos no UnderChat.</li>
+                            <li>Criação de templates de mensagens de boas-vindas no WhatsApp.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-badge">Fase 3 • Semana 3</div>
+                        <div class="phase-title">Testes E2E & Automação</div>
+                        <ul>
+                            <li>Testes de simulação de tráfego pago (Ads -> Site -> CRM -> WhatsApp).</li>
+                            <li>Validação de mensuração de conversões no GA4 e GTM.</li>
+                            <li>Automação de lembretes anti no-show para aulas experimentais.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-badge">Fase 4 • Semana 4</div>
+                        <div class="phase-title">Go-Live & Monitoramento</div>
+                        <ul>
+                            <li>Publicação em ambiente de produção (Go-Live).</li>
+                            <li>Treinamento da equipe comercial no UnderChat.</li>
+                            <li>Acompanhamento de indexação no Google Search Console.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Segurança da Informação & Conformidade LGPD</h2>
+            <div class="card">
+                <div class="stack-title">Governança de Dados e Privacidade</div>
+                <p>Garantia de segurança no tratamento dos dados pessoais de potenciais e atuais alunos.</p>
+                <ul>
+                    <li><span class="tag">Consentimento de Cookies</span>Banner LGPD nativo integrado ao Tag Manager com controle de Opt-in para pixels de marketing e analytics.</li>
+                    <li><span class="tag">Criptografia em Trânsito</span>Comunicação 100% protegida via protocolo HTTPS/TLS 1.3 em todas as chamadas de API e navegação.</li>
+                    <li><span class="tag">Direitos do Titular (LGPD)</span>Ferramenta de solicitação de exclusão de dados e facilidade de cancelamento de mensagens (opt-out no WhatsApp).</li>
+                    <li><span class="tag">Acesso Restrito</span>Autenticação por token individualizado e IP Whitelisting nos endpoints de integração.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>8. Acordo de Nível de Serviço (SLA) & Suporte Operacional</h2>
+            <div class="card card-highlight">
+                <div class="stack-title">Disponibilidade e Matriz de Atendimento</div>
+                <p>Compromisso com o funcionamento contínuo das rotas de captação de alunos e conversão.</p>
+                <div style="margin-bottom: 20px;">
+                    <span class="tag" style="background-color: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">Target Uptime: 99.5%</span>
+                    <span class="tag">Monitoramento 24/7 de Endpoints</span>
+                </div>
+                
+                <table class="sla-table">
+                    <thead>
+                        <tr>
+                            <th>Nível de Severidade</th>
+                            <th>Descrição do Cenário</th>
+                            <th>Tempo Máximo de Resposta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge-sla sla-high">Crítico (P1)</span></td>
+                            <td>Site indisponível ou interrupção total na recepção de leads no CRM.</td>
+                            <td><strong>Até 2 horas</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-sla sla-medium">Alto (P2)</span></td>
+                            <td>Falha na automação de disparos do WhatsApp ou erro em pixel de conversão.</td>
+                            <td><strong>Até 6 horas</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-sla sla-low">Normal (P3)</span></td>
+                            <td>Dúvidas técnicas, ajustes de layout ou pequenas alterações de texto.</td>
+                            <td><strong>Até 24 horas</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="footer">
+            <p>Documentação técnica - DEVEN | Mapeamento de Stack Estratégica</p>
+        </div>
+    </div>
+</body>
+</html>

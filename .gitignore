@@ -1,0 +1,22 @@
+# Ignorar vídeos pesados (manter localmente)
+*.mp4
+*.mov
+*.avi
+*.m4v
+
+# Arquivos do Sistema Operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs e temporários
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.scratch/
+tmp/

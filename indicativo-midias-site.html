@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indicativo de Mídias para o Site | ATA Martial Arts</title>
+  
+  <!-- Fonts Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: #131b2e;
+      --bg-card-hover: #1a243d;
+      --bg-input: #1e293b;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-accent: rgba(220, 38, 38, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary-red: #e11d48;
+      --primary-red-hover: #f43f5e;
+      --accent-gold: #fbbf24;
+      --accent-gold-glow: rgba(251, 191, 36, 0.15);
+      --success-green: #10b981;
+      --info-blue: #38bdf8;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow-glow: 0 10px 30px -10px rgba(225, 29, 72, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px 16px 60px 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header Banner */
+    .header {
+      background: linear-gradient(135deg, #1e1b4b 0%, #111827 50%, #1e112a 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(225, 29, 72, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+      pointer-events: none;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      color: var(--accent-gold);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .save-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .save-status-badge .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #34d399;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .header h1 span {
+      background: linear-gradient(135deg, #fbbf24 0%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    /* Progress bar */
+    .progress-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .progress-text {
+      color: var(--text-main);
+    }
+
+    .progress-count {
+      color: var(--accent-gold);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #e11d48, #fbbf24);
+      border-radius: 20px;
+      transition: width 0.4s ease;
+    }
+
+    /* Action Toolbar */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary-red);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-red-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-gold {
+      background: rgba(251, 191, 36, 0.15);
+      color: var(--accent-gold);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+    }
+
+    .btn-gold:hover {
+      background: rgba(251, 191, 36, 0.25);
+    }
+
+    /* Section Component */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(225, 29, 72, 0.12);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .section-icon.gold {
+      background: rgba(251, 191, 36, 0.12);
+      border-color: rgba(251, 191, 36, 0.3);
+    }
+
+    .section-icon.blue {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .section-icon.green {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .section-icon.purple {
+      background: rgba(168, 85, 247, 0.12);
+      border-color: rgba(168, 85, 247, 0.3);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .section-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* Explanatory Box */
+    .info-box {
+      background: rgba(30, 41, 59, 0.6);
+      border-left: 4px solid var(--info-blue);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    .info-box.gold {
+      border-left-color: var(--accent-gold);
+      background: var(--accent-gold-glow);
+    }
+
+    .info-box.red {
+      border-left-color: var(--primary-red);
+      background: rgba(225, 29, 72, 0.1);
+    }
+
+    .info-box strong {
+      color: #fff;
+    }
+
+    /* Checklist Grid */
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .check-item:hover {
+      background: rgba(30, 41, 59, 0.8);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .check-item.completed {
+      background: rgba(16, 185, 129, 0.08);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .check-item input[type="checkbox"] {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #475569;
+      border-radius: 6px;
+      background: var(--bg-input);
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .check-item input[type="checkbox"]:checked {
+      background: var(--success-green);
+      border-color: var(--success-green);
+    }
+
+    .check-item input[type="checkbox"]:checked::before {
+      content: "✓";
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .check-content {
+      flex: 1;
+    }
+
+    .check-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .check-item.completed .check-label span.item-title {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+
+    .check-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Editable Input Fields inside items */
+    .custom-input-group {
+      margin-top: 10px;
+    }
+
+    .custom-input {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: #f8fafc;
+      font-size: 0.875rem;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .custom-input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.2);
+      background: #0f172a;
+    }
+
+    .custom-input::placeholder {
+      color: #64748b;
+    }
+
+    textarea.custom-input {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .tag-red { background: rgba(225, 29, 72, 0.2); color: #f43f5e; border: 1px solid rgba(225, 29, 72, 0.3); }
+    .tag-blue { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .tag-gold { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+    .tag-purple { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+    /* Visual Aspect Ratio Comparison */
+    .ratio-comparison {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .ratio-card {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .ratio-preview-169 {
+      width: 100%;
+      max-width: 220px;
+      height: 124px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 2px dashed var(--info-blue);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .ratio-preview-916 {
+      width: 90px;
+      height: 160px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 2px dashed var(--accent-gold);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .ratio-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 9999;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 0;
+      }
+      .toolbar, .toast, .save-status-badge {
+        display: none !important;
+      }
+      .header, .section-card {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+      }
+      .header h1, .section-title, .check-label {
+        color: #000 !important;
+      }
+      .header h1 span {
+        -webkit-text-fill-color: initial !important;
+        color: #d97706 !important;
+      }
+      .info-box, .ratio-card, .check-item {
+        background: #f8fafc !important;
+        border-color: #ddd !important;
+        color: #333 !important;
+      }
+      .custom-input {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #999 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div class="badge-top">📌 Briefing de Mídias • Site Oficial</div>
+        <div class="save-status-badge" id="saveBadge">
+          <span class="dot"></span>
+          <span id="saveBadgeText">Salvamento automático ativo (LocalStorage + Cookie)</span>
+        </div>
+      </div>
+
+      <h1>Indicativo de Mídias para o <span>Site ATA Premium</span></h1>
+      <p>
+        Olá! Este guia foi criado para organizar todos os materiais (fotos, vídeos e branding) necessários para a criação do novo site da <strong>ATA Martial Arts Premium</strong>. Qualquer edição ou marcação feita aqui fica <strong>salva automaticamente no seu navegador</strong>!
+      </p>
+
+      <div class="progress-box">
+        <div class="progress-info">
+          <span class="progress-text">Progresso da Coleta</span>
+          <span class="progress-count" id="progressText">0 / 22 concluídos (0%)</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <button class="btn btn-primary" onclick="window.print()">
+        🖨️ Salvar como PDF / Imprimir
+      </button>
+      <button class="btn btn-gold" onclick="copyWhatsAppSummary()">
+        📲 Copiar Resumo para WhatsApp
+      </button>
+      <button class="btn btn-secondary" onclick="exportDataJSON()">
+        💾 Exportar Dados (JSON)
+      </button>
+      <button class="btn btn-secondary" onclick="resetChecklist()">
+        🔄 Limpar TUDO
+      </button>
+    </div>
+
+    <!-- DRIVE LINK CARD GLOBAL -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-icon purple">🔗</div>
+        <div>
+          <h2 class="section-title">Link da Pasta de Envio (Google Drive / WeTransfer)</h2>
+          <p class="section-subtitle">Cole aqui o link da sua pasta com os arquivos para que fique salvo no briefing</p>
+        </div>
+      </div>
+      <div class="custom-input-group">
+        <input type="text" id="global-drive-url" class="custom-input" placeholder="Cole aqui o link do seu Google Drive, WeTransfer ou Dropbox (ex: https://drive.google.com/drive/folders/...)" oninput="handleSave()" />
+      </div>
+    </section>
+
+    <!-- SEÇÃO 1: BRANDING -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-icon blue">🎨</div>
+        <div>
+          <h2 class="section-title">1. Branding & Identidade Visual</h2>
+          <p class="section-subtitle">Arquivos fundamentais para manter a fidelidade da marca</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>💡 Por que o Branding é importante?</strong><br />
+        O manual da marca e os arquivos em alta resolução garantem que o site utilize exatamente os tons oficiais da ATA (vermelho, dourado, preto, etc.) e que a logomarca apareça nítida e sem fundo branco em qualquer tipo de tela.
+      </div>
+
+      <div class="checklist">
+        <div class="check-item" data-id="brand-logo">
+          <input type="checkbox" id="brand-logo" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Logomarca Oficial em Alta Resolução</span>
+              <span class="tag tag-blue">PNG Transparente / Vetor</span>
+            </div>
+            <div class="check-desc">Enviar a logo sem fundo (.PNG) ou em vetor (.SVG, .AI ou .EPS). Se houver versões em branco, preto e colorida, enviar todas.</div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="brand-manual">
+          <input type="checkbox" id="brand-manual" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Manual da Marca / Guia de Estilo</span>
+              <span class="tag tag-blue">Arquivo PDF (Opcional)</span>
+            </div>
+            <div class="check-desc">Documento com regras de aplicação do logo, margens de segurança e proibições de distorção.</div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="brand-colors">
+          <input type="checkbox" id="brand-colors" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Paleta de Cores Oficiais</span>
+              <span class="tag tag-blue">Códigos HEX / RGB</span>
+            </div>
+            <div class="check-desc">Códigos das cores (ex: Vermelho #E11D48, Dourado #FBBF24, Preto #0B0F19).</div>
+            <div class="custom-input-group">
+              <input type="text" id="brand-colors-text" class="custom-input" placeholder="Anotar códigos HEX ex: #E11D48, #FBBF24" oninput="handleSave()" />
+            </div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="brand-fonts">
+          <input type="checkbox" id="brand-fonts" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Tipografia / Fontes da Marca</span>
+              <span class="tag tag-blue">Arquivos .OTF / .TTF</span>
+            </div>
+            <div class="check-desc">Nome das fontes usadas na identidade visual ou arquivos para instalação.</div>
+            <div class="custom-input-group">
+              <input type="text" id="brand-fonts-text" class="custom-input" placeholder="Ex: Plus Jakarta Sans, Montserrat, etc." oninput="handleSave()" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: CAMPEÕES -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-icon gold">🏆</div>
+        <div>
+          <h2 class="section-title">2. Atletas Campeões (World / Panam)</h2>
+          <p class="section-subtitle">Mínimo de 5 a 6 atletas para a seção de destaques e autoridade</p>
+        </div>
+      </div>
+
+      <div class="info-box gold">
+        <strong>📸 Dica para as Fotos dos Campeões:</strong><br />
+        Fotos em alta resolução durante lutas/formas, no pódio com medalha/troféu ou em estúdio com uniforme oficial da ATA. Preencha abaixo o nome do atleta e o título conquistado!
+      </div>
+
+      <div class="checklist">
+        <div class="check-item" data-id="champ-1">
+          <input type="checkbox" id="champ-1" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Atleta Campeão 1 (Foto + Nome + Título)</span>
+              <span class="tag tag-gold">Mundial / Pan</span>
+            </div>
+            <div class="check-desc">Foto individual em alta resolução.</div>
+            <div class="custom-input-group">
+              <input type="text" id="champ-1-info" class="custom-input" placeholder="Digite aqui: Nome do Atleta - Título (ex: João Silva - Campeão Mundial 2024)" oninput="handleSave()" />
+            </div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="champ-2">
+          <input type="checkbox" id="champ-2" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Atleta Campeão 2 (Foto + Nome + Título)</span>
+              <span class="tag tag-gold">Mundial / Pan</span>
+            </div>
+            <div class="check-desc">Foto individual em alta resolução.</div>
+            <div class="custom-input-group">
+              <input type="text" id="champ-2-info" class="custom-input" placeholder="Digite aqui: Nome do Atleta - Título" oninput="handleSave()" />
+            </div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="champ-3">
+          <input type="checkbox" id="champ-3" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Atleta Campeão 3 (Foto + Nome + Título)</span>
+              <span class="tag tag-gold">Mundial / Pan</span>
+            </div>
+            <div class="check-desc">Foto individual em alta resolução.</div>
+            <div class="custom-input-group">
+              <input type="text" id="champ-3-info" class="custom-input" placeholder="Digite aqui: Nome do Atleta - Título" oninput="handleSave()" />
+            </div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="champ-4">
+          <input type="checkbox" id="champ-4" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Atleta Campeão 4 (Foto + Nome + Título)</span>
+              <span class="tag tag-gold">Mundial / Pan</span>
+            </div>
+            <div class="check-desc">Foto individual em alta resolução.</div>
+            <div class="custom-input-group">
+              <input type="text" id="champ-4-info" class="custom-input" placeholder="Digite aqui: Nome do Atleta - Título" oninput="handleSave()" />
+            </div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="champ-5">
+          <input type="checkbox" id="champ-5" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Atleta Campeão 5 (Foto + Nome + Título)</span>
+              <span class="tag tag-gold">Mundial / Pan</span>
+            </div>
+            <div class="check-desc">Foto individual em alta resolução.</div>
+            <div class="custom-input-group">
+              <input type="text" id="champ-5-info" class="custom-input" placeholder="Digite aqui: Nome do Atleta - Título" oninput="handleSave()" />
+            </div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="champ-6">
+          <input type="checkbox" id="champ-6" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Atleta Campeão 6 (Foto + Nome + Título)</span>
+              <span class="tag tag-gold">Mundial / Pan</span>
+            </div>
+            <div class="check-desc">Foto individual em alta resolução.</div>
+            <div class="custom-input-group">
+              <input type="text" id="champ-6-info" class="custom-input" placeholder="Digite aqui: Nome do Atleta - Título" oninput="handleSave()" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: UNIDADES -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-icon red">🏢</div>
+        <div>
+          <h2 class="section-title">3. Fotos das Unidades (3 Locais)</h2>
+          <p class="section-subtitle">4 fotos de alta qualidade de cada unidade (Total: 12 fotos)</p>
+        </div>
+      </div>
+
+      <div class="info-box red">
+        <strong>📌 Sugestão de Ângulos por Unidade:</strong><br />
+        • 1 Foto da Fachada / Entrada<br />
+        • 1 Foto da Recepção / Atendimento<br />
+        • 1 Foto do Tatame Principal / Área de Treino (de preferência ampla)<br />
+        • 1 Foto de Detalhes / Alunos em Treino / Equipamentos
+      </div>
+
+      <!-- Unidade 1 -->
+      <h3 style="font-size: 1rem; color: var(--accent-gold); margin: 18px 0 10px 0; font-weight: 700;">
+        📍 Unidade 1 — Rua Alves de Brito (4 Fotos)
+      </h3>
+      <div class="checklist">
+        <div class="check-item" data-id="u1-f1">
+          <input type="checkbox" id="u1-f1" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade 1 - Foto 1 (Fachada / Entrada)</span><span class="tag tag-red">Foto 1/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u1-f2">
+          <input type="checkbox" id="u1-f2" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade 1 - Foto 2 (Recepção / Ambiente)</span><span class="tag tag-red">Foto 2/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u1-f3">
+          <input type="checkbox" id="u1-f3" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade 1 - Foto 3 (Tatame / Treino)</span><span class="tag tag-red">Foto 3/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u1-f4">
+          <input type="checkbox" id="u1-f4" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade 1 - Foto 4 (Detalhes / Equipamentos)</span><span class="tag tag-red">Foto 4/4</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unidade 2 -->
+      <h3 style="font-size: 1rem; color: var(--accent-gold); margin: 24px 0 10px 0; font-weight: 700;">
+        📍 Unidade 2 — Colégio Catarinense (4 Fotos)
+      </h3>
+      <div class="checklist">
+        <div class="check-item" data-id="u2-f1">
+          <input type="checkbox" id="u2-f1" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade 2 - Foto 1 (Fachada / Entrada)</span><span class="tag tag-red">Foto 1/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u2-f2">
+          <input type="checkbox" id="u2-f2" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade 2 - Foto 2 (Recepção / Ambiente)</span><span class="tag tag-red">Foto 2/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u2-f3">
+          <input type="checkbox" id="u2-f3" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade 2 - Foto 3 (Tatame / Treino)</span><span class="tag tag-red">Foto 3/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u2-f4">
+          <input type="checkbox" id="u2-f4" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade 2 - Foto 4 (Detalhes / Equipamentos)</span><span class="tag tag-red">Foto 4/4</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unidade 3 -->
+      <h3 style="font-size: 1rem; color: var(--accent-gold); margin: 24px 0 10px 0; font-weight: 700;">
+        📍 Unidade Spotmarkt — Córrego Grande (4 Fotos)
+      </h3>
+      <div class="checklist">
+        <div class="check-item" data-id="u3-f1">
+          <input type="checkbox" id="u3-f1" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade Spotmarkt - Foto 1 (Fachada / Entrada)</span><span class="tag tag-red">Foto 1/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u3-f2">
+          <input type="checkbox" id="u3-f2" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade Spotmarkt - Foto 2 (Recepção / Ambiente)</span><span class="tag tag-red">Foto 2/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u3-f3">
+          <input type="checkbox" id="u3-f3" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade Spotmarkt - Foto 3 (Tatame / Treino)</span><span class="tag tag-red">Foto 3/4</span></div>
+          </div>
+        </div>
+        <div class="check-item" data-id="u3-f4">
+          <input type="checkbox" id="u3-f4" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label"><span class="item-title">Unidade Spotmarkt - Foto 4 (Detalhes / Equipamentos)</span><span class="tag tag-red">Foto 4/4</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: VÍDEOS -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-icon green">🎬</div>
+        <div>
+          <h2 class="section-title">4. Vídeos Institucionais & Demonstrativos (3 Vídeos)</h2>
+          <p class="section-subtitle">2 vídeos em formato Paisagem (16:9) e 1 vídeo em formato Retrato (9:16)</p>
+        </div>
+      </div>
+
+      <div class="info-box gold">
+        <strong>💡 Entendendo os Formatos dos Vídeos:</strong>
+      </div>
+
+      <div class="ratio-comparison">
+        <div class="ratio-card">
+          <div class="ratio-preview-169">
+            <span style="font-size: 1.6rem;">📺</span>
+            <span style="font-size: 0.75rem; color: var(--info-blue); font-weight: 700; margin-top: 4px;">16:9 HORIZONTAL</span>
+          </div>
+          <span class="ratio-badge" style="background: rgba(56, 189, 248, 0.2); color: var(--info-blue);">Paisagem / Celular Deitado</span>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 8px;">
+            Ideal para o topo do site, computadores e YouTube. Mostra uma visão ampla dos movimentos e treinos.
+          </p>
+        </div>
+
+        <div class="ratio-card">
+          <div class="ratio-preview-916">
+            <span style="font-size: 1.6rem;">📱</span>
+            <span style="font-size: 0.7rem; color: var(--accent-gold); font-weight: 700; margin-top: 4px;">9:16 VERTICAL</span>
+          </div>
+          <span class="ratio-badge" style="background: rgba(251, 191, 36, 0.2); color: var(--accent-gold);">Retrato / Celular em Pé</span>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 8px;">
+            Formato de Reels / TikTok. Perfeito para o Master se apresentar diretamente para quem acessa no celular.
+          </p>
+        </div>
+      </div>
+
+      <div class="checklist" style="margin-top: 20px;">
+        <div class="check-item" data-id="vid-1">
+          <input type="checkbox" id="vid-1" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Vídeo 1: Apresentação Performática / Treino</span>
+              <span class="tag tag-blue">16:9 • Paisagem (Horizontal)</span>
+            </div>
+            <div class="check-desc">Vídeo com dinamismo, golpes, alunos treinando ou demonstração de artes marciais.</div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="vid-2">
+          <input type="checkbox" id="vid-2" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Vídeo 2: Apresentação Institucional / Geral</span>
+              <span class="tag tag-blue">16:9 • Paisagem (Horizontal)</span>
+            </div>
+            <div class="check-desc">Vídeo mostrando a infraestrutura, recepção ou ambiente geral das aulas.</div>
+          </div>
+        </div>
+
+        <div class="check-item" data-id="vid-3">
+          <input type="checkbox" id="vid-3" onchange="handleSave()" />
+          <div class="check-content">
+            <div class="check-label">
+              <span class="item-title">Vídeo 3: Fala do Master / Apresentação Pessoal</span>
+              <span class="tag tag-gold">9:16 • Retrato (Vertical)</span>
+            </div>
+            <div class="check-desc">Vídeo estilo Instagram Reels: o Master se apresentando, convidando para uma aula experimental ou explicando os valores da ATA.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 5: OBSERVAÇÕES & ENVIOS -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-icon purple">📝</div>
+        <div>
+          <h2 class="section-title">5. Observações & Anotações Adicionais</h2>
+          <p class="section-subtitle">Escreva aqui detalhes ou informações importantes para o desenvolvedor</p>
+        </div>
+      </div>
+      <div class="custom-input-group">
+        <textarea id="general-notes" class="custom-input" placeholder="Escreva observações extras sobre os materiais enviados (ex: 'As fotos da Unidade 2 foram tiradas à tarde com luz natural', etc.)..." oninput="handleSave()"></textarea>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">✓ Salvo automaticamente no navegador!</div>
+
+  <script>
+    const STORAGE_KEY = 'ata_midias_checklist_v2';
+    const COOKIE_NAME = 'ata_midias_data_v2';
+
+    // Inicialização ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+      loadState();
+      updateProgressUI();
+    });
+
+    // Função de Salvamento Duplo (LocalStorage + Cookie com validade de 365 dias)
+    function handleSave() {
+      const checkboxesState = {};
+      const inputsState = {};
+
+      // 1. Coletar Checkboxes
+      document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => {
+        checkboxesState[cb.id] = cb.checked;
+        const parent = cb.closest('.check-item');
+        if (cb.checked) {
+          parent.classList.add('completed');
+        } else {
+          parent.classList.remove('completed');
+        }
+      });
+
+      // 2. Coletar Inputs de Texto e Textareas
+      document.querySelectorAll('.custom-input').forEach(input => {
+        if (input.id) {
+          inputsState[input.id] = input.value;
+        }
+      });
+
+      const fullState = {
+        checkboxes: checkboxesState,
+        inputs: inputsState,
+        lastUpdated: new Date().toISOString()
+      };
+
+      const serializedData = JSON.stringify(fullState);
+
+      // A) Salvar em LocalStorage
+      try {
+        localStorage.setItem(STORAGE_KEY, serializedData);
+      } catch (e) {
+        console.warn('LocalStorage indisponível, usando cookie fallback.', e);
+      }
+
+      // B) Salvar em Cookie (Duração de 365 dias)
+      try {
+        const d = new Date();
+        d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = COOKIE_NAME + "=" + encodeURIComponent(serializedData) + ";" + expires + ";path=/;SameSite=Lax";
+      } catch (e) {
+        console.warn('Erro ao salvar cookie:', e);
+      }
+
+      updateProgressUI();
+      flashSaveBadge();
+    }
+
+    // Carregar dados (tenta LocalStorage primeiro; se vazio, busca do Cookie)
+    function loadState() {
+      let rawData = null;
+
+      try {
+        rawData = localStorage.getItem(STORAGE_KEY);
+      } catch (e) {
+        console.warn('Erro ao ler LocalStorage:', e);
+      }
+
+      if (!rawData) {
+        rawData = getCookie(COOKIE_NAME);
+      }
+
+      if (!rawData) return;
+
+      try {
+        const parsed = JSON.parse(rawData);
+
+        // Restaurar checkboxes
+        if (parsed.checkboxes) {
+          Object.keys(parsed.checkboxes).forEach(id => {
+            const cb = document.getElementById(id);
+            if (cb) {
+              cb.checked = parsed.checkboxes[id];
+              const parent = cb.closest('.check-item');
+              if (parent && cb.checked) parent.classList.add('completed');
+            }
+          });
+        }
+
+        // Restaurar inputs de texto
+        if (parsed.inputs) {
+          Object.keys(parsed.inputs).forEach(id => {
+            const field = document.getElementById(id);
+            if (field) {
+              field.value = parsed.inputs[id];
+            }
+          });
+        }
+      } catch (e) {
+        console.error('Erro ao restaurar dados salvos:', e);
+      }
+    }
+
+    // Auxiliar para ler Cookie
+    function getCookie(cname) {
+      const name = cname + "=";
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(name) === 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function updateProgressUI() {
+      const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+      const total = checkboxes.length;
+      let checkedCount = 0;
+
+      checkboxes.forEach(cb => {
+        if (cb.checked) checkedCount++;
+      });
+
+      const percent = Math.round((checkedCount / total) * 100);
+      document.getElementById('progressText').innerText = `${checkedCount} / ${total} concluídos (${percent}%)`;
+      document.getElementById('progressFill').style.width = `${percent}%`;
+    }
+
+    function flashSaveBadge() {
+      const badge = document.getElementById('saveBadge');
+      const text = document.getElementById('saveBadgeText');
+      text.innerText = '💾 Salvo automaticamente!';
+      badge.style.background = 'rgba(16, 185, 129, 0.3)';
+      
+      setTimeout(() => {
+        text.innerText = 'Salvamento automático ativo (LocalStorage + Cookie)';
+        badge.style.background = 'rgba(16, 185, 129, 0.15)';
+      }, 1500);
+    }
+
+    function resetChecklist() {
+      if (confirm('Deseja realmente apagar todas as marcações e anotações deste briefing?')) {
+        try {
+          localStorage.removeItem(STORAGE_KEY);
+          document.cookie = COOKIE_NAME + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } catch (e) {}
+
+        document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => {
+          cb.checked = false;
+          cb.closest('.check-item').classList.remove('completed');
+        });
+
+        document.querySelectorAll('.custom-input').forEach(input => {
+          input.value = '';
+        });
+
+        updateProgressUI();
+        showToast('Todas as anotações e seleções foram apagadas!');
+      }
+    }
+
+    function copyWhatsAppSummary() {
+      const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+      const total = checkboxes.length;
+      let checkedCount = 0;
+      let summaryText = "*📌 BRIEFING DE MÍDIAS - SITE ATA PREMIUM*\n\n";
+
+      const driveUrl = document.getElementById('global-drive-url').value.trim();
+      if (driveUrl) {
+        summaryText += `🔗 *Link da Pasta de Mídias:* ${driveUrl}\n\n`;
+      }
+
+      summaryText += "*Status dos Itens:*\n";
+
+      checkboxes.forEach(cb => {
+        const labelText = cb.closest('.check-item').querySelector('.item-title').innerText;
+        const icon = cb.checked ? "✅" : "⏳";
+        if (cb.checked) checkedCount++;
+        
+        let extraInfo = '';
+        const parent = cb.closest('.check-item');
+        const inputField = parent.querySelector('.custom-input');
+        if (inputField && inputField.value.trim()) {
+          extraInfo = ` (${inputField.value.trim()})`;
+        }
+
+        summaryText += `${icon} ${labelText}${extraInfo}\n`;
+      });
+
+      const notes = document.getElementById('general-notes').value.trim();
+      if (notes) {
+        summaryText += `\n📝 *Observações:* ${notes}\n`;
+      }
+
+      const percent = Math.round((checkedCount / total) * 100);
+      summaryText += `\n*Progresso Total:* ${checkedCount}/${total} (${percent}% concluído).`;
+
+      navigator.clipboard.writeText(summaryText).then(() => {
+        showToast('Resumo completo copiado para o WhatsApp!');
+      }).catch(err => {
+        alert('Erro ao copiar. Tente selecionar e copiar manualmente.');
+      });
+    }
+
+    function exportDataJSON() {
+      const data = localStorage.getItem(STORAGE_KEY) || getCookie(COOKIE_NAME);
+      if (!data) {
+        alert('Nenhum dado salvo ainda para exportar.');
+        return;
+      }
+      const blob = new Blob([data], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'briefing_midias_ata_premium.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Arquivo JSON baixado com sucesso!');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

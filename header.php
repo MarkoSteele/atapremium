@@ -31,6 +31,7 @@
         <nav class="header-nav" aria-label="Navegação Principal">
             <ul class="nav-list">
                 <li><a href="<?php echo esc_url( home_url( '/#hero' ) ); ?>" data-i18n="nav_home">Início</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/sobre-a-ata/' ) ); ?>" data-i18n="nav_about">Sobre a ATA</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#instagram' ) ); ?>" data-i18n="nav_instagram">Instagram</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
@@ -139,6 +140,7 @@
 
         <ul class="mobile-nav-list">
             <li><a href="<?php echo esc_url( home_url( '/#hero' ) ); ?>" data-i18n="nav_home">Início</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/sobre-a-ata/' ) ); ?>" data-i18n="nav_about">Sobre a ATA</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#instagram' ) ); ?>" data-i18n="nav_instagram">Instagram (@ata.premium)</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>

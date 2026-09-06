@@ -226,7 +226,7 @@ get_header(); ?>
             <div class="reel-card is-playing reveal-on-scroll delay-1" data-video="alves-de-brito">
                 <div class="reel-media-wrapper">
                     <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop">
-                        <source src="<?php echo esc_url( get_template_directory_uri() . '/alves-de-brito.mp4' ); ?>" type="video/mp4">
+                        <source src="<?php echo esc_url( get_template_directory_uri() . '/Unidade1-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
                         <span class="reel-tag-badge" data-i18n="reel_tag_1">Unidade Alves de Brito</span>
@@ -245,7 +245,7 @@ get_header(); ?>
             <div class="reel-card is-playing reveal-on-scroll delay-2" data-video="catarinense">
                 <div class="reel-media-wrapper">
                     <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop">
-                        <source src="<?php echo esc_url( get_template_directory_uri() . '/catarinense.mp4' ); ?>" type="video/mp4">
+                        <source src="<?php echo esc_url( get_template_directory_uri() . '/Unidade2-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
                         <span class="reel-tag-badge" data-i18n="reel_tag_2">Unidade Col. Catarinense</span>
@@ -264,7 +264,7 @@ get_header(); ?>
             <div class="reel-card is-playing reveal-on-scroll delay-3" data-video="spotmarkt">
                 <div class="reel-media-wrapper">
                     <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop">
-                        <source src="<?php echo esc_url( get_template_directory_uri() . '/spotmarket.mp4' ); ?>" type="video/mp4">
+                        <source src="<?php echo esc_url( get_template_directory_uri() . '/Spotmarket-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
                         <span class="reel-tag-badge" data-i18n="reel_tag_3">Unidade Spotmarkt</span>

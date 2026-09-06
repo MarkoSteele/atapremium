@@ -35,7 +35,7 @@ function atapremium_enqueue_assets() {
         'atapremium-style',
         get_template_directory_uri() . '/assets/css/main.css',
         array(),
-        '1.3.0'
+        '1.4.0'
     );
 
     // JS de Internacionalização (i18n - Português, Inglês e Espanhol)
@@ -43,7 +43,7 @@ function atapremium_enqueue_assets() {
         'atapremium-i18n',
         get_template_directory_uri() . '/assets/js/i18n.js',
         array(),
-        '1.3.0',
+        '1.4.0',
         true
     );
 
@@ -52,7 +52,7 @@ function atapremium_enqueue_assets() {
         'atapremium-form-lead',
         get_template_directory_uri() . '/assets/js/form-lead.js',
         array('atapremium-i18n'),
-        '1.3.0',
+        '1.4.0',
         true // Carrega no rodapé
     );
 
@@ -68,13 +68,14 @@ add_action( 'wp_enqueue_scripts', 'atapremium_enqueue_assets' );
 require_once get_template_directory() . '/inc/crm-integration.php';
 
 /**
- * Roteamento automático para as páginas de unidades da ATA Premium
- * Permite que /unidade-alves-de-brito/, /unidade-colegio-catarinense/ e /unidade-spotmarkt/
+ * Roteamento automático para as páginas de unidades e institucional da ATA Premium
+ * Permite que /unidade-alves-de-brito/, /unidade-colegio-catarinense/, /unidade-spotmarkt/ e /sobre-a-ata/
  * carreguem seus conteúdos ricos automaticamente mesmo antes de serem criadas no painel.
  */
 function atapremium_virtual_unit_templates( $template ) {
     $request_uri = trim( parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
     
+    // Roteamento das Unidades
     $unit_slugs = [
         'unidade-alves-de-brito'       => 'alves-de-brito',
         'unidade-colegio-catarinense'  => 'colegio-catarinense',
@@ -88,6 +89,18 @@ function atapremium_virtual_unit_templates( $template ) {
             if ( file_exists( $unit_template ) ) {
                 status_header( 200 );
                 return $unit_template;
+            }
+        }
+    }
+
+    // Roteamento da Página Sobre a ATA
+    $about_slugs = ['sobre-a-ata', 'sobre', 'sobre-a-ata-premium', 'quem-somos'];
+    foreach ( $about_slugs as $slug ) {
+        if ( $request_uri === $slug || substr( $request_uri, -strlen($slug) ) === $slug ) {
+            $about_template = get_template_directory() . '/page-sobre.php';
+            if ( file_exists( $about_template ) ) {
+                status_header( 200 );
+                return $about_template;
             }
         }
     }

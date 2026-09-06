@@ -7,6 +7,7 @@ const ATA_TRANSLATIONS = {
     pt: {
         // Navegação
         nav_home: "Início",
+        nav_about: "Sobre a ATA",
         nav_programs: "Programas",
         nav_instagram: "Instagram",
         nav_units: "Unidades",
@@ -212,6 +213,7 @@ const ATA_TRANSLATIONS = {
     en: {
         // Navigation
         nav_home: "Home",
+        nav_about: "About ATA",
         nav_programs: "Programs",
         nav_instagram: "Instagram",
         nav_units: "Locations",
@@ -417,6 +419,7 @@ const ATA_TRANSLATIONS = {
     es: {
         // Navegación
         nav_home: "Inicio",
+        nav_about: "Sobre ATA",
         nav_programs: "Programas",
         nav_instagram: "Instagram",
         nav_units: "Sedes",

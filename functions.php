@@ -66,3 +66,32 @@ add_action( 'wp_enqueue_scripts', 'atapremium_enqueue_assets' );
 
 // Inclui a integração de API/CRM
 require_once get_template_directory() . '/inc/crm-integration.php';
+
+/**
+ * Roteamento automático para as páginas de unidades da ATA Premium
+ * Permite que /unidade-alves-de-brito/, /unidade-colegio-catarinense/ e /unidade-spotmarkt/
+ * carreguem seus conteúdos ricos automaticamente mesmo antes de serem criadas no painel.
+ */
+function atapremium_virtual_unit_templates( $template ) {
+    $request_uri = trim( parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+    
+    $unit_slugs = [
+        'unidade-alves-de-brito'       => 'alves-de-brito',
+        'unidade-colegio-catarinense'  => 'colegio-catarinense',
+        'unidade-spotmarkt'            => 'spotmarkt',
+    ];
+    
+    foreach ( $unit_slugs as $slug => $id ) {
+        if ( $request_uri === $slug || substr( $request_uri, -strlen($slug) ) === $slug ) {
+            $_GET['unidade'] = $id;
+            $unit_template = get_template_directory() . '/page-unidade.php';
+            if ( file_exists( $unit_template ) ) {
+                status_header( 200 );
+                return $unit_template;
+            }
+        }
+    }
+    
+    return $template;
+}
+add_filter( 'template_include', 'atapremium_virtual_unit_templates', 99 );

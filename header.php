@@ -30,12 +30,12 @@
         <!-- Menu Principal Central -->
         <nav class="header-nav" aria-label="Navegação Principal">
             <ul class="nav-list">
-                <li><a href="#hero" data-i18n="nav_home">Início</a></li>
-                <li><a href="#programas" data-i18n="nav_programs">Programas</a></li>
-                <li><a href="#instagram" data-i18n="nav_instagram">Instagram</a></li>
-                <li><a href="#unidades" data-i18n="nav_units">Unidades</a></li>
-                <li><a href="#jornada" data-i18n="nav_method">Método Songahm</a></li>
-                <li><a href="#faq" data-i18n="nav_faq">Dúvidas</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/#hero' ) ); ?>" data-i18n="nav_home">Início</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/#instagram' ) ); ?>" data-i18n="nav_instagram">Instagram</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/#jornada' ) ); ?>" data-i18n="nav_method">Método Songahm</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             </ul>
         </nav>
 
@@ -98,7 +98,7 @@
             </div>
 
             <!-- Botão CTA Aula Experimental -->
-            <a href="#contato" class="btn-header-cta" data-track="cta_header_agendar">
+            <a href="<?php echo esc_url( home_url( '/#contato' ) ); ?>" class="btn-header-cta" data-track="cta_header_agendar">
                 <span data-i18n="nav_cta">Aula Grátis</span>
             </a>
 
@@ -138,14 +138,14 @@
         </div>
 
         <ul class="mobile-nav-list">
-            <li><a href="#hero" data-i18n="nav_home">Início</a></li>
-            <li><a href="#programas" data-i18n="nav_programs">Programas</a></li>
-            <li><a href="#instagram" data-i18n="nav_instagram">Instagram (@ata.premium)</a></li>
-            <li><a href="#unidades" data-i18n="nav_units">Unidades</a></li>
-            <li><a href="#jornada" data-i18n="nav_method">Método Songahm</a></li>
-            <li><a href="#faq" data-i18n="nav_faq">Dúvidas</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/#hero' ) ); ?>" data-i18n="nav_home">Início</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/#instagram' ) ); ?>" data-i18n="nav_instagram">Instagram (@ata.premium)</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/#jornada' ) ); ?>" data-i18n="nav_method">Método Songahm</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             <li class="mobile-cta-item">
-                <a href="#contato" class="btn btn-gold btn-block" data-i18n="nav_mobile_cta">Agendar Aula Experimental</a>
+                <a href="<?php echo esc_url( home_url( '/#contato' ) ); ?>" class="btn btn-gold btn-block" data-i18n="nav_mobile_cta">Agendar Aula Experimental</a>
             </li>
             <li class="mobile-socials-item">
                 <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener">Instagram</a>

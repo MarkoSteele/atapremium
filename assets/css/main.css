@@ -1573,9 +1573,52 @@ img {
 }
 
 .unit-card-actions {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.unit-card-actions .btn {
+    flex: 1;
+    padding: 7px 10px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    box-shadow: none;
+}
+
+.unit-card-actions .btn-gold {
+    background: var(--gold);
+    color: #08090d;
+}
+
+.unit-card-actions .btn-gold:hover {
+    background: var(--gold-light);
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(223, 186, 77, 0.3);
+}
+
+.unit-card-actions .btn-outline-gold {
+    border: 1px solid rgba(223, 186, 77, 0.35);
+    background: rgba(223, 186, 77, 0.04);
+    color: #ffffff;
+}
+
+.unit-card-actions .btn-outline-gold:hover {
+    background: rgba(223, 186, 77, 0.15);
+    border-color: var(--gold);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -2630,7 +2673,8 @@ select.form-control {
     }
 
     .unit-card-actions {
-        grid-template-columns: 1fr;
+        display: flex;
+        gap: 8px;
     }
 }
 

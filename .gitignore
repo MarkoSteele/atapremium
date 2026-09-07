@@ -20,3 +20,8 @@ yarn-debug.log*
 yarn-error.log*
 .scratch/
 tmp/
+
+# Credenciais e ambientes locais
+.env
+.env.deploy
+.env.local

@@ -474,6 +474,11 @@ get_header(); ?>
         <div class="journey-bg-overlay"></div>
     </div>
 
+    <!-- Efeito Parallax da Logo no Background da Jornada -->
+    <div class="journey-parallax-watermark" aria-hidden="true">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/logo.png' ); ?>" alt="" class="journey-parallax-logo" loading="lazy">
+    </div>
+
     <div class="container journey-container">
         <div class="section-title text-center reveal-on-scroll">
             <span class="badge-gold" data-i18n="journey_badge">TRADIÇÃO & METÁFORA</span>
@@ -764,21 +769,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Efeito Parallax Suave na Logo de Fundo do FAQ
-    const faqSection = document.querySelector('#faq');
+    // Efeito Parallax Suave nas Logos de Fundo (Jornada e FAQ)
+    const journeySec = document.querySelector('#jornada');
+    const journeyLogo = document.querySelector('.journey-parallax-watermark');
+    const faqSec = document.querySelector('#faq');
     const faqLogo = document.querySelector('.faq-parallax-watermark');
-    if (faqSection && faqLogo) {
-        const updateFaqParallax = () => {
-            const rect = faqSection.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
+
+    const updateLogosParallax = () => {
+        const windowHeight = window.innerHeight;
+
+        if (journeySec && journeyLogo) {
+            const rect = journeySec.getBoundingClientRect();
             if (rect.top < windowHeight && rect.bottom > 0) {
                 const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (scrollProgress - 0.5) * 140; // Amplitude suave
-                faqLogo.style.transform = `translate(-50%, calc(-50% + ${translateY}px))`;
+                const translateY = (scrollProgress - 0.5) * 160;
+                journeyLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
             }
-        };
-        window.addEventListener('scroll', updateFaqParallax, { passive: true });
-        updateFaqParallax();
+        }
+
+        if (faqSec && faqLogo) {
+            const rect = faqSec.getBoundingClientRect();
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+                const translateY = (scrollProgress - 0.5) * 160;
+                faqLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
+            }
+        }
+    };
+
+    if (journeySec || faqSec) {
+        window.addEventListener('scroll', updateLogosParallax, { passive: true });
+        window.addEventListener('resize', updateLogosParallax, { passive: true });
+        updateLogosParallax();
     }
 
     // Rastreamento WhatsApp Dinâmico (GTM DataLayer)

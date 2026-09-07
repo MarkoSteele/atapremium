@@ -120,22 +120,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Efeito Parallax Suave na Logo do FAQ e no Background da Jornada
+    // 4. Efeito Parallax Suave nas Logos d'Água (Jornada e FAQ) e no Background da Jornada
     const faqSection = document.querySelector('#faq');
     const faqLogo = document.querySelector('.faq-parallax-watermark');
     const journeySection = document.querySelector('#jornada');
+    const journeyLogo = document.querySelector('.journey-parallax-watermark');
     const journeyBgImage = document.querySelector('.journey-bg-image');
 
     const handleParallaxScroll = () => {
         const windowHeight = window.innerHeight;
 
-        // Parallax FAQ Logo
-        if (faqSection && faqLogo) {
-            const rect = faqSection.getBoundingClientRect();
+        // Parallax Logo na Seção Jornada
+        if (journeySection && journeyLogo) {
+            const rect = journeySection.getBoundingClientRect();
             if (rect.top < windowHeight && rect.bottom > 0) {
                 const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (scrollProgress - 0.5) * 140; // Deslocamento suave vertical
-                faqLogo.style.transform = `translate(-50%, calc(-50% + ${translateY}px))`;
+                const translateY = (scrollProgress - 0.5) * 160;
+                journeyLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
             }
         }
 
@@ -145,13 +146,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (rect.top < windowHeight && rect.bottom > 0) {
                 const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
                 const translateY = (scrollProgress - 0.5) * 60; // Deslocamento sutil com escala
-                journeyBgImage.style.transform = `scale(1.08) translateY(${translateY}px)`;
+                journeyBgImage.style.transform = `scale(1.08) translateY(${translateY.toFixed(1)}px)`;
+            }
+        }
+
+        // Parallax FAQ Logo
+        if (faqSection && faqLogo) {
+            const rect = faqSection.getBoundingClientRect();
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+                const translateY = (scrollProgress - 0.5) * 160; // Deslocamento suave vertical
+                faqLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
             }
         }
     };
 
     if (faqSection || journeySection) {
         window.addEventListener('scroll', handleParallaxScroll, { passive: true });
+        window.addEventListener('resize', handleParallaxScroll, { passive: true });
         handleParallaxScroll();
     }
 

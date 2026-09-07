@@ -30,12 +30,12 @@ add_action( 'after_setup_theme', 'atapremium_setup' );
 
 // Enfileira estilos e scripts
 function atapremium_enqueue_assets() {
-    // CSS principal
+    // CSS Principal
     wp_enqueue_style(
         'atapremium-style',
         get_template_directory_uri() . '/assets/css/main.css',
         array(),
-        '1.4.9'
+        '1.5.0'
     );
 
     // JS de Internacionalização (i18n - Português, Inglês e Espanhol)
@@ -43,16 +43,16 @@ function atapremium_enqueue_assets() {
         'atapremium-i18n',
         get_template_directory_uri() . '/assets/js/i18n.js',
         array(),
-        '1.4.9',
+        '1.5.0',
         true
     );
 
-    // JS para envio assíncrono do formulário e interações
+    // JS Principal / Captura de Leads / Interatividades
     wp_enqueue_script(
         'atapremium-form-lead',
         get_template_directory_uri() . '/assets/js/form-lead.js',
         array('atapremium-i18n'),
-        '1.4.9',
+        '1.5.0',
         true // Carrega no rodapé
     );
 

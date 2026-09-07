@@ -78,22 +78,17 @@ get_header(); ?>
     <div class="container">
         <div class="metrics-grid">
             <div class="metric-card reveal-on-scroll delay-1">
-                <div class="metric-number gold-gradient" data-i18n="metric_num_1">+1.5 Milhão</div>
+                <div class="metric-number" data-i18n="metric_num_1">+1.5 Milhão</div>
                 <div class="metric-label" data-i18n="metric_lbl_1">Praticantes no Mundo</div>
                 <p class="metric-desc" data-i18n="metric_desc_1">Taekwondo Songahm presente em dezenas de países (ATA / WTTU / STF)</p>
             </div>
             <div class="metric-card reveal-on-scroll delay-2">
-                <div class="metric-number gold-gradient" data-i18n="metric_num_2">3 Unidades</div>
+                <div class="metric-number" data-i18n="metric_num_2">3 Unidades</div>
                 <div class="metric-label" data-i18n="metric_lbl_2">Em Florianópolis</div>
                 <p class="metric-desc" data-i18n="metric_desc_2">Estruturas completas no Centro e Córrego Grande (Spotmarkt)</p>
             </div>
             <div class="metric-card reveal-on-scroll delay-3">
-                <div class="metric-number gold-gradient" data-i18n="metric_num_3">30+ Anos</div>
-                <div class="metric-label" data-i18n="metric_lbl_3">De Tradição Marcial</div>
-                <p class="metric-desc" data-i18n="metric_desc_3">Metodologia e refinamento pedagógico do Grão-Mestre H.U. Lee</p>
-            </div>
-            <div class="metric-card reveal-on-scroll delay-4">
-                <div class="metric-number gold-gradient" data-i18n="metric_num_4">100%</div>
+                <div class="metric-number" data-i18n="metric_num_4">100%</div>
                 <div class="metric-label" data-i18n="metric_lbl_4">Instrutores Certificados</div>
                 <p class="metric-desc" data-i18n="metric_desc_4">Formação internacional contínua e foco no desenvolvimento humano</p>
             </div>

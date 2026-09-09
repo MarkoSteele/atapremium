@@ -7,6 +7,26 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Evita acesso direto
 }
 
+// Detecção robusta de SSL por trás de Proxies / HostGator / Cloudflare
+if ( ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) ||
+     ( isset( $_SERVER['HTTP_X_FORWARDED_SSL'] ) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on' ) ||
+     ( isset( $_SERVER['HTTP_CF_VISITOR'] ) && strpos( $_SERVER['HTTP_CF_VISITOR'], 'https' ) !== false ) ) {
+    $_SERVER['HTTPS'] = 'on';
+}
+
+// Garante HTTPS em todas as URLs de assets do tema para evitar bloqueio de Mixed Content
+function atapremium_force_https_theme_uri( $uri ) {
+    if ( is_ssl() || 
+         ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ) || 
+         ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) ||
+         ( isset( $_SERVER['HTTP_HOST'] ) && strpos( $_SERVER['HTTP_HOST'], 'deven.com.br' ) !== false ) ) {
+        return set_url_scheme( $uri, 'https' );
+    }
+    return $uri;
+}
+add_filter( 'template_directory_uri', 'atapremium_force_https_theme_uri' );
+add_filter( 'stylesheet_directory_uri', 'atapremium_force_https_theme_uri' );
+
 // Configurações do tema
 function atapremium_setup() {
     // Adiciona suporte a tag de título dinâmica
@@ -30,29 +50,31 @@ add_action( 'after_setup_theme', 'atapremium_setup' );
 
 // Enfileira estilos e scripts
 function atapremium_enqueue_assets() {
+    $theme_uri = is_ssl() ? set_url_scheme( get_template_directory_uri(), 'https' ) : get_template_directory_uri();
+
     // CSS Principal
     wp_enqueue_style(
         'atapremium-style',
-        get_template_directory_uri() . '/assets/css/main.css',
+        $theme_uri . '/assets/css/main.css',
         array(),
-        '1.5.1'
+        '1.5.2'
     );
 
     // JS de Internacionalização (i18n - Português, Inglês e Espanhol)
     wp_enqueue_script(
         'atapremium-i18n',
-        get_template_directory_uri() . '/assets/js/i18n.js',
+        $theme_uri . '/assets/js/i18n.js',
         array(),
-        '1.5.1',
+        '1.5.2',
         true
     );
 
     // JS Principal / Captura de Leads / Interatividades
     wp_enqueue_script(
         'atapremium-form-lead',
-        get_template_directory_uri() . '/assets/js/form-lead.js',
+        $theme_uri . '/assets/js/form-lead.js',
         array('atapremium-i18n'),
-        '1.5.1',
+        '1.5.2',
         true // Carrega no rodapé
     );
 

@@ -131,8 +131,12 @@ get_header(); ?>
         <div class="programs-grid-4">
             <!-- Tigers -->
             <div class="program-card reveal-on-scroll delay-1">
+                <div class="program-card-media">
+                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img" loading="lazy">
+                    <div class="program-media-overlay"></div>
+                    <span class="program-tag-badge" data-i18n="program_tigers_tag">3 a 6 anos</span>
+                </div>
                 <div class="program-card-header">
-                    <span class="program-tag" data-i18n="program_tigers_tag">3 a 6 anos</span>
                     <h3 data-i18n="program_tigers_title">Tigers</h3>
                     <p class="program-tagline" data-i18n="program_tigers_tagline">Primeiros limites, primeiras conquistas.</p>
                 </div>
@@ -152,8 +156,12 @@ get_header(); ?>
 
             <!-- Kids -->
             <div class="program-card reveal-on-scroll delay-2">
+                <div class="program-card-media">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Kids (7 a 13 anos)" class="program-card-img" loading="lazy">
+                    <div class="program-media-overlay"></div>
+                    <span class="program-tag-badge" data-i18n="program_kids_tag">7 a 13 anos</span>
+                </div>
                 <div class="program-card-header">
-                    <span class="program-tag" data-i18n="program_kids_tag">7 a 13 anos</span>
                     <h3 data-i18n="program_kids_title">Kids</h3>
                     <p class="program-tagline" data-i18n="program_kids_tagline">Foco escolar, autoconfiança e anti-bullying.</p>
                 </div>
@@ -173,8 +181,12 @@ get_header(); ?>
 
             <!-- Teens -->
             <div class="program-card reveal-on-scroll delay-3">
+                <div class="program-card-media">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" loading="lazy">
+                    <div class="program-media-overlay"></div>
+                    <span class="program-tag-badge" data-i18n="program_teens_tag">11 a 15 anos</span>
+                </div>
                 <div class="program-card-header">
-                    <span class="program-tag" data-i18n="program_teens_tag">11 a 15 anos</span>
                     <h3 data-i18n="program_teens_title">Adolescentes</h3>
                     <p class="program-tagline" data-i18n="program_teens_tagline">Estrutura, pertencimento e inteligência emocional.</p>
                 </div>
@@ -194,8 +206,12 @@ get_header(); ?>
 
             <!-- Adultos & Família -->
             <div class="program-card reveal-on-scroll delay-4">
+                <div class="program-card-media">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Adultos e Masters" class="program-card-img" loading="lazy">
+                    <div class="program-media-overlay"></div>
+                    <span class="program-tag-badge" data-i18n="program_adults_tag">Adultos & Família</span>
+                </div>
                 <div class="program-card-header">
-                    <span class="program-tag" data-i18n="program_adults_tag">Adultos & Família</span>
                     <h3 data-i18n="program_adults_title">Adultos e Masters</h3>
                     <p class="program-tagline" data-i18n="program_adults_tagline">Saúde, alívio do estresse e tempo de qualidade.</p>
                 </div>

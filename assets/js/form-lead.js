@@ -13,26 +13,55 @@ document.addEventListener('DOMContentLoaded', () => {
         handleScroll();
     }
 
-    // 2. Mobile Menu Toggle
+    // 2. Mobile Menu Toggle com Trava de Scroll no Body
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileDrawer = document.querySelector('.mobile-nav-drawer');
     if (menuToggle && mobileDrawer) {
+        const openMobileMenu = () => {
+            mobileDrawer.classList.add('active');
+            menuToggle.classList.add('is-active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.classList.add('mobile-menu-open');
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        };
+
+        const closeMobileMenu = () => {
+            mobileDrawer.classList.remove('active');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('mobile-menu-open');
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        };
+
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            mobileDrawer.classList.toggle('active');
+            if (mobileDrawer.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
 
-        // Fecha ao clicar em um link do menu
+        // Fecha ao clicar em um link interno do menu
         mobileDrawer.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileDrawer.classList.remove('active');
+                closeMobileMenu();
             });
         });
 
-        // Fecha ao clicar fora
+        // Fecha ao clicar fora do drawer
         document.addEventListener('click', (e) => {
-            if (!mobileDrawer.contains(e.target) && !menuToggle.contains(e.target)) {
-                mobileDrawer.classList.remove('active');
+            if (!mobileDrawer.contains(e.target) && !menuToggle.contains(e.target) && mobileDrawer.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Fecha com tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) {
+                closeMobileMenu();
             }
         });
     }

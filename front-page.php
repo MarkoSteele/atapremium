@@ -341,7 +341,7 @@ get_header(); ?>
             <div class="unit-card-interactive reveal-on-scroll delay-1">
                 <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Alves de Brito">
                     <div class="unit-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" alt="Unidade Alves de Brito Centro" class="unit-img" loading="lazy">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ata-unidade-1-capa.webp' ); ?>" alt="Unidade Alves de Brito Centro" class="unit-img" loading="lazy">
                         <div class="unit-badge-pill" data-i18n="unit_pill_1">Unidade 1 • Centro</div>
                         <div class="unit-image-overlay">
                             <span class="view-unit-badge" data-i18n="unit_hover_label">Ver Página da Unidade &rarr;</span>
@@ -383,7 +383,7 @@ get_header(); ?>
             <div class="unit-card-interactive reveal-on-scroll delay-2">
                 <a href="<?php echo esc_url( home_url( '/unidade-colegio-catarinense/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Colégio Catarinense">
                     <div class="unit-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Unidade Colégio Catarinense" class="unit-img" loading="lazy">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/unidade-2.png' ); ?>" alt="Unidade Colégio Catarinense" class="unit-img" loading="lazy">
                         <div class="unit-badge-pill" data-i18n="unit_pill_2">Unidade 2 • Centro</div>
                         <div class="unit-image-overlay">
                             <span class="view-unit-badge" data-i18n="unit_hover_label">Ver Página da Unidade &rarr;</span>
@@ -425,7 +425,7 @@ get_header(); ?>
             <div class="unit-card-interactive reveal-on-scroll delay-3">
                 <a href="<?php echo esc_url( home_url( '/unidade-spotmarkt/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Spotmarkt">
                     <div class="unit-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" alt="Unidade Spotmarkt Córrego Grande" class="unit-img" loading="lazy">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ata-spotmarket-capa.webp' ); ?>" alt="Unidade Spotmarkt Córrego Grande" class="unit-img" loading="lazy">
                         <div class="unit-badge-pill" data-i18n="unit_pill_3">Unidade 3 • Córrego Grande</div>
                         <div class="unit-image-overlay">
                             <span class="view-unit-badge" data-i18n="unit_hover_label">Ver Página da Unidade &rarr;</span>

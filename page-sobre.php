@@ -165,7 +165,7 @@ get_header(); ?>
             <!-- Unidade 1 -->
             <div class="about-unit-box">
                 <div class="unit-box-media">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/unidade-alves-de-brito-fachada.jpg' ); ?>" alt="Unidade Alves de Brito" loading="lazy">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ata-unidade-1-capa.webp' ); ?>" alt="Unidade Alves de Brito" loading="lazy">
                     <span class="unit-badge">Centro • Beira-Mar</span>
                 </div>
                 <div class="unit-box-content">
@@ -179,7 +179,7 @@ get_header(); ?>
             <!-- Unidade 2 -->
             <div class="about-unit-box">
                 <div class="unit-box-media">
-                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Unidade Colégio Catarinense" loading="lazy">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/unidade-2.png' ); ?>" alt="Unidade Colégio Catarinense" loading="lazy">
                     <span class="unit-badge">Polo Escolar • Centro</span>
                 </div>
                 <div class="unit-box-content">
@@ -193,7 +193,7 @@ get_header(); ?>
             <!-- Unidade 3 -->
             <div class="about-unit-box">
                 <div class="unit-box-media">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" alt="Unidade Spotmarkt" loading="lazy">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ata-spotmarket-capa.webp' ); ?>" alt="Unidade Spotmarkt" loading="lazy">
                     <span class="unit-badge">Córrego Grande • Spotmarkt</span>
                 </div>
                 <div class="unit-box-content">

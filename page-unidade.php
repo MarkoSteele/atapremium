@@ -25,7 +25,7 @@ $unidades_data = [
         'whatsapp'    => '5548999313558',
         'horario'     => 'Segunda a Sexta: 09h às 12h | 15h às 21h',
         'video'       => get_template_directory_uri() . '/Unidade1-card.mp4',
-        'imagem_hero' => get_template_directory_uri() . '/assets/images/unidade-alves-de-brito-fachada.jpg',
+        'imagem_hero' => get_template_directory_uri() . '/assets/images/ata-unidade-1-capa.webp',
         'sobre_titulo'=> 'Localização Nobre e Estratégica Próxima à Beira-Mar Norte',
         'sobre_texto' => 'A <strong>Unidade Alves de Brito</strong> é uma das sedes mais tradicionais da ATA em Florianópolis. Situada a poucos metros da Avenida Beira-Mar Norte, oferece acesso rápido e descomplicado para famílias que moram ou trabalham no Centro e bairros adjacentes (Agronômica, Trindade e Itacorubi). Com tatames de alta tecnologia de absorção de impacto, vestiários climatizados e ambiente planejado para a formação de líderes, é o espaço ideal para quem busca conveniência, segurança e uma rotina de desenvolvimento físico e mental.',
         'pontos_fortes'=> [
@@ -83,7 +83,7 @@ $unidades_data = [
         'whatsapp'    => '5548999313558',
         'horario'     => 'Segunda a Sexta: 09h às 12h | 15h às 21h',
         'video'       => get_template_directory_uri() . '/Unidade2-card.mp4',
-        'imagem_hero' => 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1600&auto=format&fit=crop',
+        'imagem_hero' => get_template_directory_uri() . '/assets/images/unidade-2.png',
         'sobre_titulo'=> 'A Logística Perfeita para a Família e a Rotina Escolar',
         'sobre_texto' => 'Localizada estrategicamente no polo educacional e residencial nobre do Centro de Florianópolis — imediatamente ao lado do <strong>Colégio Catarinense</strong> e próxima a colégios como Bom Jesus e Menino Jesus —, esta unidade foi desenhada para facilitar a vida dos pais. O aluno pode treinar no contra-turno escolar com total segurança, evitando deslocamentos e trânsito. O espaço conta com uma atmosfera residencial, acolhedora e com suporte pedagógico integral.',
         'pontos_fortes'=> [
@@ -102,7 +102,7 @@ $unidades_data = [
         'maps_embed'  => 'https://maps.google.com/maps?q=Colegio+Catarinense+Centro+Florianopolis&t=&z=16&ie=UTF8&iwloc=&output=embed',
         'fotos'       => [
             [
-                'url' => 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop',
+                'url' => get_template_directory_uri() . '/assets/images/unidade-2.png',
                 'caption' => 'Treinos Estruturados para Foco Escolar e Disciplina',
                 'tag' => 'Kids & Teens'
             ],
@@ -136,7 +136,7 @@ $unidades_data = [
         'whatsapp'    => '5548999313558',
         'horario'     => 'Segunda a Sexta: 09h às 12h | 15h às 21h',
         'video'       => get_template_directory_uri() . '/Spotmarket-card.mp4',
-        'imagem_hero' => 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1600&auto=format&fit=crop',
+        'imagem_hero' => get_template_directory_uri() . '/assets/images/ata-spotmarket-capa.webp',
         'sobre_titulo'=> 'Treinamento de Liderança no Principal Mall do Córrego Grande',
         'sobre_texto' => 'A <strong>Unidade Spotmarkt</strong> traz uma experiência única ao estar integrada ao Spotmarkt Mall — o polo gastronômico e de convivência mais moderno do Córrego Grande, próximo ao Parque Linear e à UFSC. Os pais desfrutam de cafés especiais, restaurantes renomados, lojas e estacionamento coberto com segurança 24h enquanto seus filhos desenvolvem foco e autoconfiança no tatame. Um estilo de vida moderno, seguro e extremamente prático para toda a família.',
         'pontos_fortes'=> [

@@ -792,7 +792,7 @@ get_header(); ?>
 
     <!-- Efeito Parallax da Logo no Background da Jornada -->
     <div class="journey-parallax-watermark" aria-hidden="true">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/logo.png' ); ?>" alt="" class="journey-parallax-logo" loading="lazy">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="" class="journey-parallax-logo" loading="lazy">
     </div>
 
     <div class="container journey-container">
@@ -881,7 +881,7 @@ get_header(); ?>
 <section id="faq" class="faq-section">
     <!-- Efeito Parallax da Logo no Background do FAQ -->
     <div class="faq-parallax-watermark" aria-hidden="true">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/logo.png' ); ?>" alt="" class="faq-parallax-logo" loading="lazy">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="" class="faq-parallax-logo" loading="lazy">
     </div>
 
     <div class="container">

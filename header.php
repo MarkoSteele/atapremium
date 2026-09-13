@@ -23,7 +23,7 @@
         <!-- Logo -->
         <div class="header-logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="ATA Premium Martial Arts">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/logo.png' ); ?>" alt="ATA Premium Martial Arts" class="site-logo-img" width="160" height="48" style="max-height: 48px; width: auto; object-fit: contain;">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="ATA Premium Martial Arts" class="site-logo-img" width="160" height="48" style="max-height: 48px; width: auto; object-fit: contain;">
             </a>
         </div>
 

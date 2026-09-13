@@ -508,4 +508,47 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initAboutModal();
+
+    // 10. FAQ Acordeon Interativo
+    const initFaqAccordion = () => {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                if (!item) return;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    other.classList.remove('active');
+                    const ans = other.querySelector('.faq-answer');
+                    if (ans) ans.style.maxHeight = null;
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    const answer = item.querySelector('.faq-answer');
+                    if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    };
+
+    initFaqAccordion();
+
+    // 11. Rastreamento WhatsApp Dinâmico (GTM DataLayer)
+    const initWhatsAppTracking = () => {
+        document.querySelectorAll('[data-track="whatsapp_unidade"], [data-track="cta_hero_wpp"], [data-track="floating_whatsapp"]').forEach(link => {
+            link.addEventListener('click', function() {
+                const unidade = this.getAttribute('data-unidade') || 'Central';
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'click_whatsapp',
+                    unidade_clicada: unidade,
+                    link_url: this.href
+                });
+            });
+        });
+    };
+
+    initWhatsAppTracking();
 });

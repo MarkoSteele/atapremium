@@ -57,7 +57,7 @@ function atapremium_enqueue_assets() {
         'atapremium-style',
         $theme_uri . '/assets/css/main.css',
         array(),
-        '1.5.9'
+        '1.6.0'
     );
 
     // JS de Internacionalização (i18n - Português, Inglês e Espanhol)
@@ -65,7 +65,7 @@ function atapremium_enqueue_assets() {
         'atapremium-i18n',
         $theme_uri . '/assets/js/i18n.js',
         array(),
-        '1.5.9',
+        '1.6.0',
         true
     );
 
@@ -74,7 +74,7 @@ function atapremium_enqueue_assets() {
         'atapremium-form-lead',
         $theme_uri . '/assets/js/form-lead.js',
         array('atapremium-i18n'),
-        '1.5.9',
+        '1.6.0',
         true // Carrega no rodapé
     );
 

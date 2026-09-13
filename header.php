@@ -11,6 +11,9 @@
     <!-- Preload da Imagem LCP (Logo Oficial) com Prioridade Alta -->
     <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" as="image" fetchpriority="high">
     
+    <!-- Preload do CSS Principal com Prioridade Alta -->
+    <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/main.css?ver=1.6.0' ); ?>" as="style">
+    
     <!-- Carregamento Assíncrono e Não-Bloqueante das Fontes do Google -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">

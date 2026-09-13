@@ -132,7 +132,7 @@ get_header(); ?>
             <!-- Tigers -->
             <div class="program-card reveal-on-scroll delay-1">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img" width="800" height="450" loading="lazy" decoding="async">
+                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=75&w=480&auto=format&fit=crop" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_tigers_tag">3 a 6 anos</span>
                 </div>
@@ -157,7 +157,7 @@ get_header(); ?>
             <!-- Kids -->
             <div class="program-card reveal-on-scroll delay-2">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Kids (7 a 13 anos)" class="program-card-img" width="800" height="450" loading="lazy" decoding="async">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=75&w=480&auto=format&fit=crop" alt="Programa ATA Kids (7 a 13 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_kids_tag">7 a 13 anos</span>
                 </div>
@@ -182,7 +182,7 @@ get_header(); ?>
             <!-- Teens -->
             <div class="program-card reveal-on-scroll delay-3">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" width="800" height="450" loading="lazy" decoding="async">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=75&w=480&auto=format&fit=crop" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_teens_tag">11 a 15 anos</span>
                 </div>
@@ -207,7 +207,7 @@ get_header(); ?>
             <!-- Adultos & Família -->
             <div class="program-card reveal-on-scroll delay-4">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Adultos e Masters" class="program-card-img" width="800" height="450" loading="lazy" decoding="async">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=75&w=480&auto=format&fit=crop" alt="Programa ATA Adultos e Masters" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_adults_tag">Adultos & Família</span>
                 </div>
@@ -923,136 +923,5 @@ get_header(); ?>
         </div>
     </div>
 </section>
-
-<!-- Interações JS: FAQ Acordeon + Rastreamento GTM -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // FAQ Acordeon
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const item = btn.closest('.faq-item');
-            const isActive = item.classList.contains('active');
-
-            document.querySelectorAll('.faq-item').forEach(other => {
-                other.classList.remove('active');
-                const ans = other.querySelector('.faq-answer');
-                if (ans) ans.style.maxHeight = null;
-            });
-
-            if (!isActive) {
-                item.classList.add('active');
-                const answer = item.querySelector('.faq-answer');
-                if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        });
-    });
-
-    // Autoplay Contínuo com IntersectionObserver nos Vídeos Verticais (Reels)
-    const reelCards = document.querySelectorAll('.reel-card');
-    const playVideo = (video, card) => {
-        video.muted = true;
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                card.classList.add('is-playing');
-            }).catch(() => {});
-        }
-    };
-
-    if ('IntersectionObserver' in window) {
-        const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const card = entry.target;
-                const video = card.querySelector('.reel-video-element');
-                if (!video) return;
-                if (entry.isIntersecting) {
-                    playVideo(video, card);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        reelCards.forEach(card => videoObserver.observe(card));
-    } else {
-        reelCards.forEach(card => {
-            const video = card.querySelector('.reel-video-element');
-            if (video) playVideo(video, card);
-        });
-    }
-
-    reelCards.forEach(card => {
-        const video = card.querySelector('.reel-video-element');
-        const playBtn = card.querySelector('.reel-play-btn');
-        if (!video) return;
-
-        // Clique no botão ou card para alternar reprodução
-        if (playBtn) {
-            playBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (video.paused) {
-                    playVideo(video, card);
-                } else {
-                    video.pause();
-                    card.classList.remove('is-playing');
-                }
-            });
-        }
-
-        card.addEventListener('click', (e) => {
-            if (e.target.closest('.reel-play-btn')) return;
-            if (video.paused) {
-                playVideo(video, card);
-            }
-        });
-    });
-
-    // Efeito Parallax Suave nas Logos de Fundo (Jornada e FAQ)
-    const journeySec = document.querySelector('#jornada');
-    const journeyLogo = document.querySelector('.journey-parallax-watermark');
-    const faqSec = document.querySelector('#faq');
-    const faqLogo = document.querySelector('.faq-parallax-watermark');
-
-    const updateLogosParallax = () => {
-        const windowHeight = window.innerHeight;
-
-        if (journeySec && journeyLogo) {
-            const rect = journeySec.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (scrollProgress - 0.5) * 160;
-                journeyLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
-            }
-        }
-
-        if (faqSec && faqLogo) {
-            const rect = faqSec.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (scrollProgress - 0.5) * 160;
-                faqLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
-            }
-        }
-    };
-
-    if (journeySec || faqSec) {
-        window.addEventListener('scroll', updateLogosParallax, { passive: true });
-        window.addEventListener('resize', updateLogosParallax, { passive: true });
-        updateLogosParallax();
-    }
-
-    // Rastreamento WhatsApp Dinâmico (GTM DataLayer)
-    document.querySelectorAll('[data-track="whatsapp_unidade"], [data-track="cta_hero_wpp"]').forEach(link => {
-        link.addEventListener('click', function() {
-            const unidade = this.getAttribute('data-unidade') || 'Central';
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: 'click_whatsapp',
-                unidade_clicada: unidade,
-                link_url: this.href
-            });
-        });
-    });
-});
-</script>
 
 <?php get_footer(); ?>

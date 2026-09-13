@@ -4,7 +4,7 @@
         <div class="footer-brand-col">
             <div class="footer-logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="ATA Premium Martial Arts">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/logo.png' ); ?>" alt="ATA Premium Martial Arts" class="footer-logo-img">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/logo.png' ); ?>" alt="ATA Premium Martial Arts" class="footer-logo-img" width="180" height="58" style="max-height: 58px; width: auto; object-fit: contain;">
                 </a>
             </div>
             <p class="footer-mission" data-i18n="footer_slogan">

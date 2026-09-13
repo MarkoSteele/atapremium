@@ -42,8 +42,6 @@
 
                 <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/#depoimentos' ) ); ?>" data-i18n="nav_testimonials">Depoimentos</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/metodologia/' ) ); ?>" data-i18n="nav_method">Metodologia</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             </ul>
         </nav>
@@ -189,8 +187,6 @@
 
             <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/#depoimentos' ) ); ?>" data-i18n="nav_testimonials">Depoimentos</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/metodologia/' ) ); ?>" data-i18n="nav_method">Metodologia</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             <li class="mobile-cta-item">
                 <a href="<?php echo esc_url( home_url( '/#contato' ) ); ?>" class="btn btn-gold btn-block" data-i18n="nav_mobile_cta">Agendar Aula Experimental</a>

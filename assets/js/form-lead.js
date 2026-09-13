@@ -397,6 +397,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateTimeline, { passive: true });
         window.addEventListener('resize', updateTimeline, { passive: true });
         updateTimeline();
+    };
+
+    initTimelineProgress();
 
     // 9. Controle do Modal 'Sobre a ATA' (Desktop e Mobile)
     const initAboutModal = () => {

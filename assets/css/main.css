@@ -1643,6 +1643,366 @@ img {
 }
 
 /* ==========================================================================
+   7.5. DEPOIMENTOS DE FAMÍLIAS & PROVA SOCIAL (Google Reviews & Vídeos Instagram)
+   ========================================================================== */
+.testimonials-section {
+    position: relative;
+    padding: 120px 0;
+    background: radial-gradient(circle at 50% 15%, rgba(223, 186, 77, 0.05) 0%, var(--bg-black) 75%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+/* Barra de Confiança Google */
+.google-trust-bar {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(223, 186, 77, 0.25);
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin-top: 24px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.google-rating-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.google-stars {
+    color: #fbbc05;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.google-score-info {
+    font-size: 0.92rem;
+    color: var(--text-light);
+}
+
+.google-score-info strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.google-verified-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(52, 168, 83, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(52, 168, 83, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Grid de Depoimentos Textuais (Google Reviews) */
+.reviews-grid-wrapper {
+    margin-top: 48px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.review-card {
+    background: linear-gradient(145deg, rgba(21, 26, 40, 0.75) 0%, rgba(13, 16, 25, 0.88) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    position: relative;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(223, 186, 77, 0.4);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(223, 186, 77, 0.15);
+}
+
+.review-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+}
+
+.reviewer-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: #ffffff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-purple { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
+.avatar-gold   { background: linear-gradient(135deg, #dfba4d, #b8860b); color: #08090d; }
+.avatar-blue   { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
+.avatar-emerald{ background: linear-gradient(135deg, #10b981, #059669); }
+.avatar-rose   { background: linear-gradient(135deg, #f43f5e, #be123c); }
+
+.reviewer-meta {
+    flex: 1;
+}
+
+.reviewer-meta h4 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.reviewer-role {
+    font-size: 0.78rem;
+    color: var(--gold);
+    display: block;
+    margin-top: 2px;
+}
+
+.google-mini-badge {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 6px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.review-stars {
+    color: #fbbc05;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    margin: 16px 0 12px 0;
+}
+
+.review-text {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-style: italic;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.review-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.76rem;
+}
+
+.review-unit-tag {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.review-date {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* PARTE 2: Bloco de Depoimentos em Vídeo (Instagram) */
+.video-testimonials-block {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-testimonials-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.video-header-badge-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.video-testimonials-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+}
+
+.video-testimonials-header p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    margin-top: 8px;
+}
+
+.video-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 26px;
+}
+
+.video-testi-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, rgba(20, 24, 36, 0.85) 0%, rgba(11, 14, 22, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.video-testi-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(223, 186, 77, 0.5);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(225, 48, 108, 0.2);
+}
+
+.video-testi-media {
+    height: 190px;
+    position: relative;
+    background: linear-gradient(135deg, #1e2438 0%, #0d111d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-testi-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(225, 48, 108, 0.15) 0%, transparent 70%);
+    transition: opacity 0.3s ease;
+}
+
+.video-testi-card:hover .video-testi-media::before {
+    opacity: 0.8;
+}
+
+.video-play-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px;
+    box-shadow: 0 8px 25px rgba(225, 48, 108, 0.5);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+}
+
+.video-testi-card:hover .video-play-badge {
+    transform: scale(1.15);
+}
+
+.video-insta-icon {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 2;
+}
+
+.video-tag-pill {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    color: var(--gold);
+    border: 1px solid rgba(223, 186, 77, 0.3);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.video-testi-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.video-testi-content h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.video-excerpt {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+.video-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gold);
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.video-testi-card:hover .video-cta-link {
+    color: var(--gold-light);
+    gap: 10px;
+}
+
+.testi-cta-bottom {
+    margin-top: 60px;
+}
+
+/* ==========================================================================
    8. FAQ ACORDEON (Com Parallax da Logo no Background)
    ========================================================================== */
 .faq-section {

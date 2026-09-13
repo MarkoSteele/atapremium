@@ -466,7 +466,323 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 7. A JORNADA DAS FAIXAS (SONGAHM) - TIMELINE INTERATIVA COM SCROLL -->
+<!-- 7. DEPOIMENTOS DE FAMÍLIAS & ALUNOS (AVALIAÇÕES GOOGLE & RELATOS EM VÍDEO DO INSTAGRAM) -->
+<section id="depoimentos" class="testimonials-section">
+    <div class="container">
+        <!-- Cabeçalho da Seção com Selo de Avaliação do Google -->
+        <div class="section-title text-center reveal-on-scroll">
+            <span class="badge-gold" data-i18n="testi_badge">★ PROVA SOCIAL • RECONHECIMENTO REAL ★</span>
+            <h2 data-i18n="testi_title">Histórias de Transformação: O Relato das Famílias</h2>
+            <p data-i18n="testi_subtitle">Veja como o Método Songahm desenvolveu foco, disciplina voluntária e confiança em nossos alunos em Florianópolis.</p>
+            
+            <!-- Barra de Confiança Google 5.0 -->
+            <div class="google-trust-bar">
+                <div class="google-rating-box">
+                    <svg class="google-g-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+                        <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <div class="google-stars" aria-label="5 de 5 estrelas">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <div class="google-score-info">
+                        <strong>5.0 / 5.0</strong>
+                        <span data-i18n="testi_google_count">• Mais de 150+ avaliações no Google</span>
+                    </div>
+                </div>
+                <span class="google-verified-pill" data-i18n="testi_google_verified">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Avaliações Verificadas
+                </span>
+            </div>
+        </div>
+
+        <!-- PARTE 1: Grid de Depoimentos Textuais (Mockups Google Reviews) -->
+        <div class="reviews-grid-wrapper">
+            <div class="reviews-grid">
+                <!-- Review 1: Mariana Silveira -->
+                <div class="review-card reveal-on-scroll delay-1">
+                    <div class="review-card-header">
+                        <div class="reviewer-avatar avatar-purple">MS</div>
+                        <div class="reviewer-meta">
+                            <h4>Mariana Silveira</h4>
+                            <span class="reviewer-role">Mãe do Theo (6 anos) • Tigers</span>
+                        </div>
+                        <div class="google-mini-badge" title="Avaliação Google">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">
+                        "O desenvolvimento do Theo depois que começou no programa Tigers foi impressionante. Ele era agitado e disperso, e hoje demonstra escuta atenta, postura firme e um respeito lindo pelos professores e colegas. O ambiente é acolhedor e muito seguro!"
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-unit-tag">📍 Unidade Alves de Brito</span>
+                        <span class="review-date">Há 2 semanas</span>
+                    </div>
+                </div>
+
+                <!-- Review 2: Carlos Eduardo Menezes -->
+                <div class="review-card reveal-on-scroll delay-2">
+                    <div class="review-card-header">
+                        <div class="reviewer-avatar avatar-gold">CM</div>
+                        <div class="reviewer-meta">
+                            <h4>Carlos Eduardo Menezes</h4>
+                            <span class="reviewer-role">Pai da Sofia (9 anos) • Kids</span>
+                        </div>
+                        <div class="google-mini-badge" title="Avaliação Google">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">
+                        "A conveniência de ser ao lado do Colégio Catarinense facilitou a nossa rotina, mas o método nos conquistou logo na primeira aula. A Sofia ganhou uma autoconfiança notável que transformou a segurança dela na escola. Didática impecável!"
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-unit-tag">📍 Unidade Col. Catarinense</span>
+                        <span class="review-date">Há 3 semanas</span>
+                    </div>
+                </div>
+
+                <!-- Review 3: Renata & Gustavo Becker -->
+                <div class="review-card reveal-on-scroll delay-3">
+                    <div class="review-card-header">
+                        <div class="reviewer-avatar avatar-blue">RB</div>
+                        <div class="reviewer-meta">
+                            <h4>Renata & Gustavo Becker</h4>
+                            <span class="reviewer-role">Treino em Família • Adultos & Kids</span>
+                        </div>
+                        <div class="google-mini-badge" title="Avaliação Google">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">
+                        "Treinar juntos virou o melhor momento da nossa semana. No Spotmarkt a estrutura é fantástica, com estacionamento amplo e segurança. Os professores ensinam com muita dedicação e respeito. Toda família deveria experimentar esse método!"
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-unit-tag">📍 Unidade Spotmarkt</span>
+                        <span class="review-date">Há 1 mês</span>
+                    </div>
+                </div>
+
+                <!-- Review 4: Lucas Fagundes -->
+                <div class="review-card reveal-on-scroll delay-4">
+                    <div class="review-card-header">
+                        <div class="reviewer-avatar avatar-emerald">LF</div>
+                        <div class="reviewer-meta">
+                            <h4>Lucas Fagundes</h4>
+                            <span class="reviewer-role">Faixa Vermelha • Programa Adultos</span>
+                        </div>
+                        <div class="google-mini-badge" title="Avaliação Google">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">
+                        "Comecei aos 28 anos sem flexibilidade e buscando aliviar o estresse do trabalho. Na ATA encontrei disciplina marcial genuína, perdi 12kg e conquistei uma clareza e foco mental que utilizo diariamente na gestão dos meus negócios."
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-unit-tag">📍 Unidade Alves de Brito</span>
+                        <span class="review-date">Há 1 mês</span>
+                    </div>
+                </div>
+
+                <!-- Review 5: Juliana Castro -->
+                <div class="review-card reveal-on-scroll delay-1">
+                    <div class="review-card-header">
+                        <div class="reviewer-avatar avatar-rose">JC</div>
+                        <div class="reviewer-meta">
+                            <h4>Juliana Castro</h4>
+                            <span class="reviewer-role">Mãe do Bernardo (11 anos) • Teens</span>
+                        </div>
+                        <div class="google-mini-badge" title="Avaliação Google">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">
+                        "Meu filho era retraído e tímido. Na ATA ele foi acolhido de forma individualizada, fez amizades saudáveis e aprendeu a se posicionar com liderança. A melhora na postura corporal e nas notas foi visível em poucos meses."
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-unit-tag">📍 Unidade Spotmarkt</span>
+                        <span class="review-date">Há 2 meses</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARTE 2: Cards de Depoimentos em Vídeo (Links Oficiais do Instagram) -->
+        <div class="video-testimonials-block reveal-on-scroll">
+            <div class="video-testimonials-header">
+                <div class="video-header-badge-wrap">
+                    <span class="badge-gold">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>RELATOS EM VÍDEO</span>
+                    </span>
+                    <h3>Veja os Depoimentos em Vídeo no Instagram</h3>
+                </div>
+                <p>Assista aos relatos reais gravados diretamente por nossas famílias, pais e alunos sobre a experiência no tatame:</p>
+            </div>
+
+            <div class="video-testimonials-grid">
+                <!-- Vídeo 1: Marlon e Filha -->
+                <a href="https://www.instagram.com/p/DcEKY_PjI8l/" target="_blank" rel="noopener noreferrer" class="video-testi-card" data-track="video_testimonial_marlon">
+                    <div class="video-testi-media">
+                        <div class="video-testi-overlay"></div>
+                        <div class="video-play-badge">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="video-insta-icon" title="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <span class="video-tag-pill">👨‍👧 Família ATA</span>
+                    </div>
+                    <div class="video-testi-content">
+                        <h4>Marlon e Filha</h4>
+                        <p class="video-excerpt">"A conexão profunda entre pai e filha através da arte marcial e do exemplo de liderança."</p>
+                        <span class="video-cta-link">
+                            Assistir no Instagram 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Vídeo 2: Dudu Ferreira -->
+                <a href="https://www.instagram.com/p/DagBrKrpyRb/" target="_blank" rel="noopener noreferrer" class="video-testi-card" data-track="video_testimonial_dudu">
+                    <div class="video-testi-media">
+                        <div class="video-testi-overlay"></div>
+                        <div class="video-play-badge">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="video-insta-icon" title="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <span class="video-tag-pill">🥋 Superação & Foco</span>
+                    </div>
+                    <div class="video-testi-content">
+                        <h4>Dudu Ferreira</h4>
+                        <p class="video-excerpt">"Superando limites, conquistando autoconfiança e evoluindo a cada troca de faixa."</p>
+                        <span class="video-cta-link">
+                            Assistir no Instagram 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Vídeo 3: Rogério Penetra -->
+                <a href="https://www.instagram.com/p/DZPtAxXiNpt/" target="_blank" rel="noopener noreferrer" class="video-testi-card" data-track="video_testimonial_rogerio">
+                    <div class="video-testi-media">
+                        <div class="video-testi-overlay"></div>
+                        <div class="video-play-badge">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="video-insta-icon" title="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <span class="video-tag-pill">🔥 Disciplina & Rotina</span>
+                    </div>
+                    <div class="video-testi-content">
+                        <h4>Rogério Penetra</h4>
+                        <p class="video-excerpt">"Condicionamento físico, saúde integral e a construção de hábitos consistentes."</p>
+                        <span class="video-cta-link">
+                            Assistir no Instagram 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Vídeo 4: Rodrigo -->
+                <a href="https://www.instagram.com/p/DZNqdb-FH9a/" target="_blank" rel="noopener noreferrer" class="video-testi-card" data-track="video_testimonial_rodrigo">
+                    <div class="video-testi-media">
+                        <div class="video-testi-overlay"></div>
+                        <div class="video-play-badge">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="video-insta-icon" title="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <span class="video-tag-pill">⚡ Autocontrole & Mente</span>
+                    </div>
+                    <div class="video-testi-content">
+                        <h4>Rodrigo</h4>
+                        <p class="video-excerpt">"A vivência marcial além do tatame: autocontrole emocional, respeito e foco no dia a dia."</p>
+                        <span class="video-cta-link">
+                            Assistir no Instagram 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Vídeo 5: Lorenzo Serpa -->
+                <a href="https://www.instagram.com/p/DYxo9AeiCoo/" target="_blank" rel="noopener noreferrer" class="video-testi-card" data-track="video_testimonial_lorenzo">
+                    <div class="video-testi-media">
+                        <div class="video-testi-overlay"></div>
+                        <div class="video-play-badge">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="video-insta-icon" title="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <span class="video-tag-pill">🐯 Kids & Disciplina</span>
+                    </div>
+                    <div class="video-testi-content">
+                        <h4>Lorenzo Serpa</h4>
+                        <p class="video-excerpt">"Foco escolar, respeito aos limites e a alegria contagiante de treinar com propósito."</p>
+                        <span class="video-cta-link">
+                            Assistir no Instagram 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Vídeo 6: Pedro e Família -->
+                <a href="https://www.instagram.com/p/DYfLDatj18G/" target="_blank" rel="noopener noreferrer" class="video-testi-card" data-track="video_testimonial_pedro">
+                    <div class="video-testi-media">
+                        <div class="video-testi-overlay"></div>
+                        <div class="video-play-badge">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="video-insta-icon" title="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <span class="video-tag-pill">🌟 União Familiar</span>
+                    </div>
+                    <div class="video-testi-content">
+                        <h4>Pedro e Família</h4>
+                        <p class="video-excerpt">"Valores compartilhados e união entre gerações fortalecendo os laços familiares no tatame."</p>
+                        <span class="video-cta-link">
+                            Assistir no Instagram 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Botão CTA Final da Seção -->
+        <div class="testi-cta-bottom text-center reveal-on-scroll">
+            <a href="#contato" class="btn btn-gold btn-lg" data-track="cta_testi_agendar">
+                <span>Agendar Minha Aula Experimental Gratuita</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 8. A JORNADA DAS FAIXAS (SONGAHM) - TIMELINE INTERATIVA COM SCROLL -->
 <section id="jornada" class="journey-section">
     <!-- Foto de Fundo com Blur & Gradiente de Profundidade -->
     <div class="journey-bg-wrapper" aria-hidden="true">

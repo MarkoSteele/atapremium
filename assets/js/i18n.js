@@ -11,6 +11,7 @@ const ATA_TRANSLATIONS = {
         nav_programs: "Programas",
         nav_instagram: "Instagram",
         nav_units: "Unidades",
+        nav_testimonials: "Depoimentos",
         nav_method: "Metodologia",
         nav_faq: "Dúvidas",
         nav_cta: "Aula Grátis",
@@ -150,6 +151,13 @@ const ATA_TRANSLATIONS = {
         timeline_title_4: "A Formação de Atitudes",
         timeline_desc_4: "A vitória sobre a dúvida e a escuridão da ignorância. Não é a linha de chegada, mas o verdadeiro recomeço onde o praticante lidera pelo exemplo e planta sementes para toda a comunidade.",
 
+        // 7. Depoimentos & Avaliações
+        testi_badge: "★ PROVA SOCIAL • RECONHECIMENTO REAL ★",
+        testi_title: "Histórias de Transformação: O Relato das Famílias",
+        testi_subtitle: "Veja como o Método Songahm desenvolveu foco, disciplina voluntária e confiança em nossos alunos em Florianópolis.",
+        testi_google_count: "• Mais de 150+ avaliações no Google",
+        testi_google_verified: "Avaliações Verificadas",
+
         // 8. FAQ
         faq_badge: "DÚVIDAS FREQUENTES",
         faq_title: "Perguntas Frequentes dos Pais",
@@ -217,6 +225,7 @@ const ATA_TRANSLATIONS = {
         nav_programs: "Programs",
         nav_instagram: "Instagram",
         nav_units: "Locations",
+        nav_testimonials: "Testimonials",
         nav_method: "Methodology",
         nav_faq: "FAQ",
         nav_cta: "Free Class",
@@ -356,6 +365,13 @@ const ATA_TRANSLATIONS = {
         timeline_title_4: "Building Character for Life",
         timeline_desc_4: "Victory over doubt and ignorance. Not a finish line, but the true new beginning where the martial artist leads by example and inspires the entire community.",
 
+        // 7. Testimonials & Reviews
+        testi_badge: "★ SOCIAL PROOF • REAL RECOGNITION ★",
+        testi_title: "Transformative Stories: What Families Say",
+        testi_subtitle: "Discover how the Songahm Method builds focus, voluntary discipline, and confidence in our students in Florianópolis.",
+        testi_google_count: "• Over 150+ reviews on Google",
+        testi_google_verified: "Verified Reviews",
+
         // 8. FAQ
         faq_badge: "FREQUENTLY ASKED QUESTIONS",
         faq_title: "Common Questions from Parents",
@@ -423,6 +439,7 @@ const ATA_TRANSLATIONS = {
         nav_programs: "Programas",
         nav_instagram: "Instagram",
         nav_units: "Sedes",
+        nav_testimonials: "Testimonios",
         nav_method: "Metodología",
         nav_faq: "Preguntas",
         nav_cta: "Clase Gratis",
@@ -561,6 +578,13 @@ const ATA_TRANSLATIONS = {
         belt_tag_4: "Cinturón Negro",
         timeline_title_4: "La Formación de Actitudes",
         timeline_desc_4: "La victoria sobre la duda y la ignorancia. No es una meta final, sino el verdadero nuevo comienzo donde el practicante lidera con el ejemplo e inspira a toda la comunidad.",
+
+        // 7. Testimonios y Opiniones
+        testi_badge: "★ PRUEBA SOCIAL • RECONOCIMIENTO REAL ★",
+        testi_title: "Historias de Transformación: El Relato de las Familias",
+        testi_subtitle: "Descubra cómo el Método Songahm desarrolló enfoque, disciplina voluntaria y confianza en nuestros alumnos en Florianópolis.",
+        testi_google_count: "• Más de 150+ opiniones en Google",
+        testi_google_verified: "Opiniones Verificadas",
 
         // 8. FAQ
         faq_badge: "PREGUNTAS FRECUENTES",

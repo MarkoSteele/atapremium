@@ -5,7 +5,14 @@
             <div class="footer-logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="ATA Premium Martial Arts">
                     <div class="footer-logo-wrap">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="ATA Premium Martial Arts" class="footer-logo-img" width="180" height="58" style="max-height: 58px; width: auto; object-fit: contain;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" 
+                             alt="ATA Premium Martial Arts" 
+                             class="footer-logo-img" 
+                             width="160" 
+                             height="48" 
+                             loading="lazy" 
+                             decoding="async" 
+                             style="max-height: 48px; width: auto; object-fit: contain;">
                     </div>
                 </a>
             </div>

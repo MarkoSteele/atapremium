@@ -57,7 +57,7 @@ function atapremium_enqueue_assets() {
         'atapremium-style',
         $theme_uri . '/assets/css/main.css',
         array(),
-        '1.5.8'
+        '1.5.9'
     );
 
     // JS de Internacionalização (i18n - Português, Inglês e Espanhol)
@@ -65,7 +65,7 @@ function atapremium_enqueue_assets() {
         'atapremium-i18n',
         $theme_uri . '/assets/js/i18n.js',
         array(),
-        '1.5.8',
+        '1.5.9',
         true
     );
 
@@ -74,7 +74,7 @@ function atapremium_enqueue_assets() {
         'atapremium-form-lead',
         $theme_uri . '/assets/js/form-lead.js',
         array('atapremium-i18n'),
-        '1.5.8',
+        '1.5.9',
         true // Carrega no rodapé
     );
 
@@ -85,6 +85,15 @@ function atapremium_enqueue_assets() {
     ) );
 }
 add_action( 'wp_enqueue_scripts', 'atapremium_enqueue_assets' );
+
+// Adiciona atributo 'defer' aos scripts para carregamento assíncrono e não-bloqueante
+function atapremium_defer_scripts( $tag, $handle, $src ) {
+    if ( in_array( $handle, array( 'atapremium-i18n', 'atapremium-form-lead' ), true ) ) {
+        return str_replace( ' src', ' defer src', $tag );
+    }
+    return $tag;
+}
+add_filter( 'script_loader_tag', 'atapremium_defer_scripts', 10, 3 );
 
 // Inclui a integração de API/CRM
 require_once get_template_directory() . '/inc/crm-integration.php';

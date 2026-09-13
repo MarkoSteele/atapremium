@@ -3,9 +3,20 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Preconnect Otimizado para Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Preload da Imagem LCP (Logo Oficial) com Prioridade Alta -->
+    <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" as="image" fetchpriority="high">
+    
+    <!-- Carregamento Assíncrono e Não-Bloqueante das Fontes do Google -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    </noscript>
     
     <!-- DataLayer inicial para GTM -->
     <script>
@@ -20,10 +31,18 @@
 <!-- Header Flutuante Premium (Estilo Pill / Frosted Glass) -->
 <header class="site-header-wrapper">
     <div class="header-floating-pill">
-        <!-- Logo -->
+        <!-- Logo LCP com Prioridade Alta e Dimensões Fixas -->
         <div class="header-logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="ATA Premium Martial Arts">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="ATA Premium Martial Arts" class="site-logo-img" width="160" height="48" style="max-height: 48px; width: auto; object-fit: contain;">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" 
+                     alt="ATA Premium Martial Arts" 
+                     class="site-logo-img" 
+                     width="160" 
+                     height="48" 
+                     fetchpriority="high" 
+                     loading="eager" 
+                     decoding="async" 
+                     style="max-height: 48px; width: auto; object-fit: contain;">
             </a>
         </div>
 

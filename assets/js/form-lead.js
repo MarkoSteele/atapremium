@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Controle de Scroll no Header Flutuante
+    // 1. Controle de Scroll no Header Flutuante Otimizado com requestAnimationFrame (Sem Reflow Forçado)
     const siteHeaderWrapper = document.querySelector('.site-header-wrapper');
     if (siteHeaderWrapper) {
+        let isScrollingHeader = false;
         const handleScroll = () => {
-            if (window.scrollY > 40) {
-                siteHeaderWrapper.classList.add('header-scrolled');
-            } else {
-                siteHeaderWrapper.classList.remove('header-scrolled');
+            if (!isScrollingHeader) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 40) {
+                        siteHeaderWrapper.classList.add('header-scrolled');
+                    } else {
+                        siteHeaderWrapper.classList.remove('header-scrolled');
+                    }
+                    isScrollingHeader = false;
+                });
+                isScrollingHeader = true;
             }
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -149,111 +156,114 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Efeito Parallax Suave nas Logos d'Água (Jornada e FAQ) e no Background da Jornada
+    // 4. Efeito Parallax Suave Otimizado com requestAnimationFrame (Elimina Reflow Forçado)
     const faqSection = document.querySelector('#faq');
     const faqLogo = document.querySelector('.faq-parallax-watermark');
     const journeySection = document.querySelector('#jornada');
     const journeyLogo = document.querySelector('.journey-parallax-watermark');
     const journeyBgImage = document.querySelector('.journey-bg-image');
 
-    const handleParallaxScroll = () => {
-        const windowHeight = window.innerHeight;
-
-        // Parallax Logo na Seção Jornada
-        if (journeySection && journeyLogo) {
-            const rect = journeySection.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (scrollProgress - 0.5) * 160;
-                journeyLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
-            }
-        }
-
-        // Parallax Foto Blur da Jornada
-        if (journeySection && journeyBgImage) {
-            const rect = journeySection.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (scrollProgress - 0.5) * 60; // Deslocamento sutil com escala
-                journeyBgImage.style.transform = `scale(1.08) translateY(${translateY.toFixed(1)}px)`;
-            }
-        }
-
-        // Parallax FAQ Logo
-        if (faqSection && faqLogo) {
-            const rect = faqSection.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (scrollProgress - 0.5) * 160; // Deslocamento suave vertical
-                faqLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
-            }
-        }
-    };
-
     if (faqSection || journeySection) {
+        let isParallaxTicking = false;
+
+        const updateParallax = () => {
+            const windowHeight = window.innerHeight;
+
+            // Parallax Logo na Seção Jornada
+            if (journeySection && journeyLogo) {
+                const rect = journeySection.getBoundingClientRect();
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+                    const translateY = (scrollProgress - 0.5) * 140;
+                    journeyLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
+                }
+            }
+
+            // Parallax Foto Blur da Jornada
+            if (journeySection && journeyBgImage) {
+                const rect = journeySection.getBoundingClientRect();
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+                    const translateY = (scrollProgress - 0.5) * 50;
+                    journeyBgImage.style.transform = `scale(1.08) translateY(${translateY.toFixed(1)}px)`;
+                }
+            }
+
+            // Parallax FAQ Logo
+            if (faqSection && faqLogo) {
+                const rect = faqSection.getBoundingClientRect();
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+                    const translateY = (scrollProgress - 0.5) * 140;
+                    faqLogo.style.transform = `translate(-50%, calc(-50% + ${translateY.toFixed(1)}px))`;
+                }
+            }
+
+            isParallaxTicking = false;
+        };
+
+        const handleParallaxScroll = () => {
+            if (!isParallaxTicking) {
+                window.requestAnimationFrame(updateParallax);
+                isParallaxTicking = true;
+            }
+        };
+
         window.addEventListener('scroll', handleParallaxScroll, { passive: true });
         window.addEventListener('resize', handleParallaxScroll, { passive: true });
-        handleParallaxScroll();
     }
 
-    // 5. Gerenciamento Avançado de Autoplay de Vídeos (Hero, Reels, Unidades)
+    // 5. Gerenciamento de Alta Performance para Vídeos (Lazy Autoplay via IntersectionObserver)
     const initVideoAutoplay = () => {
-        const videos = document.querySelectorAll('video');
+        // Vídeo Hero: inicia imediatamente com atributos otimizados
+        const heroVideo = document.querySelector('.hero-video-bg');
+        if (heroVideo) {
+            heroVideo.muted = true;
+            heroVideo.defaultMuted = true;
+            heroVideo.playsInline = true;
+            heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('webkit-playsinline', '');
+            heroVideo.setAttribute('muted', '');
+            heroVideo.setAttribute('autoplay', '');
+            heroVideo.setAttribute('loop', '');
+            heroVideo.play().catch(() => {});
+        }
+
+        // Demais vídeos (Reels, Unidades, etc.): carregamento lazy via IntersectionObserver
+        const lazyVideos = document.querySelectorAll('.reel-video-element, .unit-card-video');
         
-        videos.forEach(video => {
-            // Garante conformidade total com políticas de autoplay dos navegadores modernos (Chrome, Safari, iOS, Android)
-            video.muted = true;
-            video.defaultMuted = true;
-            video.playsInline = true;
-            video.setAttribute('playsinline', '');
-            video.setAttribute('webkit-playsinline', '');
-            video.setAttribute('muted', '');
-            video.setAttribute('autoplay', '');
-            video.setAttribute('loop', '');
-
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(err => {
-                    // Silencia mensagem caso o navegador exija interação prévia
-                    console.log('Autoplay aguardando interação:', err.message);
-                });
-            }
-        });
-
-        // IntersectionObserver para reproduzir automaticamente vídeos ao entrarem na área visível
-        if ('IntersectionObserver' in window) {
+        if ('IntersectionObserver' in window && lazyVideos.length) {
             const videoObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     const video = entry.target;
                     const reelCard = video.closest('.reel-card');
                     if (entry.isIntersecting) {
                         video.muted = true;
+                        video.defaultMuted = true;
+                        video.playsInline = true;
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('webkit-playsinline', '');
                         video.play().then(() => {
                             if (reelCard) reelCard.classList.add('is-playing');
                         }).catch(() => {});
+                    } else {
+                        // Pausa vídeos fora da tela para poupar CPU, memória e bateria
+                        if (!video.paused) {
+                            video.pause();
+                        }
                     }
                 });
-            }, { threshold: 0.15 });
-
-            videos.forEach(video => videoObserver.observe(video));
-        }
-
-        // Fallback global de desbloqueio no primeiro gesto do usuário
-        const unlockAutoplay = () => {
-            videos.forEach(video => {
-                if (video.paused) {
-                    video.muted = true;
-                    video.play().catch(() => {});
-                }
+            }, { 
+                threshold: 0.15,
+                rootMargin: '100px 0px 100px 0px' // Começa a carregar um pouco antes de entrar na viewport
             });
-            window.removeEventListener('click', unlockAutoplay);
-            window.removeEventListener('touchstart', unlockAutoplay);
-            window.removeEventListener('scroll', unlockAutoplay);
-        };
 
-        window.addEventListener('click', unlockAutoplay, { once: true, passive: true });
-        window.addEventListener('touchstart', unlockAutoplay, { once: true, passive: true });
-        window.addEventListener('scroll', unlockAutoplay, { once: true, passive: true });
+            lazyVideos.forEach(video => {
+                video.muted = true;
+                video.defaultMuted = true;
+                videoObserver.observe(video);
+            });
+        }
 
         // Interação nos cards de Reels (Play/Pause ao clicar)
         const reelCards = document.querySelectorAll('.reel-card');
@@ -299,13 +309,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -40px 0px'
+                threshold: 0.08,
+                rootMargin: '0px 0px -30px 0px'
             });
 
             revealElements.forEach(el => revealObserver.observe(el));
         } else {
-            // Fallback imediato caso o navegador não suporte IntersectionObserver
             revealElements.forEach(el => el.classList.add('is-visible'));
         }
     };
@@ -322,7 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const animateSingleNumber = (element, duration = 1800) => {
             const rawText = element.textContent.trim();
-            // Regex para capturar prefixo (ex: "+"), valor numérico (ex: "1.5", "30", "100"), e sufixo (ex: " Milhão", "+ Anos", "%", " Unidades")
             const match = rawText.match(/^([^\d]*)([\d]+(?:[.,]\d+)?)(.*)$/);
             if (!match) return;
 
@@ -351,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 } else {
-                    element.textContent = rawText; // Restaura a string exata original
+                    element.textContent = rawText;
                     element.classList.remove('is-counting');
                     element.classList.add('is-counted');
                 }
@@ -364,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
             metricNumbers.forEach((el, index) => {
                 setTimeout(() => {
                     animateSingleNumber(el, 1800);
-                }, index * 120); // Delays escalonados entre os 4 cards
+                }, index * 100);
             });
         };
 
@@ -383,7 +391,6 @@ document.addEventListener('DOMContentLoaded', () => {
             startCounting();
         }
 
-        // Exporta globalmente para acionar ao trocar de idioma
         window.triggerMetricsAnimation = () => {
             startCounting();
         };
@@ -391,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initBigNumbersCounter();
 
-    // 8. Timeline Interativa Dinâmica ao Scroll (#jornada)
+    // 8. Timeline Interativa Dinâmica ao Scroll (#jornada) com requestAnimationFrame
     const initTimelineProgress = () => {
         const journeySection = document.querySelector('#jornada');
         const progressBar = document.querySelector('.timeline-progress-bar');
@@ -399,11 +406,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!journeySection || !progressBar || !timelineItems.length) return;
 
+        let isTimelineTicking = false;
+
         const updateTimeline = () => {
             const rect = journeySection.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            // Inicia quando o topo da seção entra em 70% da viewport e finaliza ao percorrer a seção
             const startThreshold = windowHeight * 0.70;
             const totalTravelDistance = rect.height;
             const currentTravel = startThreshold - rect.top;
@@ -412,7 +420,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             progressBar.style.height = `${clampedProgress * 100}%`;
 
-            // Ativa individualmente cada marco da timeline conforme o scroll alcança sua posição
             timelineItems.forEach(item => {
                 const itemRect = item.getBoundingClientRect();
                 if (itemRect.top < windowHeight * 0.72) {
@@ -421,11 +428,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.remove('is-active');
                 }
             });
+
+            isTimelineTicking = false;
         };
 
-        window.addEventListener('scroll', updateTimeline, { passive: true });
-        window.addEventListener('resize', updateTimeline, { passive: true });
-        updateTimeline();
+        const handleTimelineScroll = () => {
+            if (!isTimelineTicking) {
+                window.requestAnimationFrame(updateTimeline);
+                isTimelineTicking = true;
+            }
+        };
+
+        window.addEventListener('scroll', handleTimelineScroll, { passive: true });
+        window.addEventListener('resize', handleTimelineScroll, { passive: true });
     };
 
     initTimelineProgress();
@@ -442,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.add('is-open');
             modal.setAttribute('aria-hidden', 'false');
             if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden'; // Evita scroll do body com modal aberto
+            document.body.style.overflow = 'hidden';
         };
 
         const closeModal = () => {
@@ -467,21 +482,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Fechar ao clicar no backdrop (fora do card)
         modal.addEventListener('click', (e) => {
             if (e.target === modal || e.target.classList.contains('about-modal-wrapper')) {
                 closeModal();
             }
         });
 
-        // Fechar com tecla ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('is-open')) {
                 closeModal();
             }
         });
 
-        // Submenu acordeon no Mobile
         const mobileSubnavBtn = document.querySelector('#mobileSubnavToggle');
         const mobileSubnavMenu = document.querySelector('#mobileSubnavMenu');
 

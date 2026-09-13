@@ -132,7 +132,7 @@ get_header(); ?>
             <!-- Tigers -->
             <div class="program-card reveal-on-scroll delay-1">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img" width="800" height="450" loading="lazy" decoding="async">
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_tigers_tag">3 a 6 anos</span>
                 </div>
@@ -157,7 +157,7 @@ get_header(); ?>
             <!-- Kids -->
             <div class="program-card reveal-on-scroll delay-2">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Kids (7 a 13 anos)" class="program-card-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Kids (7 a 13 anos)" class="program-card-img" width="800" height="450" loading="lazy" decoding="async">
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_kids_tag">7 a 13 anos</span>
                 </div>
@@ -182,7 +182,7 @@ get_header(); ?>
             <!-- Teens -->
             <div class="program-card reveal-on-scroll delay-3">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" width="800" height="450" loading="lazy" decoding="async">
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_teens_tag">11 a 15 anos</span>
                 </div>
@@ -207,7 +207,7 @@ get_header(); ?>
             <!-- Adultos & Família -->
             <div class="program-card reveal-on-scroll delay-4">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Adultos e Masters" class="program-card-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Programa ATA Adultos e Masters" class="program-card-img" width="800" height="450" loading="lazy" decoding="async">
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_adults_tag">Adultos & Família</span>
                 </div>
@@ -255,9 +255,9 @@ get_header(); ?>
         <!-- Grid de 4 Vídeos Verticais (Aspect Ratio 9:16) com Autoplay Contínuo -->
         <div class="reels-grid">
             <!-- Reel 1: Unidade Alves de Brito -->
-            <div class="reel-card is-playing reveal-on-scroll delay-1" data-video="alves-de-brito">
+            <div class="reel-card reveal-on-scroll delay-1" data-video="alves-de-brito">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop">
+                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Unidade1-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -274,9 +274,9 @@ get_header(); ?>
             </div>
 
             <!-- Reel 2: Unidade Colégio Catarinense -->
-            <div class="reel-card is-playing reveal-on-scroll delay-2" data-video="catarinense">
+            <div class="reel-card reveal-on-scroll delay-2" data-video="catarinense">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop">
+                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Unidade2-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -293,9 +293,9 @@ get_header(); ?>
             </div>
 
             <!-- Reel 3: Unidade Spotmarkt -->
-            <div class="reel-card is-playing reveal-on-scroll delay-3" data-video="spotmarkt">
+            <div class="reel-card reveal-on-scroll delay-3" data-video="spotmarkt">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop">
+                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Spotmarket-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -312,9 +312,9 @@ get_header(); ?>
             </div>
 
             <!-- Reel 4: Evento & Espetáculo -->
-            <div class="reel-card is-playing reveal-on-scroll delay-4" data-video="espetaculo">
+            <div class="reel-card reveal-on-scroll delay-4" data-video="espetaculo">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?q=80&w=800&auto=format&fit=crop">
+                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?q=80&w=800&auto=format&fit=crop">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/' . rawurlencode('ESPETÁCULO 1.mp4') ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">

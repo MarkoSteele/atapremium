@@ -17,7 +17,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<!-- Header Flutuante Premium (Estilo Pill / Frosted Glass inspirado em Print 2) -->
+<!-- Header Flutuante Premium (Estilo Pill / Frosted Glass) -->
 <header class="site-header-wrapper">
     <div class="header-floating-pill">
         <!-- Logo -->
@@ -31,11 +31,19 @@
         <nav class="header-nav" aria-label="Navegação Principal">
             <ul class="nav-list">
                 <li><a href="<?php echo esc_url( home_url( '/#hero' ) ); ?>" data-i18n="nav_home">Início</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/sobre-a-ata/' ) ); ?>" data-i18n="nav_about">Sobre a ATA</a></li>
+                
+                <!-- Botão Gatilho do Modal 'Sobre a ATA' -->
+                <li class="nav-item-has-modal">
+                    <button type="button" class="nav-modal-trigger-btn" id="openAboutModalBtn" aria-haspopup="dialog" aria-expanded="false" title="Clique para explorar a Federação, ATA Floripa, Equipe e Metodologia">
+                        <span data-i18n="nav_about">Sobre a ATA</span>
+                        <svg class="nav-chevron-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                </li>
+
                 <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#depoimentos' ) ); ?>" data-i18n="nav_testimonials">Depoimentos</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/#jornada' ) ); ?>" data-i18n="nav_method">Metodologia</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/metodologia/' ) ); ?>" data-i18n="nav_method">Metodologia</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             </ul>
         </nav>
@@ -140,11 +148,49 @@
 
         <ul class="mobile-nav-list">
             <li><a href="<?php echo esc_url( home_url( '/#hero' ) ); ?>" data-i18n="nav_home">Início</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/sobre-a-ata/' ) ); ?>" data-i18n="nav_about">Sobre a ATA</a></li>
+            
+            <!-- Grupo Expansível Sobre a ATA no Mobile -->
+            <li class="mobile-subnav-item">
+                <button type="button" class="mobile-subnav-btn" id="mobileSubnavToggle">
+                    <span data-i18n="nav_about">Sobre a ATA</span>
+                    <svg class="mobile-subnav-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="mobile-subnav-drawer-menu" id="mobileSubnavMenu">
+                    <a href="<?php echo esc_url( home_url( '/federacao-ata/' ) ); ?>">
+                        <span class="sub-icon">🌐</span>
+                        <div class="sub-text">
+                            <strong>Federação ATA</strong>
+                            <small>História mundial desde 1969</small>
+                        </div>
+                    </a>
+                    <a href="<?php echo esc_url( home_url( '/sobre-a-ata-premium/' ) ); ?>">
+                        <span class="sub-icon">🥋</span>
+                        <div class="sub-text">
+                            <strong>Premium Floripa</strong>
+                            <small>Nossas unidades e valores</small>
+                        </div>
+                    </a>
+                    <a href="<?php echo esc_url( home_url( '/equipe/' ) ); ?>">
+                        <span class="sub-icon">👨‍🏫</span>
+                        <div class="sub-text">
+                            <strong>Nossa Equipe</strong>
+                            <small>Mestres e instrutores</small>
+                        </div>
+                    </a>
+                    <a href="<?php echo esc_url( home_url( '/metodologia/' ) ); ?>">
+                        <span class="sub-icon">🌲</span>
+                        <div class="sub-text">
+                            <strong>Metodologia Songahm</strong>
+                            <small>Pilares e jornada das faixas</small>
+                        </div>
+                    </a>
+                </div>
+            </li>
+
             <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#depoimentos' ) ); ?>" data-i18n="nav_testimonials">Depoimentos</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/#jornada' ) ); ?>" data-i18n="nav_method">Metodologia</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/metodologia/' ) ); ?>" data-i18n="nav_method">Metodologia</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             <li class="mobile-cta-item">
                 <a href="<?php echo esc_url( home_url( '/#contato' ) ); ?>" class="btn btn-gold btn-block" data-i18n="nav_mobile_cta">Agendar Aula Experimental</a>
@@ -156,3 +202,92 @@
         </ul>
     </div>
 </header>
+
+<!-- Modal / Mega-menu Institucional 'Conheça a ATA' -->
+<div class="about-modal-backdrop" id="aboutModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+    <div class="about-modal-wrapper">
+        <div class="about-modal-card">
+            <!-- Botão de Fechar -->
+            <button type="button" class="about-modal-close-btn" id="closeAboutModalBtn" aria-label="Fechar Modal">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Cabeçalho do Modal -->
+            <div class="about-modal-head text-center">
+                <span class="badge-gold" data-i18n="modal_about_badge">★ CONHEÇA A ATA MARTIAL ARTS ★</span>
+                <h3 id="aboutModalTitle" data-i18n="modal_about_title">Escolha o que deseja explorar</h3>
+                <p data-i18n="modal_about_subtitle">Descubra nossa tradição internacional, presença em Florianópolis, corpo docente e a metodologia Songahm.</p>
+            </div>
+
+            <!-- Grid com os 4 Cards Institucionais -->
+            <div class="about-modal-cards-grid">
+                <!-- 1. Federação ATA -->
+                <a href="<?php echo esc_url( home_url( '/federacao-ata/' ) ); ?>" class="about-option-card" data-track="modal_nav_federacao">
+                    <div class="option-icon-wrapper">
+                        <span>🌐</span>
+                    </div>
+                    <div class="option-content">
+                        <span class="option-tag">Tradição Mundial</span>
+                        <h4>Federação ATA</h4>
+                        <p>A história da maior organização Songahm do mundo, fundada em 1969 pelo Eternal Grand Master H.U. Lee (+1.5M de praticantes).</p>
+                        <span class="option-cta-link">
+                            Conhecer Federação 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- 2. Premium Floripa -->
+                <a href="<?php echo esc_url( home_url( '/sobre-a-ata-premium/' ) ); ?>" class="about-option-card" data-track="modal_nav_premium_floripa">
+                    <div class="option-icon-wrapper">
+                        <span>🥋</span>
+                    </div>
+                    <div class="option-content">
+                        <span class="option-tag">Nossa Escola Local</span>
+                        <h4>Premium Floripa</h4>
+                        <p>Nossa história em Florianópolis, missão de formar atitudes, estrutura completa das 3 unidades e impacto na comunidade.</p>
+                        <span class="option-cta-link">
+                            Sobre ATA Floripa 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- 3. Equipe e Mestres -->
+                <a href="<?php echo esc_url( home_url( '/equipe/' ) ); ?>" class="about-option-card" data-track="modal_nav_equipe">
+                    <div class="option-icon-wrapper">
+                        <span>👨‍🏫</span>
+                    </div>
+                    <div class="option-content">
+                        <span class="option-tag">Corpo Docente</span>
+                        <h4>Nossa Equipe</h4>
+                        <p>Mestres e instrutores com certificação internacional ATA, formação em psicologia do desenvolvimento e liderança marcial.</p>
+                        <span class="option-cta-link">
+                            Ver Professores 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- 4. Metodologia Songahm -->
+                <a href="<?php echo esc_url( home_url( '/metodologia/' ) ); ?>" class="about-option-card" data-track="modal_nav_metodologia">
+                    <div class="option-icon-wrapper">
+                        <span>🌲</span>
+                    </div>
+                    <div class="option-content">
+                        <span class="option-tag">Didática Pedagógica</span>
+                        <h4>Metodologia Songahm</h4>
+                        <p>A ciência do pinheiro e da rocha, os 4 pilares formativos, a jornada das faixas (branca à preta) e turmas por idade.</p>
+                        <span class="option-cta-link">
+                            Ver Metodologia 
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

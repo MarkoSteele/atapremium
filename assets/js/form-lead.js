@@ -398,13 +398,70 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateTimeline, { passive: true });
         updateTimeline();
 
-        // Clique em um card para destaque suave
-        timelineItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.add('is-active');
+    // 9. Controle do Modal 'Sobre a ATA' (Desktop e Mobile)
+    const initAboutModal = () => {
+        const modal = document.querySelector('#aboutModal');
+        const openBtn = document.querySelector('#openAboutModalBtn');
+        const closeBtn = document.querySelector('#closeAboutModalBtn');
+
+        if (!modal) return;
+
+        const openModal = () => {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden'; // Evita scroll do body com modal aberto
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        };
+
+        if (openBtn) {
+            openBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openModal();
             });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeModal();
+            });
+        }
+
+        // Fechar ao clicar no backdrop (fora do card)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('about-modal-wrapper')) {
+                closeModal();
+            }
         });
+
+        // Fechar com tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                closeModal();
+            }
+        });
+
+        // Submenu acordeon no Mobile
+        const mobileSubnavBtn = document.querySelector('#mobileSubnavToggle');
+        const mobileSubnavMenu = document.querySelector('#mobileSubnavMenu');
+
+        if (mobileSubnavBtn && mobileSubnavMenu) {
+            mobileSubnavBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                mobileSubnavBtn.classList.toggle('is-open');
+                mobileSubnavMenu.classList.toggle('is-open');
+            });
+        }
     };
 
-    initTimelineProgress();
+    initAboutModal();
 });

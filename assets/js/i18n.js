@@ -17,6 +17,11 @@ const ATA_TRANSLATIONS = {
         nav_cta: "Aula Grátis",
         nav_mobile_cta: "Agendar Aula Experimental",
 
+        // Modal Institucional 'Sobre a ATA'
+        modal_about_badge: "★ CONHEÇA A ATA MARTIAL ARTS ★",
+        modal_about_title: "Escolha o que deseja explorar",
+        modal_about_subtitle: "Descubra nossa tradição internacional, presença em Florianópolis, corpo docente e a metodologia Songahm.",
+
         // 1. Hero
         hero_badge: "★ ATA MARTIAL ARTS • MÉTODO SONGAHM | FLORIANÓPOLIS ★",
         hero_title: "Mais disciplina, foco e segurança para seus filhos — <span class=\"gold-gradient\">dentro e fora do tatame.</span>",
@@ -231,6 +236,11 @@ const ATA_TRANSLATIONS = {
         nav_cta: "Free Class",
         nav_mobile_cta: "Book a Free Trial Class",
 
+        // Institutional Modal 'About ATA'
+        modal_about_badge: "★ DISCOVER ATA MARTIAL ARTS ★",
+        modal_about_title: "Choose what you want to explore",
+        modal_about_subtitle: "Discover our international tradition, presence in Florianópolis, instructor team, and the Songahm method.",
+
         // 1. Hero
         hero_badge: "★ ATA MARTIAL ARTS • SONGAHM METHOD | FLORIANÓPOLIS ★",
         hero_title: "More discipline, focus, and confidence for your children — <span class=\"gold-gradient\">on and off the mat.</span>",
@@ -444,6 +454,11 @@ const ATA_TRANSLATIONS = {
         nav_faq: "Preguntas",
         nav_cta: "Clase Gratis",
         nav_mobile_cta: "Reservar Clase de Prueba Gratis",
+
+        // Modal Institucional 'Sobre ATA'
+        modal_about_badge: "★ CONOZCA ATA MARTIAL ARTS ★",
+        modal_about_title: "Elija lo que desea explorar",
+        modal_about_subtitle: "Descubra nuestra tradición internacional, presencia en Florianópolis, equipo de maestros y la metodología Songahm.",
 
         // 1. Hero
         hero_badge: "★ ATA MARTIAL ARTS • MÉTODO SONGAHM | FLORIANÓPOLIS ★",

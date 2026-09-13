@@ -7,21 +7,21 @@
 
 get_header(); ?>
 
-<!-- 1. Hero Institucional -->
+<!-- 1. Hero Institucional ATA Premium Floripa -->
 <section class="about-hero-section">
     <div class="about-hero-glow"></div>
     <div class="container about-hero-container">
         <div class="about-hero-content text-center">
-            <span class="badge-gold">★ ATA MARTIAL ARTS • TRADIÇÃO INTERNACIONAL ★</span>
+            <span class="badge-gold">★ ATA PREMIUM FLORIANÓPOLIS • NOSSA HISTÓRIA E MISSÃO ★</span>
             <h1 class="about-hero-title">
-                Mais de 50 Anos Formando Atitudes e <span class="gold-gradient">Líderes Dentro e Fora do Tatame</span>
+                Formando Atitudes e Líderes em <span class="gold-gradient">Florianópolis Dentro e Fora do Tatame</span>
             </h1>
             <p class="about-hero-subtitle">
-                Fundada pelo Grão-Mestre H.U. Lee em 1969, a ATA (American Taekwondo Association) é uma das maiores organizações de artes marciais do planeta, com mais de 1,5 milhão de praticantes formados sob a metodologia Songahm.
+                Conheça a presença da ATA Premium na Ilha de Santa Catarina: 3 unidades modernas no Centro e Córrego Grande, uma equipe de mestres dedicados e a missão de transformar vidas pelo Método Songahm.
             </p>
             <div class="about-hero-ctas">
-                <a href="#agendamento" class="btn btn-gold btn-lg">Agendar Aula Experimental Grátis</a>
-                <a href="#apresentacao" class="btn btn-outline btn-lg">Conhecer Nossa História ↓</a>
+                <a href="<?php echo esc_url( home_url( '/#contato' ) ); ?>" class="btn btn-gold btn-lg">Agendar Aula Experimental Grátis</a>
+                <a href="#apresentacao" class="btn btn-outline-gold btn-lg">Conhecer Nossa História ↓</a>
             </div>
         </div>
     </div>

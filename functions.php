@@ -57,7 +57,7 @@ function atapremium_enqueue_assets() {
         'atapremium-style',
         $theme_uri . '/assets/css/main.css',
         array(),
-        '1.5.5'
+        '1.5.6'
     );
 
     // JS de Internacionalização (i18n - Português, Inglês e Espanhol)
@@ -65,7 +65,7 @@ function atapremium_enqueue_assets() {
         'atapremium-i18n',
         $theme_uri . '/assets/js/i18n.js',
         array(),
-        '1.5.5',
+        '1.5.6',
         true
     );
 
@@ -74,7 +74,7 @@ function atapremium_enqueue_assets() {
         'atapremium-form-lead',
         $theme_uri . '/assets/js/form-lead.js',
         array('atapremium-i18n'),
-        '1.5.5',
+        '1.5.6',
         true // Carrega no rodapé
     );
 
@@ -90,43 +90,65 @@ add_action( 'wp_enqueue_scripts', 'atapremium_enqueue_assets' );
 require_once get_template_directory() . '/inc/crm-integration.php';
 
 /**
- * Roteamento automático para as páginas de unidades e institucional da ATA Premium
- * Permite que /unidade-alves-de-brito/, /unidade-colegio-catarinense/, /unidade-spotmarkt/ e /sobre-a-ata/
- * carreguem seus conteúdos ricos automaticamente mesmo antes de serem criadas no painel.
+ * Interceptador robusto para páginas virtuais institucionais e de unidades da ATA Premium
+ * Permite que todas as páginas carreguem seus conteúdos ricos automaticamente sem necessidade de configuração prévia no admin do WordPress.
  */
-function atapremium_virtual_unit_templates( $template ) {
-    $request_uri = trim( parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+function atapremium_intercept_virtual_pages() {
+    $request_path = trim( parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
     
-    // Roteamento das Unidades
-    $unit_slugs = [
-        'unidade-alves-de-brito'       => 'alves-de-brito',
-        'unidade-colegio-catarinense'  => 'colegio-catarinense',
-        'unidade-spotmarkt'            => 'spotmarkt',
+    $virtual_routes = [
+        // 1. Federação ATA
+        'federacao-ata'              => 'page-federacao-ata.php',
+        'sobre-a-ata'                => 'page-federacao-ata.php',
+        'sobre-a-federacao-ata'      => 'page-federacao-ata.php',
+        'federacao'                  => 'page-federacao-ata.php',
+        
+        // 2. ATA Premium Floripa
+        'sobre-a-ata-premium'        => 'page-sobre.php',
+        'sobre-nos'                  => 'page-sobre.php',
+        'premium-floripa'            => 'page-sobre.php',
+        'quem-somos'                 => 'page-sobre.php',
+        
+        // 3. Equipe & Instrutores
+        'equipe'                     => 'page-equipe.php',
+        'nossa-equipe'               => 'page-equipe.php',
+        'instrutores'                => 'page-equipe.php',
+        'professores'                => 'page-equipe.php',
+        
+        // 4. Metodologia Songahm
+        'metodologia'                => 'page-metodologia.php',
+        'metodologia-songahm'        => 'page-metodologia.php',
+        'jornada-songahm'            => 'page-metodologia.php',
+        
+        // 5. Unidades
+        'unidade-alves-de-brito'     => 'page-unidade.php',
+        'unidade-colegio-catarinense'=> 'page-unidade.php',
+        'unidade-spotmarkt'          => 'page-unidade.php',
     ];
-    
-    foreach ( $unit_slugs as $slug => $id ) {
-        if ( $request_uri === $slug || substr( $request_uri, -strlen($slug) ) === $slug ) {
-            $_GET['unidade'] = $id;
-            $unit_template = get_template_directory() . '/page-unidade.php';
-            if ( file_exists( $unit_template ) ) {
-                status_header( 200 );
-                return $unit_template;
-            }
-        }
-    }
 
-    // Roteamento da Página Sobre a ATA
-    $about_slugs = ['sobre-a-ata', 'sobre', 'sobre-a-ata-premium', 'quem-somos'];
-    foreach ( $about_slugs as $slug ) {
-        if ( $request_uri === $slug || substr( $request_uri, -strlen($slug) ) === $slug ) {
-            $about_template = get_template_directory() . '/page-sobre.php';
-            if ( file_exists( $about_template ) ) {
-                status_header( 200 );
-                return $about_template;
+    foreach ( $virtual_routes as $slug => $file ) {
+        if ( $request_path === $slug || substr( $request_path, -strlen($slug) ) === $slug ) {
+            global $wp_query, $post;
+            
+            if ( is_object( $wp_query ) ) {
+                $wp_query->is_404 = false;
+                $wp_query->is_page = true;
+                $wp_query->is_singular = true;
+                $wp_query->is_home = false;
+                $wp_query->is_archive = false;
+            }
+            
+            status_header( 200 );
+            
+            $template_file = get_template_directory() . '/' . $file;
+            if ( file_exists( $template_file ) ) {
+                if ( strpos( $slug, 'unidade-' ) === 0 ) {
+                    $_GET['unidade'] = str_replace( 'unidade-', '', $slug );
+                }
+                include $template_file;
+                exit;
             }
         }
     }
-    
-    return $template;
 }
-add_filter( 'template_include', 'atapremium_virtual_unit_templates', 99 );
+add_action( 'template_redirect', 'atapremium_intercept_virtual_pages', 1 );

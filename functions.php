@@ -269,7 +269,7 @@ function atapremium_enqueue_assets() {
         'atapremium-style',
         $theme_uri . '/assets/css/main.css',
         array(),
-        '1.6.9'
+        '1.7.0'
     );
 
     // JS de Internacionalização (i18n - Português, Inglês e Espanhol)

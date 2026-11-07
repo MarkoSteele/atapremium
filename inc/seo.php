@@ -128,6 +128,28 @@ function atapremium_get_seo_data() {
         ];
     }
 
+    // 9. Blog & Artigos Single
+    if ( function_exists( 'is_single' ) && is_single() ) {
+        $post_id = get_queried_object_id();
+        return [
+            'title'       => get_the_title( $post_id ) . ' | Blog ATA Premium Florianópolis',
+            'description' => has_excerpt( $post_id ) ? get_the_excerpt( $post_id ) : wp_trim_words( wp_strip_all_tags( get_post_field( 'post_content', $post_id ) ), 26 ),
+            'canonical'   => get_permalink( $post_id ),
+            'og_type'     => 'article',
+            'image'       => function_exists( 'atapremium_get_post_cover_url' ) ? atapremium_get_post_cover_url( $post_id ) : $default_image,
+        ];
+    }
+
+    if ( $path === 'blog' || strpos( $path, 'blog/' ) === 0 || ( function_exists( 'is_category' ) && is_category() ) ) {
+        return [
+            'title'       => 'Blog & Inteligência Marcial | ATA Premium Florianópolis',
+            'description' => 'Artigos sobre desenvolvimento infantil, foco escolar, neurociência do esporte, limites saudáveis e o Método Songahm em Florianópolis.',
+            'canonical'   => home_url( '/blog/' ),
+            'og_type'     => 'website',
+            'image'       => $default_image,
+        ];
+    }
+
     // 9. Página Inicial (Front Page / Home)
     if ( ( function_exists('is_front_page') && is_front_page() ) || ( function_exists('is_home') && is_home() ) || empty( $path ) ) {
         return [

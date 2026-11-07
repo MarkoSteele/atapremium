@@ -82,6 +82,7 @@
                 <li>
                     <span class="icon">🌐</span>
                     <div class="footer-social-links">
+                        <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" title="Blog ATA Premium">Blog</a>
                         <a href="https://www.instagram.com/ata.premium" target="_blank" rel="noopener" title="Instagram">Instagram</a>
                         <a href="https://www.tiktok.com/@ata.premium" target="_blank" rel="noopener" title="TikTok">TikTok</a>
                         <a href="https://www.youtube.com/@atapremium" target="_blank" rel="noopener" title="YouTube">YouTube</a>

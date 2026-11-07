@@ -12,7 +12,7 @@
     <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" as="image" type="image/webp" fetchpriority="high">
     
     <!-- Preload do CSS Principal com Prioridade Alta -->
-    <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/main.css?ver=1.7.3' ); ?>" as="style">
+    <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/main.css?ver=1.7.4' ); ?>" as="style">
     
     <!-- Carregamento Assíncrono e Não-Bloqueante das Fontes do Google -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
@@ -81,6 +81,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" data-i18n="nav_blog">Blog</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             </ul>
         </nav>
@@ -191,6 +192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <li><a href="<?php echo esc_url( home_url( '/#programas' ) ); ?>" data-i18n="nav_programs">Programas</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#unidades' ) ); ?>" data-i18n="nav_units">Unidades</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" data-i18n="nav_blog">Blog</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" data-i18n="nav_faq">Dúvidas</a></li>
             <li class="mobile-cta-item">
                 <a href="<?php echo esc_url( home_url( '/#contato' ) ); ?>" class="btn btn-gold btn-block" data-i18n="nav_mobile_cta">Agendar Aula Experimental</a>

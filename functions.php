@@ -269,7 +269,7 @@ function atapremium_enqueue_assets() {
         'atapremium-style',
         $theme_uri . '/assets/css/main.css',
         array(),
-        '1.7.3'
+        '1.7.4'
     );
 
     // JS de Internacionalização (i18n - Português, Inglês e Espanhol)
@@ -277,7 +277,7 @@ function atapremium_enqueue_assets() {
         'atapremium-i18n',
         $theme_uri . '/assets/js/i18n.js',
         array(),
-        '1.7.3',
+        '1.7.4',
         true
     );
 
@@ -308,10 +308,11 @@ function atapremium_defer_scripts( $tag, $handle, $src ) {
 }
 add_filter( 'script_loader_tag', 'atapremium_defer_scripts', 10, 3 );
 
-// Módulos de Inteligência, Leads & CRM da ATA Premium
+// Módulos de Inteligência, Leads, Blog & CRM da ATA Premium
 require_once get_template_directory() . '/inc/lead-database.php';
 require_once get_template_directory() . '/inc/crm-integration.php';
 require_once get_template_directory() . '/inc/admin-leads-dashboard.php';
+require_once get_template_directory() . '/inc/blog-helper.php';
 require_once get_template_directory() . '/inc/seo.php';
 
 /**
@@ -354,6 +355,10 @@ function atapremium_intercept_virtual_pages() {
         'unidade-alves-de-brito'     => 'page-unidade.php',
         'unidade-colegio-catarinense'=> 'page-unidade.php',
         'unidade-spotmarkt'          => 'page-unidade.php',
+
+        // Blog & Conteúdo Oficial
+        'blog'                       => 'page-blog.php',
+        'artigos'                    => 'page-blog.php',
     ];
 
     foreach ( $virtual_routes as $slug => $file ) {

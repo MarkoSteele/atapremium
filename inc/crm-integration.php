@@ -42,7 +42,7 @@ add_action( 'rest_api_init', function () {
 } );
 
 /**
- * Processa a submissão de lead via REST API
+ * Processa a submissão de lead via REST API com validação estrita, Honeypot anti-bot e Rate Limiting
  *
  * @param WP_REST_Request $request
  * @return WP_REST_Response
@@ -53,20 +53,67 @@ function atapremium_process_rest_lead( $request ) {
         $params = $request->get_params();
     }
 
-    // Sanitização e Normalização de Dados
-    $nome     = sanitize_text_field( $params['nome'] ?? '' );
-    $telefone = sanitize_text_field( $params['telefone'] ?? '' );
-    $email    = sanitize_email( $params['email'] ?? '' );
+    // 0. Honeypot Anti-Bot: Se o campo invisível "website_url" estiver preenchido, descarta silenciosamente
+    if ( ! empty( $params['website_url'] ) ) {
+        return new WP_REST_Response( array(
+            'success'      => true,
+            'lead_id'      => 0,
+            'message'      => 'Solicitação recebida.',
+            'redirect_url' => 'https://wa.me/5548999313558'
+        ), 200 );
+    }
+
+    // 1. Captura segura de IP com validação filter_var (evita IP Spoofing/Injection via headers)
+    $candidate_ips = array();
+    if ( ! empty( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ) {
+        $candidate_ips[] = $_SERVER['HTTP_CF_CONNECTING_IP'];
+    }
+    if ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
+        $forwarded = explode( ',', $_SERVER['HTTP_X_FORWARDED_FOR'] );
+        $candidate_ips[] = trim( $forwarded[0] );
+    }
+    if ( ! empty( $_SERVER['REMOTE_ADDR'] ) ) {
+        $candidate_ips[] = $_SERVER['REMOTE_ADDR'];
+    }
+
+    $ip = '0.0.0.0';
+    foreach ( $candidate_ips as $cand ) {
+        $clean_cand = trim( (string) $cand );
+        if ( filter_var( $clean_cand, FILTER_VALIDATE_IP ) ) {
+            $ip = $clean_cand;
+            break;
+        }
+    }
+
+    // 2. Rate Limiting por IP (máximo de 8 envios a cada 10 minutos por IP para evitar Flood/Spam)
+    $rl_key = 'ata_lead_rl_' . md5( $ip );
+    $attempts = (int) get_transient( $rl_key );
+    if ( $attempts >= 8 ) {
+        return new WP_REST_Response( array(
+            'success' => false,
+            'message' => 'Muitas tentativas seguidas. Aguarde alguns minutos ou chame diretamente no WhatsApp (48) 99931-3558.'
+        ), 429 );
+    }
+    set_transient( $rl_key, $attempts + 1, 10 * MINUTE_IN_SECONDS );
+
+    // 3. Sanitização Estrita e Limites de Tamanho (mb_substr)
+    $nome     = mb_substr( sanitize_text_field( wp_strip_all_tags( $params['nome'] ?? '' ) ), 0, 120, 'UTF-8' );
+    $telefone = mb_substr( sanitize_text_field( wp_strip_all_tags( $params['telefone'] ?? '' ) ), 0, 30, 'UTF-8' );
+    $raw_mail = sanitize_email( $params['email'] ?? '' );
+    $email    = ( ! empty( $raw_mail ) && is_email( $raw_mail ) ) ? mb_substr( $raw_mail, 0, 150, 'UTF-8' ) : '';
     $unidade  = atapremium_normalize_unit( $params['unidade'] ?? 'Central' );
-    $programa = sanitize_text_field( $params['programa'] ?? ( $params['faixa_etaria'] ?? '' ) );
+    $programa = mb_substr( sanitize_text_field( wp_strip_all_tags( $params['programa'] ?? ( $params['faixa_etaria'] ?? '' ) ) ), 0, 100, 'UTF-8' );
     $origem   = atapremium_normalize_origin( $params['origem'] ?? 'whatsapp_modal' );
 
-    // Parâmetros de UTM (Rastreamento de Tráfego)
-    $utm_source   = sanitize_text_field( $params['utm_source'] ?? '' );
-    $utm_medium   = sanitize_text_field( $params['utm_medium'] ?? '' );
-    $utm_campaign = sanitize_text_field( $params['utm_campaign'] ?? '' );
-    $utm_content  = sanitize_text_field( $params['utm_content'] ?? '' );
-    $utm_term     = sanitize_text_field( $params['utm_term'] ?? '' );
+    // Parâmetros de UTM e Contexto (Rastreamento de Tráfego, Idioma e Página)
+    $utm_source   = mb_substr( sanitize_text_field( $params['utm_source'] ?? '' ), 0, 100, 'UTF-8' );
+    $utm_medium   = mb_substr( sanitize_text_field( $params['utm_medium'] ?? '' ), 0, 100, 'UTF-8' );
+    $utm_campaign = mb_substr( sanitize_text_field( $params['utm_campaign'] ?? '' ), 0, 100, 'UTF-8' );
+    $utm_content  = mb_substr( sanitize_text_field( $params['utm_content'] ?? '' ), 0, 100, 'UTF-8' );
+    $utm_term     = mb_substr( sanitize_text_field( $params['utm_term'] ?? '' ), 0, 100, 'UTF-8' );
+
+    $lang_active  = mb_substr( sanitize_text_field( $params['lang'] ?? 'pt' ), 0, 10, 'UTF-8' );
+    $page_path    = mb_substr( sanitize_text_field( $params['page_path'] ?? '' ), 0, 200, 'UTF-8' );
 
     // Se a empresa foi enviada (campo legado do formulário home), extrai programa/unidade se vazios
     if ( ! empty( $params['empresa'] ) ) {
@@ -75,33 +122,25 @@ function atapremium_process_rest_lead( $request ) {
             $parts = explode( '|', $empresa_str );
             foreach ( $parts as $part ) {
                 if ( strpos( $part, 'Faixa:' ) !== false ) {
-                    $programa = trim( str_replace( 'Faixa:', '', $part ) );
+                    $programa = mb_substr( trim( str_replace( 'Faixa:', '', $part ) ), 0, 100, 'UTF-8' );
                 }
             }
         }
     }
 
-    // Validação básica obrigatória: Nome e Telefone
-    if ( empty( $nome ) || empty( $telefone ) ) {
+    // 4. Validação de Nome e Telefone (exige entre 10 e 15 dígitos numéricos)
+    $phone_digits = preg_replace( '/\D/', '', $telefone );
+    if ( mb_strlen( $nome, 'UTF-8' ) < 2 || strlen( $phone_digits ) < 10 || strlen( $phone_digits ) > 15 ) {
         return new WP_REST_Response( array(
             'success' => false,
-            'message' => 'Por favor, informe seu nome e número de WhatsApp.'
+            'message' => 'Por favor, informe seu nome completo e um número de WhatsApp válido com DDD.'
         ), 400 );
     }
 
-    // Captura IP e User Agent
-    $ip = '';
-    if ( ! empty( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ) {
-        $ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
-    } elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
-        $ip = explode( ',', $_SERVER['HTTP_X_FORWARDED_FOR'] )[0];
-    } else {
-        $ip = $_SERVER['REMOTE_ADDR'] ?? '';
-    }
-    $ip = sanitize_text_field( $ip );
-    $user_agent = sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ?? '' );
+    $user_agent = mb_substr( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ?? '' ), 0, 250, 'UTF-8' );
+    $observacoes = trim( sprintf( 'Idioma: %s | Página: %s', strtoupper( $lang_active ?: 'PT' ), $page_path ?: '/' ) );
 
-    // 1. Grava no banco de dados personalizado
+    // 5. Grava no banco de dados personalizado
     $lead_data = array(
         'nome'         => $nome,
         'telefone'     => $telefone,
@@ -116,7 +155,8 @@ function atapremium_process_rest_lead( $request ) {
         'utm_term'     => $utm_term,
         'ip'           => $ip,
         'user_agent'   => $user_agent,
-        'status'       => 'Novo'
+        'status'       => 'Novo',
+        'observacoes'  => $observacoes,
     );
 
     $lead_id = atapremium_insert_lead( $lead_data );

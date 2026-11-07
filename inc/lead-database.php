@@ -106,9 +106,10 @@ function atapremium_insert_lead( $data ) {
     $utm_term     = sanitize_text_field( $data['utm_term'] ?? '' );
 
     // Metadados
-    $ip         = sanitize_text_field( $data['ip'] ?? ( $_SERVER['REMOTE_ADDR'] ?? '' ) );
-    $user_agent = sanitize_text_field( substr( $data['user_agent'] ?? ( $_SERVER['HTTP_USER_AGENT'] ?? '' ), 0, 255 ) );
-    $status     = sanitize_text_field( $data['status'] ?? 'Novo' );
+    $ip          = sanitize_text_field( $data['ip'] ?? ( $_SERVER['REMOTE_ADDR'] ?? '' ) );
+    $user_agent  = sanitize_text_field( substr( $data['user_agent'] ?? ( $_SERVER['HTTP_USER_AGENT'] ?? '' ), 0, 255 ) );
+    $status      = sanitize_text_field( $data['status'] ?? 'Novo' );
+    $observacoes = sanitize_text_field( $data['observacoes'] ?? '' );
 
     if ( empty( $nome ) || empty( $telefone ) ) {
         return false;
@@ -130,11 +131,12 @@ function atapremium_insert_lead( $data ) {
         'ip'           => $ip,
         'user_agent'   => $user_agent,
         'status'       => $status,
+        'observacoes'  => $observacoes,
     );
 
     $format = array(
         '%s', '%s', '%s', '%s', '%s', '%s', '%s',
-        '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'
+        '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'
     );
 
     $result = $wpdb->insert( $table_name, $insert_data, $format );

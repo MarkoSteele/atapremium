@@ -18,3 +18,14 @@
     Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
 </IfModule>
+
+# Bloqueia acesso direto a scripts internos, backups e arquivos de configuração
+<FilesMatch "(^\.|\.(py|sh|env|bak|sql|log|md|yml|yaml|ini)$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

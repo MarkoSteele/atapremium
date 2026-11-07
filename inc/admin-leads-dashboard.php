@@ -65,27 +65,37 @@ function atapremium_handle_admin_actions() {
         // UTF-8 BOM para abrir com acentos perfeitos no Microsoft Excel
         fputs( $output, "\xEF\xBB\xBF" );
 
+        // Função contra CSV Formula Injection (Excel Injection)
+        $safe_csv = function( $val ) {
+            $str = (string) $val;
+            if ( preg_match( '/^[\=\+\-\@\t\r]/', $str ) ) {
+                return "'" . $str;
+            }
+            return $str;
+        };
+
         // Cabeçalhos das colunas
         fputcsv( $output, array(
             'ID', 'Data/Hora', 'Nome', 'WhatsApp', 'Email', 'Unidade',
-            'Programa', 'Origem', 'UTM Source', 'UTM Campaign', 'UTM Medium', 'Status', 'IP'
+            'Programa', 'Origem', 'UTM Source', 'UTM Campaign', 'UTM Medium', 'Status', 'Observacoes', 'IP'
         ), ';' );
 
         foreach ( $leads as $lead ) {
             fputcsv( $output, array(
-                $lead['id'],
-                $lead['data_hora'],
-                $lead['nome'],
-                $lead['telefone'],
-                $lead['email'],
-                $lead['unidade'],
-                $lead['programa'],
-                $lead['origem'],
-                $lead['utm_source'],
-                $lead['utm_campaign'],
-                $lead['utm_medium'],
-                $lead['status'],
-                $lead['ip']
+                (int) $lead['id'],
+                $safe_csv( $lead['data_hora'] ),
+                $safe_csv( $lead['nome'] ),
+                $safe_csv( $lead['telefone'] ),
+                $safe_csv( $lead['email'] ),
+                $safe_csv( $lead['unidade'] ),
+                $safe_csv( $lead['programa'] ),
+                $safe_csv( $lead['origem'] ),
+                $safe_csv( $lead['utm_source'] ),
+                $safe_csv( $lead['utm_campaign'] ),
+                $safe_csv( $lead['utm_medium'] ),
+                $safe_csv( $lead['status'] ),
+                $safe_csv( $lead['observacoes'] ?? '' ),
+                $safe_csv( $lead['ip'] )
             ), ';' );
         }
 

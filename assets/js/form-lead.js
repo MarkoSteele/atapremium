@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const telefone = form.querySelector('[name="telefone"]')?.value.trim() || '';
             const unidade = form.querySelector('[name="unidade"]')?.value || 'Central';
             const faixaEtaria = form.querySelector('[name="faixa_etaria"]')?.value || 'Não informada';
+            const websiteUrl = form.querySelector('[name="website_url"]')?.value || '';
 
             const payload = {
                 nome: nome,
@@ -150,6 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 unidade: unidade,
                 programa: faixaEtaria,
                 origem: 'form_home',
+                website_url: websiteUrl,
+                lang: localStorage.getItem('ata_premium_lang') || 'pt',
+                page_path: window.location.pathname,
                 ...getStoredUtms()
             };
 
@@ -788,12 +792,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const utms = getStoredUtms();
+            const websiteUrlWpp = formWpp.querySelector('[name="website_url"]')?.value || '';
             const payload = {
                 nome: nome,
                 telefone: telefone,
                 unidade: unidade,
                 programa: programa,
                 origem: 'whatsapp_modal',
+                website_url: websiteUrlWpp,
+                lang: localStorage.getItem('ata_premium_lang') || 'pt',
+                page_path: window.location.pathname,
                 ...utms
             };
 

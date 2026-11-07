@@ -9,13 +9,13 @@ import sys
 import ftplib
 from pathlib import Path
 
-# Configurações padrão
+# Configurações padrão (credenciais sensíveis carregadas via .env.deploy ou variáveis de ambiente)
 DEFAULT_CONFIG = {
-    'FTP_HOST': 'ftp.deven.com.br',
-    'FTP_USER': 'mark@atapremium.deven.com.br',
-    'FTP_PASS': 'M@rk135791',
-    'FTP_PORT': '21',
-    'REMOTE_PATH': '/'
+    'FTP_HOST': os.environ.get('ATA_FTP_HOST', 'ftp.deven.com.br'),
+    'FTP_USER': os.environ.get('ATA_FTP_USER', 'mark@atapremium.deven.com.br'),
+    'FTP_PASS': os.environ.get('ATA_FTP_PASS', ''),
+    'FTP_PORT': os.environ.get('ATA_FTP_PORT', '21'),
+    'REMOTE_PATH': os.environ.get('ATA_REMOTE_PATH', '/')
 }
 
 CONFIG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env.deploy')
@@ -24,7 +24,8 @@ CONFIG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env.dep
 EXCLUDE_DIRS = {'.git', '.github', 'docs', '.idea', '.vscode', '__pycache__', 'node_modules', '.scratch', 'tmp', 'raw_media_backup'}
 EXCLUDE_FILES = {
     '.DS_Store', '.gitignore', '.env.deploy', '.env.deploy.example', 
-    'deploy.py', 'deploy.sh', '.cpanel.yml', 'README.md'
+    'deploy.py', 'deploy.sh', '.cpanel.yml', 'README.md',
+    'Proposta_Arquitetura_Deven_V2.html', 'indicativo-midias-site.html'
 }
 EXCLUDE_EXTENSIONS = {'.swp', '.tmp', '.bak', '.zip', '.py'}
 

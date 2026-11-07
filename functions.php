@@ -113,18 +113,18 @@ function atapremium_handle_cache_purge() {
 
         $active_plugins = get_option( 'active_plugins', array() );
 
-        $stats = function_exists( 'atapremium_get_lead_stats' ) ? atapremium_get_lead_stats() : array();
-        $recent_leads = function_exists( 'atapremium_get_leads' ) ? atapremium_get_leads( array( 'per_page' => 5 ) ) : array();
+        if ( current_user_can( 'manage_options' ) ) {
+            $stats = function_exists( 'atapremium_get_lead_stats' ) ? atapremium_get_lead_stats() : array();
+            $diag = "ABSPATH: " . ABSPATH . "\n";
+            $diag .= "DOCUMENT_ROOT: " . $doc_root . "\n";
+            $diag .= "ACTIVE PLUGINS:\n" . implode( "\n", (array) $active_plugins ) . "\n\n";
+            $diag .= "LEAD STATS IN DB:\n" . print_r( $stats, true ) . "\n\n";
+            $diag .= "DELETED FILES (" . count( $deleted ) . "):\n" . implode( "\n", $deleted ) . "\n\n";
+            $diag .= ".HTACCESS CONTENT:\n" . $htaccess_content . "\n";
+            wp_die( '<h1>Diagnóstico de Cache ATA Premium (Admin)</h1><pre>' . esc_html( $diag ) . '</pre><p><a href="' . esc_url( home_url('/') ) . '">Voltar à Página Inicial</a></p>' );
+        }
 
-        $diag = "ABSPATH: " . ABSPATH . "\n";
-        $diag .= "DOCUMENT_ROOT: " . $doc_root . "\n";
-        $diag .= "ACTIVE PLUGINS:\n" . implode( "\n", (array) $active_plugins ) . "\n\n";
-        $diag .= "LEAD STATS IN DB:\n" . print_r( $stats, true ) . "\n\n";
-        $diag .= "RECENT LEADS IN DB:\n" . print_r( $recent_leads, true ) . "\n\n";
-        $diag .= "DELETED FILES (" . count( $deleted ) . "):\n" . implode( "\n", $deleted ) . "\n\n";
-        $diag .= ".HTACCESS CONTENT:\n" . $htaccess_content . "\n";
-
-        wp_die( '<h1>Diagnóstico de Cache & Leads ATA Premium</h1><pre>' . esc_html( $diag ) . '</pre><p><a href="' . esc_url( home_url('/') ) . '">Voltar à Página Inicial</a></p>' );
+        wp_die( '<h1>Cache atualizado com sucesso</h1><p><a href="' . esc_url( home_url('/') ) . '">Voltar à Página Inicial</a></p>' );
     }
 }
 add_action( 'init', 'atapremium_handle_cache_purge' );
@@ -225,19 +225,31 @@ function atapremium_ensure_root_htaccess() {
 
     if ( $is_explicit ) {
         header( 'Content-Type: application/json; charset=utf-8' );
-        echo json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES );
+        if ( current_user_can( 'manage_options' ) ) {
+            echo json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES );
+        } else {
+            echo json_encode( array( 'status' => 'ok', 'permalink_structure' => get_option( 'permalink_structure' ) ) );
+        }
         exit;
     }
 }
 add_action( 'init', 'atapremium_ensure_root_htaccess', 1 );
 
-// Define tempo de vida de cache do HTML para evitar que páginas estáticas fiquem retidas por horas
+// Define cabeçalhos de segurança HTTP e controle de cache do HTML
 function atapremium_control_html_cache_headers() {
     if ( ! is_admin() ) {
         header( 'Cache-Control: public, max-age=60, s-maxage=60, stale-while-revalidate=120' );
+        header( 'X-Content-Type-Options: nosniff' );
+        header( 'X-Frame-Options: SAMEORIGIN' );
+        header( 'Referrer-Policy: strict-origin-when-cross-origin' );
+        header( 'Permissions-Policy: geolocation=(), microphone=(), camera=()' );
     }
 }
 add_action( 'send_headers', 'atapremium_control_html_cache_headers', 99 );
+
+// Hardening do WordPress: desativa XML-RPC (proteção contra força bruta) e oculta versão do WP
+add_filter( 'xmlrpc_enabled', '__return_false' );
+remove_action( 'wp_head', 'wp_generator' );
 
 // Configurações do tema
 function atapremium_setup() {
@@ -286,7 +298,7 @@ function atapremium_enqueue_assets() {
         'atapremium-form-lead',
         $theme_uri . '/assets/js/form-lead.js',
         array('atapremium-i18n'),
-        '1.7.3',
+        '1.7.5',
         true // Carrega no rodapé
     );
 

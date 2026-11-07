@@ -924,6 +924,12 @@ get_header(); ?>
                         <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com" data-i18n-ph="form_ph_email">
                     </div>
 
+                    <!-- Campo Honeypot Anti-Bot Invisível -->
+                    <div style="position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden;" aria-hidden="true">
+                        <label for="website_url_home">Website</label>
+                        <input type="text" id="website_url_home" name="website_url" tabindex="-1" autocomplete="off">
+                    </div>
+
                     <button type="submit" class="btn btn-gold btn-block btn-lg" data-track="cta_form_final" data-i18n="form_btn_submit">
                         Confirmar Agendamento Gratuito
                     </button>

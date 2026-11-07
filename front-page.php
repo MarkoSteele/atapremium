@@ -131,10 +131,10 @@ get_header(); ?>
         <div class="programs-grid-4">
             <!-- Tigers -->
             <div class="program-card reveal-on-scroll delay-1">
-                <div class="program-card-media">
+                <div class="program-card-media program-card-media--tigers">
                     <picture>
                         <source srcset="<?php echo esc_url( get_template_directory_uri() . '/tiger.webp' ); ?>" type="image/webp">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/tiger.jpeg' ); ?>" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/tiger.jpeg' ); ?>" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img program-card-img--tigers" width="640" height="960" loading="lazy" decoding="async">
                     </picture>
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_tigers_tag">3 a 6 anos</span>

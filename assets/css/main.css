@@ -938,8 +938,16 @@ img {
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.program-card-img--tigers {
+    transform: translateY(10%);
+}
+
 .program-card:hover .program-card-img {
     transform: scale(1.08);
+}
+
+.program-card:hover .program-card-img--tigers {
+    transform: translateY(10%) scale(1.08);
 }
 
 .program-media-overlay {
@@ -947,6 +955,10 @@ img {
     inset: 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(10, 12, 18, 0.7) 100%);
     pointer-events: none;
+}
+
+.program-card-media--tigers .program-media-overlay {
+    background: linear-gradient(180deg, #0d111d 0%, #0d111d 9%, rgba(13, 17, 29, 0.45) 16%, rgba(0, 0, 0, 0.05) 30%, rgba(10, 12, 18, 0.7) 100%);
 }
 
 .program-tag-badge {

@@ -99,7 +99,7 @@ function atapremium_get_seo_data() {
     if ( strpos( $path, 'federacao-ata' ) !== false || strpos( $path, 'sobre-a-ata' ) !== false || strpos( $path, 'federacao' ) !== false || ( function_exists('is_page') && is_page('federacao-ata') ) ) {
         return [
             'title'       => 'Federação ATA Martial Arts Global | ATA Premium Florianópolis',
-            'description' => 'A ATA é uma das maiores organizações marciais do mundo, fundada em 1969. Conheça a rede integrada (ATA, WTTU, STF) presente em mais de 25 países.',
+            'description' => 'A ATA é uma das maiores organizações marciais do mundo, fundada em 1969, presente em mais de 25 países.',
             'canonical'   => home_url( '/federacao-ata/' ),
             'og_type'     => 'article',
             'image'       => $theme_uri . '/assets/images/logo.png',

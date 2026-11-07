@@ -43,7 +43,7 @@ get_header(); ?>
                     <div class="equipe-banner-badge">
                         <span class="badge-icon">🥋</span>
                         <div class="badge-text">
-                            <strong>Certificação Internacional ATA / STF</strong>
+                            <strong>Certificação Internacional ATA</strong>
                             <span>Tradição marcial, pedagogia progressiva e liderança</span>
                         </div>
                     </div>

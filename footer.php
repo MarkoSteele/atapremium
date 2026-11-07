@@ -95,7 +95,7 @@
     <div class="footer-bottom">
         <div class="container footer-bottom-container">
             <p data-i18n="footer_copyright">© <?php echo date( 'Y' ); ?> ATA Premium Martial Arts Florianópolis. Todos os direitos reservados.</p>
-            <p class="footer-affiliation">Filiada à American Taekwondo Association (ATA / WTTU / STF) • Método Songahm</p>
+            <p class="footer-affiliation">Filiada à American Taekwondo Association (ATA) • Método Songahm</p>
         </div>
     </div>
 </footer>

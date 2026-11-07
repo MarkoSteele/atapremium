@@ -35,7 +35,7 @@ const ATA_TRANSLATIONS = {
         // 2. Métricas & Autoridade
         metric_num_1: "+1.5 Milhão",
         metric_lbl_1: "Praticantes no Mundo",
-        metric_desc_1: "Taekwondo Songahm presente em dezenas de países (ATA / WTTU / STF)",
+        metric_desc_1: "Taekwondo Songahm presente em dezenas de países (ATA)",
         metric_num_2: "3 Unidades",
         metric_lbl_2: "Em Florianópolis",
         metric_desc_2: "Estruturas completas no Centro e Córrego Grande (Spotmarkt)",
@@ -254,7 +254,7 @@ const ATA_TRANSLATIONS = {
         // 2. Metrics & Authority
         metric_num_1: "+1.5 Million",
         metric_lbl_1: "Practitioners Worldwide",
-        metric_desc_1: "Songahm Taekwondo present in dozens of countries (ATA / WTTU / STF)",
+        metric_desc_1: "Songahm Taekwondo present in dozens of countries (ATA)",
         metric_num_2: "3 Locations",
         metric_lbl_2: "In Florianópolis",
         metric_desc_2: "State-of-the-art facilities in Downtown & Córrego Grande (Spotmarkt)",
@@ -473,7 +473,7 @@ const ATA_TRANSLATIONS = {
         // 2. Métricas & Autoridad
         metric_num_1: "+1.5 Millones",
         metric_lbl_1: "Practicantes en el Mundo",
-        metric_desc_1: "Taekwondo Songahm presente en decenas de países (ATA / WTTU / STF)",
+        metric_desc_1: "Taekwondo Songahm presente en decenas de países (ATA)",
         metric_num_2: "3 Sedes",
         metric_lbl_2: "En Florianópolis",
         metric_desc_2: "Instalaciones completas en el Centro y Córrego Grande (Spotmarkt)",

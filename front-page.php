@@ -80,7 +80,7 @@ get_header(); ?>
             <div class="metric-card reveal-on-scroll delay-1">
                 <div class="metric-number" data-i18n="metric_num_1">+1.5 Milhão</div>
                 <div class="metric-label" data-i18n="metric_lbl_1">Praticantes no Mundo</div>
-                <p class="metric-desc" data-i18n="metric_desc_1">Taekwondo Songahm presente em dezenas de países (ATA / WTTU / STF)</p>
+                <p class="metric-desc" data-i18n="metric_desc_1">Taekwondo Songahm presente em dezenas de países (ATA)</p>
             </div>
             <div class="metric-card reveal-on-scroll delay-2">
                 <div class="metric-number" data-i18n="metric_num_2">3 Unidades</div>

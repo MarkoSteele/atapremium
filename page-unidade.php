@@ -162,7 +162,8 @@ $unidades_data = [
             [
                 'url' => get_template_directory_uri() . '/assets/images/aula2-unidade3.webp',
                 'caption' => 'Metodologia Lúdica e Formadora de Caráter para Crianças',
-                'tag' => 'Tigers & Kids'
+                'tag' => 'Tigers & Kids',
+                'pos' => 'center 20%'
             ],
             [
                 'url' => get_template_directory_uri() . '/assets/images/aula3-unidade3.webp',
@@ -304,7 +305,7 @@ foreach ($unidades_data as $key => $data) {
                     <?php foreach ($unidade_atual['fotos'] as $idx => $foto) : ?>
                         <div class="carousel-slide <?php echo $idx === 0 ? 'is-active' : ''; ?>">
                             <div class="carousel-image-card">
-                                <img src="<?php echo esc_url($foto['url']); ?>" alt="<?php echo esc_attr($foto['caption']); ?>" loading="lazy">
+                                <img src="<?php echo esc_url($foto['url']); ?>" alt="<?php echo esc_attr($foto['caption']); ?>" loading="lazy"<?php echo ! empty( $foto['pos'] ) ? ' style="object-position: ' . esc_attr( $foto['pos'] ) . ';"' : ''; ?>>
                                 <div class="slide-overlay">
                                     <span class="slide-tag"><?php echo esc_html($foto['tag']); ?></span>
                                     <p class="slide-caption"><?php echo esc_html($foto['caption']); ?></p>
@@ -425,6 +426,12 @@ foreach ($unidades_data as $key => $data) {
                 <div class="form-group">
                     <label for="email">E-mail (opcional)</label>
                     <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com">
+                </div>
+
+                <!-- Campo Honeypot Anti-Bot Invisível -->
+                <div style="position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden;" aria-hidden="true">
+                    <label for="website_url_unit">Website</label>
+                    <input type="text" id="website_url_unit" name="website_url" tabindex="-1" autocomplete="off">
                 </div>
 
                 <button type="submit" class="btn btn-gold btn-block btn-lg">Confirmar Agendamento Gratuito</button>

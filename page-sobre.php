@@ -31,6 +31,12 @@ get_header(); ?>
 <section id="apresentacao" class="about-showcase-section">
     <div class="container">
         <div class="about-showcase-grid">
+            <!-- Cabeçalho / Título da Seção (No mobile fica acima da foto; no desktop fica no topo da coluna direita) -->
+            <div class="about-text-header">
+                <span class="badge-gold">QUEM SOMOS & NOSSA MISSÃO</span>
+                <h2>"Aqui, o objetivo não é formar lutadores. <span class="gold-gradient">É formar atitudes!"</span></h2>
+            </div>
+
             <!-- Imagem de Apresentação em Destaque -->
             <div class="about-image-col">
                 <div class="about-image-card">
@@ -43,9 +49,6 @@ get_header(); ?>
 
             <!-- Texto Institucional e Filosofia -->
             <div class="about-text-col">
-                <span class="badge-gold">QUEM SOMOS & NOSSA MISSÃO</span>
-                <h2>"Aqui, o objetivo não é formar lutadores. <span class="gold-gradient">É formar atitudes!"</span></h2>
-                
                 <div class="about-text-body">
                     <p>
                         A <strong>ATA Premium Martial Arts</strong> é a referência oficial do <strong>Método Songahm</strong> em Florianópolis. Muito além de ensinar chutes e técnicas de defesa pessoal, nossa missão é proporcionar um ambiente seguro, estimulante e acolhedor onde crianças, adolescentes e adultos constroem caráter, disciplina voluntária e confiança inabalável.

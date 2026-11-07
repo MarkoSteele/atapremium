@@ -21,10 +21,16 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     </noscript>
     
-    <!-- DataLayer inicial para GTM -->
+    <!-- Google Tag Manager (GTM-TK324HVL) -->
     <script>
         window.dataLayer = window.dataLayer || [];
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TK324HVL');
     </script>
+    <!-- End Google Tag Manager -->
     
     <!-- Fallback de Título Nativo caso title-tag não esteja ativo -->
     <?php if ( ! current_theme_supports( 'title-tag' ) && function_exists( 'atapremium_has_seo_plugin' ) && ! atapremium_has_seo_plugin() ) : 
@@ -36,6 +42,10 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK324HVL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <?php wp_body_open(); ?>
 
 <!-- Header Flutuante Premium (Estilo Pill / Frosted Glass) -->

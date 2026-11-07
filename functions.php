@@ -286,7 +286,7 @@ function atapremium_enqueue_assets() {
         'atapremium-form-lead',
         $theme_uri . '/assets/js/form-lead.js',
         array('atapremium-i18n'),
-        '1.6.8',
+        '1.7.0',
         true // Carrega no rodapé
     );
 

@@ -158,6 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
             window.dataLayer.push({
                 event: 'generate_lead',
                 form_id: 'form-lead-home',
+                form_location: 'form_home',
+                method: 'formulario_site',
+                unidade: unidade,
+                programa: faixaEtaria,
                 lead_data: {
                     unidade: unidade,
                     programa: faixaEtaria,
@@ -761,6 +765,10 @@ document.addEventListener('DOMContentLoaded', () => {
             window.dataLayer.push({
                 event: 'generate_lead',
                 form_id: 'form-wpp-lead-modal',
+                form_location: 'whatsapp_modal',
+                method: 'whatsapp_modal',
+                unidade: unidade,
+                programa: programa,
                 lead_data: {
                     nome: nome,
                     unidade: unidade,
@@ -773,6 +781,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             window.dataLayer.push({
                 event: 'click_whatsapp',
+                form_location: 'whatsapp_modal',
+                method: 'whatsapp',
+                unidade: unidade,
+                programa: programa,
                 unidade_clicada: unidade,
                 programa_escolhido: programa
             });

@@ -269,7 +269,7 @@ get_header(); ?>
             <!-- Reel 1: Unidade Alves de Brito -->
             <div class="reel-card reveal-on-scroll delay-1" data-video="alves-de-brito">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-1.webp' ); ?>">
+                    <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-1.webp?ver=1.7.3' ); ?>">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Unidade1-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -288,7 +288,7 @@ get_header(); ?>
             <!-- Reel 2: Unidade Colégio Catarinense -->
             <div class="reel-card reveal-on-scroll delay-2" data-video="catarinense">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-2.webp' ); ?>">
+                    <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-2.webp?ver=1.7.3' ); ?>">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Unidade2-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -307,7 +307,7 @@ get_header(); ?>
             <!-- Reel 3: Unidade Spotmarkt -->
             <div class="reel-card reveal-on-scroll delay-3" data-video="spotmarkt">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-3.webp' ); ?>">
+                    <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-3.webp?ver=1.7.3' ); ?>">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Spotmarket-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -326,7 +326,7 @@ get_header(); ?>
             <!-- Reel 4: Evento & Espetáculo -->
             <div class="reel-card reveal-on-scroll delay-4" data-video="espetaculo">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-4.webp' ); ?>">
+                    <video class="reel-video-element" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-4.webp?ver=1.7.3' ); ?>">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/espetaculo.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">

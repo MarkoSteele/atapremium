@@ -309,23 +309,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Demais vídeos (Reels, Unidades, etc.): carregamento lazy via IntersectionObserver
-        const lazyVideos = document.querySelectorAll('.reel-video-element, .unit-card-video');
-        
+        const lazyVideos = document.querySelectorAll('.reel-video-element, .unit-card-video, .unit-embedded-video');
+        const visibleVideos = new Set();
+
+        const tryPlayVideo = (video) => {
+            video.muted = true;
+            video.defaultMuted = true;
+            video.playsInline = true;
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+            video.setAttribute('muted', '');
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.then === 'function') {
+                playPromise.then(() => {
+                    const reelCard = video.closest('.reel-card');
+                    if (reelCard) reelCard.classList.add('is-playing');
+                }).catch(() => {});
+            }
+        };
+
+        lazyVideos.forEach(video => {
+            video.muted = true;
+            video.defaultMuted = true;
+            video.playsInline = true;
+            const reelCard = video.closest('.reel-card');
+            if (reelCard) {
+                video.addEventListener('play', () => reelCard.classList.add('is-playing'));
+                video.addEventListener('playing', () => reelCard.classList.add('is-playing'));
+                video.addEventListener('pause', () => reelCard.classList.remove('is-playing'));
+                if (!video.paused) {
+                    reelCard.classList.add('is-playing');
+                }
+            }
+        });
+
         if ('IntersectionObserver' in window && lazyVideos.length) {
             const videoObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     const video = entry.target;
-                    const reelCard = video.closest('.reel-card');
                     if (entry.isIntersecting) {
-                        video.muted = true;
-                        video.defaultMuted = true;
-                        video.playsInline = true;
-                        video.setAttribute('playsinline', '');
-                        video.setAttribute('webkit-playsinline', '');
-                        video.play().then(() => {
-                            if (reelCard) reelCard.classList.add('is-playing');
-                        }).catch(() => {});
+                        visibleVideos.add(video);
+                        tryPlayVideo(video);
                     } else {
+                        visibleVideos.delete(video);
                         // Pausa vídeos fora da tela para poupar CPU, memória e bateria
                         if (!video.paused) {
                             video.pause();
@@ -333,16 +359,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             }, { 
-                threshold: 0.15,
-                rootMargin: '100px 0px 100px 0px' // Começa a carregar um pouco antes de entrar na viewport
+                threshold: 0.1,
+                rootMargin: '180px 0px 180px 0px' // Começa a carregar/reproduzir antes de entrar na viewport
             });
 
             lazyVideos.forEach(video => {
-                video.muted = true;
-                video.defaultMuted = true;
                 videoObserver.observe(video);
             });
+        } else {
+            lazyVideos.forEach(video => tryPlayVideo(video));
         }
+
+        // Desbloqueio de autoplay em navegadores mobile ao primeiro toque/scroll
+        const unlockMobileVideos = () => {
+            visibleVideos.forEach(video => {
+                if (video.paused) {
+                    tryPlayVideo(video);
+                }
+            });
+        };
+        window.addEventListener('touchstart', unlockMobileVideos, { passive: true, once: true });
+        window.addEventListener('scroll', unlockMobileVideos, { passive: true, once: true });
 
         // Interação nos cards de Reels (Play/Pause ao clicar)
         const reelCards = document.querySelectorAll('.reel-card');

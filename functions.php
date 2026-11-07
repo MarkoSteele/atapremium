@@ -321,31 +321,36 @@ require_once get_template_directory() . '/inc/seo.php';
 function atapremium_intercept_virtual_pages() {
     $request_path = trim( parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
     
+    // Rotas temporariamente desativadas para o lançamento inicial (redirecionam para Premium Floripa)
+    $disabled_routes = [
+        'federacao-ata',
+        'sobre-a-ata',
+        'sobre-a-federacao-ata',
+        'federacao',
+        'equipe',
+        'nossa-equipe',
+        'instrutores',
+        'professores',
+        'metodologia',
+        'metodologia-songahm',
+        'jornada-songahm',
+    ];
+
+    foreach ( $disabled_routes as $disabled_slug ) {
+        if ( $request_path === $disabled_slug || substr( $request_path, -strlen( $disabled_slug ) ) === $disabled_slug ) {
+            wp_safe_redirect( home_url( '/sobre-a-ata-premium/' ), 302 );
+            exit;
+        }
+    }
+
     $virtual_routes = [
-        // 1. Federação ATA
-        'federacao-ata'              => 'page-federacao-ata.php',
-        'sobre-a-ata'                => 'page-federacao-ata.php',
-        'sobre-a-federacao-ata'      => 'page-federacao-ata.php',
-        'federacao'                  => 'page-federacao-ata.php',
-        
-        // 2. ATA Premium Floripa
+        // ATA Premium Floripa (Ativa no lançamento)
         'sobre-a-ata-premium'        => 'page-sobre.php',
         'sobre-nos'                  => 'page-sobre.php',
         'premium-floripa'            => 'page-sobre.php',
         'quem-somos'                 => 'page-sobre.php',
         
-        // 3. Equipe & Instrutores
-        'equipe'                     => 'page-equipe.php',
-        'nossa-equipe'               => 'page-equipe.php',
-        'instrutores'                => 'page-equipe.php',
-        'professores'                => 'page-equipe.php',
-        
-        // 4. Metodologia Songahm
-        'metodologia'                => 'page-metodologia.php',
-        'metodologia-songahm'        => 'page-metodologia.php',
-        'jornada-songahm'            => 'page-metodologia.php',
-        
-        // 5. Unidades
+        // Unidades (Ativas no lançamento)
         'unidade-alves-de-brito'     => 'page-unidade.php',
         'unidade-colegio-catarinense'=> 'page-unidade.php',
         'unidade-spotmarkt'          => 'page-unidade.php',

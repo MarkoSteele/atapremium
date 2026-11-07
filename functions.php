@@ -289,7 +289,7 @@ function atapremium_enqueue_assets() {
         'atapremium-i18n',
         $theme_uri . '/assets/js/i18n.js',
         array(),
-        '1.7.4',
+        '1.7.5',
         true
     );
 

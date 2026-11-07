@@ -674,12 +674,42 @@ const ATA_FLAGS = {
 
 class AtaI18n {
     constructor() {
-        this.currentLang = localStorage.getItem('ata_premium_lang') || 'pt';
         this.supportedLangs = ['pt', 'en', 'es'];
-        if (!this.supportedLangs.includes(this.currentLang)) {
-            this.currentLang = 'pt';
-        }
+        this.currentLang = this.detectInitialLanguage();
         this.init();
+    }
+
+    detectInitialLanguage() {
+        // 1. Prioridade Máxima: Parâmetro explícito na URL (?lang=en, ?lang=es, ?lang=pt)
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = (urlParams.get('lang') || '').toLowerCase();
+            if (this.supportedLangs.includes(urlLang)) {
+                localStorage.setItem('ata_premium_lang', urlLang);
+                return urlLang;
+            }
+        } catch (e) {}
+
+        // 2. Segunda Prioridade: Preferência salva anteriormente pelo usuário
+        const storedLang = localStorage.getItem('ata_premium_lang');
+        if (storedLang && this.supportedLangs.includes(storedLang)) {
+            return storedLang;
+        }
+
+        // 3. Terceira Prioridade: Detecção automática do idioma do celular/navegador (navigator.language)
+        try {
+            const browserLangs = navigator.languages && navigator.languages.length
+                ? navigator.languages
+                : [navigator.language || navigator.userLanguage || 'pt'];
+            for (const rawLang of browserLangs) {
+                const code = String(rawLang || '').toLowerCase().slice(0, 2);
+                if (this.supportedLangs.includes(code)) {
+                    return code;
+                }
+            }
+        } catch (e) {}
+
+        return 'pt';
     }
 
     init() {
@@ -794,9 +824,22 @@ class AtaI18n {
         if (!this.supportedLangs.includes(lang)) return;
         this.currentLang = lang;
         localStorage.setItem('ata_premium_lang', lang);
-        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : (lang === 'en' ? 'en-US' : 'es-ES');
 
         const translations = ATA_TRANSLATIONS[lang] || ATA_TRANSLATIONS.pt;
+
+        // Sincroniza ?lang= na barra de endereços sem recarregar a página (facilita compartilhamento do link)
+        if (triggerTracking && window.history && window.history.replaceState) {
+            try {
+                const currentUrl = new URL(window.location.href);
+                if (lang === 'pt') {
+                    currentUrl.searchParams.delete('lang');
+                } else {
+                    currentUrl.searchParams.set('lang', lang);
+                }
+                window.history.replaceState({}, '', currentUrl.toString());
+            } catch (e) {}
+        }
 
         // Atualiza textos marcados com data-i18n
         document.querySelectorAll('[data-i18n]').forEach(el => {

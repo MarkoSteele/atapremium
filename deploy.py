@@ -18,7 +18,7 @@ DEFAULT_CONFIG = {
     'REMOTE_PATH': '/'
 }
 
-CONFIG_FILE = '.env.deploy'
+CONFIG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env.deploy')
 
 # Arquivos e pastas a ignorar no upload
 EXCLUDE_DIRS = {'.git', '.github', 'docs', '.idea', '.vscode', '__pycache__', 'node_modules', '.scratch', 'tmp', 'raw_media_backup'}

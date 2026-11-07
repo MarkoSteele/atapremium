@@ -5,17 +5,17 @@
 
 get_header(); ?>
 
-<main id="primary" class="site-main page-generic-main" style="padding-top: 160px; padding-bottom: 100px; min-height: 80vh;">
-    <div class="container" style="max-width: 900px; margin: 0 auto;">
+<main id="primary" class="site-main page-generic-main">
+    <div class="container page-generic-container">
         <?php
         if ( have_posts() ) :
             while ( have_posts() ) :
                 the_post();
                 ?>
-                <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-article-card' ); ?> style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-card);">
-                    <header class="entry-header" style="margin-bottom: 30px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;">
-                        <span class="badge-gold" style="margin-bottom: 12px; display: inline-block;">ATA MARTIAL ARTS FLORIANÓPOLIS</span>
-                        <h1 class="entry-title gold-gradient" style="font-size: 2.6rem; font-weight: 800;"><?php the_title(); ?></h1>
+                <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-article-card' ); ?>>
+                    <header class="entry-header">
+                        <span class="badge-gold">ATA MARTIAL ARTS FLORIANÓPOLIS</span>
+                        <h1 class="entry-title gold-gradient"><?php the_title(); ?></h1>
                     </header>
 
                     <div class="entry-content" style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">

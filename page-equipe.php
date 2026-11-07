@@ -36,7 +36,10 @@ get_header(); ?>
         <div class="container">
             <div class="equipe-banner-wrapper">
                 <div class="equipe-banner-img-box">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/autorizado-davi-master-barth-faraco.jpg' ); ?>" alt="Equipe de Mestres e Instrutores ATA Premium Florianópolis" class="equipe-highlight-img" loading="lazy">
+                    <picture>
+                        <source srcset="<?php echo esc_url( get_template_directory_uri() . '/assets/images/autorizado-davi-master-barth-faraco.webp' ); ?>" type="image/webp">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/autorizado-davi-master-barth-faraco.jpg' ); ?>" alt="Equipe de Mestres e Instrutores ATA Premium Florianópolis" class="equipe-highlight-img" loading="lazy" width="1600" height="1067">
+                    </picture>
                     <div class="equipe-banner-badge">
                         <span class="badge-icon">🥋</span>
                         <div class="badge-text">

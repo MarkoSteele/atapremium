@@ -8,11 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload da Imagem LCP (Logo Oficial) com Prioridade Alta -->
-    <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" as="image" fetchpriority="high">
+    <!-- Preload da Imagem LCP (Logo Oficial WebP) com Prioridade Alta -->
+    <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" as="image" type="image/webp" fetchpriority="high">
     
     <!-- Preload do CSS Principal com Prioridade Alta -->
-    <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/main.css?ver=1.6.0' ); ?>" as="style">
+    <link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/main.css?ver=1.6.7' ); ?>" as="style">
     
     <!-- Carregamento Assíncrono e Não-Bloqueante das Fontes do Google -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
@@ -26,6 +26,13 @@
         window.dataLayer = window.dataLayer || [];
     </script>
     
+    <!-- Fallback de Título Nativo caso title-tag não esteja ativo -->
+    <?php if ( ! current_theme_supports( 'title-tag' ) && function_exists( 'atapremium_has_seo_plugin' ) && ! atapremium_has_seo_plugin() ) : 
+        $seo = atapremium_get_seo_data();
+    ?>
+    <title><?php echo esc_html( $seo['title'] ); ?></title>
+    <?php endif; ?>
+    
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -37,15 +44,18 @@
         <!-- Logo LCP com Prioridade Alta e Dimensões Fixas -->
         <div class="header-logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="ATA Premium Martial Arts">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" 
-                     alt="ATA Premium Martial Arts" 
-                     class="site-logo-img" 
-                     width="160" 
-                     height="48" 
-                     fetchpriority="high" 
-                     loading="eager" 
-                     decoding="async" 
-                     style="max-height: 48px; width: auto; object-fit: contain;">
+                <picture>
+                    <source srcset="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" type="image/webp">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" 
+                         alt="ATA Premium Martial Arts" 
+                         class="site-logo-img" 
+                         width="152" 
+                         height="48" 
+                         fetchpriority="high" 
+                         loading="eager" 
+                         decoding="async" 
+                         style="max-height: 48px; width: auto; object-fit: contain;">
+                </picture>
             </a>
         </div>
 

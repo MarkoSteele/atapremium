@@ -1,4 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Gerenciamento de UTMs (Captura e Persistência na Sessão)
+    const getStoredUtms = () => {
+        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+        const urlParams = new URLSearchParams(window.location.search);
+        let utms = {};
+
+        utmKeys.forEach(key => {
+            const val = urlParams.get(key);
+            if (val) {
+                sessionStorage.setItem('ata_' + key, val);
+                utms[key] = val;
+            } else {
+                utms[key] = sessionStorage.getItem('ata_' + key) || '';
+            }
+        });
+        return utms;
+    };
+    const currentUtms = getStoredUtms();
+
+    // 0.1. Máscara de Telefone Brasileira Dinâmica (XX) XXXXX-XXXX
+    const applyPhoneMask = (input) => {
+        if (!input) return;
+        input.addEventListener('input', (e) => {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 11) v = v.slice(0, 11);
+            if (v.length > 10) {
+                e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+            } else if (v.length > 6) {
+                e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 6)}-${v.slice(6)}`;
+            } else if (v.length > 2) {
+                e.target.value = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+            } else if (v.length > 0) {
+                e.target.value = `(${v}`;
+            } else {
+                e.target.value = '';
+            }
+        });
+    };
+
+    document.querySelectorAll('input[type="tel"], input[name="telefone"], input[name="wpp_telefone"]').forEach(applyPhoneMask);
+
     // 1. Controle de Scroll no Header Flutuante Otimizado com requestAnimationFrame (Sem Reflow Forçado)
     const siteHeaderWrapper = document.querySelector('.site-header-wrapper');
     if (siteHeaderWrapper) {
@@ -73,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Envio Assíncrono do Formulário de Lead + GTM DataLayer
+    // 3. Envio Assíncrono do Formulário de Lead Home + GTM DataLayer
     const form = document.querySelector('#form-lead-home');
     
     if (form) {
@@ -106,53 +147,87 @@ document.addEventListener('DOMContentLoaded', () => {
                 nome: nome,
                 email: email,
                 telefone: telefone,
-                empresa: `Unidade: ${unidade} | Faixa: ${faixaEtaria}`
+                unidade: unidade,
+                programa: faixaEtaria,
+                origem: 'form_home',
+                ...getStoredUtms()
             };
 
             // Disparo Imediato para a Camada de Dados (GTM / GA4 / Google Ads)
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                event: 'form_lead_sucesso',
-                leadData: {
-                    form_id: 'form-lead-home',
+                event: 'generate_lead',
+                form_id: 'form-lead-home',
+                lead_data: {
                     unidade: unidade,
-                    faixa_etaria: faixaEtaria
+                    programa: faixaEtaria,
+                    utm_source: payload.utm_source,
+                    utm_campaign: payload.utm_campaign
                 }
             });
 
-            // Endpoint REST do WordPress
-            const apiUrl = window.wpApiSettings ? wpApiSettings.root + 'api/v1/lead' : '/wp-json/api/v1/lead';
+            // Endpoints de Envio (Canal Duplo: REST API + Fallback AJAX Universal)
+            const restUrl = window.wpApiSettings ? wpApiSettings.root + 'atapremium/v1/lead' : '/wp-json/atapremium/v1/lead';
+            const ajaxUrl = window.wpApiSettings && wpApiSettings.ajax_url ? wpApiSettings.ajax_url : '/wp-admin/admin-ajax.php?action=atapremium_lead';
 
+            let saved = false;
+            let errorMessage = '';
+
+            // 1ª Tentativa: REST API Principal
             try {
-                const response = await fetch(apiUrl, {
+                const response = await fetch(restUrl, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'X-WP-Nonce': window.wpApiSettings ? wpApiSettings.nonce : ''
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(payload)
                 });
 
-                const result = await response.json();
-
-                if (response.ok && result.success) {
-                    feedbackMessage.classList.add('success');
-                    feedbackMessage.innerText = '✓ Solicitação confirmada com sucesso! Entraremos em contato via WhatsApp para confirmar seu horário experimental.';
-                    form.reset();
-                } else {
-                    feedbackMessage.classList.add('error');
-                    feedbackMessage.innerText = result.message || 'Ocorreu um erro ao enviar. Tente novamente.';
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result && result.success) {
+                        saved = true;
+                    }
                 }
-            } catch (error) {
-                console.error('Erro na submissão:', error);
-                // Mesmo em caso de falha de rede da API, se o GTM disparou, exibimos confirmação amigável
-                feedbackMessage.classList.add('success');
-                feedbackMessage.innerText = '✓ Solicitação recebida! Entraremos em contato via WhatsApp para confirmar seu agendamento.';
-                form.reset();
-            } finally {
-                btnSubmit.disabled = false;
-                btnSubmit.innerHTML = originalBtnText;
+            } catch (restError) {
+                console.warn('REST API temporariamente indisponível, acionando fallback AJAX...', restError);
             }
+
+            // 2ª Tentativa: Fallback Universal AJAX
+            if (!saved) {
+                try {
+                    const ajaxResponse = await fetch(ajaxUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (ajaxResponse.ok) {
+                        const ajaxResult = await ajaxResponse.json();
+                        if (ajaxResult && ajaxResult.success) {
+                            saved = true;
+                        } else if (ajaxResult && ajaxResult.message) {
+                            errorMessage = ajaxResult.message;
+                        }
+                    }
+                } catch (ajaxError) {
+                    console.error('Falha em ambos os canais de envio:', ajaxError);
+                }
+            }
+
+            if (saved) {
+                feedbackMessage.classList.add('success');
+                feedbackMessage.innerText = '✓ Solicitação confirmada com sucesso! Entraremos em contato via WhatsApp para agendar sua aula experimental.';
+                form.reset();
+            } else {
+                feedbackMessage.classList.add('error');
+                feedbackMessage.innerText = errorMessage || 'Não foi possível registrar seu agendamento no momento. Por favor, chame nossa equipe diretamente pelo WhatsApp: (48) 99931-3558.';
+            }
+
+            btnSubmit.disabled = false;
+            btnSubmit.innerHTML = originalBtnText;
         });
     }
 
@@ -535,20 +610,254 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initFaqAccordion();
 
-    // 11. Rastreamento WhatsApp Dinâmico (GTM DataLayer)
-    const initWhatsAppTracking = () => {
-        document.querySelectorAll('[data-track="whatsapp_unidade"], [data-track="cta_hero_wpp"], [data-track="floating_whatsapp"]').forEach(link => {
-            link.addEventListener('click', function() {
-                const unidade = this.getAttribute('data-unidade') || 'Central';
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    event: 'click_whatsapp',
-                    unidade_clicada: unidade,
-                    link_url: this.href
+    // 11. Micro-Modal de Captura de Lead para WhatsApp & GTM DataLayer
+    const initWhatsAppModal = () => {
+        const modal = document.querySelector('#whatsapp-lead-modal');
+        const formWpp = document.querySelector('#form-wpp-lead-modal');
+        if (!modal || !formWpp) return;
+
+        const inputNome = formWpp.querySelector('#wpp_lead_nome');
+        const inputTelefone = formWpp.querySelector('#wpp_lead_telefone');
+        const selectUnidade = formWpp.querySelector('#wpp_lead_unidade');
+        const selectPrograma = formWpp.querySelector('#wpp_lead_programa');
+        const btnSubmit = formWpp.querySelector('#btn-submit-wpp-modal');
+        const feedbackBox = formWpp.querySelector('.wpp-modal-feedback');
+
+        // Abre o modal pré-selecionando a unidade e programa se fornecidos
+        const openWppModal = (unidadePref, programaPref) => {
+            if (selectUnidade && unidadePref) {
+                const normUnidade = unidadePref.toLowerCase();
+                if (normUnidade.includes('alves') || normUnidade.includes('brito')) {
+                    selectUnidade.value = 'Alves de Brito';
+                } else if (normUnidade.includes('colegio') || normUnidade.includes('catarinense')) {
+                    selectUnidade.value = 'Colégio Catarinense';
+                } else if (normUnidade.includes('spot') || normUnidade.includes('markt') || normUnidade.includes('corrego')) {
+                    selectUnidade.value = 'Spotmarkt';
+                }
+            }
+
+            if (selectPrograma && programaPref) {
+                Array.from(selectPrograma.options).forEach(opt => {
+                    if (opt.value.toLowerCase().includes(programaPref.toLowerCase())) {
+                        selectPrograma.value = opt.value;
+                    }
                 });
+            }
+
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+
+            if (feedbackBox) {
+                feedbackBox.className = 'wpp-modal-feedback';
+                feedbackBox.innerText = '';
+            }
+
+            setTimeout(() => {
+                if (inputNome) inputNome.focus();
+            }, 100);
+        };
+
+        // Fecha o modal
+        const closeWppModal = () => {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        // Fechar ao clicar em elementos com [data-close-modal="true"]
+        modal.querySelectorAll('[data-close-modal="true"]').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeWppModal();
             });
+        });
+
+        // Fechar com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                closeWppModal();
+            }
+        });
+
+        // Intercepta TODOS os cliques em botões e links de WhatsApp do site (Delegação Global em Capture Phase)
+        document.addEventListener('click', (e) => {
+            const trigger = e.target.closest(
+                '[data-track="whatsapp_unidade"], [data-track="cta_hero_wpp"], [data-track="floating_whatsapp"], .floating-wpp-btn, .btn-whatsapp, .btn-hero-wpp, .btn-404-wpp, a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="whatsapp.com"]'
+            );
+
+            if (!trigger) return;
+
+            // Ignora se for dentro do próprio modal ou explicitamente marcado como direto
+            if (trigger.closest('#whatsapp-lead-modal') || trigger.getAttribute('data-direct-wpp') === 'true') {
+                return;
+            }
+
+            e.preventDefault();
+            e.stopPropagation();
+            if (e.stopImmediatePropagation) {
+                e.stopImmediatePropagation();
+            }
+
+            const unidadeAttr = trigger.getAttribute('data-unidade') || '';
+            const programaAttr = trigger.getAttribute('data-programa') || '';
+            
+            openWppModal(unidadeAttr, programaAttr);
+        }, true);
+
+
+        // Submissão do Formulário de Lead do Micro-Modal
+        formWpp.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const nome = inputNome ? inputNome.value.trim() : '';
+            const telefone = inputTelefone ? inputTelefone.value.trim() : '';
+            const unidade = selectUnidade ? selectUnidade.value : 'Alves de Brito';
+            const programa = selectPrograma ? selectPrograma.value : 'Kids (7-13 anos)';
+
+            const cleanDigits = telefone.replace(/\D/g, '');
+
+            if (!nome || nome.length < 2) {
+                if (feedbackBox) {
+                    feedbackBox.className = 'wpp-modal-feedback error';
+                    feedbackBox.innerText = 'Por favor, informe seu nome completo.';
+                }
+                if (inputNome) inputNome.focus();
+                return;
+            }
+
+            if (!telefone || cleanDigits.length < 10) {
+                if (feedbackBox) {
+                    feedbackBox.className = 'wpp-modal-feedback error';
+                    feedbackBox.innerText = 'Por favor, informe um WhatsApp válido com DDD.';
+                }
+                if (inputTelefone) inputTelefone.focus();
+                return;
+            }
+
+            // Estado de carregamento
+            const originalBtnContent = btnSubmit ? btnSubmit.innerHTML : '';
+            if (btnSubmit) {
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = '<span class="spinner"></span> Conectando ao WhatsApp...';
+            }
+            if (feedbackBox) {
+                feedbackBox.className = 'wpp-modal-feedback';
+                feedbackBox.innerText = '';
+            }
+
+            const utms = getStoredUtms();
+            const payload = {
+                nome: nome,
+                telefone: telefone,
+                unidade: unidade,
+                programa: programa,
+                origem: 'whatsapp_modal',
+                ...utms
+            };
+
+            // Disparo imediato para Google Tag Manager / GA4 / Meta
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'generate_lead',
+                form_id: 'form-wpp-lead-modal',
+                lead_data: {
+                    nome: nome,
+                    unidade: unidade,
+                    programa: programa,
+                    origem: 'whatsapp_modal',
+                    utm_source: payload.utm_source,
+                    utm_campaign: payload.utm_campaign
+                }
+            });
+
+            window.dataLayer.push({
+                event: 'click_whatsapp',
+                unidade_clicada: unidade,
+                programa_escolhido: programa
+            });
+
+            // Endpoints de Envio (Canal Duplo: REST API + Fallback AJAX Universal)
+            const restUrl = window.wpApiSettings ? wpApiSettings.root + 'atapremium/v1/lead' : '/wp-json/atapremium/v1/lead';
+            const ajaxUrl = window.wpApiSettings && wpApiSettings.ajax_url ? wpApiSettings.ajax_url : '/wp-admin/admin-ajax.php?action=atapremium_lead';
+
+            // URL Padrão de Fallback imediata caso a rede falhe
+            let redirectUrl = `https://wa.me/5548999313558?text=${encodeURIComponent(
+                `Olá! Meu nome é ${nome}. Gostaria de agendar uma aula experimental na Unidade ${unidade} (${programa}).`
+            )}`;
+
+            let saved = false;
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 6000); // 6s de limite seguro
+
+                const response = await fetch(restUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result && result.success) {
+                        saved = true;
+                        if (result.redirect_url) {
+                            redirectUrl = result.redirect_url;
+                        }
+                    }
+                }
+            } catch (err) {
+                console.warn('REST lead falhou ou timed out, tentando fallback AJAX...', err);
+            }
+
+            // Fallback imediato via admin-ajax caso o REST não confirme
+            if (!saved) {
+                try {
+                    const ajaxRes = await fetch(ajaxUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    if (ajaxRes.ok) {
+                        const ajaxResult = await ajaxRes.json();
+                        if (ajaxResult && ajaxResult.redirect_url) {
+                            redirectUrl = ajaxResult.redirect_url;
+                        }
+                        saved = true;
+                    }
+                } catch (ajaxErr) {
+                    console.warn('Fallback AJAX erro:', ajaxErr);
+                }
+            }
+
+            if (feedbackBox) {
+                feedbackBox.className = 'wpp-modal-feedback success';
+                feedbackBox.innerText = '✓ Tudo pronto! Abrindo WhatsApp...';
+            }
+
+            setTimeout(() => {
+                window.open(redirectUrl, '_blank');
+                closeWppModal();
+                formWpp.reset();
+                if (btnSubmit) {
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerHTML = originalBtnContent;
+                }
+                if (feedbackBox) {
+                    feedbackBox.className = 'wpp-modal-feedback';
+                    feedbackBox.innerText = '';
+                }
+            }, 500);
         });
     };
 
-    initWhatsAppTracking();
+    initWhatsAppModal();
 });
+

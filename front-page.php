@@ -132,7 +132,10 @@ get_header(); ?>
             <!-- Tigers -->
             <div class="program-card reveal-on-scroll delay-1">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=75&w=480&auto=format&fit=crop" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="<?php echo esc_url( get_template_directory_uri() . '/tiger.webp' ); ?>" type="image/webp">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/tiger.jpeg' ); ?>" alt="Programa ATA Tigers (3 a 6 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                    </picture>
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_tigers_tag">3 a 6 anos</span>
                 </div>
@@ -157,7 +160,10 @@ get_header(); ?>
             <!-- Kids -->
             <div class="program-card reveal-on-scroll delay-2">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=75&w=480&auto=format&fit=crop" alt="Programa ATA Kids (7 a 13 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="<?php echo esc_url( get_template_directory_uri() . '/kids.webp' ); ?>" type="image/webp">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/kids.jpeg' ); ?>" alt="Programa ATA Kids (7 a 13 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                    </picture>
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_kids_tag">7 a 13 anos</span>
                 </div>
@@ -182,7 +188,10 @@ get_header(); ?>
             <!-- Teens -->
             <div class="program-card reveal-on-scroll delay-3">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=75&w=480&auto=format&fit=crop" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="<?php echo esc_url( get_template_directory_uri() . '/teens.webp' ); ?>" type="image/webp">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/teens.jpeg' ); ?>" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                    </picture>
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_teens_tag">11 a 15 anos</span>
                 </div>
@@ -207,7 +216,10 @@ get_header(); ?>
             <!-- Adultos & Família -->
             <div class="program-card reveal-on-scroll delay-4">
                 <div class="program-card-media">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=75&w=480&auto=format&fit=crop" alt="Programa ATA Adultos e Masters" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                    <picture>
+                        <source srcset="<?php echo esc_url( get_template_directory_uri() . '/adulto.webp' ); ?>" type="image/webp">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/adulto.jpeg' ); ?>" alt="Programa ATA Adultos e Masters" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                    </picture>
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_adults_tag">Adultos & Família</span>
                 </div>
@@ -257,7 +269,7 @@ get_header(); ?>
             <!-- Reel 1: Unidade Alves de Brito -->
             <div class="reel-card reveal-on-scroll delay-1" data-video="alves-de-brito">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop">
+                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-1.webp' ); ?>">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Unidade1-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -276,7 +288,7 @@ get_header(); ?>
             <!-- Reel 2: Unidade Colégio Catarinense -->
             <div class="reel-card reveal-on-scroll delay-2" data-video="catarinense">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop">
+                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-2.webp' ); ?>">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Unidade2-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -295,7 +307,7 @@ get_header(); ?>
             <!-- Reel 3: Unidade Spotmarkt -->
             <div class="reel-card reveal-on-scroll delay-3" data-video="spotmarkt">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop">
+                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-3.webp' ); ?>">
                         <source src="<?php echo esc_url( get_template_directory_uri() . '/Spotmarket-card.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
@@ -314,8 +326,8 @@ get_header(); ?>
             <!-- Reel 4: Evento & Espetáculo -->
             <div class="reel-card reveal-on-scroll delay-4" data-video="espetaculo">
                 <div class="reel-media-wrapper">
-                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?q=80&w=800&auto=format&fit=crop">
-                        <source src="<?php echo esc_url( get_template_directory_uri() . '/' . rawurlencode('ESPETÁCULO 1.mp4') ); ?>" type="video/mp4">
+                    <video class="reel-video-element" muted loop playsinline webkit-playsinline preload="none" poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/poster-reel-4.webp' ); ?>">
+                        <source src="<?php echo esc_url( get_template_directory_uri() . '/espetaculo.mp4' ); ?>" type="video/mp4">
                     </video>
                     <div class="reel-overlay">
                         <span class="reel-tag-badge" data-i18n="reel_tag_4">Evento Oficial ATA</span>
@@ -399,7 +411,7 @@ get_header(); ?>
             <div class="unit-card-interactive reveal-on-scroll delay-2">
                 <a href="<?php echo esc_url( home_url( '/unidade-colegio-catarinense/' ) ); ?>" class="unit-card-link-wrapper" title="Ver Unidade Colégio Catarinense">
                     <div class="unit-image-wrapper">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/unidade-2.png' ); ?>" alt="Unidade Colégio Catarinense" class="unit-img" loading="lazy">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/unidade-2.webp' ); ?>" alt="Unidade Colégio Catarinense" class="unit-img" loading="lazy">
                         <div class="unit-badge-pill" data-i18n="unit_pill_2">Unidade 2 • Centro</div>
                         <div class="unit-image-overlay">
                             <span class="view-unit-badge" data-i18n="unit_hover_label">Ver Página da Unidade &rarr;</span>
@@ -523,7 +535,7 @@ get_header(); ?>
                     <div class="review-card-header">
                         <div class="reviewer-avatar avatar-purple">MS</div>
                         <div class="reviewer-meta">
-                            <h4>Mariana Silveira</h4>
+                            <h3>Mariana Silveira</h3>
                             <span class="reviewer-role">Mãe do Theo (6 anos) • Tigers</span>
                         </div>
                         <div class="google-mini-badge" title="Avaliação Google">
@@ -547,7 +559,7 @@ get_header(); ?>
                     <div class="review-card-header">
                         <div class="reviewer-avatar avatar-gold">CM</div>
                         <div class="reviewer-meta">
-                            <h4>Carlos Eduardo Menezes</h4>
+                            <h3>Carlos Eduardo Menezes</h3>
                             <span class="reviewer-role">Pai da Sofia (9 anos) • Kids</span>
                         </div>
                         <div class="google-mini-badge" title="Avaliação Google">
@@ -571,7 +583,7 @@ get_header(); ?>
                     <div class="review-card-header">
                         <div class="reviewer-avatar avatar-blue">RB</div>
                         <div class="reviewer-meta">
-                            <h4>Renata & Gustavo Becker</h4>
+                            <h3>Renata & Gustavo Becker</h3>
                             <span class="reviewer-role">Treino em Família • Adultos & Kids</span>
                         </div>
                         <div class="google-mini-badge" title="Avaliação Google">
@@ -595,7 +607,7 @@ get_header(); ?>
                     <div class="review-card-header">
                         <div class="reviewer-avatar avatar-emerald">LF</div>
                         <div class="reviewer-meta">
-                            <h4>Lucas Fagundes</h4>
+                            <h3>Lucas Fagundes</h3>
                             <span class="reviewer-role">Faixa Vermelha • Programa Adultos</span>
                         </div>
                         <div class="google-mini-badge" title="Avaliação Google">
@@ -619,7 +631,7 @@ get_header(); ?>
                     <div class="review-card-header">
                         <div class="reviewer-avatar avatar-rose">JC</div>
                         <div class="reviewer-meta">
-                            <h4>Juliana Castro</h4>
+                            <h3>Juliana Castro</h3>
                             <span class="reviewer-role">Mãe do Bernardo (11 anos) • Teens</span>
                         </div>
                         <div class="google-mini-badge" title="Avaliação Google">
@@ -889,9 +901,9 @@ get_header(); ?>
                             <label for="unidade" data-i18n="form_lbl_unit">Unidade de Preferência em Floripa *</label>
                             <select id="unidade" name="unidade" class="form-control" required>
                                 <option value="" disabled selected data-i18n="form_opt_unit_placeholder">Selecione a unidade mais próxima...</option>
-                                <option value="Unidade 1 - Alves de Brito (Centro)" data-i18n="form_opt_u1">Unidade 1 - Rua Alves de Brito, nº 33 (Centro)</option>
-                                <option value="Unidade 2 - Colégio Catarinense (Centro)" data-i18n="form_opt_u2">Unidade 2 - Ao lado do Col. Catarinense (Centro)</option>
-                                <option value="Unidade 3 - Spotmarkt (Córrego Grande)" data-i18n="form_opt_u3">Unidade 3 - Spotmarkt (Córrego Grande)</option>
+                                <option value="Alves de Brito" data-i18n="form_opt_u1">Unidade 1 - Rua Alves de Brito, nº 33 (Centro)</option>
+                                <option value="Colégio Catarinense" data-i18n="form_opt_u2">Unidade 2 - Ao lado do Col. Catarinense (Centro)</option>
+                                <option value="Spotmarkt" data-i18n="form_opt_u3">Unidade 3 - Spotmarkt (Córrego Grande)</option>
                             </select>
                         </div>
                         <div class="form-group">

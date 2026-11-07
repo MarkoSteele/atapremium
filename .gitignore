@@ -15,11 +15,17 @@ Thumbs.db
 
 # Logs e temporários
 *.log
+*.zip
+*.bak
+*.tar.gz
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .scratch/
 tmp/
+docs/slides_preview/
+test_layout.py
+generate_presentation.py
 
 # Credenciais e ambientes locais
 .env

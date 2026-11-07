@@ -5,14 +5,17 @@
             <div class="footer-logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="ATA Premium Martial Arts">
                     <div class="footer-logo-wrap">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" 
-                             alt="ATA Premium Martial Arts" 
-                             class="footer-logo-img" 
-                             width="160" 
-                             height="48" 
-                             loading="lazy" 
-                             decoding="async" 
-                             style="max-height: 48px; width: auto; object-fit: contain;">
+                        <picture>
+                            <source srcset="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" type="image/webp">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" 
+                                 alt="ATA Premium Martial Arts" 
+                                 class="footer-logo-img" 
+                                 width="152" 
+                                 height="48" 
+                                 loading="lazy" 
+                                 decoding="async" 
+                                 style="max-height: 48px; width: auto; object-fit: contain;">
+                        </picture>
                     </div>
                 </a>
             </div>
@@ -35,7 +38,7 @@
 
         <!-- Coluna 2: Nossas Unidades -->
         <div class="footer-col">
-            <h4 class="footer-title" data-i18n="footer_units_title">Nossas Unidades</h4>
+            <h3 class="footer-title" data-i18n="footer_units_title">Nossas Unidades</h3>
             <ul class="footer-nav-list">
                 <li>
                     <a href="<?php echo esc_url( home_url( '/unidade-alves-de-brito/' ) ); ?>">
@@ -60,7 +63,7 @@
 
         <!-- Coluna 3: Atendimento e Redes -->
         <div class="footer-col">
-            <h4 class="footer-title" data-i18n="footer_links_title">Atendimento & Redes</h4>
+            <h3 class="footer-title" data-i18n="footer_links_title">Atendimento & Redes</h3>
             <ul class="footer-contact-list">
                 <li>
                     <span class="icon">📞</span>
@@ -103,6 +106,66 @@
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
 </a>
+
+<!-- Micro-Modal de Captura Rápida de Lead para WhatsApp -->
+<div id="whatsapp-lead-modal" class="wpp-lead-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="wpp-modal-title">
+    <div class="wpp-modal-backdrop" data-close-modal="true"></div>
+    <div class="wpp-modal-box">
+        <button type="button" class="wpp-modal-close" aria-label="Fechar Modal" data-close-modal="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <div class="wpp-modal-header">
+            <div class="wpp-modal-badge">🥋 AULA EXPERIMENTAL GRATUITA</div>
+            <h3 id="wpp-modal-title" class="wpp-modal-title">Agendar no WhatsApp</h3>
+            <p class="wpp-modal-desc">Informe seus dados para conectarmos você diretamente com o coordenador da unidade escolhida:</p>
+        </div>
+
+        <form id="form-wpp-lead-modal" class="wpp-modal-form" novalidate>
+            <div class="wpp-modal-field">
+                <label for="wpp_lead_nome">Seu Nome / Nome do Aluno <span class="required">*</span></label>
+                <input type="text" id="wpp_lead_nome" name="wpp_nome" required placeholder="Ex: Lucas Ferreira ou Maria (mãe do Theo)" autocomplete="name">
+            </div>
+
+            <div class="wpp-modal-field">
+                <label for="wpp_lead_telefone">WhatsApp com DDD <span class="required">*</span></label>
+                <input type="tel" id="wpp_lead_telefone" name="wpp_telefone" required placeholder="(48) 99999-9999" autocomplete="tel" maxlength="15">
+            </div>
+
+            <div class="wpp-modal-grid-2">
+                <div class="wpp-modal-field">
+                    <label for="wpp_lead_unidade">Unidade Desejada</label>
+                    <select id="wpp_lead_unidade" name="wpp_unidade">
+                        <option value="Alves de Brito">Alves de Brito (Centro)</option>
+                        <option value="Colégio Catarinense">Ao lado do Col. Catarinense</option>
+                        <option value="Spotmarkt">Mall Spotmarkt (Córrego Grande)</option>
+                    </select>
+                </div>
+
+                <div class="wpp-modal-field">
+                    <label for="wpp_lead_programa">Faixa Etária / Programa</label>
+                    <select id="wpp_lead_programa" name="wpp_programa">
+                        <option value="Tigers (3-6 anos)">Tigers (3 a 6 anos)</option>
+                        <option value="Kids (7-13 anos)" selected>Kids (7 a 13 anos)</option>
+                        <option value="Teens (11-15 anos)">Teens (11 a 15 anos)</option>
+                        <option value="Adultos (16+ anos)">Adultos / Masters</option>
+                        <option value="Família">Treino em Família</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="wpp-modal-feedback" aria-live="polite"></div>
+
+            <button type="submit" class="btn-wpp-modal-submit" id="btn-submit-wpp-modal">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>Continuar para o WhatsApp</span>
+            </button>
+            <p class="wpp-modal-privacy">🔒 Seus dados são confidenciais e utilizados apenas para o agendamento da sua experiência.</p>
+        </form>
+    </div>
+</div>
 
 <?php wp_footer(); ?>
 </body>

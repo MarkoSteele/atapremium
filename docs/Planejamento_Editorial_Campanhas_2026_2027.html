@@ -1,0 +1,2381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planejamento Editorial & Campanhas 2026/2027 — ATA Martial Arts Florianópolis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0A0B0E;
+      --bg-card: #12151E;
+      --bg-card-alt: #171B26;
+      --bg-surface: #1E2333;
+      --border-subtle: #2A3146;
+      --border-gold: rgba(212, 175, 55, 0.35);
+      --gold-primary: #C5A869;
+      --gold-light: #E5C378;
+      --gold-gradient: linear-gradient(135deg, #C5A869 0%, #F3D382 50%, #B39352 100%);
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --accent-green: #10B981;
+      --accent-blue: #38BDF8;
+      --accent-purple: #A855F7;
+      --accent-red: #F43F5E;
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.3);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 15px;
+      padding-bottom: 80px;
+    }
+
+    h1, h2, h3, h4, h5, .brand-font {
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: var(--gold-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #fff;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Nav / Sticky Header */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 11, 14, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .logo-badge {
+      background: var(--gold-gradient);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #fff;
+      background: var(--bg-surface);
+    }
+    .btn-print {
+      background: var(--bg-card-alt);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-print:hover {
+      background: var(--bg-surface);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at 50% -20%, rgba(197, 168, 105, 0.15) 0%, transparent 70%);
+    }
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(197, 168, 105, 0.12);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #D8DCE5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p.lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 820px;
+      margin-bottom: 28px;
+    }
+
+    /* Metrics Ribbon */
+    .metrics-ribbon {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .metric-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: var(--bg-surface);
+      color: var(--gold-light);
+    }
+    .metric-data h4 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .metric-data span {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 56px 0;
+    }
+    .section-header {
+      margin-bottom: 32px;
+    }
+    .section-subtitle {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-primary);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 720px;
+      margin-top: 6px;
+    }
+
+    /* Competitors Grid */
+    .competitor-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .comp-tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .comp-tab-btn:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+    .comp-tab-btn.active {
+      background: var(--bg-surface);
+      border-color: var(--gold-light);
+      box-shadow: 0 0 0 1px var(--gold-light), var(--shadow-sm);
+    }
+    .comp-tab-btn h4 {
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .comp-tab-btn span {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .comp-content-pane {
+      display: none;
+    }
+    .comp-content-pane.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .topics-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+    }
+    table.custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    table.custom-table th {
+      background: var(--bg-card-alt);
+      color: var(--text-muted);
+      font-weight: 600;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    table.custom-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-main);
+      vertical-align: top;
+    }
+    table.custom-table tr:last-child td {
+      border-bottom: none;
+    }
+    table.custom-table tr:hover td {
+      background: rgba(255,255,255,0.015);
+    }
+    .topic-idx {
+      font-weight: 700;
+      color: var(--gold-light);
+      display: inline-block;
+      min-width: 26px;
+    }
+    .topic-title {
+      font-weight: 600;
+      color: #fff;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .topic-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .badge-kids { background: rgba(56, 189, 248, 0.15); color: #7DD3FC; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-adults { background: rgba(168, 85, 247, 0.15); color: #D8B4FE; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-teens { background: rgba(244, 63, 94, 0.15); color: #FDA4AF; border: 1px solid rgba(244, 63, 94, 0.3); }
+    .badge-family { background: rgba(16, 185, 129, 0.15); color: #6EE7B7; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-lead { background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+    /* Gap Analysis Box */
+    .gap-box {
+      margin-top: 24px;
+      background: linear-gradient(135deg, rgba(197, 168, 105, 0.08) 0%, rgba(26, 32, 48, 0.6) 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .gap-col h4 {
+      color: var(--gold-light);
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .gap-col ul {
+      list-style: none;
+    }
+    .gap-col li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .gap-col li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: var(--gold-primary);
+      font-weight: bold;
+    }
+
+    /* Trends & Radar Section */
+    .trends-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+    }
+    .trend-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .trend-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+    .trend-top-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+    .trend-badge-legal { background: rgba(239, 68, 68, 0.15); color: #FCA5A5; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .trend-badge-health { background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .trend-badge-science { background: rgba(56, 189, 248, 0.15); color: #7DD3FC; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .trend-badge-behavior { background: rgba(16, 185, 129, 0.15); color: #6EE7B7; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .trend-badge-local { background: rgba(168, 85, 247, 0.15); color: #D8B4FE; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+    .trend-card h3 {
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .trend-card p.trend-fact {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .trend-action-box {
+      background: var(--bg-card-alt);
+      border-left: 3px solid var(--gold-primary);
+      padding: 10px 14px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      font-size: 0.82rem;
+      color: var(--text-main);
+    }
+    .trend-action-box strong {
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 2px;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .trend-sources-box {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.78rem;
+    }
+    .trend-sources-title {
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .trend-sources-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .trend-sources-list li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+    .trend-sources-list li a {
+      color: var(--gold-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .trend-sources-list li a:hover {
+      color: #fff;
+    }
+
+    /* Filters Bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+      align-items: center;
+      background: var(--bg-card);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+    .filter-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 6px;
+    }
+    .filter-btn {
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      color: #fff;
+      border-color: var(--border-subtle);
+    }
+    .filter-btn.active {
+      background: var(--gold-primary);
+      color: #0A0B0E;
+      font-weight: 700;
+    }
+
+    /* Month Cards Layout */
+    .calendar-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .month-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s;
+    }
+    .month-block:hover {
+      border-color: rgba(197, 168, 105, 0.4);
+    }
+    .month-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .month-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .month-badge {
+      background: var(--gold-gradient);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .month-title-group h3 {
+      font-size: 1.25rem;
+      color: #fff;
+      font-weight: 700;
+    }
+    .month-title-group span {
+      font-size: 0.82rem;
+      color: var(--gold-light);
+    }
+    .month-season-note {
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      max-width: 380px;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .post-card {
+      background: var(--bg-card-alt);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .post-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-gold);
+      background: var(--bg-surface);
+    }
+    .post-top {
+      margin-bottom: 12px;
+    }
+    .post-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .post-card h4 {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .post-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .post-bottom {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+    }
+    .post-format {
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    /* Campaigns Section */
+    .campaigns-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+    }
+    .campaign-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .campaign-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold-gradient);
+    }
+    .campaign-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .campaign-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: var(--bg-surface);
+      color: var(--gold-light);
+      border: 1px solid var(--border-subtle);
+    }
+    .campaign-header h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .campaign-header span {
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    .campaign-body p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .campaign-details {
+      background: var(--bg-card-alt);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .campaign-details-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .campaign-details-item strong {
+      color: #fff;
+      font-weight: 600;
+      min-width: 110px;
+    }
+    .campaign-details-item span {
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    /* Operational Routine & Flow */
+    .routine-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .routine-day {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+    .day-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .routine-day h4 {
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .routine-day p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .competitor-tabs { grid-template-columns: 1fr 1fr; }
+      .gap-box { grid-template-columns: 1fr; }
+      .routine-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.1rem; }
+      .month-header { flex-direction: column; gap: 10px; }
+      .month-season-note { text-align: left; }
+    }
+    @media (max-width: 600px) {
+      .competitor-tabs { grid-template-columns: 1fr; }
+      .campaigns-grid { grid-template-columns: 1fr; }
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .nav-links { overflow-x: auto; width: 100%; padding-bottom: 6px; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      header.site-header, .btn-print, .filter-bar { display: none !important; }
+      .month-block, .campaign-card, .metric-card { break-inside: avoid; border: 1px solid #ccc; background: #fff; color: #000; }
+      h1, h2, h3, h4 { color: #000 !important; }
+      .lead, p, span, td, th { color: #333 !important; }
+      .badge { border: 1px solid #999 !important; color: #000 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-logo">
+        <span class="logo-badge">ATA PREMIUM</span>
+        <span>Florianópolis — Estratégia Integrada 2026/2027</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#benchmark">1. Benchmark Competitivo</a></li>
+          <li><a href="#tendencias">2. Tendências & Fontes (Set/Out)</a></li>
+          <li><a href="#calendario">3. Calendário 12 Meses (45 Pautas)</a></li>
+          <li><a href="#campanhas">4. Campanhas Integradas</a></li>
+          <li><a href="#operacao">5. Fluxo & KPIs</a></li>
+        </ul>
+      </nav>
+      <button class="btn-print" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        Salvar PDF / Imprimir
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tagline">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        Planejamento Estratégico Anual
+      </div>
+      <h1>Dominância Digital & Atração de Leads:<br>Do Blog ao WhatsApp</h1>
+      <p class="lead">
+        Mapeamento de 40 temas dos maiores players globais e locais, inteligência em tempo real com as <strong>leis e tendências de Setembro/Outubro</strong>, estruturação sazonal de <strong>45 postagens estratégicas</strong> (Setembro/2026 a Agosto/2027) e <strong>6 pilares de campanhas integradas</strong> para as 3 unidades de Florianópolis (Alves de Brito, Colégio Catarinense e Spotmarkt).
+      </p>
+
+      <!-- Key Metrics Ribbon -->
+      <div class="metrics-ribbon" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <div class="metric-card">
+          <div class="metric-icon">🥋</div>
+          <div class="metric-data">
+            <h4>40 Temas</h4>
+            <span>Benchmark Mapeado</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">⚖️</div>
+          <div class="metric-data">
+            <h4>5 Tendências</h4>
+            <span>Leis & Notícias Reais</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">📅</div>
+          <div class="metric-data">
+            <h4>45 Pautas</h4>
+            <span>12 Meses Sazonais</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">🎯</div>
+          <div class="metric-data">
+            <h4>6 Campanhas</h4>
+            <span>Pagas + Inbound + Parcerias</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">📍</div>
+          <div class="metric-data">
+            <h4>3 Unidades</h4>
+            <span>Centro & Córrego Grande</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: BENCHMARK COMPETITIVO -->
+  <section id="benchmark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Inteligência de Mercado</div>
+        <h2>1. Benchmark Competitivo — 40 Temas Explorados</h2>
+        <p>Análise aprofundada das abordagens de conteúdo dos líderes internacionais de Songahm Taekwondo e concorrentes diretos locais em Florianópolis.</p>
+      </div>
+
+      <!-- Tab Buttons for Competitors -->
+      <div class="competitor-tabs">
+        <button class="comp-tab-btn active" onclick="switchCompetitor('element')">
+          <h4>Element ATA (EUA)</h4>
+          <span>Liderança, Família & Sucesso Escolar</span>
+        </button>
+        <button class="comp-tab-btn" onclick="switchCompetitor('inspiration')">
+          <h4>Inspiration ATA (EUA)</h4>
+          <span>Anti-Bullying & Desconexão Digital</span>
+        </button>
+        <button class="comp-tab-btn" onclick="switchCompetitor('topmartial')">
+          <h4>TOP Martial Arts (Floripa)</h4>
+          <span>Songahm Local & Graduações</span>
+        </button>
+        <button class="comp-tab-btn" onclick="switchCompetitor('gracie')">
+          <h4>Gracie Barra / Solo (Floripa)</h4>
+          <span>Defesa Pessoal & Executivos</span>
+        </button>
+      </div>
+
+      <!-- PANE 1: ELEMENT ATA -->
+      <div id="pane-element" class="comp-content-pane active">
+        <div class="topics-table-wrap">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">#</th>
+                <th style="width: 32%;">Tema / Título Explorador</th>
+                <th style="width: 18%;">Público-Alvo</th>
+                <th>Ângulo Estratégico & Ponto Forte</th>
+                <th style="width: 16%;">CTA / Conversão</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="topic-idx">01</span></td>
+                <td><span class="topic-title">How Martial Arts Builds Academic Excellence</span><span class="topic-desc">Como a disciplina no tatame melhora notas e rendimento escolar.</span></td>
+                <td><span class="badge badge-kids">Kids 6-12 & Pais</span></td>
+                <td>Conecta os comandos de atenção do Taekwondo com a capacidade de escuta em sala de aula.</td>
+                <td>Agendar Aula Experimental de Foco</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">02</span></td>
+                <td><span class="topic-title">The Black Belt Mindset in Everyday Life</span><span class="topic-desc">Filosofia da faixa preta aplicada à perseverança diária.</span></td>
+                <td><span class="badge badge-teens">Teens & Adultos</span></td>
+                <td>Trata a faixa preta não como objeto físico, mas como resiliência para não desistir diante de obstáculos.</td>
+                <td>Conhecer Programa de Liderança</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">03</span></td>
+                <td><span class="topic-title">Why Families That Kick Together, Stick Together</span><span class="topic-desc">O impacto do treino conjunto de pais e filhos.</span></td>
+                <td><span class="badge badge-family">Família Completa</span></td>
+                <td>Aborda a falta de tempo de qualidade dos pais modernos e propõe o treino marcial como conexão familiar.</td>
+                <td>Plano Família com Desconto</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">04</span></td>
+                <td><span class="topic-title">Developing Unshakeable Confidence in Toddlers (Ages 3-6)</span><span class="topic-desc">Desenvolvimento psicomotor e timidez na primeira infância.</span></td>
+                <td><span class="badge badge-kids">Tigers (3 a 6 anos)</span></td>
+                <td>Enfatiza habilidades motoras grossas, postura corporal e vencer a ansiedade de separação materna.</td>
+                <td>Turmas Tigers: Vagas Limitadas</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">05</span></td>
+                <td><span class="topic-title">Goal-Setting Mastery: Teaching Kids How to Win</span><span class="topic-desc">O sistema de faixas como metodologia de metas.</span></td>
+                <td><span class="badge badge-kids">Kids & Jovens</span></td>
+                <td>Explica aos pais como o sistema de pequenas conquistas (listras) cria tolerância à frustração.</td>
+                <td>Baixar Infográfico de Metas</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">06</span></td>
+                <td><span class="topic-title">Adult Fitness That Isn’t Boring: Beyond the Gym</span><span class="topic-desc">Por que a musculação tradicional cansa a mente e o Taekwondo revigora.</span></td>
+                <td><span class="badge badge-adults">Adultos 25-45</span></td>
+                <td>Queima calórica alta (até 800 kcal/aula) com aprendizado constante e dinamismo mental.</td>
+                <td>Passe Livre de 7 Dias</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">07</span></td>
+                <td><span class="topic-title">Leadership Skills You Won’t Learn at School</span><span class="topic-desc">Oratória, postura corporal e liderança infantil.</span></td>
+                <td><span class="badge badge-lead">Teens & Juniors</span></td>
+                <td>Alunos graduados auxiliando novatos; desenvolve empatia, responsabilidade e voz firme.</td>
+                <td>Programa ATA Leadership</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">08</span></td>
+                <td><span class="topic-title">Overcoming Screen Addiction with Martial Arts</span><span class="topic-desc">A troca da dopamina rápida das telas pelo desafio real do tatame.</span></td>
+                <td><span class="badge badge-kids">Pais Preocupados</span></td>
+                <td>Mostra dados de sedentarismo e ansiedade infantil gerada pelo excesso de smartphones e iPads.</td>
+                <td>Agendar Diagnóstico Comportamental</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">09</span></td>
+                <td><span class="topic-title">Self-Defense vs. Aggression: What We Really Teach</span><span class="topic-desc">Desmistificando o medo de que arte marcial torne a criança agressiva.</span></td>
+                <td><span class="badge badge-kids">Mães Cautelosas</span></td>
+                <td>Demonstra que crianças seguras não precisam brigar; a calma desarma o conflito.</td>
+                <td>Depoimento em Vídeo de Mães</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">10</span></td>
+                <td><span class="topic-title">The Nutrition and Sleep Habits of Junior Black Belts</span><span class="topic-desc">Estilo de vida saudável e hábitos de descanso.</span></td>
+                <td><span class="badge badge-family">Família & Atletas</span></td>
+                <td>Combina rotina de sono reparador com energia para treino e aulas escolares matinais.</td>
+                <td>Receber E-book de Hábitos Saudáveis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PANE 2: INSPIRATION ATA -->
+      <div id="pane-inspiration" class="comp-content-pane">
+        <div class="topics-table-wrap">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">#</th>
+                <th style="width: 32%;">Tema / Título Explorador</th>
+                <th style="width: 18%;">Público-Alvo</th>
+                <th>Ângulo Estratégico & Ponto Forte</th>
+                <th style="width: 16%;">CTA / Conversão</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="topic-idx">11</span></td>
+                <td><span class="topic-title">The Verbal Judo: Stopping Bullies Without Throwing a Punch</span><span class="topic-desc">Desescalada verbal de agressões na escola.</span></td>
+                <td><span class="badge badge-kids">Crianças 7-14 & Pais</span></td>
+                <td>Técnicas de contato visual, postura ereta e tom de voz assertivo que inibem o agressor.</td>
+                <td>Guia Prático Anti-Bullying</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">12</span></td>
+                <td><span class="topic-title">ADHD and Martial Arts: A Natural Therapy for Focus</span><span class="topic-desc">Benefícios comprovados do Taekwondo no TDAH infantil.</span></td>
+                <td><span class="badge badge-kids">Pais de Neuroatípicos</span></td>
+                <td>Rotinas previsíveis, estímulos proprioceptivos e canalização da hiperatividade para o movimento.</td>
+                <td>Falar com Instrutor Especializado</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">13</span></td>
+                <td><span class="topic-title">Why Girls Need Martial Arts More Than Ever</span><span class="topic-desc">Empoderamento, voz e autonomia para meninas desde a infância.</span></td>
+                <td><span class="badge badge-kids">Meninas & Mães</span></td>
+                <td>Quebra do estereótipo masculino; foco em postura de liderança feminina e segurança no espaço público.</td>
+                <td>Turma Especial Feminina</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">14</span></td>
+                <td><span class="topic-title">Dealing with Peer Pressure in the Teenage Years</span><span class="topic-desc">Como manter valores fortes diante da pressão do grupo.</span></td>
+                <td><span class="badge badge-teens">Adolescentes 13-17</span></td>
+                <td>Criação de um círculo social de elite no dojo, onde o respeito e o esforço são valorizados.</td>
+                <td>Conhecer Comunidade Teen</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">15</span></td>
+                <td><span class="topic-title">The Power of Courtesy: Bringing Respect Back Home</span><span class="topic-desc">Transferindo a cortesia do tatame para as conversas em família.</span></td>
+                <td><span class="badge badge-family">Pais & Filhos</span></td>
+                <td>Relatos de pais sobre crianças que passaram a arrumar o quarto e responder aos pais com respeito.</td>
+                <td>Teste de 14 Dias de Transformação</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">16</span></td>
+                <td><span class="topic-title">Stress Relief for Working Professionals and Executives</span><span class="topic-desc">Descarregando o estresse corporativo em chutes no saco de pancadas.</span></td>
+                <td><span class="badge badge-adults">Executivos & Profissionais</span></td>
+                <td>Liberação de endorfina e desconexão de reuniões e e-mails por 60 minutos ininterruptos.</td>
+                <td>Aula Experimental Noturna</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">17</span></td>
+                <td><span class="topic-title">Martial Arts Summer Camps: Fun With a Purpose</span><span class="topic-desc">Colônia de férias que educa ao invés de apenas entreter.</span></td>
+                <td><span class="badge badge-kids">Pais em Férias</span></td>
+                <td>Equilíbrio entre jogos, oficinas de defesa pessoal, jogos cooperativos e disciplina.</td>
+                <td>Pré-Inscrição Camp de Férias</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">18</span></td>
+                <td><span class="topic-title">Building Mental Toughness for Student Athletes</span><span class="topic-desc">Treino marcial como suporte a outros esportes (tênis, futebol, natação).</span></td>
+                <td><span class="badge badge-teens">Jovens Atletas</span></td>
+                <td>Equilíbrio corporal, tempo de reação rápida, flexibilidade e controle da ansiedade de competição.</td>
+                <td>Avaliação de Desempenho Físico</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">19</span></td>
+                <td><span class="topic-title">From Shy to Confident: A Student’s Journey</span><span class="topic-desc">Estudo de caso real de transformação pessoal no tatame.</span></td>
+                <td><span class="badge badge-family">Novas Famílias</span></td>
+                <td>História documentada em vídeo: o primeiro dia tímido vs. a conquista da faixa amarela falando alto.</td>
+                <td>Ver Depoimentos Reais</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">20</span></td>
+                <td><span class="topic-title">Safety Rules Every Kid Must Know When Alone</span><span class="topic-desc">Segurança pessoal, atenção ao redor (situational awareness) e limites.</span></td>
+                <td><span class="badge badge-kids">Kids 8-12</span></td>
+                <td>Dicas para volta da escola, não falar com estranhos e confiar no próprio instinto de alerta.</td>
+                <td>Baixar Cartilha de Segurança Kids</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PANE 3: TOP MARTIAL ARTS -->
+      <div id="pane-topmartial" class="comp-content-pane">
+        <div class="topics-table-wrap">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">#</th>
+                <th style="width: 32%;">Tema / Título Explorador</th>
+                <th style="width: 18%;">Público-Alvo</th>
+                <th>Ângulo Estratégico & Ponto Forte</th>
+                <th style="width: 16%;">CTA / Conversão</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="topic-idx">21</span></td>
+                <td><span class="topic-title">Songahm Taekwondo vs. Taekwondo Olímpico (WT)</span><span class="topic-desc">As diferenças práticas entre o estilo marcial e a modalidade esportiva.</span></td>
+                <td><span class="badge badge-teens">Praticantes & Curiosos</span></td>
+                <td>Explica por que o Songahm inclui armas orientais, defesa pessoal realista e currículo integral.</td>
+                <td>Agendar Aula Comparativa</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">22</span></td>
+                <td><span class="topic-title">Armas Tradicionais: O que as Crianças Aprendem com Nunchaku e Bastão</span><span class="topic-desc">Coordenação motora fina, controle espacial e respeito à ferramenta.</span></td>
+                <td><span class="badge badge-kids">Kids & Teens</span></td>
+                <td>Desmistifica o perigo: o treino com armas desenvolve reflexos neuromusculares de alta precisão.</td>
+                <td>Conhecer Módulo de Armas ATA</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">23</span></td>
+                <td><span class="topic-title">O Significado das Cores de Faixa no Songahm</span><span class="topic-desc">Do branco (semente pura) ao preto (maturidade e liderança).</span></td>
+                <td><span class="badge badge-family">Alunos & Pais</span></td>
+                <td>Conteúdo educativo de alto compartilhamento sobre cada estágio da evolução psicológica do aluno.</td>
+                <td>Baixar Cronograma de Graduação</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">24</span></td>
+                <td><span class="topic-title">Campeonatos Panamericanos e Nacionais ATA</span><span class="topic-desc">Como funcionam as competições e o espírito de irmandade internacional.</span></td>
+                <td><span class="badge badge-teens">Competidores & Famílias</span></td>
+                <td>Competição como celebração do aprendizado, onde vitória e derrota são absorvidas com elegância.</td>
+                <td>Apoiar Equipe Floripa</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">25</span></td>
+                <td><span class="topic-title">Condicionamento Físico Sem Lesões para Quem Tem Mais de 35 Anos</span><span class="topic-desc">Preservação articular, alongamento dinâmico e flexibilidade adulta.</span></td>
+                <td><span class="badge badge-adults">Adultos 35-55</span></td>
+                <td>Metodologia progressiva que respeita a biomecânica individual sem choques desnecessários.</td>
+                <td>Agendar Aula Experimental Adulto</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">26</span></td>
+                <td><span class="topic-title">Exame de Graduação: Como Superar o Nervosismo Diante da Banca</span><span class="topic-desc">Controle respiratório e domínio da ansiedade sob avaliação.</span></td>
+                <td><span class="badge badge-kids">Alunos Pré-Graduação</span></td>
+                <td>Preparação emocional que serve diretamente para provas escolares e vestibulares futuros.</td>
+                <td>Dicas do Mestre por Vídeo</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">27</span></td>
+                <td><span class="topic-title">Songahm Sparring: Luta Controlada com Equipamentos de Segurança</span><span class="topic-desc">Como o combate seguro desenvolve tomada de decisão rápida em frações de segundo.</span></td>
+                <td><span class="badge badge-teens">Teens & Adultos</span></td>
+                <td>Uso obrigatório de protetores de mão, pé e capacete; zero risco de trauma grave.</td>
+                <td>Ver Vídeo do Treino de Sparring</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">28</span></td>
+                <td><span class="topic-title">A História do Grand Master Soon Ho Lee e a Expansão da ATA</span><span class="topic-desc">Tradição marcial, raízes coreanas e a presença da maior federação mundial.</span></td>
+                <td><span class="badge badge-family">Cultura Marcial</span></td>
+                <td>Autoridade de pertencer a uma entidade com mais de 300.000 membros no mundo inteiro.</td>
+                <td>Conhecer a Linhagem ATA</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">29</span></td>
+                <td><span class="topic-title">Treino de Defesa Pessoal contra Pegadas e Agarramentos</span><span class="topic-desc">Técnicas de alavancas e escape simples para situações reais urbanas.</span></td>
+                <td><span class="badge badge-adults">Mulheres & Jovens</span></td>
+                <td>Não depende de força bruta: o foco é escapar e buscar local seguro imediatamente.</td>
+                <td>Workshops de Defesa Pessoal</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">30</span></td>
+                <td><span class="topic-title">Por que Nossos Instrutores Têm Certificação Internacional</span><span class="topic-desc">Critérios rigorosos de formação pedagógica e primeiros socorros da ATA.</span></td>
+                <td><span class="badge badge-kids">Pais Exigentes</span></td>
+                <td>Diferencial em relação a academias de bairro: instrutores passam por cursos anuais nos EUA.</td>
+                <td>Conheça Nossos Instrutores</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PANE 4: GRACIE BARRA & OUTROS -->
+      <div id="pane-gracie" class="comp-content-pane">
+        <div class="topics-table-wrap">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">#</th>
+                <th style="width: 32%;">Tema / Título Explorador</th>
+                <th style="width: 18%;">Público-Alvo</th>
+                <th>Ângulo Estratégico & Ponto Forte</th>
+                <th style="width: 16%;">CTA / Conversão</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="topic-idx">31</span></td>
+                <td><span class="topic-title">Jiu-Jitsu para Defesa Pessoal Feminina: Ganhe Autonomia</span><span class="topic-desc">Técnicas de solo para escapar de agressores maiores e mais pesados.</span></td>
+                <td><span class="badge badge-adults">Mulheres 18-45</span></td>
+                <td>Sensação de segurança ao caminhar na rua e quebra de travas de vulnerabilidade física.</td>
+                <td>Inscrição no Módulo Feminino</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">32</span></td>
+                <td><span class="topic-title">O Efeito do Treino na Síndrome de Burnout em Florianópolis</span><span class="topic-desc">A rotina de profissionais de tecnologia e finanças na Ilha do Silício.</span></td>
+                <td><span class="badge badge-adults">Tech, Médicos & Gestores</span></td>
+                <td>A necessidade de um esporte onde é impossível pensar em código ou planilhas enquanto se defende.</td>
+                <td>Passe Executivo de 1 Semana</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">33</span></td>
+                <td><span class="topic-title">Alimentação e Recuperação Muscular para Quem Treina à Noite</span><span class="topic-desc">Como jantar bem sem pesar no estômago após um treino intenso.</span></td>
+                <td><span class="badge badge-adults">Praticantes Ativos</span></td>
+                <td>Dicas de hidratação e refeições leves que facilitam a produção de melatonina pós-tatame.</td>
+                <td>Receber Guia Nutricional</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">34</span></td>
+                <td><span class="topic-title">Construção da Fraternidade no Tatame: Amizades para a Vida</span><span class="topic-desc">O ambiente acolhedor e a ausência de vaidade entre os parceiros de treino.</span></td>
+                <td><span class="badge badge-family">Novos Residentes em Floripa</span></td>
+                <td>Excelente gancho para quem acabou de se mudar para a Grande Florianópolis e busca networking saudável.</td>
+                <td>Venha Fazer Novos Amigos</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">35</span></td>
+                <td><span class="topic-title">Como a Arte Marcial Melhora a Postura de Quem Trabalha Home Office</span><span class="topic-desc">Combate às dores lombares e encurtamento de quadril causados por 8h sentado.</span></td>
+                <td><span class="badge badge-adults">Profissionais Remotos</span></td>
+                <td>Trabalho profundo de core, mobilidade torácica e fortalecimento dos paravertebrais.</td>
+                <td>Agendar Aula Postural</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">36</span></td>
+                <td><span class="topic-title">Disciplina de Campeão: Como Criar Rotinas Inabaláveis</span><span class="topic-desc">A importância de treinar mesmo nos dias frios e chuvosos de inverno.</span></td>
+                <td><span class="badge badge-teens">Geral</span></td>
+                <td>A disciplina como a ponte entre a motivação passageira e o resultado de longo prazo.</td>
+                <td>Conheça Nossa Grade Matutina</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">37</span></td>
+                <td><span class="topic-title">Defesa Pessoal Urbana: Consciência Situacional em Ambientes Públicos</span><span class="topic-desc">Como estacionamentos, saídas de banco e áreas escuras exigem atenção preventiva.</span></td>
+                <td><span class="badge badge-adults">Adultos & Idosos</span></td>
+                <td>90% da defesa pessoal é não entrar na zona de perigo; postura confiante afasta criminosos.</td>
+                <td>Assistir Masterclass de Prevenção</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">38</span></td>
+                <td><span class="topic-title">O Papel do Professor: Mais que Instrutor, um Mentor de Caráter</span><span class="topic-desc">A relação de confiança pedagógica que transforma a vida de jovens.</span></td>
+                <td><span class="badge badge-kids">Famílias com Teens</span></td>
+                <td>O papel de um modelo positivo masculino/feminino fora do núcleo familiar próximo.</td>
+                <td>Converse com Nossos Mestres</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">39</span></td>
+                <td><span class="topic-title">Longevidade e Mobilidade: Treinando Artes Marciais aos 50+</span><span class="topic-desc">Como manter agilidade, equilíbrio e reflexos afiados na maturidade.</span></td>
+                <td><span class="badge badge-adults">Master 50+</span></td>
+                <td>Prevenção de quedas, aumento da densidade óssea e saúde cardiovascular sustentável.</td>
+                <td>Agendar Aula para Iniciantes 50+</td>
+              </tr>
+              <tr>
+                <td><span class="topic-idx">40</span></td>
+                <td><span class="topic-title">Por que Todo Empreendedor Deveria Treinar Arte Marcial</span><span class="topic-desc">Tomada de decisão sob pressão, humildade ao errar e foco implacável.</span></td>
+                <td><span class="badge badge-adults">Empresários e Líderes</span></td>
+                <td>No tatame não há status comercial: todos aprendem com os mesmos princípios de meritocracia.</td>
+                <td>Rede de Networking ATA Floripa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- GAP ANALYSIS: O QUE A ATA PREMIUM TEM QUE OS OUTROS NÃO EXPLORAM -->
+      <div class="gap-box">
+        <div class="gap-col">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Vantagens Únicas da ATA Premium Florianópolis
+          </h4>
+          <ul>
+            <li><strong>Presença Escolar Interna:</strong> Unidade no tradicional Colégio Catarinense com conveniência total para pais.</li>
+            <li><strong>Experiência Mall Premium:</strong> Unidade no Spotmarkt Mall (Córrego Grande) com estacionamento, cafés e compras integradas.</li>
+            <li><strong>Unidade Central Dedicada:</strong> Na Rua Alves de Brito, com estrutura de boutique marcial e vestiários climatizados.</li>
+            <li><strong>Metodologia Songahm Líder Mundial:</strong> Sistema unificado de ensino com armas, sparring e currículo de liderança internacional.</li>
+          </ul>
+        </div>
+        <div class="gap-col">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Ângulos de Conteúdo Inexplorados pelos Concorrentes
+          </h4>
+          <ul>
+            <li>Foco explícito nas <strong>dores dos pais de classe A/B de Florianópolis</strong> (excesso de tempo de tela, falta de frustração nos filhos, isolamento social pós-pandemia).</li>
+            <li>Integração da <strong>rotina do Córrego Grande / Itacorubi / Centro</strong> com o trânsito da ilha e facilidade de acesso nas unidades.</li>
+            <li>Conteúdo centrado em <strong>Soft Skills</strong> (Oratória, Liderança, Autoestima e Inteligência Emocional) em vez de apenas golpes técnicos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: TENDÊNCIAS & NOTÍCIAS REAIS (SETEMBRO E OUTUBRO) -->
+  <section id="tendencias" style="background: rgba(18, 21, 30, 0.6); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Radar de Notícias & Inteligência Local</div>
+        <h2>2. Tendências & Fontes Oficiais — Brasil & Florianópolis</h2>
+        <p>Dados de pesquisas recentes, atualizações legislativas em Santa Catarina e tendências comportamentais de famílias de alto padrão que embasam diretamente as pautas e campanhas deste início de ciclo.</p>
+      </div>
+
+      <div class="trends-grid">
+
+        <!-- TREND 1: CELULARES NAS ESCOLAS -->
+        <div class="trend-card">
+          <div>
+            <span class="trend-top-badge trend-badge-legal">
+              ⚖️ Marco Legal & Educação
+            </span>
+            <h3>1. Restrição e Proibição de Celulares nas Escolas (Lei 15.100 & CEE/SC)</h3>
+            <p class="trend-fact">
+              Com a promulgação da <strong>Lei Federal nº 15.100/2025</strong> e a orientação da <strong>Nota Técnica nº 001/2025 do CEE/SC</strong> (regulamentando a Lei Estadual nº 14.363/2008), escolas públicas e privadas de Santa Catarina intensificaram a proibição de smartphones e aparelhos portáteis durante aulas e recreios. Colégios como o <strong>Colégio Catarinense</strong> enfrentam a abstinência digital dos jovens e demandam canais de socialização real.
+            </p>
+            <div class="trend-action-box">
+              <strong>Como a ATA aplica no Marketing:</strong>
+              Posicionar o dojang como o ambiente ideal de socialização e foco pós-celular. Gancho imediato para as famílias do Colégio Catarinense e Centro.
+            </div>
+          </div>
+          <div class="trend-sources-box">
+            <div class="trend-sources-title">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Fontes & Documentos Oficiais:
+            </div>
+            <ul class="trend-sources-list">
+              <li>• <a href="https://www.planalto.gov.br" target="_blank" rel="noopener">Planalto — Lei Federal nº 15.100/2025 (Restrição de Celulares em Escolas)</a></li>
+              <li>• <a href="https://www.cee.sc.gov.br" target="_blank" rel="noopener">Conselho Estadual de Educação de SC — Nota Técnica nº 001/2025</a></li>
+              <li>• <a href="https://leis.alesc.sc.gov.br" target="_blank" rel="noopener">Alesc — Lei Estadual nº 14.363/2008 & PL 21/2020</a></li>
+              <li>• <a href="https://www.estadao.com.br" target="_blank" rel="noopener">Estadão & NSC Total — Cobertura sobre Celulares nas Escolas de SC</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TREND 2: SETEMBRO AMARELO & SAÚDE MENTAL -->
+        <div class="trend-card">
+          <div>
+            <span class="trend-top-badge trend-badge-health">
+              💛 Setembro Amarelo & Saúde Mental
+            </span>
+            <h3>2. O Esporte como Âncora Emocional e Antidepressivo Natural</h3>
+            <p class="trend-fact">
+              Em Florianópolis, o Setembro Amarelo conta com mobilização do Ministério Público de SC (MPSC) e da Associação Brasileira de Psiquiatria (ABP). Médicos e psicólogos reforçam que a prática estruturada de artes marciais regula neurotransmissores (endorfina, dopamina), constrói rotina previsível e funciona como fator de proteção vital contra ansiedade e isolamento juvenil.
+            </p>
+            <div class="trend-action-box">
+              <strong>Como a ATA aplica no Marketing:</strong>
+              Artigos e anúncios de Setembro abordando a saúde mental sem tabus: o tatame como refúgio de descompressão e fortalecimento emocional de jovens e adultos.
+            </div>
+          </div>
+          <div class="trend-sources-box">
+            <div class="trend-sources-title">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Fontes & Documentos Oficiais:
+            </div>
+            <ul class="trend-sources-list">
+              <li>• <a href="https://www.mpsc.mp.br" target="_blank" rel="noopener">Ministério Público de SC (MPSC) — Ações de Conscientização em Saúde Mental</a></li>
+              <li>• <a href="https://www.abp.org.br" target="_blank" rel="noopener">Associação Brasileira de Psiquiatria (ABP) — Diretrizes Setembro Amarelo</a></li>
+              <li>• <a href="https://cvv.org.br" target="_blank" rel="noopener">CVV (Centro de Valorização da Vida - Ligue 188) — cvv.org.br</a></li>
+              <li>• <a href="https://www.pmf.sc.gov.br" target="_blank" rel="noopener">Prefeitura de Florianópolis — Programas Esportivos de Apoio Emocional</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TREND 3: SEDENTARISMO & OBESIDADE INFANTIL -->
+        <div class="trend-card">
+          <div>
+            <span class="trend-top-badge trend-badge-science">
+              📊 Pesquisa Científica & Pediatria
+            </span>
+            <h3>3. Atlas da Obesidade 2026: 38,4% dos Jovens com Sobrepeso</h3>
+            <p class="trend-fact">
+              Dados do <em>Atlas Mundial da Obesidade 2026</em> revelam que 38,4% das crianças e adolescentes brasileiros vivem com excesso de peso (quase o dobro da média global de 20,7%). Cerca de 75% dos jovens não cumprem as recomendações mínimas da OMS e da Sociedade Brasileira de Pediatria (SBP) devido à substituição de brincadeiras ativas por telas dentro de apartamentos.
+            </p>
+            <div class="trend-action-box">
+              <strong>Como a ATA aplica no Marketing:</strong>
+              Combate direto ao sedentarismo infantil com queima calórica lúdica e desenvolvimento motor completo nas turmas Tigers e Juniors.
+            </div>
+          </div>
+          <div class="trend-sources-box">
+            <div class="trend-sources-title">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Fontes & Documentos Oficiais:
+            </div>
+            <ul class="trend-sources-list">
+              <li>• <a href="https://www.worldobesity.org" target="_blank" rel="noopener">World Obesity Federation — World Obesity Atlas 2026</a></li>
+              <li>• <a href="https://www.sbp.com.br" target="_blank" rel="noopener">Sociedade Brasileira de Pediatria (SBP) — Manual de Atividade Física e Telas</a></li>
+              <li>• <a href="https://hospitalsaocamilosp.org.br" target="_blank" rel="noopener">Hospital São Camilo / Jornal do Comércio — Estudo da Inatividade Juvenil</a></li>
+              <li>• <a href="https://noticias.uol.com.br" target="_blank" rel="noopener">UOL VivaBem — Análise de Risco de Doenças Crônicas Precoces</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TREND 4: DIA DAS CRIANÇAS - EXPERIÊNCIAS -->
+        <div class="trend-card">
+          <div>
+            <span class="trend-top-badge trend-badge-behavior">
+              🎁 Comportamento & Dia das Crianças
+            </span>
+            <h3>4. Outubro: "Experiências e Hábitos para a Vida > Brinquedos"</h3>
+            <p class="trend-fact">
+              Pesquisas da Fecomércio SC e CDL Floripa demonstram uma virada comportamental nas famílias de classe A/B: os pais preferem investir em experiências ativas, esportes e saúde do que em brinquedos plásticos que perdem o valor em poucos dias. O mês é marcado pela estreia da <em>Disney Magic Run</em> na Beira-Mar Continental e festivais nos parques da cidade.
+            </p>
+            <div class="trend-action-box">
+              <strong>Como a ATA aplica no Marketing:</strong>
+              Campanha de Outubro com o mote "O Melhor Presente é a Autoconfiança". Oferta especial com Kit Uniforme Oficial para novas matrículas.
+            </div>
+          </div>
+          <div class="trend-sources-box">
+            <div class="trend-sources-title">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Fontes & Documentos Oficiais:
+            </div>
+            <ul class="trend-sources-list">
+              <li>• <a href="https://www.nsctotal.com.br" target="_blank" rel="noopener">NSC Total / Conecta SC — Disney Magic Run Florianópolis (Outubro)</a></li>
+              <li>• <a href="https://somosaldeia.com.br" target="_blank" rel="noopener">Portal da Aldeia — Guia de Programação e Eventos Infantis de Floripa</a></li>
+              <li>• <a href="https://www.cultura.sc.gov.br" target="_blank" rel="noopener">FCC / Gov SC — 25ª Mostra de Cinema Infantil de Florianópolis (CIC)</a></li>
+              <li>• <a href="https://www.fecomercio-sc.com.br" target="_blank" rel="noopener">Fecomércio SC & CDL Florianópolis — Pesquisa de Intenção de Consumo</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TREND 5: PRIMAVERA E CONVIVÊNCIA EM FLORIPA -->
+        <div class="trend-card">
+          <div>
+            <span class="trend-top-badge trend-badge-local">
+              🌸 Estação & Geografia Local
+            </span>
+            <h3>5. Clima de Primavera & Retomada das Rotinas no Spotmarkt e Centro</h3>
+            <p class="trend-fact">
+              Dados da Epagri/Ciram mostram o aumento gradual de temperaturas e diminuição de frentes frias no litoral catarinense a partir de setembro. As famílias do Córrego Grande, Itacorubi e Centro voltam a circular em áreas abertas e shoppings de conveniência como o Spotmarkt Mall após o horário escolar.
+            </p>
+            <div class="trend-action-box">
+              <strong>Como a ATA aplica no Marketing:</strong>
+              Divulgação forte do conceito "Treine no Spotmarkt Mall": os pais desfrutam da gastronomia e cafés enquanto o filho desenvolve liderança marcial.
+            </div>
+          </div>
+          <div class="trend-sources-box">
+            <div class="trend-sources-title">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Fontes & Documentos Oficiais:
+            </div>
+            <ul class="trend-sources-list">
+              <li>• <a href="https://ciram.epagri.sc.gov.br" target="_blank" rel="noopener">Epagri/Ciram — Monitoramento Meteorológico da Primavera em SC</a></li>
+              <li>• <a href="https://guiafloripa.com.br" target="_blank" rel="noopener">Guia Floripa — Polos Gastronômicos e de Convivência no Córrego Grande</a></li>
+              <li>• <a href="https://www.pmf.sc.gov.br" target="_blank" rel="noopener">Prefeitura de Florianópolis — Atividades nos Parques Urbanos e Beira-Mar</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: CALENDÁRIO EDITORIAL SAZONAL -->
+  <section id="calendario" style="background: rgba(18, 21, 30, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Cronograma Anual 2026/2027</div>
+        <h2>3. Calendário Editorial Sazonal — 45 Pautas Estruturadas</h2>
+        <p>Iniciando em <strong>Setembro de 2026 com 1 post de abertura</strong>, seguido por <strong>4 posts mensais de Outubro de 2026 a Agosto de 2027</strong>. Perfeitamente alinhado com as estações climáticas de Floripa, férias escolares, vestibulares e datas comerciais.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-bar">
+        <span class="filter-label">Filtrar por Pilar:</span>
+        <button class="filter-btn active" onclick="filterPosts('all')">Todos (45)</button>
+        <button class="filter-btn" onclick="filterPosts('kids')">Kids & Pais (18)</button>
+        <button class="filter-btn" onclick="filterPosts('adults')">Adultos & Executivos (13)</button>
+        <button class="filter-btn" onclick="filterPosts('teens')">Teens & Liderança (8)</button>
+        <button class="filter-btn" onclick="filterPosts('family')">Família & Institucional (6)</button>
+      </div>
+
+      <div class="calendar-timeline">
+
+        <!-- SETEMBRO 2026: 1 POST -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Set 2026</span>
+              <div class="month-title-group">
+                <h3>Primavera das Famílias, Leis de Telas & Setembro Amarelo</h3>
+                <span>1 Artigo Estratégico de Lançamento da Nova Fase Digital</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Conexão direta com a Lei Federal 15.100/2025, Nota CEE/SC 001/2025 de restrição de celulares escolares e o Setembro Amarelo em Floripa.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num">
+                  <span>Pauta #01 • Fundo de Funil</span>
+                  <span class="badge badge-family">Família & Institucional</span>
+                </div>
+                <h4>O Renascimento do Foco: Por Que as Famílias de Florianópolis Estão Trocando as Telas pelo Tatame da ATA</h4>
+                <p>Análise da restrição de celulares em escolas de SC (Lei 15.100/2025) e a importância da saúde mental no Setembro Amarelo. Apresentação da rede ATA Florianópolis (Alves de Brito, Colégio Catarinense e Spotmarkt) como a melhor resposta pedagógica.</p>
+              </div>
+              <div class="post-bottom">
+                <span class="post-format">Blog Post Pilar + Vídeo Manifesto</span>
+                <span>KW: artes marciais florianopolis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OUTUBRO 2026: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Out 2026</span>
+              <div class="month-title-group">
+                <h3>Mês das Crianças & Combate ao Sedentarismo</h3>
+                <span>4 Artigos • Foco em Pais, Timidez, Hiperatividade e Primeira Infância</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Mês festivo das crianças e tendência de consumo de experiências > brinquedos (Fecomércio SC); alerta do Atlas da Obesidade 2026.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #02 • Topo</span><span class="badge badge-kids">Kids 3-6</span></div>
+                <h4>O Melhor Presente para o Dia das Crianças Não Tem Bateria: Por Que Pais em Floripa Estão Trocando Brinquedos por Autoconfiança</h4>
+                <p>A virada de comportamento apontada pelo comércio: experiências motoras e valores marciais que trazem benefícios cognitivos duradouros para crianças de 3 a 6 anos.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Blog + Carrossel Instagram</span><span>KW: taekwondo infantil florianopolis</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #03 • Meio</span><span class="badge badge-kids">TDAH & Foco</span></div>
+                <h4>Atlas da Obesidade e Sedentarismo: Como o Taekwondo Vence a Inatividade e Canaliza a Energia Excessiva de Crianças Agitadas</h4>
+                <p>Com quase 40% dos jovens com sobrepeso e 75% sedentários no Brasil, o método Songahm ensina autocontrole físico e foco escolar sem punições.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Longo + Infográfico</span><span>KW: foco infantil e artes marciais</span></div>
+            </div>
+            <div class="post-card" data-category="teens">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #04 • Meio</span><span class="badge badge-teens">Teens & Postura</span></div>
+                <h4>Sem Celular no Recreio: Como a Postura Corporal Erguida e a Voz Firme Ajudam Alunos Tímidos a Fazer Amigos Reais</h4>
+                <p>A neurociência do alinhamento postural da ATA e como vencer a inibição social no novo ambiente escolar sem telas.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo + Depoimento Vídeo</span><span>KW: timidez infantil como vencer</span></div>
+            </div>
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #05 • Fundo</span><span class="badge badge-family">Spotmarkt & Centro</span></div>
+                <h4>Primavera no Córrego Grande e Centro: 4 Motivos Para os Pais Treinarem no Spotmarkt Mall Enquanto os Filhos Fazem Taekwondo</h4>
+                <p>Conveniência de treinar, tomar um café e fazer compras no Spotmarkt Mall enquanto a criança treina, driblando o trânsito da ilha na primavera.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Local + Convite WhatsApp</span><span>KW: treino pais e filhos floripa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOVEMBRO 2026: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Nov 2026</span>
+              <div class="month-title-group">
+                <h3>Reta Final Escolar, Foco nas Provas & Black November</h3>
+                <span>4 Artigos • Controle da Ansiedade Pré-Férias e Condicionamento Adulto</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Alunos sob pressão de exames finais nos colégios (Catarinense, Bom Jesus, etc.); oportunidade para planos anuais 2027 e Black Friday.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #06 • Meio</span><span class="badge badge-kids">Escolares</span></div>
+                <h4>Fim de Ano Escolar Sem Pânico: Técnicas de Respiração do Taekwondo para Crianças Controlarem a Ansiedade de Provas</h4>
+                <p>Exercícios práticos de centramento usados pelos instrutores da ATA aplicáveis nos dias de provas bimestrais.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo + Vídeo Tutorial</span><span>KW: ansiedade de provas criancas</span></div>
+            </div>
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #07 • Topo</span><span class="badge badge-adults">Adultos</span></div>
+                <h4>Chegando em Dezembro no Limite? Como o Treino Noturno Elimina a Carga Mental do Trabalho em 50 Minutos</h4>
+                <p>Por que chutar alvos libera mais tensão acumulada do que corrida em esteira convencional.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Blog + Reels Instrutor</span><span>KW: alivio de estresse florianopolis</span></div>
+            </div>
+            <div class="post-card" data-category="teens">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #08 • Meio</span><span class="badge badge-teens">Teens & Vestibular</span></div>
+                <h4>Equilíbrio Emocional para Vestibulandos e Alunos do Ensino Médio: O Foco Marcial como Diferencial Competitivo</h4>
+                <p>Estudantes que mantêm 2 treinos semanais relatam maior capacidade de retenção de conteúdo e menos crises de estresse.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo + Depoimento</span><span>KW: foco estudos artes marciais</span></div>
+            </div>
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #09 • Fundo</span><span class="badge badge-family">Black Friday / Matrículas</span></div>
+                <h4>Planejamento 2027: Garanta a Vaga do Seu Filho no Programa de Liderança da ATA com Condições Exclusivas de Black November</h4>
+                <p>Anúncio das vantagens de antecipar a matrícula de 2027 com kit uniforme especial e congelamento de mensalidade.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Página de Captura + Blog</span><span>KW: promocao artes marciais floripa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEZEMBRO 2026: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Dez 2026</span>
+              <div class="month-title-group">
+                <h3>Encerramento de Ciclo, Metas 2027 & Mini-Camps</h3>
+                <span>4 Artigos • Graduações de Fim de Ano e Preparação para o Verão</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Cerimônias de graduação de faixas em Floripa; pais planejando a ocupação saudável dos filhos nas férias de verão de Janeiro.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #10 • Topo</span><span class="badge badge-family">Graduação</span></div>
+                <h4>O Orgulho de Trocar de Faixa: O que a Cerimônia de Graduação da ATA Realmente Significa Para o Seu Filho</h4>
+                <p>Cobertura emocional dos exames de faixa de fim de ano e celebração do esforço individual conquistado degrau por degrau.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Galeria de Fotos + Blog</span><span>KW: graduacao taekwondo floripa</span></div>
+            </div>
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #11 • Meio</span><span class="badge badge-adults">Defesa Pessoal</span></div>
+                <h4>Festas e Confraternizações de Fim de Ano: A Importância da Consciência Situacional para Homens e Mulheres</h4>
+                <p>Dicas práticas de segurança em trânsito noturno, eventos lotados e preservação do espaço pessoal.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Carrossel Salvar + Post</span><span>KW: dicas seguranca urbana floripa</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #12 • Fundo</span><span class="badge badge-kids">Colônia de Férias</span></div>
+                <h4>Como Evitar que as Férias de Verão Virem 12 Horas por Dia de Telas: Conheça o Mini-Camp Marcial de Janeiro</h4>
+                <p>Lançamento oficial das vagas da Colônia de Férias com atividades esportivas, defesa pessoal básica e gincanas na ATA.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Página de Inscrição + Artigo</span><span>KW: colonia de ferias florianopolis</span></div>
+            </div>
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #13 • Topo</span><span class="badge badge-adults">Metas de Ano Novo</span></div>
+                <h4>Resoluções de Ano Novo que Não Morrem em Fevereiro: Por Que Aprender uma Nova Habilidade é Mais Eficaz que Fazer Dieta</h4>
+                <p>A psicologia da formação de hábitos duradouros através da arte marcial em vez de metas abstratas de academia.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Motivacional</span><span>KW: resolucoes de ano novo fitness</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JANEIRO 2027: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Jan 2027</span>
+              <div class="month-title-group">
+                <h3>Verão Marcial & Desintoxicação Digital</h3>
+                <span>4 Artigos • Condicionamento Físico de Verão e Colônia de Férias em Ação</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Pico do verão catarinense; praias cheias, calor; oportunidade para treinos matinais e vespertinos com ar-condicionado e turmas de férias.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #14 • Topo</span><span class="badge badge-adults">Verão & Fitness</span></div>
+                <h4>Treino de Verão em Florianópolis: Queimando Gordura e Ganhando Flexibilidade Sem a Monotonia dos Aparelhos</h4>
+                <p>Como os chutes circulares e combinações pliométricas ativam glúteos, abdômen e pernas com alto gasto calórico.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Reels de Treino + Artigo</span><span>KW: emagrecimento taekwondo floripa</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #15 • Meio</span><span class="badge badge-kids">Férias Ativas</span></div>
+                <h4>Detox de Telas nas Férias: 5 Jogos Motores que Praticamos no Dojang que Você Pode Repetir na Praia com Seus Filhos</h4>
+                <p>Ideias práticas para pais estimularem reflexo, equilíbrio e velocidade dos pequenos durante os passeios de verão.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">E-book Gratuito + Post</span><span>KW: atividades ferias infantil floripa</span></div>
+            </div>
+            <div class="post-card" data-category="teens">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #16 • Meio</span><span class="badge badge-teens">Teens & Verão</span></div>
+                <h4>Amizades Reais Fora das Redes Sociais: A Comunidade Teen da ATA que Compartilha Valores Positivos</h4>
+                <p>Como adolescentes que treinam juntos constroem vínculos seguros, longe de influências tóxicas das baladas e da internet.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo + Depoimento Teens</span><span>KW: atividades para jovens floripa</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #17 • Fundo</span><span class="badge badge-kids">Back to School Antecipado</span></div>
+                <h4>Preparando o Retorno Escolar com 15 Dias de Antecedência: Como Reajustar o Sono e a Rotina Infantil Sem Sofrimento</h4>
+                <p>Transição suave do ritmo das férias para a volta às aulas com a rotina de treinos marciais.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Checklist em PDF + Blog</span><span>KW: rotina sono volta as aulas</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEVEREIRO 2027: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Fev 2027</span>
+              <div class="month-title-group">
+                <h3>Volta às Aulas (Back to School) — A Maior Safra do Ano</h3>
+                <span>4 Artigos • Integração com Colégios, Foco, Amizades e Combate ao Sedentarismo</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              O mês mais estratégico para matrícula de artes marciais infantis em Florianópolis. Retomada total no Colégio Catarinense e Spotmarkt.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #18 • Fundo</span><span class="badge badge-kids">Colégio Catarinense</span></div>
+                <h4>Volta às Aulas no Colégio Catarinense: As Vantagens do Treino de Taekwondo ATA Dentro do Espaço Escolar</h4>
+                <p>Logística perfeita para famílias: o filho sai da sala de aula e já entra no dojang credenciado sem pegar o trânsito da Beira-Mar.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Landing Page + Blog</span><span>KW: taekwondo colegio catarinense</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #19 • Meio</span><span class="badge badge-kids">Adaptação Escolar</span></div>
+                <h4>Mudança de Escola ou de Ano: Como a Autoconfiança da Arte Marcial Facilita a Adaptação Social da Criança</h4>
+                <p>Superando o medo de ser o 'aluno novo'; exercícios de postura de voz e segurança interna para fazer novos amigos.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Guia + Reels</span><span>KW: adaptacao escolar infantil dicas</span></div>
+            </div>
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #20 • Meio</span><span class="badge badge-adults">Rotina dos Pais</span></div>
+                <h4>Filhos na Escola, Hora de Cuidar de Você: Treinos Matutinos e de Almoço na Unidade Alves de Brito (Centro)</h4>
+                <p>Grade inteligente de horários para profissionais liberais e pais que precisam de 45 minutos de alta intensidade antes do trabalho.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo + Tabela de Horários</span><span>KW: artes marciais centro florianopolis</span></div>
+            </div>
+            <div class="post-card" data-category="teens">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #21 • Meio</span><span class="badge badge-teens">Liderança</span></div>
+                <h4>O Programa de Liderança ATA: Como Alunos do Ensino Fundamental Aprendem a Falar em Público e Guiar Equipes</h4>
+                <p>Apresentação do programa ATA Leadership: formação de futuros líderes com base no respeito e na responsabilidade social.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Vídeo Entrevista + Artigo</span><span>KW: lideranca para jovens floripa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MARÇO 2027: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Mar 2027</span>
+              <div class="month-title-group">
+                <h3>Mês da Mulher & Defesa Pessoal Feminina</h3>
+                <span>4 Artigos • Empoderamento Feminino, Mães que Treinam e Rotina Produtiva de Outono</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Campanhas de conscientização do Dia Internacional da Mulher (8 de Março) e atração de alunas adultas e mães.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #22 • Topo</span><span class="badge badge-adults">Mulheres & Defesa</span></div>
+                <h4>Defesa Pessoal Feminina Sem Mitos: 3 Técnicas Simples de Escape Que Toda Mulher em Florianópolis Deveria Saber</h4>
+                <p>Orientações práticas de segurança urbana para mulheres em saídas noturnas, caminhadas na Beira-Mar e garagens.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Carrossel Tutorial + Post</span><span>KW: defesa pessoal feminina florianopolis</span></div>
+            </div>
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #23 • Meio</span><span class="badge badge-adults">Mães Ativas</span></div>
+                <h4>Mães no Tatame: Por que Mais Mulheres Estão Deixando a Cadeira de Espera para Vestir o Kimono</h4>
+                <p>Histórias reais de mães que começaram assistindo às aulas dos filhos e hoje conquistam suas próprias faixas coloridas.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Entrevista + Vídeo</span><span>KW: mulheres nas artes marciais</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #24 • Meio</span><span class="badge badge-kids">Meninas Fortes</span></div>
+                <h4>Meninas Confiantes, Futuras Líderes: Como o Taekwondo Fortalece a Autoestima das Nossas Filhas desde Cedo</h4>
+                <p>A desconstrução de que arte marcial é esporte masculino; o protagonismo das alunas faixas-pretas na ATA.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo + Depoimento Pais</span><span>KW: empoderamento feminino infantil</span></div>
+            </div>
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #25 • Fundo</span><span class="badge badge-family">Workshop Gratuito</span></div>
+                <h4>Semana Especial da Mulher: Participe do Workshop Beneficente de Defesa Pessoal nas Nossas Unidades</h4>
+                <p>Convite aberto para alunas, mães e convidadas aprenderem noções essenciais de proteção pessoal e autoconfiança.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Página de Evento + Blog</span><span>KW: workshop defesa pessoal floripa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABRIL 2027: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Abr 2027</span>
+              <div class="month-title-group">
+                <h3>Mês Nacional de Prevenção ao Bullying Escolar</h3>
+                <span>4 Artigos • Proteção Emocional, Inteligência Social e Resiliência Infantil</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Em 7 de abril é o Dia Nacional de Combate ao Bullying. Momento de altíssima busca de pais por ajuda preventiva nos colégios.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #26 • Topo</span><span class="badge badge-kids">Anti-Bullying</span></div>
+                <h4>Bullying Escolar em Florianópolis: Como Saber se Seu Filho Está Sofrendo Calado e o que Fazer Imediatamente</h4>
+                <p>Sinais sutis de isolamento, relutância em ir para a aula e como abrir o canal de diálogo com empatia e firmeza.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Completo + Cartilha</span><span>KW: como identificar bullying infantil</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #27 • Meio</span><span class="badge badge-kids">Resolução Sem Luta</span></div>
+                <h4>O Escudo da Autoconfiança: Por Que Crianças que Praticam Taekwondo Raramente São Vítimas de Agressões</h4>
+                <p>Como a postura de olhar nos olhos, ombros abertos e voz clara desestimulam 95% dos valentões sem precisar de brigas físicas.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo + Demonstração em Vídeo</span><span>KW: como evitar bullying artes marciais</span></div>
+            </div>
+            <div class="post-card" data-category="teens">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #28 • Meio</span><span class="badge badge-teens">Cyberbullying</span></div>
+                <h4>Cyberbullying e Grupos de WhatsApp: Ensinando os Jovens a Não Serem Vítimas Nem Espectadores Coniventes</h4>
+                <p>O pilar marcial da integridade aplicado ao ambiente digital e às redes sociais dos adolescentes.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Post Educativo + Guia</span><span>KW: cyberbullying como proteger adolescentes</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #29 • Fundo</span><span class="badge badge-kids">E-book & Aula</span></div>
+                <h4>Baixe o E-book Gratuito: O Manual Definitivo dos Pais Contra o Bullying (Escrito por Mestres de Artes Marciais)</h4>
+                <p>Guia em formato PDF distribuído como isca digital com formulário de agendamento de aula experimental gratuita.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Landing Page Isca + Post</span><span>KW: cartilha anti bullying escolar</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIO 2027: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Mai 2027</span>
+              <div class="month-title-group">
+                <h3>Mês das Mães & Conexão Afetiva</h3>
+                <span>4 Artigos • Saúde Mental Materna, Pais Saudáveis e Treino em Dupla</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Homenagens ao Dia das Mães; conexão entre cuidar de si mesma para conseguir cuidar melhor dos filhos.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #30 • Topo</span><span class="badge badge-adults">Mães</span></div>
+                <h4>A Carga Invisível das Mães: Como 1 Hora de Treino Sem Telefone Pode Salvar Sua Saúde Mental e Seu Sono</h4>
+                <p>A importância do autocuidado materno num ambiente estruturado onde o foco é seu próprio corpo e bem-estar.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Empático + Reels</span><span>KW: saude mental materna florianopolis</span></div>
+            </div>
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #31 • Meio</span><span class="badge badge-family">Mãe e Filho</span></div>
+                <h4>Treino Mãe e Filho: O Momento Onde Ambos São Alunos e Aprendem Juntos no Mesmo Tatame</h4>
+                <p>Relatos tocantes de cumplicidade que surgem quando mãe e filho vestem o mesmo uniforme para aprender desafios novos.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Depoimento Fotos + Artigo</span><span>KW: aulas mae e filho artes marciais</span></div>
+            </div>
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #32 • Meio</span><span class="badge badge-kids">Gratidão & Respeito</span></div>
+                <h4>A Lição do Respeito aos Pais: Como a Filosofia Songahm Ensina a Criança a Valorizar a Família em Casa</h4>
+                <p>Os rituais de reverência do Taekwondo e como eles são traduzidos em gentileza no almoço em família e respeito aos horários.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Educativo</span><span>KW: como ensinar respeito aos filhos</span></div>
+            </div>
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #33 • Fundo</span><span class="badge badge-family">Voucher Dia das Mães</span></div>
+                <h4>Presente Especial de Maio: Ganhe 1 Mês de Treino na ATA ao Matricular Seu Filho Neste Mês das Mães</h4>
+                <p>Oferta de incentivo para as mães conhecerem a estrutura das unidades Spotmarkt e Alves de Brito.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Campanha WhatsApp + Post</span><span>KW: promocao dia das maes floripa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JUNHO 2027: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Jun 2027</span>
+              <div class="month-title-group">
+                <h3>Resistência no Inverno Catarinense & Avaliação Semestral</h3>
+                <span>4 Artigos • Imunidade, Combate ao Desânimo do Frio e Renovação de Metas</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Início do inverno úmido de Floripa; período em que muitos alunos faltam por causa do frio; estratégia de retenção e aquecimento corporal.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #34 • Topo</span><span class="badge badge-kids">Saúde & Inverno</span></div>
+                <h4>Frio e Imunidade Infantil em Florianópolis: Por Que Manter a Prática de Esportes Protege Contra Gripes e Crises Respiratórias</h4>
+                <p>A visão médica da atividade física regular aeróbica no fortalecimento do sistema pulmonar das crianças no inverno.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo Médico + Post</span><span>KW: atividade fisica criancas inverno</span></div>
+            </div>
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #35 • Meio</span><span class="badge badge-adults">Disciplina Pessoal</span></div>
+                <h4>Vencendo a Cama no Inverno: O Segredo da Disciplina Marcial Para Não Abandonar Seus Resultados no Meio do Ano</h4>
+                <p>Como a constância nos meses frios define a forma física e a vitalidade que você terá no próximo verão.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Post Inspirador + Reels</span><span>KW: disciplina no inverno treinos</span></div>
+            </div>
+            <div class="post-card" data-category="teens">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #36 • Meio</span><span class="badge badge-teens">Armas & Foco</span></div>
+                <h4>O Treino de Nunchaku e Bastão Longo: Como Armas Orientais Desenvolvem a Coordenação Motora Fina dos Jovens</h4>
+                <p>Curiosidades sobre o currículo de armas da ATA e por que ele atrai adolescentes apaixonados por desafios de precisão.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Vídeo Demonstrativo + Artigo</span><span>KW: treino nunchaku taekwondo floripa</span></div>
+            </div>
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #37 • Fundo</span><span class="badge badge-family">Graduação de Julho</span></div>
+                <h4>Metade do Ano Concluída: O Balanço do Primeiro Semestre e o Preparativo Para os Exames de Faixa de Inverno</h4>
+                <p>Como incentivar seu filho a revisar suas fórmulas e matérias de prova para a banca examinadora.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Avisos de Calendário + Artigo</span><span>KW: exame de faixa ata florianopolis</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JULHO 2027: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Jul 2027</span>
+              <div class="month-title-group">
+                <h3>Férias de Inverno & Bootcamp de Imersão Marcial</h3>
+                <span>4 Artigos • Ocupação Ativa nas Férias Escolares e Treinamento Intensivo</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Recesso escolar de 2 semanas em SC; shopping centers cheios; excelente apelo para oficinas de férias na unidade Spotmarkt Mall.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="kids">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #38 • Fundo</span><span class="badge badge-kids">Bootcamp Julho</span></div>
+                <h4>Férias de Julho Sem Tédio: Como Funciona o Bootcamp Marcial de Inverno para Crianças e Adolescentes na ATA</h4>
+                <p>Programa especial de 1 semana intensiva com jogos marciais, desafios em equipe e técnicas básicas de sobrevivência urbana.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Landing Page + Post</span><span>KW: atividades ferias julho infantil floripa</span></div>
+            </div>
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #39 • Meio</span><span class="badge badge-adults">Alongamento</span></div>
+                <h4>Você Perdeu a Flexibilidade com o Passar dos Anos? Como Restaurar a Mobilidade do Quadril e Coluna na Vida Adulta</h4>
+                <p>Exercícios progressivos do Taekwondo que descompressam a região lombar e aumentam o alcance funcional dos membros.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Infográfico + Artigo</span><span>KW: flexibilidade e alongamento adultos floripa</span></div>
+            </div>
+            <div class="post-card" data-category="teens">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #40 • Meio</span><span class="badge badge-teens">Competições</span></div>
+                <h4>O Caminho Até o Campeonato Panamericano da ATA: Conheça os Alunos Catarinenses Que Competem no Exterior</h4>
+                <p>Inspiração e alta performance: a rotina de quem viaja pelo mundo representando Florianópolis no circuito Songahm.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Reportagem Especial + Fotos</span><span>KW: campeonato panamericano taekwondo</span></div>
+            </div>
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #41 • Topo</span><span class="badge badge-family">Passeio no Spotmarkt</span></div>
+                <h4>Um Dia Diferente no Córrego Grande: Como Aproveitar a Gastronomia do Spotmarkt Enquanto Seu Filho Treina na ATA</h4>
+                <p>A união perfeita de lazer urbano, gastronomia de alto padrão e conveniência esportiva em um só local.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Guia Local + Storytelling</span><span>KW: spotmarkt corrego grande florianopolis</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AGOSTO 2027: 4 POSTS -->
+        <div class="month-block">
+          <div class="month-header">
+            <div class="month-meta">
+              <span class="month-badge">Ago 2027</span>
+              <div class="month-title-group">
+                <h3>Mês dos Pais & Legado Entre Gerações</h3>
+                <span>4 Artigos • Pais e Filhos no Tatame, Liderança Pessoal e Fechamento do Ciclo de 12 Meses</span>
+              </div>
+            </div>
+            <div class="month-season-note">
+              Celebração do Dia dos Pais; campanha emocional "O Melhor Exemplo é o Tatame"; consolidação do tráfego anual do blog.
+            </div>
+          </div>
+          <div class="posts-grid">
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #42 • Topo</span><span class="badge badge-family">Dia dos Pais</span></div>
+                <h4>O Melhor Exemplo Que um Pai Pode Dar é Ser Forte Mentalmente: Treinando Lado a Lado no Dia dos Pais</h4>
+                <p>Por que as crianças imitam as atitudes dos pais e não apenas as palavras; construindo memórias inesquecíveis de respeito mútuo.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Vídeo Emocional + Post</span><span>KW: dia dos pais florianopolis</span></div>
+            </div>
+            <div class="post-card" data-category="adults">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #43 • Meio</span><span class="badge badge-adults">Homens 30-55</span></div>
+                <h4>Saúde Masculina e Prevenção Cardiovascular: Os Benefícios dos Treinos de Chutes para o Coração e Disposição Diária</h4>
+                <p>Estudos sobre a redução do risco de infarto e melhora dos índices glicêmicos em homens praticantes de artes marciais.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Artigo com Dados de Saúde</span><span>KW: saude masculina exercicios floripa</span></div>
+            </div>
+            <div class="post-card" data-category="teens">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #44 • Meio</span><span class="badge badge-teens">Faixa Preta</span></div>
+                <h4>O Significado Real da Faixa Preta: Por Que Ela é Apenas o Começo da Jornada de um Verdadeiro Líder</h4>
+                <p>Depoimentos de jovens que alcançaram a faixa preta na ATA e como isso abriu portas em entrevistas de emprego e bolsas no exterior.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Vídeo Documentário + Post</span><span>KW: como ser faixa preta taekwondo</span></div>
+            </div>
+            <div class="post-card" data-category="family">
+              <div class="post-top">
+                <div class="post-num"><span>Pauta #45 • Fundo</span><span class="badge badge-family">Retrospectiva & Convite</span></div>
+                <h4>1 Ano de Transformação: Como a Comunidade ATA Florianópolis Ajudou Centenas de Famílias a Viverem com Mais Coragem</h4>
+                <p>Fechamento comemorativo dos 12 meses, apresentação dos dados de evolução dos alunos e convite aberto para a próxima turma.</p>
+              </div>
+              <div class="post-bottom"><span class="post-format">Manifesto + CTA WhatsApp</span><span>KW: academia de taekwondo florianopolis</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CAMPANHAS INTEGRADAS -->
+  <section id="campanhas">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Estratégia de Tráfego & Conversão</div>
+        <h2>4. Campanhas Integradas Paralelas às Postagens</h2>
+        <p>Como amplificar o alcance das 45 postagens do blog conectando as <strong>leis e tendências reais de Santa Catarina</strong> diretamente com <strong>leads qualificados no banco de dados e conversas no WhatsApp</strong>.</p>
+      </div>
+
+      <div class="campaigns-grid">
+
+        <!-- CAMPAIGN 1: META ADS GEO -->
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div class="campaign-icon">📱</div>
+            <div>
+              <h3>Meta Ads Hiperlocal (Instagram & Facebook)</h3>
+              <span>Segmentação em Raio de 3 a 5 km por Unidade</span>
+            </div>
+          </div>
+          <div class="campaign-body">
+            <p>Tráfego pago focado exatamente nos bairros onde as famílias moram e trabalham: Centro, Beira-Mar Norte, Córrego Grande, Itacorubi, Santa Mônica e Agronômica.</p>
+            <div class="campaign-details">
+              <div class="campaign-details-item">
+                <strong>Públicos:</strong>
+                <span>Mães e Pais de 28 a 52 anos; Interesses em Educação Privada, Pedagogia, Esportes Infantis.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Ganchos Validados:</strong>
+                <span>Criativos citando a restrição de celulares nas escolas (Lei 15.100), saúde mental no Setembro Amarelo e a campanha de Dia das Crianças com foco em experiências.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Formatos:</strong>
+                <span>Carrosséis educativos derivados do blog + Vídeos curtos dos mestres no tatame.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Destino:</strong>
+                <span>Landing Page do Artigo com pop-up/formulário ou Direto para o WhatsApp com UTM trackeada.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMPAIGN 2: GOOGLE SEARCH & MAPS -->
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div class="campaign-icon">🔍</div>
+            <div>
+              <h3>Google Search & Google Meu Negócio</h3>
+              <span>Captura de Intenção Alta ("Pronto para Comprar")</span>
+            </div>
+          </div>
+          <div class="campaign-body">
+            <p>Anúncios de pesquisa para quem já está ativamente procurando uma escola de artes marciais para os filhos ou para si em Floripa.</p>
+            <div class="campaign-details">
+              <div class="campaign-details-item">
+                <strong>Palavras-Chave:</strong>
+                <span>"taekwondo florianopolis", "artes marciais infantil centro", "defesa pessoal spotmarkt", "luta para criancas floripa".</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Extensões:</strong>
+                <span>Sitelinks direcionados para Unidade Catarinense, Unidade Spotmarkt e Alves de Brito. Botão de Ligar e WhatsApp.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Local Pack:</strong>
+                <span>Otimização dos perfis do Google Maps com fotos atualizadas e resenhas semanais de 5 estrelas dos pais.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMPAIGN 3: ISCAS DIGITAIS / LEAD MAGNETS -->
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div class="campaign-icon">📖</div>
+            <div>
+              <h3>Iscas Digitais (Inbound E-books & Guias)</h3>
+              <span>Nutrição de Pais que Ainda Estão Pesquisando</span>
+            </div>
+          </div>
+          <div class="campaign-body">
+            <p>Captura de e-mail e telefone de pais preocupados que ainda não agendaram a aula, mas querem entender como resolver as dores dos filhos.</p>
+            <div class="campaign-details">
+              <div class="campaign-details-item">
+                <strong>E-book 1 (Abril):</strong>
+                <span>"Manual Prático dos Pais Contra o Bullying: Como Blindar a Autoestima do Seu Filho em 30 Dias".</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>E-book 2 (Jan/Fev):</strong>
+                <span>"Guia de Desintoxicação Digital: 10 Passos para Substituir o iPad por Hábitos Físicos Saudáveis".</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Fluxo:</strong>
+                <span>Download via formulário do site -> Registro no Lead DB -> Disparo de mensagem no WhatsApp convidando para aula experimental.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMPAIGN 4: PARCERIAS ESCOLARES E CONDOMÍNIOS -->
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div class="campaign-icon">🏫</div>
+            <div>
+              <h3>Parcerias com Colégios & Condomínios de Alto Padrão</h3>
+              <span>Ativações Presenciais e Parcerias B2B</span>
+            </div>
+          </div>
+          <div class="campaign-body">
+            <p>Utilização estratégica das unidades para penetrar nos principais grupos fechados de famílias no Centro e Córrego Grande.</p>
+            <div class="campaign-details">
+              <div class="campaign-details-item">
+                <strong>Colégios:</strong>
+                <span>Palestras anti-bullying gratuitas no Colégio Catarinense e outras escolas privadas parceiras.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Condomínios:</strong>
+                <span>Vouchers exclusivos nos aplicativos condominiais (ex: TownSq) de prédios de luxo na Beira-Mar e Itacorubi.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Spotmarkt Mall:</strong>
+                <span>Apresentações abertas de fim de semana na praça do shopping atraindo os frequentadores das cafeterias.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMPAIGN 5: VOUCHERS SAZONAIS & EXPERIMENTAIS -->
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div class="campaign-icon">🎟️</div>
+            <div>
+              <h3>Vouchers de Aulas Experimentais com Escassez</h3>
+              <span>Conversão Rápida para o WhatsApp</span>
+            </div>
+          </div>
+          <div class="campaign-body">
+            <p>Campanhas flash de 7 dias a cada trimestre, oferecendo passes VIP com limite de vagas para gerar senso de urgência.</p>
+            <div class="campaign-details">
+              <div class="campaign-details-item">
+                <strong>Passe Férias de Verão:</strong>
+                <span>1 semana experimental de Janeiro para crianças de 4 a 12 anos.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Semana da Mulher Segura:</strong>
+                <span>Acesso livre às aulas noturnas de defesa pessoal durante a semana de 8 de Março.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Rastreamento:</strong>
+                <span>Cada voucher tem código UTM exclusivo para medir qual campanha gerou mais alunos matriculados no dashboard.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMPAIGN 6: MEMBER-GET-MEMBER (INDICAÇÃO) -->
+        <div class="campaign-card">
+          <div class="campaign-header">
+            <div class="campaign-icon">🤝</div>
+            <div>
+              <h3>Programa "Amigo Faixa-Preta" (Indicação Premiada)</h3>
+              <span>Crescimento Orgânico Exponencial Dentro do Dojang</span>
+            </div>
+          </div>
+          <div class="campaign-body">
+            <p>Transformar os alunos e pais satisfeitos nos maiores promotores da marca nas escolas e no trabalho.</p>
+            <div class="campaign-details">
+              <div class="campaign-details-item">
+                <strong>Mecânica:</strong>
+                <span>Cada aluno ganha 2 'Cartões VIP de Amigo' por semestre para presentear um colega de classe ou primo.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Recompensa:</strong>
+                <span>Se o amigo se matricular, o aluno ganha desconto na taxa de graduação ou patch exclusivo para o uniforme.</span>
+              </div>
+              <div class="campaign-details-item">
+                <strong>Mês dos Amigos:</strong>
+                <span>Aulão aberto de sábado onde todo aluno pode treinar junto com seu melhor amigo.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: ROTINA OPERACIONAL & KPIS -->
+  <section id="operacao" style="background: rgba(18, 21, 30, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Execução Semanal</div>
+        <h2>5. Rotina Operacional da Equipe & Métricas de Sucesso</h2>
+        <p>Como operacionalizar as postagens e campanhas semanalmente com alinhamento entre marketing e recepção das unidades.</p>
+      </div>
+
+      <!-- Weekly Flow Grid -->
+      <div class="routine-grid">
+        <div class="routine-day">
+          <span class="day-badge">Segunda-Feira</span>
+          <h4>Publicação do Artigo</h4>
+          <p>Publicação do post da semana no blog do site oficial com metadados de SEO, links internos e CTA para a unidade pertinente.</p>
+        </div>
+        <div class="routine-day">
+          <span class="day-badge">Terça-Feira</span>
+          <h4>Cortes de Redes Sociais</h4>
+          <p>Adaptação do artigo em 1 carrossel educativo no Instagram e gravação de 1 Reels de 30-45s com o professor demonstrando o tema.</p>
+        </div>
+        <div class="routine-day">
+          <span class="day-badge">Quarta-Feira</span>
+          <h4>Ativação de Tráfego</h4>
+          <p>Lançamento de impulsionamento pago no Meta Ads (Dark Post) para o raio de 4km e atualização de orçamentos do Google Ads.</p>
+        </div>
+        <div class="routine-day">
+          <span class="day-badge">Quinta-Feira</span>
+          <h4>Disparo no WhatsApp</h4>
+          <p>Envio de resumo do conteúdo para listas de transmissão de pais ativos e nutrição dos leads frios dos últimos 60 dias.</p>
+        </div>
+        <div class="routine-day">
+          <span class="day-badge">Sexta-Feira</span>
+          <h4>Auditoria no Dashboard</h4>
+          <p>Abertura do painel de controle <code>/wp-admin/admin.php?page=atapremium-leads</code> para checar agendamentos de aulas e taxas de comparecimento.</p>
+        </div>
+      </div>
+
+      <!-- KPI Targets Table -->
+      <div style="margin-top: 32px;" class="topics-table-wrap">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Métrica / KPI de Sucesso</th>
+              <th>Meta Mensal Estimada</th>
+              <th>Ferramenta de Aferição</th>
+              <th>Ação Corretiva se Baixo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Visitantes Únicos no Blog</strong></td>
+              <td>1.500 a 3.500 visitas/mês</td>
+              <td>Google Analytics 4 & Clarity</td>
+              <td>Ajustar títulos SEO e impulsionar carrosséis com foco em cliques no link.</td>
+            </tr>
+            <tr>
+              <td><strong>Leads Registrados no Sistema</strong></td>
+              <td>60 a 120 novos leads/mês</td>
+              <td>Painel ATA Leads (Banco MySQL)</td>
+              <td>Verificar pop-ups, simplificar campos de formulário e trocar CTAs.</td>
+            </tr>
+            <tr>
+              <td><strong>Iniciações de Conversa no WhatsApp</strong></td>
+              <td>40 a 80 conversas/mês</td>
+              <td>Google Tag Manager (Eventos ATA)</td>
+              <td>Revisar copy do botão do WhatsApp e garantir resposta em até 5 minutos pela recepção.</td>
+            </tr>
+            <tr>
+              <td><strong>Taxa de Comparecimento na Aula Experimental</strong></td>
+              <td>Superior a 65% dos agendados</td>
+              <td>Relatório da Recepção das Unidades</td>
+              <td>Enviar mensagem de lembrete com foto do tatame e orientações de roupa 3h antes.</td>
+            </tr>
+            <tr>
+              <td><strong>Taxa de Matrícula (Fechamento)</strong></td>
+              <td>Superior a 40% dos presentes</td>
+              <td>Contratos Assinados</td>
+              <td>Treinamento de atendimento consultivo dos instrutores focado nos valores para o filho.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>ATA Martial Arts Florianópolis</strong> — Documento de Estratégia de Conteúdo e Campanhas 2026/2027.</p>
+      <p style="margin-top: 4px;">Unidades: Rua Alves de Brito (Centro) • Colégio Catarinense • Spotmarkt Mall (Córrego Grande).</p>
+      <p style="margin-top: 8px; font-size: 0.75rem;">Armazenado localmente em <code>docs/Planejamento_Editorial_Campanhas_2026_2027.html</code>. Pronto para consulta e execução.</p>
+    </div>
+  </footer>
+
+  <!-- Simple Tab and Filter Scripts -->
+  <script>
+    function switchCompetitor(id) {
+      document.querySelectorAll('.comp-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.comp-content-pane').forEach(pane => pane.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      const targetPane = document.getElementById('pane-' + id);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    }
+
+    function filterPosts(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const cards = document.querySelectorAll('.post-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

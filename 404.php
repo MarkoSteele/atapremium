@@ -9,7 +9,10 @@ get_header(); ?>
 <main id="primary" class="site-main error-404-main">
     <!-- Imagem de fundo com foto da equipe/mestres e overlay de alto padrão -->
     <div class="error-404-bg-media">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/404-bg.jpg' ); ?>" alt="Equipe ATA Martial Arts Florianópolis" class="error-404-bg-img" loading="eager">
+        <picture>
+            <source srcset="<?php echo esc_url( get_template_directory_uri() . '/assets/images/404-bg.webp' ); ?>" type="image/webp">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/404-bg.jpg' ); ?>" alt="Equipe ATA Martial Arts Florianópolis" class="error-404-bg-img" loading="eager" width="1600" height="1067">
+        </picture>
         <div class="error-404-overlay"></div>
     </div>
 

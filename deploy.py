@@ -21,12 +21,12 @@ DEFAULT_CONFIG = {
 CONFIG_FILE = '.env.deploy'
 
 # Arquivos e pastas a ignorar no upload
-EXCLUDE_DIRS = {'.git', '.github', 'docs', '.idea', '.vscode', '__pycache__', 'node_modules', '.scratch', 'tmp'}
+EXCLUDE_DIRS = {'.git', '.github', 'docs', '.idea', '.vscode', '__pycache__', 'node_modules', '.scratch', 'tmp', 'raw_media_backup'}
 EXCLUDE_FILES = {
     '.DS_Store', '.gitignore', '.env.deploy', '.env.deploy.example', 
     'deploy.py', 'deploy.sh', '.cpanel.yml', 'README.md'
 }
-EXCLUDE_EXTENSIONS = {'.swp', '.tmp', '.bak', '.zip'}
+EXCLUDE_EXTENSIONS = {'.swp', '.tmp', '.bak', '.zip', '.py'}
 
 def log(msg):
     print(msg, flush=True)
@@ -121,7 +121,7 @@ def upload_theme(config):
         ensure_remote_dir(ftp, target_remote_dir)
 
         for filename in sorted(files):
-            if filename in EXCLUDE_FILES or filename.startswith('.'):
+            if filename in EXCLUDE_FILES or (filename.startswith('.') and filename != '.htaccess'):
                 continue
             if any(filename.endswith(ext) for ext in EXCLUDE_EXTENSIONS):
                 continue

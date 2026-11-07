@@ -34,7 +34,7 @@ get_header(); ?>
             <!-- Imagem de Apresentação em Destaque -->
             <div class="about-image-col">
                 <div class="about-image-card">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/apresentacao.png' ); ?>" alt="Apresentação ATA Premium Martial Arts Florianópolis" class="about-showcase-img" loading="lazy">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/apresentacao.webp' ); ?>" alt="Apresentação ATA Premium Martial Arts Florianópolis" class="about-showcase-img" loading="lazy" width="1200" height="1200">
                     <div class="about-image-badge">
                         <span>★ ATA Premium Florianópolis ★</span>
                     </div>
@@ -179,7 +179,7 @@ get_header(); ?>
             <!-- Unidade 2 -->
             <div class="about-unit-box">
                 <div class="unit-box-media">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/unidade-2.png' ); ?>" alt="Unidade Colégio Catarinense" loading="lazy">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/unidade-2.webp' ); ?>" alt="Unidade Colégio Catarinense" loading="lazy" width="1400" height="780">
                     <span class="unit-badge">Polo Escolar • Centro</span>
                 </div>
                 <div class="unit-box-content">

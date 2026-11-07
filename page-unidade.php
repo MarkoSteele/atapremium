@@ -44,7 +44,7 @@ $unidades_data = [
         'maps_embed'  => 'https://maps.google.com/maps?q=Rua+Alves+de+Brito+33+Centro+Florianopolis&t=&z=16&ie=UTF8&iwloc=&output=embed',
         'fotos'       => [
             [
-                'url' => get_template_directory_uri() . '/assets/images/unidade-alves-de-brito-fachada.jpg',
+                'url' => get_template_directory_uri() . '/assets/images/unidade-alves-de-brito-fachada.webp',
                 'caption' => 'Fachada Oficial da Unidade Alves de Brito (Rua Alves de Brito, 33)',
                 'tag' => 'Fachada & Recepção'
             ],
@@ -83,7 +83,7 @@ $unidades_data = [
         'whatsapp'    => '5548999313558',
         'horario'     => 'Segunda a Sexta: 09h às 12h | 15h às 21h',
         'video'       => get_template_directory_uri() . '/Unidade2-card.mp4',
-        'imagem_hero' => get_template_directory_uri() . '/assets/images/unidade-2.png',
+        'imagem_hero' => get_template_directory_uri() . '/assets/images/unidade-2.webp',
         'sobre_titulo'=> 'A Logística Perfeita para a Família e a Rotina Escolar',
         'sobre_texto' => 'Localizada estrategicamente no polo educacional e residencial nobre do Centro de Florianópolis — imediatamente ao lado do <strong>Colégio Catarinense</strong> e próxima a colégios como Bom Jesus e Menino Jesus —, esta unidade foi desenhada para facilitar a vida dos pais. O aluno pode treinar no contra-turno escolar com total segurança, evitando deslocamentos e trânsito. O espaço conta com uma atmosfera residencial, acolhedora e com suporte pedagógico integral.',
         'pontos_fortes'=> [

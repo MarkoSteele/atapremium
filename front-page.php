@@ -189,8 +189,8 @@ get_header(); ?>
             <div class="program-card reveal-on-scroll delay-3">
                 <div class="program-card-media">
                     <picture>
-                        <source srcset="<?php echo esc_url( get_template_directory_uri() . '/teens.webp' ); ?>" type="image/webp">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/teens.jpeg' ); ?>" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" width="480" height="270" loading="lazy" decoding="async">
+                        <source srcset="<?php echo esc_url( get_template_directory_uri() . '/teens.webp?ver=1.7.1' ); ?>" type="image/webp">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/teens.jpeg?ver=1.7.1' ); ?>" alt="Programa ATA Teens (11 a 15 anos)" class="program-card-img" width="640" height="960" loading="lazy" decoding="async">
                     </picture>
                     <div class="program-media-overlay"></div>
                     <span class="program-tag-badge" data-i18n="program_teens_tag">11 a 15 anos</span>

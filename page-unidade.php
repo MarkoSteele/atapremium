@@ -49,24 +49,29 @@ $unidades_data = [
                 'tag' => 'Fachada & Recepção'
             ],
             [
-                'url' => 'https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Treinos Lúdicos de Foco e Autocontrole para Tigers e Kids',
+                'url' => get_template_directory_uri() . '/assets/images/aula1-unidade1.webp',
+                'caption' => 'Técnica, Flexibilidade e Alta Performance no Tatame Oficial',
+                'tag' => 'Treino Técnico'
+            ],
+            [
+                'url' => get_template_directory_uri() . '/assets/images/aula2-unidade1.webp',
+                'caption' => 'Aulas para Adultos e Masters: Condicionamento, Foco e Autodefesa',
+                'tag' => 'Adultos & Masters'
+            ],
+            [
+                'url' => get_template_directory_uri() . '/assets/images/aula3-unidade1.webp',
+                'caption' => 'Adolescentes e Jovens Desenvolvendo Postura Firme e Liderança',
+                'tag' => 'Teens & Liderança'
+            ],
+            [
+                'url' => get_template_directory_uri() . '/assets/images/aula4-unidade1.webp',
+                'caption' => 'Prática de Sparring com Equipamentos Oficiais de Proteção e Segurança',
+                'tag' => 'Sparring Seguro'
+            ],
+            [
+                'url' => get_template_directory_uri() . '/assets/images/aula5-unidade1.webp',
+                'caption' => 'Disciplina Voluntária, Concentração e Respeito desde a Infância',
                 'tag' => 'Tigers & Kids'
-            ],
-            [
-                'url' => 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Aulas Dinâmicas de Condicionamento e Autodefesa para Adolescentes e Adultos',
-                'tag' => 'Teens & Masters'
-            ],
-            [
-                'url' => 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Cerimônia de Troca de Faixas e Superação de Metas',
-                'tag' => 'Graduação de Faixas'
-            ],
-            [
-                'url' => 'https://images.unsplash.com/photo-1508215885820-4523e431397b?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Ambiente Familiar, Seguro e Supervisionado por Especialistas',
-                'tag' => 'Comunidade ATA'
             ]
         ]
     ],
@@ -102,24 +107,14 @@ $unidades_data = [
         'maps_embed'  => 'https://maps.google.com/maps?q=Colegio+Catarinense+Centro+Florianopolis&t=&z=16&ie=UTF8&iwloc=&output=embed',
         'fotos'       => [
             [
-                'url' => get_template_directory_uri() . '/assets/images/unidade-2.png',
-                'caption' => 'Treinos Estruturados para Foco Escolar e Disciplina',
-                'tag' => 'Kids & Teens'
+                'url' => get_template_directory_uri() . '/assets/images/unidade-2.webp',
+                'caption' => 'Fachada e Acesso da Unidade Colégio Catarinense',
+                'tag' => 'Unidade Centro'
             ],
             [
-                'url' => 'https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Primeiros Limites e Socialização Saudável para Pequenos',
-                'tag' => 'Programa Tigers'
-            ],
-            [
-                'url' => 'https://images.unsplash.com/photo-1508215885820-4523e431397b?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Treinamento Conjunto de Pais e Filhos no Tatame',
-                'tag' => 'Treino Familiar'
-            ],
-            [
-                'url' => 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Reconhecimento e Conquista de Faixas',
-                'tag' => 'Graduações ATA'
+                'url' => get_template_directory_uri() . '/assets/images/aula1-unidade2.webp',
+                'caption' => 'Treinos Estruturados para Foco Escolar, Coordenação e Disciplina',
+                'tag' => 'Tigers & Kids'
             ]
         ]
     ],
@@ -155,24 +150,29 @@ $unidades_data = [
         'maps_embed'  => 'https://maps.google.com/maps?q=Spotmarkt+Mall+Corrego+Grande+Florianopolis&t=&z=16&ie=UTF8&iwloc=&output=embed',
         'fotos'       => [
             [
-                'url' => 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Tatame Moderno no Complexo Spotmarkt',
+                'url' => get_template_directory_uri() . '/assets/images/ata-spotmarket-capa.webp',
+                'caption' => 'Tatame Moderno no Complexo Spotmarkt Córrego Grande',
                 'tag' => 'Dojo Spotmarkt'
             ],
             [
-                'url' => 'https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Metodologia Divertida e Formadora de Caráter para Crianças',
+                'url' => get_template_directory_uri() . '/assets/images/aula1-unidade3.webp',
+                'caption' => 'Ampla Vista Arborizada Integrada ao Parque Linear no Córrego Grande',
+                'tag' => 'Ambiente & Natureza'
+            ],
+            [
+                'url' => get_template_directory_uri() . '/assets/images/aula2-unidade3.webp',
+                'caption' => 'Metodologia Lúdica e Formadora de Caráter para Crianças',
                 'tag' => 'Tigers & Kids'
             ],
             [
-                'url' => 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Adolescentes e Adultos em Treino de Condicionamento e Liderança',
-                'tag' => 'Teens & Adultos'
+                'url' => get_template_directory_uri() . '/assets/images/aula3-unidade3.webp',
+                'caption' => 'Tatame Oficial de Alto Padrão e Iluminação Contemporânea',
+                'tag' => 'Estrutura Premium'
             ],
             [
-                'url' => 'https://images.unsplash.com/photo-1508215885820-4523e431397b?q=80&w=1200&auto=format&fit=crop',
-                'caption' => 'Comunidade Vibrante e Convivência Positiva',
-                'tag' => 'Família ATA'
+                'url' => get_template_directory_uri() . '/assets/images/aula4-unidade3.webp',
+                'caption' => 'Recepção e Área de Espera Confortável para os Pais e Famílias',
+                'tag' => 'Conforto Familiar'
             ]
         ]
     ]

@@ -652,7 +652,7 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- PARTE 2: Cards de Depoimentos em Vídeo (Links Oficiais do Instagram) -->
+        <?php /* PARTE 2: Cards de Depoimentos em Vídeo (Links Oficiais do Instagram) - Comentado temporariamente
         <div class="video-testimonials-block reveal-on-scroll">
             <div class="video-testimonials-header">
                 <div class="video-header-badge-wrap">
@@ -799,6 +799,7 @@ get_header(); ?>
                 </a>
             </div>
         </div>
+        */ ?>
 
         <!-- Botão CTA Final da Seção -->
         <div class="testi-cta-bottom text-center reveal-on-scroll">
